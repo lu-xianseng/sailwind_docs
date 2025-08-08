@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content="Rspress v1.45.1">
     <title data-rh="true">第 24 章 SailWind Router 对话框 ಠ_ಠ - SailWind</title><meta data-rh="true" name="description" content="SailWind"/>
-  <script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script><link rel="icon" href="/sailwind_docs/favicon.ico"><script defer src="/sailwind_docs/static/js/styles.56f22da8.js"></script><script defer src="/sailwind_docs/static/js/lib-react.36f9b428.js"></script><script defer src="/sailwind_docs/static/js/lib-router.971f4280.js"></script><script defer src="/sailwind_docs/static/js/1762.a6b4b7dd.js"></script><script defer src="/sailwind_docs/static/js/index.1b30f5ff.js"></script><link href="/sailwind_docs/static/css/styles.22672a82.css" rel="stylesheet"></head>
+  <script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script><link rel="icon" href="/sailwind_docs/favicon.ico"><script defer src="/sailwind_docs/static/js/styles.56f22da8.js"></script><script defer src="/sailwind_docs/static/js/lib-react.36f9b428.js"></script><script defer src="/sailwind_docs/static/js/lib-router.971f4280.js"></script><script defer src="/sailwind_docs/static/js/1762.24ffb243.js"></script><script defer src="/sailwind_docs/static/js/index.4e4b140a.js"></script><link href="/sailwind_docs/static/css/styles.22672a82.css" rel="stylesheet"></head>
 
   <body >
     <div id="root"><div class="navContainer_d18b1 rspress-nav px-6  sticky_ddfa7"><div class="container_e4235 flex justify-between items-center h-full"><div class="navBarTitle_c5f07"><a href="/sailwind_docs/index.html" class="link_a7cea flex items-center w-full h-full text-base font-semibold transition-opacity duration-300 hover:opacity-60"><div class="mr-1 min-w-8"><img src="/sailwind_docs/logo.png" alt="logo" id="logo" class="rspress-logo"/></div><span>SailWind</span></a></div><div class="flex flex-1 justify-end items-center"><div class="rightNav_a2fea"><div class="flex sm:flex-1 items-center sm:pl-4 sm:pr-2"><div class="rspress-nav-search-button navSearchButton_df1fb"><button><svg width="18" height="18" viewBox="0 0 32 32"><path fill="var(--rp-c-gray)" d="m29 27.586-7.552-7.552a11.018 11.018 0 1 0-1.414 1.414L27.586 29ZM4 13a9 9 0 1 1 9 9 9.01 9.01 0 0 1-9-9"></path></svg><p class="searchWord_af2c1">搜索</p><div style="opacity:0"><span></span><span>K</span></div></button></div><div class="mobileNavSearchButton_d85a9"><svg width="24" height="24" viewBox="0 0 32 32"><path fill="var(--rp-c-gray)" d="m29 27.586-7.552-7.552a11.018 11.018 0 1 0-1.414 1.414L27.586 29ZM4 13a9 9 0 1 1 9 9 9.01 9.01 0 0 1-9-9"></path></svg></div></div><div class="rspress-nav-menu menu h-14"><a href="/sailwind_docs/logic/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center">原理图 (Logic)</div></a><a href="/sailwind_docs/layout/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center">物理版图 (Layout)</div></a><a href="/sailwind_docs/router/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154 activeItem_a28b5 text-sm font-medium mx-1.5 px-3 py-2 flex items-center">布线器 (Router)</div></a><a href="/sailwind_docs/lpcreator/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center">焊盘图形 (LPW)</div></a><a href="/sailwind_docs/about.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center">关于</div></a></div><div class="flex-center flex-row"><div class="mx-2"><div class="md:mr-2 rspress-nav-appearance"><div class="p-1 border border-solid border-gray-300 text-gray-400  cursor-pointer rounded-md hover:border-gray-600 hover:text-gray-600 dark:hover:border-gray-200 dark:hover:text-gray-200 transition-all duration-300 w-7 h-7"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" class="dark:hidden" width="18" height="18" fill="currentColor"><path d="M12 18c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6m0-10c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4M12 4c-.6 0-1-.4-1-1V1c0-.6.4-1 1-1s1 .4 1 1v2c0 .6-.4 1-1 1M12 24c-.6 0-1-.4-1-1v-2c0-.6.4-1 1-1s1 .4 1 1v2c0 .6-.4 1-1 1M5.6 6.6c-.3 0-.5-.1-.7-.3L3.5 4.9c-.4-.4-.4-1 0-1.4s1-.4 1.4 0l1.4 1.4c.4.4.4 1 0 1.4-.1.2-.4.3-.7.3M19.8 20.8c-.3 0-.5-.1-.7-.3l-1.4-1.4c-.4-.4-.4-1 0-1.4s1-.4 1.4 0l1.4 1.4c.4.4.4 1 0 1.4-.2.2-.5.3-.7.3M3 13H1c-.6 0-1-.4-1-1s.4-1 1-1h2c.6 0 1 .4 1 1s-.4 1-1 1M23 13h-2c-.6 0-1-.4-1-1s.4-1 1-1h2c.6 0 1 .4 1 1s-.4 1-1 1M4.2 20.8c-.3 0-.5-.1-.7-.3-.4-.4-.4-1 0-1.4l1.4-1.4c.4-.4 1-.4 1.4 0s.4 1 0 1.4l-1.4 1.4c-.2.2-.4.3-.7.3M18.4 6.6c-.3 0-.5-.1-.7-.3-.4-.4-.4-1 0-1.4l1.4-1.4c.4-.4 1-.4 1.4 0s.4 1 0 1.4l-1.4 1.4c-.2.2-.5.3-.7.3"></path></svg><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" class="hidden dark:block" width="18" height="18" fill="currentColor"><path d="M12.1 22h-.9c-5.5-.5-9.5-5.4-9-10.9.4-4.8 4.2-8.6 9-9 .4 0 .8.2 1 .5s.2.8-.1 1.1c-2 2.7-1.4 6.4 1.3 8.4 2.1 1.6 5 1.6 7.1 0 .3-.2.7-.3 1.1-.1.3.2.5.6.5 1-.2 2.7-1.5 5.1-3.6 6.8-1.9 1.4-4.1 2.2-6.4 2.2M9.3 4.4c-2.9 1-5 3.6-5.2 6.8-.4 4.4 2.8 8.3 7.2 8.7 2.1.2 4.2-.4 5.8-1.8 1.1-.9 1.9-2.1 2.4-3.4-2.5.9-5.3.5-7.5-1.1-2.8-2.2-3.9-5.9-2.7-9.2"></path></svg></div></div></div><div class="social-links menu-item_e90a6 flex-center relative"><div class="flex-center h-full gap-x-4 transition-colors duration-300 md:mr-2"><a href="https://github.com/mikigo/sailwind_docs/" target="_blank" rel="noopener noreferrer" class="social-links"><div class="social-links-icon_a4ad0"><div><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a></div></div></div></div><div class="mobileNavMenu_e7045"><div class="navScreen_ec30c  rspress-nav-screen" id="navScreen"><div class="container_c935d"><div class="navMenu_b887b"><div class="navMenuItem_e7978 w-full"><a href="/sailwind_docs/logic/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center">原理图 (Logic)</div></a></div><div class="navMenuItem_e7978 w-full"><a href="/sailwind_docs/layout/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center">物理版图 (Layout)</div></a></div><div class="navMenuItem_e7978 w-full"><a href="/sailwind_docs/router/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154 activeItem_a28b5 text-sm font-medium mx-1.5 px-3 py-2 flex items-center">布线器 (Router)</div></a></div><div class="navMenuItem_e7978 w-full"><a href="/sailwind_docs/lpcreator/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center">焊盘图形 (LPW)</div></a></div><div class="navMenuItem_e7978 w-full"><a href="/sailwind_docs/about.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center">关于</div></a></div></div><div class="flex-center flex-col gap-2"><div class="mt-2 navAppearance_bf893 flex justify-center"></div><div class="social-links menu-item_e90a6 flex-center relative"><div class="flex-center h-full gap-x-4 transition-colors duration-300 md:mr-2"><a href="https://github.com/mikigo/sailwind_docs/" target="_blank" rel="noopener noreferrer" class="social-links"><div class="social-links-icon_a4ad0"><div><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a></div></div></div></div></div><button aria-label="mobile hamburger" class=" rspress-mobile-hamburger navHamburger_ac64c text-gray-500"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="currentColor"><circle cx="8" cy="16" r="2" fill="currentColor"></circle><circle cx="16" cy="16" r="2" fill="currentColor"></circle><circle cx="24" cy="16" r="2" fill="currentColor"></circle></svg></button></div></div></div></div><section><div class="docLayout_af141 pt-0"><aside class="sidebar_dd719 rspress-sidebar "><div class="navTitleMask_fb17c"><div class="navBarTitle_c5f07"><a href="/sailwind_docs/index.html" class="link_a7cea flex items-center w-full h-full text-base font-semibold transition-opacity duration-300 hover:opacity-60"><div class="mr-1 min-w-8"><img src="/sailwind_docs/logo.png" alt="logo" id="logo" class="rspress-logo"/></div><span>SailWind</span></a></div></div><div class="rspress-scrollbar sidebarContent_da296"><nav class="pb-2"><a href="/sailwind_docs/router/index.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:14px;margin-left:0;border-radius:0 var(--rp-radius) var(--rp-radius) 0;padding-left:24px;font-weight:bold"><span>章节预览</span></div></a><section class="rspress-sidebar-section mt-0.5 block" style="margin-left:0"><div class="rspress-sidebar-collapse flex justify-between items-center menuItem_ac22e" style="border-radius:0 var(--rp-radius) var(--rp-radius) 0;cursor:pointer"><h2 class="py-2 px-3 text-sm font-medium flex" style="font-size:14px;padding-left:24px;font-weight:bold"><span class="flex-center" style="font-size:14px">指南(Guide)</span></h2><div class="collapseContainer_d6e4e p-2 rounded-xl"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(0deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div class="transition-all duration-300 ease-in-out" style="overflow:hidden;max-height:0"><div class="rspress-sidebar-group transition-opacity duration-500 ease-in-out" style="opacity:0;margin-left:12px"><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/1_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 1 章 自动布线快速入门 ಠ_ಠ</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/2_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 2 章 交互式布线快速入门 ಠ_ಠ</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/3_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 3 章 设计准备</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/4_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 4 章 文件操作</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/5_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 5 章 界面元素 ಠ_ಠ</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/6_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 6 章 无模命令与快捷键</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/7_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 7 章 视图</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/8_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 8 章 撤销、重做、重复与删除</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/9_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 9 章 搜索与选择</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/10_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 10 章 电气网络</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/11_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 11 章 设置规则</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/12_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 12 章 启用设计规则检查</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/13_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 13 章 元件放置</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/14_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 14 章 虚拟管脚</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/15_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 15 章 覆铜平面与铜形状</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/16_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 16 章 布线设置</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/17_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 17 章 自动布线</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/18_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 18 章 选择性自动布线</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/19_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 19 章 手动布线</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/20_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 20 章 手动编辑</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/21_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 21 章 设计验证</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/22_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 22 章 报告</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/23_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 23 章 授权许可</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/24_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItemActive_de63c mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 24 章 SailWind Router 对话框 ಠ_ಠ</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/25_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 25 章 软件启动选项</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/26_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 26 章 自定义界面 ಠ_ಠ</span></div></a></div></div></div></section><section class="rspress-sidebar-section mt-0.5 block" style="margin-left:0"><div class="rspress-sidebar-collapse flex justify-between items-center menuItem_ac22e" style="border-radius:0 var(--rp-radius) var(--rp-radius) 0;cursor:pointer"><h2 class="py-2 px-3 text-sm font-medium flex" style="font-size:14px;padding-left:24px;font-weight:bold"><span class="flex-center" style="font-size:14px">教程(Tutorial)</span></h2><div class="collapseContainer_d6e4e p-2 rounded-xl"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(0deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div class="transition-all duration-300 ease-in-out" style="overflow:hidden;max-height:0"><div class="rspress-sidebar-group transition-opacity duration-500 ease-in-out" style="opacity:0;margin-left:12px"><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/tutorial/1_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>学习用户界面</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/tutorial/2_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>约束条件分配</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/tutorial/3_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>设计准备</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/tutorial/4_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>元件放置</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/tutorial/5_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>交互式布线创建导线</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/tutorial/6_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>使用交互式布线创建高速导线</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/tutorial/7_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>使用 SailWind Router 进行自动布线</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/tutorial/8_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>设计规则检查</span></div></a></div></div></div></section><section class="rspress-sidebar-section mt-0.5 block" style="margin-left:0"><div class="rspress-sidebar-collapse flex justify-between items-center menuItem_ac22e" style="border-radius:0 var(--rp-radius) var(--rp-radius) 0;cursor:pointer"><h2 class="py-2 px-3 text-sm font-medium flex" style="font-size:14px;padding-left:24px;font-weight:bold"><span class="flex-center" style="font-size:14px">快速参考(Quick Reference)</span></h2><div class="collapseContainer_d6e4e p-2 rounded-xl"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(0deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div class="transition-all duration-300 ease-in-out" style="overflow:hidden;max-height:0"><div class="rspress-sidebar-group transition-opacity duration-500 ease-in-out" style="opacity:0;margin-left:12px"><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/qr/modless.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>无模命令</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/qr/shortcut.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>键盘快捷键</span></div></a></div></div></div></section></nav></div></aside><div class="flex-1 relative min-w-0"><div class="rspress-sidebar-menu-container "><div class="rspress-sidebar-menu"><button type="button" class="flex-center mr-auto"><div class="text-md mr-2"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg></div><span class="text-sm">Menu</span></button><button type="button" class="flex-center ml-auto"><span class="text-sm">本页目录</span><div class="text-md mr-2" style="transform:rotate(0deg);transition:transform 0.2s ease-out;margin-top:2px"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></button><div class="rspress-local-toc-container "><ul><li><a href="#添加编辑命令对话框" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">添加/编辑命令对话框</span></a></li><li><a href="#归档器对话框" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">归档器对话框</span></a></li><li><a href="#归档器附加文件对话框" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">归档器附加文件对话框</span></a></li><li><a href="#归档器库对话框" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">归档器库对话框</span></a></li><li><a href="#分配快捷键对话框" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">分配快捷键对话框</span></a></li><li><a href="#检查更新对话框" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">检查更新对话框</span></a></li><li><a href="#元件属性对话框电气网络选项卡" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">元件属性对话框，电气网络选项卡</span></a></li><li><a href="#自定义对话框命令选项卡" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">自定义对话框，命令选项卡</span></a></li><li><a href="#自定义对话框键盘和鼠标选项卡" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">自定义对话框，键盘和鼠标选项卡</span></a></li><li><a href="#自定义对话框宏文件选项卡" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">自定义对话框，宏文件选项卡</span></a></li><li><a href="#自定义对话框---选项选项卡" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">自定义对话框 - 选项选项卡</span></a></li><li><a href="#自定义对话框---工具栏和菜单选项卡" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">自定义对话框 - 工具栏和菜单选项卡</span></a></li><li><a href="#设计规则检查对话框" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">设计规则检查对话框</span></a></li><li><a href="#编辑按钮图像对话框" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">编辑按钮图像对话框</span></a></li><li><a href="#编辑筛选器对话框" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">编辑筛选器对话框</span></a></li><li><a href="#电气网络对话框" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">电气网络对话框</span></a></li><li><a href="#电气网络属性对话框---电气网络选项卡" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">电气网络属性对话框 - 电气网络选项卡</span></a></li><li><a href="#电气网络属性对话框---长度选项卡" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">电气网络属性对话框 - 长度选项卡</span></a></li><li><a href="#错误检测对话框" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">错误检测对话框</span></a></li><li><a href="#查找对话框" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">查找对话框</span></a></li><li><a href="#查找对话框电子表格窗口" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">查找对话框，电子表格窗口</span></a></li><li><a href="#已安装选项对话框许可证文件选项卡" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">已安装选项对话框，许可证文件选项卡</span></a></li><li><a href="#网络属性对话框电气网络选项卡" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">网络属性对话框，电气网络选项卡</span></a></li><li><a href="#选项对话框颜色类别" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">选项对话框，颜色类别</span></a></li><li><a href="#选项对话框设计验证类别" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">选项对话框，设计验证类别</span></a></li><li><a href="#选项对话框显示类别" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">选项对话框，显示类别</span></a></li><li><a href="#选项对话框制造类别" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">选项对话框，制造类别</span></a></li><li><a href="#选项对话框全局类别备份子类别" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">选项对话框，全局类别，备份子类别</span></a></li><li><a href="#选项对话框全局类别文件位置子类别" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">选项对话框，全局类别，文件位置子类别</span></a></li><li><a href="#选项对话框全局类别常规子类别" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">选项对话框，全局类别，常规子类别</span></a></li><li><a href="#选项对话框布局类别" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">选项对话框，布局类别</span></a></li><li><a href="#选项对话框覆铜类别" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">选项对话框，覆铜类别</span></a></li><li><a href="#选项对话框布线类别常规子类别" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">选项对话框，布线类别，常规子类别</span></a></li><li><a href="#选项对话框布线类别策略子类别" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">选项对话框，布线类别，策略子类别</span></a></li><li><a href="#选项对话框测试点类别" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">选项对话框，测试点类别</span></a></li><li><a href="#选项对话框文本和线类别" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">选项对话框，文本和线类别</span></a></li><li><a href="#选项对话框布线类别调整子类别" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">选项对话框，布线类别，调整子类别</span></a></li><li><a href="#sailwind-suite-配置对话框" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">SailWind Suite 配置对话框</span></a></li><li><a href="#特性对话框间距选项卡" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">特性对话框，间距选项卡</span></a></li><li><a href="#特性对话框元件选项卡" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">特性对话框，元件选项卡</span></a></li><li><a href="#特性对话框---铜箔" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">特性对话框 - 铜箔</span></a></li><li><a href="#特性对话框---铜箔挖空选项卡" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">特性对话框 - 铜箔挖空选项卡</span></a></li><li><a href="#特性对话框---铜箔挖空拐角" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">特性对话框 - 铜箔挖空拐角</span></a></li><li><a href="#特性对话框---铜箔挖空线段" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">特性对话框 - 铜箔挖空线段</span></a></li><li><a href="#特性对话框---铜箔平面选项卡" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">特性对话框 - 铜箔平面选项卡</span></a></li><li><a href="#特性对话框---铜箔铜箔平面拐角" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">特性对话框 - 铜箔/铜箔平面拐角</span></a></li><li><a href="#特性对话框---铜箔铜箔平面线段" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">特性对话框 - 铜箔/铜箔平面线段</span></a></li><li><a href="#特性对话框---拐角选项卡" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">特性对话框 - 拐角选项卡</span></a></li><li><a href="#特性对话框---钻孔选项卡管脚" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">特性对话框 - 钻孔选项卡（管脚）</span></a></li><li><a href="#特性对话框---钻孔选项卡过孔" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">特性对话框 - 钻孔选项卡（过孔）</span></a></li><li><a href="#特性对话框---钻孔选项卡虚拟管脚" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">特性对话框 - 钻孔选项卡（虚拟管脚）</span></a></li><li><a href="#特性对话框---扇出选项卡" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">特性对话框 - 扇出选项卡</span></a></li><li><a href="#特性对话框---覆铜选项卡" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">特性对话框 - 覆铜选项卡</span></a></li><li><a href="#特性对话框---网格选项卡" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">特性对话框 - 网格选项卡</span></a></li><li><a href="#特性对话框---组选项卡" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">特性对话框 - 组选项卡</span></a></li><li><a href="#特性对话框---禁止区域选项卡" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">特性对话框 - 禁止区域选项卡</span></a></li><li><a href="#特性对话框---禁止区域段" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">特性对话框 - 禁止区域段</span></a></li><li><a href="#特性对话框层偏置选项卡" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">特性对话框，层偏置选项卡</span></a></li><li><a href="#特性对话框层选项卡" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">特性对话框，层选项卡</span></a></li><li><a href="#特性对话框长度选项卡" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">特性对话框，长度选项卡</span></a></li><li><a href="#特性对话框网络选项卡" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">特性对话框，网络选项卡</span></a></li><li><a href="#特性对话框无属性选项卡" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">特性对话框，无属性选项卡</span></a></li><li><a href="#特性对话框焊盘入口选项卡" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">特性对话框，焊盘入口选项卡</span></a></li><li><a href="#特性对话框焊盘栈选项卡管脚" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">特性对话框，焊盘栈选项卡（管脚）</span></a></li><li><a href="#特性对话框焊盘栈选项卡过孔" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">特性对话框，焊盘栈选项卡（过孔）</span></a></li><li><a href="#特性对话框焊盘栈选项卡虚拟管脚" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">特性对话框，焊盘栈选项卡（虚拟管脚）</span></a></li><li><a href="#差分对特性对话框配对选项卡" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">差分对特性对话框，配对选项卡</span></a></li><li><a href="#特性对话框管脚选项卡" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">特性对话框，管脚选项卡</span></a></li><li><a href="#特性对话框管脚对选项卡" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">特性对话框，管脚对选项卡</span></a></li><li><a href="#特性对话框布线选项卡" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">特性对话框，布线选项卡</span></a></li><li><a href="#特性对话框相同网络选项卡" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">特性对话框，相同网络选项卡</span></a></li><li><a href="#特性对话框测试点选项卡" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">特性对话框，测试点选项卡</span></a></li><li><a href="#特性对话框测试点选项卡网络" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">特性对话框，测试点选项卡（网络）</span></a></li><li><a href="#特性对话框测试点选项卡组件或过孔类型" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">特性对话框，测试点选项卡（组件或过孔类型）</span></a></li><li><a href="#特性对话框拓扑选项卡" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">特性对话框，拓扑选项卡</span></a></li><li><a href="#特性对话框导线选项卡" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">特性对话框，导线选项卡</span></a></li><li><a href="#特性对话框导线段选项卡" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">特性对话框，导线段选项卡</span></a></li><li><a href="#特性对话框过孔选项卡" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">特性对话框，过孔选项卡</span></a></li><li><a href="#特性对话框过孔偏置选项卡" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">特性对话框，过孔偏置选项卡</span></a></li><li><a href="#特性对话框虚拟管脚选项卡" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">特性对话框，虚拟管脚选项卡</span></a></li><li><a href="#选择层对话框" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">选择层对话框</span></a></li><li><a href="#快捷键对话框" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">快捷键对话框</span></a></li><li><a href="#查看网络对话框" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">查看网络对话框</span></a></li></ul></div></div></div><div class="content_ff766 rspress-doc-container flex"><div class="flex-1 overflow-x-auto"><div class="rspress-doc"><!--$--><h1 id="第-24-章-sailwind-router-对话框-ಠ_ಠ" class="rspress-doc-title text-3xl mb-10 leading-10 tracking-tight title_fb7eb">第 24 章 SailWind Router 对话框 ಠ_ಠ<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#第-24-章-sailwind-router-对话框-ಠ_ಠ">#</a></h1>
 <p class="my-4 leading-7">SailWind 布线器中的各种对话框提供了工具和设置的访问权限。每个对话框都提供了一个帮助图标用于获取更多信息。</p>
 <h2 id="添加编辑命令对话框" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">添加/编辑命令对话框<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#添加编辑命令对话框">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：点击 <strong class="font-semibold">工具 &gt; 自定义</strong> (菜单项) &gt; <strong class="font-semibold">命令</strong> 选项卡 &gt; <strong class="font-semibold">新建</strong> 或 <strong class="font-semibold">编辑</strong> 按钮</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：点击 <strong class="font-semibold">工具 &gt; 自定义</strong> (菜单项) &gt; <strong class="font-semibold">命令</strong> 选项卡 &gt; <strong class="font-semibold">新建</strong> 或 <strong class="font-semibold">编辑</strong> 按钮</p>
 <p class="my-4 leading-7">创建可用作菜单选项或工具栏按钮的命令。</p>
 <table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
 <thead>
@@ -57,7 +57,7 @@
 </tbody>
 </table>
 <h2 id="归档器对话框" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">归档器对话框<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#归档器对话框">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：</p>
 <ul class="list-disc pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">点击 <strong class="font-semibold">文件 &gt; 归档</strong> 菜单项</li>
 </ul>
@@ -109,7 +109,7 @@
 </tbody>
 </table>
 <h2 id="归档器附加文件对话框" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">归档器附加文件对话框<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#归档器附加文件对话框">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：点击 <strong class="font-semibold">文件 &gt; 归档</strong> 菜单项 &gt; 选择附加文件复选框 &gt; 点击对应的浏览按钮</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：点击 <strong class="font-semibold">文件 &gt; 归档</strong> 菜单项 &gt; 选择附加文件复选框 &gt; 点击对应的浏览按钮</p>
 <p class="my-4 leading-7">向要归档的设计添加文件和文件夹。</p>
 <table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
 <thead>
@@ -142,7 +142,7 @@
 </tbody>
 </table>
 <h2 id="归档器库对话框" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">归档器库对话框<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#归档器库对话框">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：点击 <strong class="font-semibold">文件 &gt; 归档</strong> 菜单项 &gt; 选择添加库复选框 &gt; 选择选择选项 &gt; 点击对应的浏览按钮</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：点击 <strong class="font-semibold">文件 &gt; 归档</strong> 菜单项 &gt; 选择添加库复选框 &gt; 选择选择选项 &gt; 点击对应的浏览按钮</p>
 <p class="my-4 leading-7">向要归档的设计添加库。</p>
 <table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
 <thead>
@@ -179,7 +179,7 @@
 </tbody>
 </table>
 <h2 id="分配快捷键对话框" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">分配快捷键对话框<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#分配快捷键对话框">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：点击 <strong class="font-semibold">工具 &gt; 自定义</strong> 菜单项 &gt; <strong class="font-semibold">键盘和鼠标</strong> 选项卡 &gt; 当前快捷键区域中的新建按钮</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：点击 <strong class="font-semibold">工具 &gt; 自定义</strong> 菜单项 &gt; <strong class="font-semibold">键盘和鼠标</strong> 选项卡 &gt; 当前快捷键区域中的新建按钮</p>
 <p class="my-4 leading-7">创建新的快捷键。</p>
 <table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
 <thead>
@@ -204,7 +204,7 @@
 </tbody>
 </table>
 <h2 id="检查更新对话框" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">检查更新对话框<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#检查更新对话框">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：点击 <strong class="font-semibold">帮助 &gt; 检查更新</strong> 菜单项</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：点击 <strong class="font-semibold">帮助 &gt; 检查更新</strong> 菜单项</p>
 <p class="my-4 leading-7">手动检查 SailWind 的新版本，并禁用或启用自动检查。</p>
 <table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
 <thead>
@@ -229,7 +229,7 @@
 </tbody>
 </table>
 <h2 id="元件属性对话框电气网络选项卡" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">元件属性对话框，电气网络选项卡<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#元件属性对话框电气网络选项卡">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：选择元件 &gt; 右键点击 &gt; <strong class="font-semibold">特性</strong> 弹出菜单项 &gt; <strong class="font-semibold">电气网络</strong> 选项卡 查看和控制元件的电气网络状态。</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：选择元件 &gt; 右键点击 &gt; <strong class="font-semibold">特性</strong> 弹出菜单项 &gt; <strong class="font-semibold">电气网络</strong> 选项卡 查看和控制元件的电气网络状态。</p>
 <table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
 <thead>
 <tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
@@ -293,7 +293,7 @@
 </tbody>
 </table>
 <h2 id="自定义对话框命令选项卡" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">自定义对话框，命令选项卡<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#自定义对话框命令选项卡">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：选择 <strong class="font-semibold">工具 &gt; 自定义</strong> 菜单项 &gt; <strong class="font-semibold">命令</strong> 选项卡</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：选择 <strong class="font-semibold">工具 &gt; 自定义</strong> 菜单项 &gt; <strong class="font-semibold">命令</strong> 选项卡</p>
 <p class="my-4 leading-7">向菜单或工具栏添加命令，或创建自定义菜单。</p>
 <table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
 <thead>
@@ -318,7 +318,7 @@
 </tbody>
 </table>
 <h2 id="自定义对话框键盘和鼠标选项卡" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">自定义对话框，键盘和鼠标选项卡<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#自定义对话框键盘和鼠标选项卡">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：选择 <strong class="font-semibold">工具 &gt; 自定义</strong> 菜单项 &gt; <strong class="font-semibold">键盘和鼠标</strong> 选项卡</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：选择 <strong class="font-semibold">工具 &gt; 自定义</strong> 菜单项 &gt; <strong class="font-semibold">键盘和鼠标</strong> 选项卡</p>
 <p class="my-4 leading-7">创建和自定义快捷键。</p>
 <table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
 <thead>
@@ -363,7 +363,7 @@
 </tbody>
 </table>
 <h2 id="自定义对话框宏文件选项卡" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">自定义对话框，宏文件选项卡<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#自定义对话框宏文件选项卡">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：选择 <strong class="font-semibold">工具 &gt; 自定义</strong> 菜单项 &gt; <strong class="font-semibold">宏文件</strong> 选项卡</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：选择 <strong class="font-semibold">工具 &gt; 自定义</strong> 菜单项 &gt; <strong class="font-semibold">宏文件</strong> 选项卡</p>
 <p class="my-4 leading-7">从宏文件创建命令并将其添加到工具栏和菜单。</p>
 <div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
 <p class="my-4 leading-7"> 要从宏命令文件创建命令，宏命令文件(.mcr)必须已存在。您可以通过在 SailWind 工具中录制宏或用宏语言编写脚本来创建宏。有关更多信息，请参阅创建宏。</p>
@@ -391,7 +391,7 @@
 </tbody>
 </table>
 <h2 id="自定义对话框---选项选项卡" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">自定义对话框 - 选项选项卡<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#自定义对话框---选项选项卡">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：选择 <strong class="font-semibold">工具 &gt; 自定义</strong> 菜单项 &gt; <strong class="font-semibold">选项</strong> 选项卡</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：选择 <strong class="font-semibold">工具 &gt; 自定义</strong> 菜单项 &gt; <strong class="font-semibold">选项</strong> 选项卡</p>
 <p class="my-4 leading-7">通过更改菜单和工具栏的外观来自定义 SailWind 界面。</p>
 <table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
 <thead>
@@ -459,7 +459,7 @@
 </tbody>
 </table>
 <h2 id="自定义对话框---工具栏和菜单选项卡" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">自定义对话框 - 工具栏和菜单选项卡<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#自定义对话框---工具栏和菜单选项卡">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：选择 <strong class="font-semibold">工具 &gt; 自定义</strong> 菜单项 &gt; <strong class="font-semibold">工具栏和菜单</strong> 选项卡</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：选择 <strong class="font-semibold">工具 &gt; 自定义</strong> 菜单项 &gt; <strong class="font-semibold">工具栏和菜单</strong> 选项卡</p>
 <p class="my-4 leading-7">创建自定义工具栏和快捷菜单。</p>
 <div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
 <p class="my-4 leading-7"> 要创建自定义主菜单，请使用自定义对话框中的<strong class="font-semibold">命令</strong> 选项卡。参见创建自定义菜单。</p>
@@ -514,7 +514,7 @@
 </tbody>
 </table>
 <h2 id="设计规则检查对话框" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">设计规则检查对话框<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#设计规则检查对话框">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：</p>
 <ul class="list-disc pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
 <p class="my-4 leading-7">选择 <strong class="font-semibold">工具 &gt; DRC 设置</strong> 菜单项</p>
@@ -567,7 +567,7 @@
 </tbody>
 </table>
 <h2 id="编辑按钮图像对话框" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">编辑按钮图像对话框<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#编辑按钮图像对话框">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：选择 <strong class="font-semibold">工具 &gt; 自定义</strong> 菜单项 &gt; <strong class="font-semibold">命令</strong> 选项卡 &gt; <strong class="font-semibold">新建</strong> 按钮 &gt; <strong class="font-semibold">选择用户定义图像</strong> 选项 &gt; <strong class="font-semibold">新建</strong> 或 <strong class="font-semibold">编辑</strong> 按钮</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：选择 <strong class="font-semibold">工具 &gt; 自定义</strong> 菜单项 &gt; <strong class="font-semibold">命令</strong> 选项卡 &gt; <strong class="font-semibold">新建</strong> 按钮 &gt; <strong class="font-semibold">选择用户定义图像</strong> 选项 &gt; <strong class="font-semibold">新建</strong> 或 <strong class="font-semibold">编辑</strong> 按钮</p>
 <p class="my-4 leading-7">创建或编辑按钮图标。</p>
 <p class="my-4 leading-7"><img src="/sailwind_docs/router/guide/24/_page_22_Figure_4.jpeg" alt=""/></p>
 <table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
@@ -589,7 +589,7 @@
 </tbody>
 </table>
 <h2 id="编辑筛选器对话框" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">编辑筛选器对话框<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#编辑筛选器对话框">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：在电子表格窗口中，单击 <strong class="font-semibold">定义筛选器设置</strong> 按钮。</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：在电子表格窗口中，单击 <strong class="font-semibold">定义筛选器设置</strong> 按钮。</p>
 <p class="my-4 leading-7">使用此对话框在当前选定的电子表格窗口选项卡中查找对象。</p>
 <table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
 <thead>
@@ -630,7 +630,7 @@
 </tbody>
 </table>
 <h2 id="电气网络对话框" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">电气网络对话框<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#电气网络对话框">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：选择 <strong class="font-semibold">设置 &gt; 电气网络</strong> 菜单项。</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：选择 <strong class="font-semibold">设置 &gt; 电气网络</strong> 菜单项。</p>
 <p class="my-4 leading-7">通过添加或删除关联组件的参考标识前缀来创建和删除电气网络，即电气网络现在通过（删除时）或将要通过（创建时）的组件。</p>
 <div class="rspress-directive warning"><div class="rspress-directive-title">WARNING</div><div class="rspress-directive-content">
 <p class="my-4 leading-7"> 电气网络在<em>工程变更单(ECO)操作</em>中不可用。</p>
@@ -702,7 +702,7 @@
 </tbody>
 </table>
 <h2 id="电气网络属性对话框---电气网络选项卡" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">电气网络属性对话框 - 电气网络选项卡<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#电气网络属性对话框---电气网络选项卡">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：选择电气网络 &gt; <strong class="font-semibold">右键</strong>单击 &gt; 选择 <strong class="font-semibold">特性</strong> 弹出菜单项 &gt; <strong class="font-semibold">电气网络</strong> 选项卡</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：选择电气网络 &gt; <strong class="font-semibold">右键</strong>单击 &gt; 选择 <strong class="font-semibold">特性</strong> 弹出菜单项 &gt; <strong class="font-semibold">电气网络</strong> 选项卡</p>
 <p class="my-4 leading-7">查看和管理电气网络状态。</p>
 <table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
 <thead>
@@ -739,7 +739,7 @@
 </tbody>
 </table>
 <h2 id="电气网络属性对话框---长度选项卡" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">电气网络属性对话框 - 长度选项卡<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#电气网络属性对话框---长度选项卡">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：选择电气网络 &gt; <strong class="font-semibold">右键</strong>单击 &gt; 选择 <strong class="font-semibold">特性</strong> 弹出菜单项 &gt; <strong class="font-semibold">长度</strong> 选项卡 限制电气网络长度。</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：选择电气网络 &gt; <strong class="font-semibold">右键</strong>单击 &gt; 选择 <strong class="font-semibold">特性</strong> 弹出菜单项 &gt; <strong class="font-semibold">长度</strong> 选项卡 限制电气网络长度。</p>
 <table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
 <thead>
 <tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
@@ -763,7 +763,7 @@
 </tbody>
 </table>
 <h2 id="错误检测对话框" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">错误检测对话框<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#错误检测对话框">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：除非软件崩溃并且在软件 <em>.ini</em> 文件中启用了崩溃检测，否则无法访问此对话框。</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：除非软件崩溃并且在软件 <em>.ini</em> 文件中启用了崩溃检测，否则无法访问此对话框。</p>
 <p class="my-4 leading-7">错误检测对话框在崩溃时打开，允许您将 SailWind 环境的报告以及相关文件保存到压缩的转储文件中。然后您可以将此文件提交给客户支持以进行故障排除。</p>
 <table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
 <thead>
@@ -788,7 +788,7 @@
 </tbody>
 </table>
 <h2 id="查找对话框" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">查找对话框<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#查找对话框">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：选择 <strong class="font-semibold">编辑 &gt; 查找</strong> 菜单项。</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：选择 <strong class="font-semibold">编辑 &gt; 查找</strong> 菜单项。</p>
 <p class="my-4 leading-7">通过参考标志符、零件类型、匹配长度管脚对组或其他属性查找并选择单个或多个对象。</p>
 <div class="rspress-directive warning"><div class="rspress-directive-title">WARNING</div><div class="rspress-directive-content">
 <p class="my-4 leading-7"> 查找功能忽略第 137 页的选择过滤器设置，会根据您的要求选择对象。</p>
@@ -844,7 +844,7 @@
 </tbody>
 </table>
 <h2 id="查找对话框电子表格窗口" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">查找对话框，电子表格窗口<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#查找对话框电子表格窗口">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：在电子表格窗口中点击 <strong class="font-semibold">查找</strong> 按钮。</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：在电子表格窗口中点击 <strong class="font-semibold">查找</strong> 按钮。</p>
 <p class="my-4 leading-7">使用此对话框在当前选定的电子表格窗口选项卡中查找对象。</p>
 <table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
 <thead>
@@ -889,7 +889,7 @@
 </tbody>
 </table>
 <h2 id="已安装选项对话框许可证文件选项卡" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">已安装选项对话框，许可证文件选项卡<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#已安装选项对话框许可证文件选项卡">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：选择 <strong class="font-semibold">帮助 &gt; 已安装选项</strong> 菜单项 &gt; <strong class="font-semibold">许可证文件</strong> 选项卡</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：选择 <strong class="font-semibold">帮助 &gt; 已安装选项</strong> 菜单项 &gt; <strong class="font-semibold">许可证文件</strong> 选项卡</p>
 <p class="my-4 leading-7">如果使用节点锁定许可，可以查看许可证文件内容。如果使用浮动许可，则无法查看实际许可证文件，但可以查看与服务器许可证关联的功能状态。</p>
 <table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
 <thead>
@@ -940,7 +940,7 @@
 </tbody>
 </table>
 <h2 id="网络属性对话框电气网络选项卡" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">网络属性对话框，电气网络选项卡<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#网络属性对话框电气网络选项卡">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：选择网络 &gt; 右键点击 &gt; 选择 <strong class="font-semibold">特性</strong> 弹出菜单项 &gt; <strong class="font-semibold">电气网络</strong> 选项卡 查看并控制网络的电气网络状态。</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：选择网络 &gt; 右键点击 &gt; 选择 <strong class="font-semibold">特性</strong> 弹出菜单项 &gt; <strong class="font-semibold">电气网络</strong> 选项卡 查看并控制网络的电气网络状态。</p>
 <table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
 <thead>
 <tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
@@ -980,7 +980,7 @@
 </tbody>
 </table>
 <h2 id="选项对话框颜色类别" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">选项对话框，颜色类别<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#选项对话框颜色类别">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：</p>
 <ul class="list-disc pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
 <p class="my-4 leading-7">选择 <strong class="font-semibold">工具 &gt; 选项</strong> 菜单项 &gt; 颜色类别</p>
@@ -1052,7 +1052,7 @@
 </tbody>
 </table>
 <h2 id="选项对话框设计验证类别" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">选项对话框，设计验证类别<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#选项对话框设计验证类别">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：</p>
 <ul class="list-disc pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
 <p class="my-4 leading-7">点击 <strong class="font-semibold">选项</strong> 按钮 &gt; 设计验证类别</p>
@@ -1300,7 +1300,7 @@
 </table>
 <p class="my-4 leading-7"><strong class="font-semibold">SailWind Router GUI 参考 选项对话框，设计验证类别</strong></p>
 <h2 id="选项对话框显示类别" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">选项对话框，显示类别<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#选项对话框显示类别">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：</p>
 <ul class="list-disc pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
 <p class="my-4 leading-7">选择 <strong class="font-semibold">工具 &gt; 选项</strong> 菜单项 &gt; 显示类别</p>
@@ -1336,7 +1336,7 @@
 </tbody>
 </table>
 <h2 id="选项对话框制造类别" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">选项对话框，制造类别<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#选项对话框制造类别">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：</p>
 <ul class="list-disc pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
 <p class="my-4 leading-7">选择 <strong class="font-semibold">工具 &gt; 选项</strong> 菜单项 &gt; 制造类别</p>
@@ -1473,7 +1473,7 @@
 </tbody>
 </table>
 <h2 id="选项对话框全局类别备份子类别" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">选项对话框，全局类别，备份子类别<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#选项对话框全局类别备份子类别">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：</p>
 <ul class="list-disc pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
 <p class="my-4 leading-7">选择 <strong class="font-semibold">工具 &gt; 选项</strong> 菜单项 &gt; <strong class="font-semibold">全局</strong> 类别 &gt; <strong class="font-semibold">备份</strong> 子类别</p>
@@ -1626,7 +1626,7 @@
 </table>
 <p class="my-4 leading-7"><strong class="font-semibold">表 88. 文件备份策略</strong></p>
 <h2 id="选项对话框全局类别文件位置子类别" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">选项对话框，全局类别，文件位置子类别<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#选项对话框全局类别文件位置子类别">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：</p>
 <ul class="list-disc pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
 <p class="my-4 leading-7">选择 <strong class="font-semibold">工具 &gt; 选项</strong> 菜单项 &gt; <strong class="font-semibold">全局</strong> 类别 &gt; <strong class="font-semibold">文件位置</strong> 子类别</p>
@@ -1658,7 +1658,7 @@
 </tbody>
 </table>
 <h2 id="选项对话框全局类别常规子类别" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">选项对话框，全局类别，常规子类别<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#选项对话框全局类别常规子类别">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：</p>
 <ul class="list-disc pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
 <p class="my-4 leading-7">选择 <strong class="font-semibold">工具 &gt; 选项</strong> 菜单项 &gt; <strong class="font-semibold">全局</strong> 类别 &gt; <strong class="font-semibold">常规</strong> 子类别</p>
@@ -1838,7 +1838,7 @@
 </tbody>
 </table>
 <h2 id="选项对话框布局类别" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">选项对话框，布局类别<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#选项对话框布局类别">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：</p>
 <ol class="list-decimal pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
 <p class="my-4 leading-7">选择 <strong class="font-semibold">工具 &gt; 选项</strong> 菜单项 &gt; <strong class="font-semibold">布局</strong> 类别</p>
@@ -1914,7 +1914,7 @@
 </tbody>
 </table>
 <h2 id="选项对话框覆铜类别" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">选项对话框，覆铜类别<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#选项对话框覆铜类别">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：</p>
 <ol class="list-decimal pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
 <p class="my-4 leading-7">选择 <strong class="font-semibold">工具 &gt; 选项</strong> 菜单项 &gt; 覆铜类别</p>
@@ -1999,7 +1999,7 @@
 </tbody>
 </table>
 <h2 id="选项对话框布线类别常规子类别" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">选项对话框，布线类别，常规子类别<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#选项对话框布线类别常规子类别">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：</p>
 <ol class="list-decimal pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
 <p class="my-4 leading-7">点击 <strong class="font-semibold">选项</strong> 按钮 &gt; <strong class="font-semibold">布线</strong> 类别 &gt; <strong class="font-semibold">常规</strong> 子类别</p>
@@ -2291,7 +2291,7 @@
 </tbody>
 </table>
 <h2 id="选项对话框布线类别策略子类别" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">选项对话框，布线类别，策略子类别<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#选项对话框布线类别策略子类别">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：</p>
 <ol class="list-decimal pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
 <p class="my-4 leading-7">选择 <strong class="font-semibold">工具 &gt; 选项</strong> 菜单项 &gt; <strong class="font-semibold">布线</strong> 类别 &lt; <strong class="font-semibold">策略</strong> 子类别</p>
@@ -2387,7 +2387,7 @@
 </tbody>
 </table>
 <h2 id="选项对话框测试点类别" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">选项对话框，测试点类别<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#选项对话框测试点类别">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：</p>
 <ul class="list-disc pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
 <p class="my-4 leading-7">点击<strong class="font-semibold">选项</strong>按钮 &gt; 测试点类别</p>
@@ -2519,7 +2519,7 @@
 </tbody>
 </table>
 <h2 id="选项对话框文本和线类别" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">选项对话框，文本和线类别<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#选项对话框文本和线类别">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：</p>
 <ul class="list-disc pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
 <p class="my-4 leading-7">点击<strong class="font-semibold">选项</strong>按钮 &gt; 文本和线类别</p>
@@ -2558,7 +2558,7 @@
 </tbody>
 </table>
 <h2 id="选项对话框布线类别调整子类别" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">选项对话框，布线类别，调整子类别<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#选项对话框布线类别调整子类别">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：</p>
 <ul class="list-disc pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
 <p class="my-4 leading-7">选择<strong class="font-semibold">工具 &gt; 选项</strong>菜单项 &gt; <strong class="font-semibold">布线</strong>类别 &gt; <strong class="font-semibold">调整</strong>子类别</p>
@@ -2602,7 +2602,7 @@
 </tbody>
 </table>
 <h2 id="sailwind-suite-配置对话框" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">SailWind Suite 配置对话框<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#sailwind-suite-配置对话框">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：</p>
 <ul class="list-disc pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
 <p class="my-4 leading-7">选择<strong class="font-semibold">帮助 &gt; 已安装选项</strong>菜单项 &gt; <strong class="font-semibold">Suite 配置</strong>按钮</p>
@@ -2686,7 +2686,7 @@
 </tbody>
 </table>
 <h2 id="特性对话框间距选项卡" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">特性对话框，间距选项卡<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#特性对话框间距选项卡">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：</p>
 <ul class="list-disc pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
 <p class="my-4 leading-7">点击<strong class="font-semibold">特性</strong>按钮 &gt; <strong class="font-semibold">间距</strong>选项卡</p>
@@ -2718,7 +2718,7 @@
 </tbody>
 </table>
 <h2 id="特性对话框元件选项卡" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">特性对话框，元件选项卡<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#特性对话框元件选项卡">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：选择元件或管脚 &gt; <strong class="font-semibold">右键</strong>单击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">元件</strong>选项卡</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：选择元件或管脚 &gt; <strong class="font-semibold">右键</strong>单击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">元件</strong>选项卡</p>
 <p class="my-4 leading-7">查看和修改所选元件或管脚的属性。</p>
 <div class="rspress-directive warning"><div class="rspress-directive-title">WARNING</div><div class="rspress-directive-content">
 <p class="my-4 leading-7"> 使用属性对话框设置设计和对象属性。更多信息，请参阅第 154 页的设置设计属性和设置对象属性。</p>
@@ -2782,7 +2782,7 @@
 </tbody>
 </table>
 <h2 id="特性对话框---铜箔" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">特性对话框 - 铜箔<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#特性对话框---铜箔">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：选择铜箔形状 &gt; <strong class="font-semibold">右键</strong>单击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">铜箔</strong>选项卡</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：选择铜箔形状 &gt; <strong class="font-semibold">右键</strong>单击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">铜箔</strong>选项卡</p>
 <p class="my-4 leading-7">设置铜箔形状的所在层、线宽和分配的网络。还可指定铜箔形状是实心填充还是采用阴影线填充图案。</p>
 <table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
 <thead>
@@ -2815,7 +2815,7 @@
 </tbody>
 </table>
 <h2 id="特性对话框---铜箔挖空选项卡" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">特性对话框 - 铜箔挖空选项卡<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#特性对话框---铜箔挖空选项卡">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：选择铜箔挖空区域 &gt; <strong class="font-semibold">右键</strong>单击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">铜箔挖空</strong>选项卡</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：选择铜箔挖空区域 &gt; <strong class="font-semibold">右键</strong>单击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">铜箔挖空</strong>选项卡</p>
 <p class="my-4 leading-7">查看铜箔挖空区域的所在层和尺寸信息。</p>
 <table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
 <thead>
@@ -2836,7 +2836,7 @@
 </tbody>
 </table>
 <h2 id="特性对话框---铜箔挖空拐角" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">特性对话框 - 铜箔挖空拐角<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#特性对话框---铜箔挖空拐角">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：选择铜箔挖空拐角 &gt; <strong class="font-semibold">右键</strong>单击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">拐角</strong>选项卡</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：选择铜箔挖空拐角 &gt; <strong class="font-semibold">右键</strong>单击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">拐角</strong>选项卡</p>
 <p class="my-4 leading-7">设置铜箔挖空拐角的坐标并查看其其他属性。</p>
 <table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
 <thead>
@@ -2857,7 +2857,7 @@
 </tbody>
 </table>
 <h2 id="特性对话框---铜箔挖空线段" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">特性对话框 - 铜箔挖空线段<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#特性对话框---铜箔挖空线段">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：选择铜箔平面挖空的导线段 &gt; <strong class="font-semibold">右键</strong>单击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">线段</strong>选项卡</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：选择铜箔平面挖空的导线段 &gt; <strong class="font-semibold">右键</strong>单击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">线段</strong>选项卡</p>
 <p class="my-4 leading-7">设置铜箔挖空线段的坐标。</p>
 <table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
 <thead>
@@ -2890,7 +2890,7 @@
 </tbody>
 </table>
 <h2 id="特性对话框---铜箔平面选项卡" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">特性对话框 - 铜箔平面选项卡<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#特性对话框---铜箔平面选项卡">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：选择铜箔平面 &gt; <strong class="font-semibold">右键</strong>单击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">铜箔平面</strong>选项卡</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：选择铜箔平面 &gt; <strong class="font-semibold">右键</strong>单击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">铜箔平面</strong>选项卡</p>
 <p class="my-4 leading-7">查看铜箔平面的所在层和分配的网络信息。</p>
 <div class="rspress-directive warning"><div class="rspress-directive-title">WARNING</div><div class="rspress-directive-content">
 <p class="my-4 leading-7"> 使用属性对话框设置设计和对象属性。更多信息请参见第 154 页的设置设计属性和设置对象属性。</p>
@@ -2930,7 +2930,7 @@
 </tbody>
 </table>
 <h2 id="特性对话框---铜箔铜箔平面拐角" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">特性对话框 - 铜箔/铜箔平面拐角<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#特性对话框---铜箔铜箔平面拐角">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：选择铜箔或铜箔平面拐角 &gt; <strong class="font-semibold">右键</strong>单击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">拐角</strong>选项卡</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：选择铜箔或铜箔平面拐角 &gt; <strong class="font-semibold">右键</strong>单击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">拐角</strong>选项卡</p>
 <p class="my-4 leading-7">编辑铜箔/铜箔平面拐角的坐标并查看其其他属性。</p>
 <table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
 <thead>
@@ -2955,7 +2955,7 @@
 </tbody>
 </table>
 <h2 id="特性对话框---铜箔铜箔平面线段" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">特性对话框 - 铜箔/铜箔平面线段<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#特性对话框---铜箔铜箔平面线段">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：选择铜箔或铜箔平面的线段 &gt; <strong class="font-semibold">右键</strong>单击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">线段</strong>选项卡</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：选择铜箔或铜箔平面的线段 &gt; <strong class="font-semibold">右键</strong>单击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">线段</strong>选项卡</p>
 <p class="my-4 leading-7">编辑铜箔/铜箔平面线段的坐标。</p>
 <table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
 <thead>
@@ -2992,7 +2992,7 @@
 </tbody>
 </table>
 <h2 id="特性对话框---拐角选项卡" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">特性对话框 - 拐角选项卡<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#特性对话框---拐角选项卡">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：选择导线 &gt; <strong class="font-semibold">右键</strong>单击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">拐角</strong>选项卡</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：选择导线 &gt; <strong class="font-semibold">右键</strong>单击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">拐角</strong>选项卡</p>
 <p class="my-4 leading-7">设置导线拐角的坐标，并查看拐角所在的层。导线拐角包括 T型连接点和导线端点。</p>
 <div class="rspress-directive warning"><div class="rspress-directive-title">WARNING</div><div class="rspress-directive-content">
 <p class="my-4 leading-7"> 使用属性对话框设置设计和对象属性。更多信息请参见第 154 页的设置设计属性和设置对象属性。</p>
@@ -3020,7 +3020,7 @@
 </tbody>
 </table>
 <h2 id="特性对话框---钻孔选项卡管脚" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">特性对话框 - 钻孔选项卡（管脚）<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#特性对话框---钻孔选项卡管脚">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：选择管脚 &gt; <strong class="font-semibold">右键</strong>单击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">钻孔</strong>选项卡</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：选择管脚 &gt; <strong class="font-semibold">右键</strong>单击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">钻孔</strong>选项卡</p>
 <p class="my-4 leading-7">查看管脚焊盘堆叠信息，如成品钻孔尺寸和原始钻孔尺寸。对于槽孔，您可以查看成品长度、电镀前长度、方向和偏移量。</p>
 <p class="my-4 leading-7">🙊<strong class="font-semibold">限制</strong></p>
 <p class="my-4 leading-7">此选项卡仅用于查看信息；这些属性无法在 SailWind Router 中修改。使用 SailWind Layout 中的焊盘堆叠属性对话框修改此选项卡中显示的属性。</p>
@@ -3077,7 +3077,7 @@
 </tbody>
 </table>
 <h2 id="特性对话框---钻孔选项卡过孔" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">特性对话框 - 钻孔选项卡（过孔）<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#特性对话框---钻孔选项卡过孔">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：选择过孔 &gt; <strong class="font-semibold">右键</strong>单击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">钻孔</strong>选项卡</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：选择过孔 &gt; <strong class="font-semibold">右键</strong>单击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">钻孔</strong>选项卡</p>
 <p class="my-4 leading-7">查看过孔连接的起始层和结束层、成品钻孔尺寸和原始钻孔尺寸。<strong class="font-semibold">钻孔</strong>选项卡仅用于查看信息；您无法在 SailWind Router 中修改这些属性。使用 SailWind Layout 中的焊盘堆叠属性对话框修改<strong class="font-semibold">钻孔</strong>选项卡中显示的属性。</p>
 <div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
 <p class="my-4 leading-7"> 对于电镀孔，钻孔尺寸包括全局钻孔超量值。</p>
@@ -3112,7 +3112,7 @@
 </tbody>
 </table>
 <h2 id="特性对话框---钻孔选项卡虚拟管脚" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">特性对话框 - 钻孔选项卡（虚拟管脚）<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#特性对话框---钻孔选项卡虚拟管脚">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：选择虚拟管脚 &gt; <strong class="font-semibold">右键</strong>单击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">钻孔</strong>选项卡。</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：选择虚拟管脚 &gt; <strong class="font-semibold">右键</strong>单击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">钻孔</strong>选项卡。</p>
 <p class="my-4 leading-7">查看虚拟管脚连接的首层和末层、成品钻孔尺寸以及原始钻孔尺寸。此选项卡仅用于信息展示，您无法在 SailWind Router 中修改这些属性。如需修改本选项卡显示的属性，请使用 SailWind Layout 中的焊盘堆叠属性对话框。</p>
 <div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
 <p class="my-4 leading-7"> 对于镀孔，钻孔尺寸包含全局钻孔超量值。</p>
@@ -3147,7 +3147,7 @@
 </tbody>
 </table>
 <h2 id="特性对话框---扇出选项卡" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">特性对话框 - 扇出选项卡<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#特性对话框---扇出选项卡">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：<strong class="font-semibold">右键</strong>单击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">扇出</strong>选项卡</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：<strong class="font-semibold">右键</strong>单击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">扇出</strong>选项卡</p>
 <p class="my-4 leading-7">使用扇出可使布线更简单并确保连接完成。程序会根据本选项卡上的对齐设置尝试放置扇出过孔。扇出对于某些复杂的 SMD（如 BGA）最为有用。</p>
 <div class="rspress-directive warning"><div class="rspress-directive-title">WARNING</div><div class="rspress-directive-content">
 <p class="my-4 leading-7"> 使用属性对话框设置设计和对象属性。更多信息，请参阅第 154 页的&quot;设置设计属性&quot;和&quot;设置对象属性&quot;。</p>
@@ -3237,7 +3237,7 @@
 </table>
 <p class="my-4 leading-7"><strong class="font-semibold">表 89. 扇出选项卡内容（续）</strong></p>
 <h2 id="特性对话框---覆铜选项卡" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">特性对话框 - 覆铜选项卡<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#特性对话框---覆铜选项卡">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：选择覆铜或分割平面 &gt; <strong class="font-semibold">右键</strong>单击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">覆铜</strong>选项卡。</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：选择覆铜或分割平面 &gt; <strong class="font-semibold">右键</strong>单击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">覆铜</strong>选项卡。</p>
 <p class="my-4 leading-7">使用<strong class="font-semibold">覆铜</strong>选项卡更改所选覆铜平面或形状的覆铜行为或外观。当您启用动态铜修复功能时（<strong class="font-semibold">选项 &gt; 覆铜</strong>选项卡），您所做的更改将显示出来。</p>
 <table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
 <thead>
@@ -3286,7 +3286,7 @@
 </tbody>
 </table>
 <h2 id="特性对话框---网格选项卡" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">特性对话框 - 网格选项卡<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#特性对话框---网格选项卡">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：未选择任何对象时，执行以下任一操作：</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：未选择任何对象时，执行以下任一操作：</p>
 <ul class="list-disc pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
 <p class="my-4 leading-7">在设计区域双击</p>
@@ -3345,7 +3345,7 @@
 </tbody>
 </table>
 <h2 id="特性对话框---组选项卡" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">特性对话框 - 组选项卡<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#特性对话框---组选项卡">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：选择组 &gt; <strong class="font-semibold">右键</strong>单击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">组</strong>选项卡</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：选择组 &gt; <strong class="font-semibold">右键</strong>单击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">组</strong>选项卡</p>
 <p class="my-4 leading-7">设置组成员之间的容差和组的长度限制。</p>
 <div class="rspress-directive warning"><div class="rspress-directive-title">WARNING</div><div class="rspress-directive-content">
 <p class="my-4 leading-7"> 使用属性对话框设置设计和对象属性。更多信息，请参阅第 154 页的&quot;设置设计属性&quot;和&quot;设置对象属性&quot;。</p>
@@ -3377,7 +3377,7 @@
 </tbody>
 </table>
 <h2 id="特性对话框---禁止区域选项卡" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">特性对话框 - 禁止区域选项卡<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#特性对话框---禁止区域选项卡">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：选择禁止区域 &gt; <strong class="font-semibold">右键</strong>单击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">禁止区域</strong>选项卡</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：选择禁止区域 &gt; <strong class="font-semibold">右键</strong>单击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">禁止区域</strong>选项卡</p>
 <p class="my-4 leading-7">设置禁止区域所在的层，并指定要从禁止区域限制的对象。</p>
 <div class="rspress-directive warning"><div class="rspress-directive-title">WARNING</div><div class="rspress-directive-content">
 <p class="my-4 leading-7"> 使用属性对话框设置设计和对象属性。更多信息，请参阅第 154 页的&quot;设置设计（全局和默认）属性&quot;和&quot;设置对象属性&quot;。</p>
@@ -3401,7 +3401,7 @@
 </tbody>
 </table>
 <h2 id="特性对话框---禁止区域段" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">特性对话框 - 禁止区域段<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#特性对话框---禁止区域段">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：选择铜或覆铜平面的一段 &gt; <strong class="font-semibold">右键</strong>单击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">段</strong>选项卡</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：选择铜或覆铜平面的一段 &gt; <strong class="font-semibold">右键</strong>单击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">段</strong>选项卡</p>
 <p class="my-4 leading-7">编辑禁止区域段的坐标。</p>
 <table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
 <thead>
@@ -3430,7 +3430,7 @@
 </tbody>
 </table>
 <h2 id="特性对话框层偏置选项卡" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">特性对话框，层偏置选项卡<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#特性对话框层偏置选项卡">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：</p>
 <ul class="list-disc pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
 <p class="my-4 leading-7">点击<strong class="font-semibold">特性</strong>按钮 &gt; <strong class="font-semibold">层偏置</strong>选项卡</p>
@@ -3464,7 +3464,7 @@
 </tbody>
 </table>
 <h2 id="特性对话框层选项卡" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">特性对话框，层选项卡<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#特性对话框层选项卡">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：选择一层 &gt; 右键点击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">层</strong>选项卡</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：选择一层 &gt; 右键点击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">层</strong>选项卡</p>
 <p class="my-4 leading-7">为特定层设置布线参数。</p>
 <div class="rspress-directive warning"><div class="rspress-directive-title">WARNING</div><div class="rspress-directive-content">
 <p class="my-4 leading-7"> 使用属性对话框设置设计和对象属性。更多信息，请参见第 154 页的设置设计属性和设置对象属性。</p>
@@ -3508,7 +3508,7 @@
 </tbody>
 </table>
 <h2 id="特性对话框长度选项卡" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">特性对话框，长度选项卡<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#特性对话框长度选项卡">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：选择网络或管脚对 &gt; 右键点击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">长度</strong>选项卡</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：选择网络或管脚对 &gt; 右键点击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">长度</strong>选项卡</p>
 <p class="my-4 leading-7">限制网络或管脚对的长度。</p>
 <div class="rspress-directive warning"><div class="rspress-directive-title">WARNING</div><div class="rspress-directive-content">
 <p class="my-4 leading-7"> 使用属性对话框设置设计和对象属性。更多信息，请参见第 154 页的设置设计属性和设置对象属性。</p>
@@ -3544,7 +3544,7 @@
 </tbody>
 </table>
 <h2 id="特性对话框网络选项卡" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">特性对话框，网络选项卡<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#特性对话框网络选项卡">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：选择网络 &gt; 右键点击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">网络</strong>选项卡</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：选择网络 &gt; 右键点击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">网络</strong>选项卡</p>
 <p class="my-4 leading-7">查看网络属性，保护导线和过孔，并修改该网络上所有导线的宽度。</p>
 <div class="rspress-directive warning"><div class="rspress-directive-title">WARNING</div><div class="rspress-directive-content">
 <p class="my-4 leading-7"> 使用属性对话框设置设计和对象属性。更多信息，请参见第 154 页的设置设计属性和设置对象属性。</p>
@@ -3588,7 +3588,7 @@
 </tbody>
 </table>
 <h2 id="特性对话框无属性选项卡" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">特性对话框，无属性选项卡<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#特性对话框无属性选项卡">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：在属性对话框打开时，选择没有属性的对象，或选择两个或多个不同类型的对象。</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：在属性对话框打开时，选择没有属性的对象，或选择两个或多个不同类型的对象。</p>
 <p class="my-4 leading-7">显示属性信息消息。</p>
 <p class="my-4 leading-7">此选项卡显示以下消息之一：</p>
 <table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
@@ -3606,7 +3606,7 @@
 </tbody>
 </table>
 <h2 id="特性对话框焊盘入口选项卡" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">特性对话框，焊盘入口选项卡<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#特性对话框焊盘入口选项卡">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：选择对象 &gt; 右键点击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">焊盘入口</strong>选项卡</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：选择对象 &gt; 右键点击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">焊盘入口</strong>选项卡</p>
 <p class="my-4 leading-7">启用焊盘入口和退出方法，软化首拐角规则，并允许在表面贴装焊盘中放置过孔。</p>
 <div class="rspress-directive warning"><div class="rspress-directive-title">WARNING</div><div class="rspress-directive-content">
 <p class="my-4 leading-7"> 使用属性对话框设置设计和对象属性。更多信息，请参见第 154 页的设置设计属性和设置对象属性。</p>
@@ -3663,7 +3663,7 @@
 </tbody>
 </table>
 <h2 id="特性对话框焊盘栈选项卡管脚" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">特性对话框，焊盘栈选项卡（管脚）<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#特性对话框焊盘栈选项卡管脚">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：选择管脚 &gt; 右键点击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">焊盘栈</strong>选项卡</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：选择管脚 &gt; 右键点击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">焊盘栈</strong>选项卡</p>
 <p class="my-4 leading-7">查看有关管脚焊盘栈的信息，例如层、形状、大小、长度、方向、偏移、孔大小、是否为镀金孔，以及圆角/倒角焊盘的角类型和角半径。</p>
 <p class="my-4 leading-7">🙊<strong class="font-semibold">限制</strong></p>
 <p class="my-4 leading-7">此选项卡仅用于查看信息；无法修改属性。使用 SailWind 布局修改此选项卡中显示的信息。</p>
@@ -3697,7 +3697,7 @@
 </tbody>
 </table>
 <h2 id="特性对话框焊盘栈选项卡过孔" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">特性对话框，焊盘栈选项卡（过孔）<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#特性对话框焊盘栈选项卡过孔">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：选择过孔 &gt; 右键点击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">焊盘栈</strong>选项卡</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：选择过孔 &gt; 右键点击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">焊盘栈</strong>选项卡</p>
 <p class="my-4 leading-7">查看有关过孔或过孔类型的信息，例如过孔连接的层、焊盘形状和直径，以及圆角/倒角焊盘的角类型和角半径。</p>
 <p class="my-4 leading-7">🙊<strong class="font-semibold">限制</strong></p>
 <p class="my-4 leading-7">此选项卡仅用于查看信息；无法修改属性。使用 SailWind 布局中的焊盘栈属性对话框修改此选项卡中显示的信息。</p>
@@ -3727,7 +3727,7 @@
 </tbody>
 </table>
 <h2 id="特性对话框焊盘栈选项卡虚拟管脚" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">特性对话框，焊盘栈选项卡（虚拟管脚）<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#特性对话框焊盘栈选项卡虚拟管脚">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：选择虚拟管脚 &gt; 右键点击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">焊盘栈</strong>选项卡</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：选择虚拟管脚 &gt; 右键点击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">焊盘栈</strong>选项卡</p>
 <p class="my-4 leading-7">查看有关虚拟管脚或虚拟管脚类型的信息，例如虚拟管脚连接的层、焊盘形状和直径，以及圆角/倒角焊盘的角类型和角半径。</p>
 <p class="my-4 leading-7">🙊<strong class="font-semibold">限制</strong></p>
 <p class="my-4 leading-7">此选项卡仅用于查看信息；您无法修改属性。使用 SailWind 布局中的焊盘栈属性对话框修改此选项卡中显示的信息。</p>
@@ -3757,7 +3757,7 @@
 </tbody>
 </table>
 <h2 id="差分对特性对话框配对选项卡" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">差分对特性对话框，配对选项卡<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#差分对特性对话框配对选项卡">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：选择差分对 &gt; 右键点击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">配对</strong>选项卡</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：选择差分对 &gt; 右键点击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">配对</strong>选项卡</p>
 <p class="my-4 leading-7">设置差分对的间距、线宽、长度和障碍物处理方式。</p>
 <div class="rspress-directive warning"><div class="rspress-directive-title">WARNING</div><div class="rspress-directive-content">
 <p class="my-4 leading-7"> 使用属性对话框设置设计和对象属性。更多信息请参见第 154 页的&quot;设置设计属性&quot;和第 169 页的&quot;设置对象属性&quot;。</p>
@@ -3829,7 +3829,7 @@
 </tbody>
 </table>
 <h2 id="特性对话框管脚选项卡" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">特性对话框，管脚选项卡<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#特性对话框管脚选项卡">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：选择管脚 &gt; 右键点击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">管脚</strong>选项卡</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：选择管脚 &gt; 右键点击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">管脚</strong>选项卡</p>
 <p class="my-4 leading-7">查看和修改管脚属性信息。</p>
 <p class="my-4 leading-7"><strong class="font-semibold">描述</strong></p>
 <p class="my-4 leading-7">您只能修改以下选项：</p>
@@ -3906,7 +3906,7 @@
 </tbody>
 </table>
 <h2 id="特性对话框管脚对选项卡" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">特性对话框，管脚对选项卡<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#特性对话框管脚对选项卡">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：选择管脚对 &gt; 右键点击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">管脚对</strong>选项卡</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：选择管脚对 &gt; 右键点击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">管脚对</strong>选项卡</p>
 <p class="my-4 leading-7">查看和修改管脚对属性信息。您只能修改导线宽度和保护导线选项。所有其他选项仅用于查看。</p>
 <div class="rspress-directive warning"><div class="rspress-directive-title">WARNING</div><div class="rspress-directive-content">
 <p class="my-4 leading-7"> 使用属性对话框设置设计和对象属性。更多信息请参见第 154 页的&quot;设置设计属性&quot;和&quot;设置对象属性&quot;。</p>
@@ -3956,7 +3956,7 @@
 </tbody>
 </table>
 <h2 id="特性对话框布线选项卡" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">特性对话框，布线选项卡<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#特性对话框布线选项卡">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：右键点击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">布线</strong>选项卡</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：右键点击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">布线</strong>选项卡</p>
 <p class="my-4 leading-7">设置默认布线规则，包括导线宽度和自动布线属性。如果选择对象，则为该对象设置属性。如果未选择任何内容，则将布线属性设置为设计默认值。</p>
 <div class="rspress-directive warning"><div class="rspress-directive-title">WARNING</div><div class="rspress-directive-content">
 <p class="my-4 leading-7"> 使用属性对话框设置设计和对象属性。更多信息请参见第 154 页的&quot;设置设计属性&quot;和&quot;设置对象属性&quot;。</p>
@@ -4011,7 +4011,7 @@
 </tbody>
 </table>
 <h2 id="特性对话框相同网络选项卡" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">特性对话框，相同网络选项卡<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#特性对话框相同网络选项卡">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：</p>
 <ul class="list-disc pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
 <p class="my-4 leading-7">选择设计对象 &gt; 右键点击 &gt;选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">相同网络</strong>选项卡</p>
@@ -4053,7 +4053,7 @@
 </tbody>
 </table>
 <h2 id="特性对话框测试点选项卡" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">特性对话框，测试点选项卡<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#特性对话框测试点选项卡">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：未选择任何内容 &gt; 右键点击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">测试点</strong>选项卡</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：未选择任何内容 &gt; 右键点击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">测试点</strong>选项卡</p>
 <p class="my-4 leading-7">指定最小间距间距并设置整个设计中为访问网络而创建的导线残段的最大长度。</p>
 <div class="rspress-directive warning"><div class="rspress-directive-title">WARNING</div><div class="rspress-directive-content">
 <p class="my-4 leading-7"> 使用属性对话框设置设计和对象属性。更多信息请参见第 154 页的&quot;设置设计属性&quot;和&quot;设置对象属性&quot;。</p>
@@ -4081,7 +4081,7 @@
 </tbody>
 </table>
 <h2 id="特性对话框测试点选项卡网络" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">特性对话框，测试点选项卡（网络）<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#特性对话框测试点选项卡网络">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：选择网络 &gt; 右键点击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">测试点</strong>选项卡</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：选择网络 &gt; 右键点击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">测试点</strong>选项卡</p>
 <p class="my-4 leading-7">设置选定网络上的最小测试点数量。</p>
 <div class="rspress-directive warning"><div class="rspress-directive-title">WARNING</div><div class="rspress-directive-content">
 <p class="my-4 leading-7"> 使用属性对话框设置设计和对象属性。更多信息请参见第 154 页的&quot;设置设计属性&quot;和&quot;设置对象属性&quot;。</p>
@@ -4101,7 +4101,7 @@
 </tbody>
 </table>
 <h2 id="特性对话框测试点选项卡组件或过孔类型" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">特性对话框，测试点选项卡（组件或过孔类型）<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#特性对话框测试点选项卡组件或过孔类型">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：</p>
 <p class="my-4 leading-7">• 选择组件或过孔类型（必须使用项目资源管理器选择） &gt; 右键点击 &gt; 选择<strong class="font-semibold">特性</strong>选项卡 &gt; <strong class="font-semibold">测试点</strong>选项卡</p>
 <p class="my-4 leading-7">使用<strong class="font-semibold">测试点</strong>选项卡防止或倾向于将测试点分配给组件或过孔类型。默认情况下，SailWind Router 使网络上的所有管脚都可用于测试管脚分配，并将它们作为测试点候选者均匀加权。</p>
 <div class="rspress-directive warning"><div class="rspress-directive-title">WARNING</div><div class="rspress-directive-content">
@@ -4126,7 +4126,7 @@
 </tbody>
 </table>
 <h2 id="特性对话框拓扑选项卡" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">特性对话框，拓扑选项卡<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#特性对话框拓扑选项卡">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：</p>
 <ul class="list-disc pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
 <p class="my-4 leading-7">未选择任何内容 &gt; 右键点击 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">拓扑</strong>选项卡</p>
@@ -4186,7 +4186,7 @@
 </tbody>
 </table>
 <h2 id="特性对话框导线选项卡" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">特性对话框，导线选项卡<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#特性对话框导线选项卡">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：选择导线 &gt; 右键 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">导线</strong>选项卡</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：选择导线 &gt; 右键 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">导线</strong>选项卡</p>
 <p class="my-4 leading-7">查看并修改导线的宽度、所在层，以及保护导线。</p>
 <div class="rspress-directive warning"><div class="rspress-directive-title">WARNING</div><div class="rspress-directive-content">
 <p class="my-4 leading-7"> 使用属性对话框设置设计和对象属性。更多信息请参见第 154 页的设置设计属性和设置对象属性。</p>
@@ -4244,7 +4244,7 @@
 </tbody>
 </table>
 <h2 id="特性对话框导线段选项卡" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">特性对话框，导线段选项卡<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#特性对话框导线段选项卡">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：选择导线段 &gt; 右键 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">线段</strong>选项卡</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：选择导线段 &gt; 右键 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">线段</strong>选项卡</p>
 <p class="my-4 leading-7">设置导线段的层、坐标和尺寸。</p>
 <div class="rspress-directive warning"><div class="rspress-directive-title">WARNING</div><div class="rspress-directive-content">
 <p class="my-4 leading-7"> 使用属性对话框设置设计和对象属性。更多信息请参见第 154 页的设置设计属性和设置对象属性。</p>
@@ -4298,7 +4298,7 @@
 </tbody>
 </table>
 <h2 id="特性对话框过孔选项卡" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">特性对话框，过孔选项卡<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#特性对话框过孔选项卡">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：选择过孔 &gt; 右键 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">过孔</strong>选项卡</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：选择过孔 &gt; 右键 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">过孔</strong>选项卡</p>
 <p class="my-4 leading-7">查看和修改过孔属性信息。</p>
 <p class="my-4 leading-7">🙊<strong class="font-semibold">限制</strong></p>
 <p class="my-4 leading-7">您无法在 SailWind Router 中更改过孔大小或添加额外过孔。使用 SailWind Layout 中的焊盘栈属性对话框执行此操作。</p>
@@ -4394,7 +4394,7 @@
 </tbody>
 </table>
 <h2 id="特性对话框过孔偏置选项卡" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">特性对话框，过孔偏置选项卡<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#特性对话框过孔偏置选项卡">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：</p>
 <ul class="list-disc pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
 <p class="my-4 leading-7">单击<strong class="font-semibold">特性</strong>按钮 &gt; <strong class="font-semibold">过孔偏置</strong>选项卡</p>
@@ -4424,7 +4424,7 @@
 </tbody>
 </table>
 <h2 id="特性对话框虚拟管脚选项卡" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">特性对话框，虚拟管脚选项卡<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#特性对话框虚拟管脚选项卡">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：选择虚拟管脚 &gt; 右键 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">虚拟管脚</strong>选项卡</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：选择虚拟管脚 &gt; 右键 &gt; 选择弹出菜单中的<strong class="font-semibold">特性</strong> &gt; <strong class="font-semibold">虚拟管脚</strong>选项卡</p>
 <p class="my-4 leading-7">查看和修改虚拟管脚属性。</p>
 <div class="rspress-directive warning"><div class="rspress-directive-title">WARNING</div><div class="rspress-directive-content">
 <p class="my-4 leading-7"> 使用属性对话框设置设计和对象属性。更多信息请参见第 154 页的设置设计属性和设置对象属性。</p>
@@ -4490,7 +4490,7 @@
 </tbody>
 </table>
 <h2 id="选择层对话框" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">选择层对话框<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#选择层对话框">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：单击<strong class="font-semibold">选择过滤器工具栏</strong>按钮 &gt; <strong class="font-semibold">层</strong>按钮</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：单击<strong class="font-semibold">选择过滤器工具栏</strong>按钮 &gt; <strong class="font-semibold">层</strong>按钮</p>
 <p class="my-4 leading-7">使用选择层对话框启用或禁用选择特定层上对象的能力。</p>
 <p class="my-4 leading-7"><img src="/sailwind_docs/router/guide/24/_page_151_Picture_4.jpeg" alt=""/></p>
 <table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
@@ -4520,7 +4520,7 @@
 </tbody>
 </table>
 <h2 id="快捷键对话框" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">快捷键对话框<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#快捷键对话框">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：</p>
 <ul class="list-disc pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
 <p class="my-4 leading-7">单击标准工具栏上的<strong class="font-semibold">视图</strong> &gt; <strong class="font-semibold">快捷方式对话框</strong>按钮</p>
@@ -4561,7 +4561,7 @@
 </tbody>
 </table>
 <h2 id="查看网络对话框" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">查看网络对话框<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#查看网络对话框">#</a></h2>
-<p class="my-4 leading-7">💃访问方式：选择<strong class="font-semibold">视图</strong> &gt; <strong class="font-semibold">查看网络</strong>菜单项</p>
+<p class="my-4 leading-7">💃<strong class="font-semibold">访问方式</strong>：选择<strong class="font-semibold">视图</strong> &gt; <strong class="font-semibold">查看网络</strong>菜单项</p>
 <p class="my-4 leading-7">查看网络对话框允许您选择和查看网络。对于每个网络，您可以隐藏或显示连接、布线路径或未布线路径。您还可以指定颜色并显示或隐藏各种未布线，使您在分割平面时更容易识别网络。保存设计时，您也会保存所做的任何网络颜色分配。</p>
 <table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
 <thead>
@@ -4630,7 +4630,7 @@
 <td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">选择&quot;按网络启用颜色&quot;复选框可启用此复选框。</td>
 </tr>
 </tbody>
-</table><!--/$--></div><div class="rspress-doc-footer"><footer class="mt-8"><div class="xs:flex pb-5 px-2 justify-end items-center"><div class="flex text-sm text-text-2 leading-6 sm:leading-8 font-medium"><p>最近更新时间<!-- -->: <span>2025/8/8 02:01:46</span></p></div></div><div class="flex flex-col"></div><div class="flex flex-col sm:flex-row sm:justify-around gap-4 pt-6"><div class="prev_c92d1 flex flex-col"><a href="/sailwind_docs/router/guide/23_zh.html" class="link_a7cea pager-link_e0d2d"><span class="desc_dcc01">上一页</span><span class="title_a3acb">第 23 章 授权许可</span></a></div><div class="next_c11be flex flex-col"><a href="/sailwind_docs/router/guide/25_zh.html" class="link_a7cea pager-link_e0d2d next_ad355"><span class="desc_dcc01">下一页</span><span class="title_a3acb">第 25 章 软件启动选项</span></a></div></div></footer></div></div><div class="aside-container_bc5fa"><div class="flex flex-col"><div id="aside-container" class="relative text-sm font-medium"><div class="leading-7 block text-sm font-semibold pl-3">本页目录</div><nav class="mt-1"><ul class="relative"><li><a href="#添加编辑命令对话框" title="添加/编辑命令对话框" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">添加/编辑命令对话框</span></a></li><li><a href="#归档器对话框" title="归档器对话框" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">归档器对话框</span></a></li><li><a href="#归档器附加文件对话框" title="归档器附加文件对话框" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">归档器附加文件对话框</span></a></li><li><a href="#归档器库对话框" title="归档器库对话框" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">归档器库对话框</span></a></li><li><a href="#分配快捷键对话框" title="分配快捷键对话框" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">分配快捷键对话框</span></a></li><li><a href="#检查更新对话框" title="检查更新对话框" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">检查更新对话框</span></a></li><li><a href="#元件属性对话框电气网络选项卡" title="元件属性对话框，电气网络选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">元件属性对话框，电气网络选项卡</span></a></li><li><a href="#自定义对话框命令选项卡" title="自定义对话框，命令选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">自定义对话框，命令选项卡</span></a></li><li><a href="#自定义对话框键盘和鼠标选项卡" title="自定义对话框，键盘和鼠标选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">自定义对话框，键盘和鼠标选项卡</span></a></li><li><a href="#自定义对话框宏文件选项卡" title="自定义对话框，宏文件选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">自定义对话框，宏文件选项卡</span></a></li><li><a href="#自定义对话框---选项选项卡" title="自定义对话框 - 选项选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">自定义对话框 - 选项选项卡</span></a></li><li><a href="#自定义对话框---工具栏和菜单选项卡" title="自定义对话框 - 工具栏和菜单选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">自定义对话框 - 工具栏和菜单选项卡</span></a></li><li><a href="#设计规则检查对话框" title="设计规则检查对话框" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">设计规则检查对话框</span></a></li><li><a href="#编辑按钮图像对话框" title="编辑按钮图像对话框" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">编辑按钮图像对话框</span></a></li><li><a href="#编辑筛选器对话框" title="编辑筛选器对话框" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">编辑筛选器对话框</span></a></li><li><a href="#电气网络对话框" title="电气网络对话框" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">电气网络对话框</span></a></li><li><a href="#电气网络属性对话框---电气网络选项卡" title="电气网络属性对话框 - 电气网络选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">电气网络属性对话框 - 电气网络选项卡</span></a></li><li><a href="#电气网络属性对话框---长度选项卡" title="电气网络属性对话框 - 长度选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">电气网络属性对话框 - 长度选项卡</span></a></li><li><a href="#错误检测对话框" title="错误检测对话框" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">错误检测对话框</span></a></li><li><a href="#查找对话框" title="查找对话框" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">查找对话框</span></a></li><li><a href="#查找对话框电子表格窗口" title="查找对话框，电子表格窗口" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">查找对话框，电子表格窗口</span></a></li><li><a href="#已安装选项对话框许可证文件选项卡" title="已安装选项对话框，许可证文件选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">已安装选项对话框，许可证文件选项卡</span></a></li><li><a href="#网络属性对话框电气网络选项卡" title="网络属性对话框，电气网络选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">网络属性对话框，电气网络选项卡</span></a></li><li><a href="#选项对话框颜色类别" title="选项对话框，颜色类别" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">选项对话框，颜色类别</span></a></li><li><a href="#选项对话框设计验证类别" title="选项对话框，设计验证类别" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">选项对话框，设计验证类别</span></a></li><li><a href="#选项对话框显示类别" title="选项对话框，显示类别" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">选项对话框，显示类别</span></a></li><li><a href="#选项对话框制造类别" title="选项对话框，制造类别" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">选项对话框，制造类别</span></a></li><li><a href="#选项对话框全局类别备份子类别" title="选项对话框，全局类别，备份子类别" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">选项对话框，全局类别，备份子类别</span></a></li><li><a href="#选项对话框全局类别文件位置子类别" title="选项对话框，全局类别，文件位置子类别" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">选项对话框，全局类别，文件位置子类别</span></a></li><li><a href="#选项对话框全局类别常规子类别" title="选项对话框，全局类别，常规子类别" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">选项对话框，全局类别，常规子类别</span></a></li><li><a href="#选项对话框布局类别" title="选项对话框，布局类别" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">选项对话框，布局类别</span></a></li><li><a href="#选项对话框覆铜类别" title="选项对话框，覆铜类别" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">选项对话框，覆铜类别</span></a></li><li><a href="#选项对话框布线类别常规子类别" title="选项对话框，布线类别，常规子类别" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">选项对话框，布线类别，常规子类别</span></a></li><li><a href="#选项对话框布线类别策略子类别" title="选项对话框，布线类别，策略子类别" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">选项对话框，布线类别，策略子类别</span></a></li><li><a href="#选项对话框测试点类别" title="选项对话框，测试点类别" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">选项对话框，测试点类别</span></a></li><li><a href="#选项对话框文本和线类别" title="选项对话框，文本和线类别" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">选项对话框，文本和线类别</span></a></li><li><a href="#选项对话框布线类别调整子类别" title="选项对话框，布线类别，调整子类别" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">选项对话框，布线类别，调整子类别</span></a></li><li><a href="#sailwind-suite-配置对话框" title="SailWind Suite 配置对话框" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">SailWind Suite 配置对话框</span></a></li><li><a href="#特性对话框间距选项卡" title="特性对话框，间距选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框，间距选项卡</span></a></li><li><a href="#特性对话框元件选项卡" title="特性对话框，元件选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框，元件选项卡</span></a></li><li><a href="#特性对话框---铜箔" title="特性对话框 - 铜箔" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框 - 铜箔</span></a></li><li><a href="#特性对话框---铜箔挖空选项卡" title="特性对话框 - 铜箔挖空选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框 - 铜箔挖空选项卡</span></a></li><li><a href="#特性对话框---铜箔挖空拐角" title="特性对话框 - 铜箔挖空拐角" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框 - 铜箔挖空拐角</span></a></li><li><a href="#特性对话框---铜箔挖空线段" title="特性对话框 - 铜箔挖空线段" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框 - 铜箔挖空线段</span></a></li><li><a href="#特性对话框---铜箔平面选项卡" title="特性对话框 - 铜箔平面选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框 - 铜箔平面选项卡</span></a></li><li><a href="#特性对话框---铜箔铜箔平面拐角" title="特性对话框 - 铜箔/铜箔平面拐角" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框 - 铜箔/铜箔平面拐角</span></a></li><li><a href="#特性对话框---铜箔铜箔平面线段" title="特性对话框 - 铜箔/铜箔平面线段" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框 - 铜箔/铜箔平面线段</span></a></li><li><a href="#特性对话框---拐角选项卡" title="特性对话框 - 拐角选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框 - 拐角选项卡</span></a></li><li><a href="#特性对话框---钻孔选项卡管脚" title="特性对话框 - 钻孔选项卡（管脚）" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框 - 钻孔选项卡（管脚）</span></a></li><li><a href="#特性对话框---钻孔选项卡过孔" title="特性对话框 - 钻孔选项卡（过孔）" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框 - 钻孔选项卡（过孔）</span></a></li><li><a href="#特性对话框---钻孔选项卡虚拟管脚" title="特性对话框 - 钻孔选项卡（虚拟管脚）" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框 - 钻孔选项卡（虚拟管脚）</span></a></li><li><a href="#特性对话框---扇出选项卡" title="特性对话框 - 扇出选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框 - 扇出选项卡</span></a></li><li><a href="#特性对话框---覆铜选项卡" title="特性对话框 - 覆铜选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框 - 覆铜选项卡</span></a></li><li><a href="#特性对话框---网格选项卡" title="特性对话框 - 网格选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框 - 网格选项卡</span></a></li><li><a href="#特性对话框---组选项卡" title="特性对话框 - 组选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框 - 组选项卡</span></a></li><li><a href="#特性对话框---禁止区域选项卡" title="特性对话框 - 禁止区域选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框 - 禁止区域选项卡</span></a></li><li><a href="#特性对话框---禁止区域段" title="特性对话框 - 禁止区域段" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框 - 禁止区域段</span></a></li><li><a href="#特性对话框层偏置选项卡" title="特性对话框，层偏置选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框，层偏置选项卡</span></a></li><li><a href="#特性对话框层选项卡" title="特性对话框，层选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框，层选项卡</span></a></li><li><a href="#特性对话框长度选项卡" title="特性对话框，长度选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框，长度选项卡</span></a></li><li><a href="#特性对话框网络选项卡" title="特性对话框，网络选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框，网络选项卡</span></a></li><li><a href="#特性对话框无属性选项卡" title="特性对话框，无属性选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框，无属性选项卡</span></a></li><li><a href="#特性对话框焊盘入口选项卡" title="特性对话框，焊盘入口选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框，焊盘入口选项卡</span></a></li><li><a href="#特性对话框焊盘栈选项卡管脚" title="特性对话框，焊盘栈选项卡（管脚）" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框，焊盘栈选项卡（管脚）</span></a></li><li><a href="#特性对话框焊盘栈选项卡过孔" title="特性对话框，焊盘栈选项卡（过孔）" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框，焊盘栈选项卡（过孔）</span></a></li><li><a href="#特性对话框焊盘栈选项卡虚拟管脚" title="特性对话框，焊盘栈选项卡（虚拟管脚）" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框，焊盘栈选项卡（虚拟管脚）</span></a></li><li><a href="#差分对特性对话框配对选项卡" title="差分对特性对话框，配对选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">差分对特性对话框，配对选项卡</span></a></li><li><a href="#特性对话框管脚选项卡" title="特性对话框，管脚选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框，管脚选项卡</span></a></li><li><a href="#特性对话框管脚对选项卡" title="特性对话框，管脚对选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框，管脚对选项卡</span></a></li><li><a href="#特性对话框布线选项卡" title="特性对话框，布线选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框，布线选项卡</span></a></li><li><a href="#特性对话框相同网络选项卡" title="特性对话框，相同网络选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框，相同网络选项卡</span></a></li><li><a href="#特性对话框测试点选项卡" title="特性对话框，测试点选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框，测试点选项卡</span></a></li><li><a href="#特性对话框测试点选项卡网络" title="特性对话框，测试点选项卡（网络）" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框，测试点选项卡（网络）</span></a></li><li><a href="#特性对话框测试点选项卡组件或过孔类型" title="特性对话框，测试点选项卡（组件或过孔类型）" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框，测试点选项卡（组件或过孔类型）</span></a></li><li><a href="#特性对话框拓扑选项卡" title="特性对话框，拓扑选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框，拓扑选项卡</span></a></li><li><a href="#特性对话框导线选项卡" title="特性对话框，导线选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框，导线选项卡</span></a></li><li><a href="#特性对话框导线段选项卡" title="特性对话框，导线段选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框，导线段选项卡</span></a></li><li><a href="#特性对话框过孔选项卡" title="特性对话框，过孔选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框，过孔选项卡</span></a></li><li><a href="#特性对话框过孔偏置选项卡" title="特性对话框，过孔偏置选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框，过孔偏置选项卡</span></a></li><li><a href="#特性对话框虚拟管脚选项卡" title="特性对话框，虚拟管脚选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框，虚拟管脚选项卡</span></a></li><li><a href="#选择层对话框" title="选择层对话框" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">选择层对话框</span></a></li><li><a href="#快捷键对话框" title="快捷键对话框" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">快捷键对话框</span></a></li><li><a href="#查看网络对话框" title="查看网络对话框" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">查看网络对话框</span></a></li></ul></nav></div></div></div></div></div></div></section></div>
+</table><!--/$--></div><div class="rspress-doc-footer"><footer class="mt-8"><div class="xs:flex pb-5 px-2 justify-end items-center"><div class="flex text-sm text-text-2 leading-6 sm:leading-8 font-medium"><p>最近更新时间<!-- -->: <span>2025/8/8 02:49:24</span></p></div></div><div class="flex flex-col"></div><div class="flex flex-col sm:flex-row sm:justify-around gap-4 pt-6"><div class="prev_c92d1 flex flex-col"><a href="/sailwind_docs/router/guide/23_zh.html" class="link_a7cea pager-link_e0d2d"><span class="desc_dcc01">上一页</span><span class="title_a3acb">第 23 章 授权许可</span></a></div><div class="next_c11be flex flex-col"><a href="/sailwind_docs/router/guide/25_zh.html" class="link_a7cea pager-link_e0d2d next_ad355"><span class="desc_dcc01">下一页</span><span class="title_a3acb">第 25 章 软件启动选项</span></a></div></div></footer></div></div><div class="aside-container_bc5fa"><div class="flex flex-col"><div id="aside-container" class="relative text-sm font-medium"><div class="leading-7 block text-sm font-semibold pl-3">本页目录</div><nav class="mt-1"><ul class="relative"><li><a href="#添加编辑命令对话框" title="添加/编辑命令对话框" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">添加/编辑命令对话框</span></a></li><li><a href="#归档器对话框" title="归档器对话框" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">归档器对话框</span></a></li><li><a href="#归档器附加文件对话框" title="归档器附加文件对话框" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">归档器附加文件对话框</span></a></li><li><a href="#归档器库对话框" title="归档器库对话框" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">归档器库对话框</span></a></li><li><a href="#分配快捷键对话框" title="分配快捷键对话框" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">分配快捷键对话框</span></a></li><li><a href="#检查更新对话框" title="检查更新对话框" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">检查更新对话框</span></a></li><li><a href="#元件属性对话框电气网络选项卡" title="元件属性对话框，电气网络选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">元件属性对话框，电气网络选项卡</span></a></li><li><a href="#自定义对话框命令选项卡" title="自定义对话框，命令选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">自定义对话框，命令选项卡</span></a></li><li><a href="#自定义对话框键盘和鼠标选项卡" title="自定义对话框，键盘和鼠标选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">自定义对话框，键盘和鼠标选项卡</span></a></li><li><a href="#自定义对话框宏文件选项卡" title="自定义对话框，宏文件选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">自定义对话框，宏文件选项卡</span></a></li><li><a href="#自定义对话框---选项选项卡" title="自定义对话框 - 选项选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">自定义对话框 - 选项选项卡</span></a></li><li><a href="#自定义对话框---工具栏和菜单选项卡" title="自定义对话框 - 工具栏和菜单选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">自定义对话框 - 工具栏和菜单选项卡</span></a></li><li><a href="#设计规则检查对话框" title="设计规则检查对话框" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">设计规则检查对话框</span></a></li><li><a href="#编辑按钮图像对话框" title="编辑按钮图像对话框" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">编辑按钮图像对话框</span></a></li><li><a href="#编辑筛选器对话框" title="编辑筛选器对话框" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">编辑筛选器对话框</span></a></li><li><a href="#电气网络对话框" title="电气网络对话框" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">电气网络对话框</span></a></li><li><a href="#电气网络属性对话框---电气网络选项卡" title="电气网络属性对话框 - 电气网络选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">电气网络属性对话框 - 电气网络选项卡</span></a></li><li><a href="#电气网络属性对话框---长度选项卡" title="电气网络属性对话框 - 长度选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">电气网络属性对话框 - 长度选项卡</span></a></li><li><a href="#错误检测对话框" title="错误检测对话框" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">错误检测对话框</span></a></li><li><a href="#查找对话框" title="查找对话框" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">查找对话框</span></a></li><li><a href="#查找对话框电子表格窗口" title="查找对话框，电子表格窗口" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">查找对话框，电子表格窗口</span></a></li><li><a href="#已安装选项对话框许可证文件选项卡" title="已安装选项对话框，许可证文件选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">已安装选项对话框，许可证文件选项卡</span></a></li><li><a href="#网络属性对话框电气网络选项卡" title="网络属性对话框，电气网络选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">网络属性对话框，电气网络选项卡</span></a></li><li><a href="#选项对话框颜色类别" title="选项对话框，颜色类别" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">选项对话框，颜色类别</span></a></li><li><a href="#选项对话框设计验证类别" title="选项对话框，设计验证类别" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">选项对话框，设计验证类别</span></a></li><li><a href="#选项对话框显示类别" title="选项对话框，显示类别" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">选项对话框，显示类别</span></a></li><li><a href="#选项对话框制造类别" title="选项对话框，制造类别" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">选项对话框，制造类别</span></a></li><li><a href="#选项对话框全局类别备份子类别" title="选项对话框，全局类别，备份子类别" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">选项对话框，全局类别，备份子类别</span></a></li><li><a href="#选项对话框全局类别文件位置子类别" title="选项对话框，全局类别，文件位置子类别" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">选项对话框，全局类别，文件位置子类别</span></a></li><li><a href="#选项对话框全局类别常规子类别" title="选项对话框，全局类别，常规子类别" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">选项对话框，全局类别，常规子类别</span></a></li><li><a href="#选项对话框布局类别" title="选项对话框，布局类别" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">选项对话框，布局类别</span></a></li><li><a href="#选项对话框覆铜类别" title="选项对话框，覆铜类别" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">选项对话框，覆铜类别</span></a></li><li><a href="#选项对话框布线类别常规子类别" title="选项对话框，布线类别，常规子类别" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">选项对话框，布线类别，常规子类别</span></a></li><li><a href="#选项对话框布线类别策略子类别" title="选项对话框，布线类别，策略子类别" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">选项对话框，布线类别，策略子类别</span></a></li><li><a href="#选项对话框测试点类别" title="选项对话框，测试点类别" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">选项对话框，测试点类别</span></a></li><li><a href="#选项对话框文本和线类别" title="选项对话框，文本和线类别" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">选项对话框，文本和线类别</span></a></li><li><a href="#选项对话框布线类别调整子类别" title="选项对话框，布线类别，调整子类别" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">选项对话框，布线类别，调整子类别</span></a></li><li><a href="#sailwind-suite-配置对话框" title="SailWind Suite 配置对话框" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">SailWind Suite 配置对话框</span></a></li><li><a href="#特性对话框间距选项卡" title="特性对话框，间距选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框，间距选项卡</span></a></li><li><a href="#特性对话框元件选项卡" title="特性对话框，元件选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框，元件选项卡</span></a></li><li><a href="#特性对话框---铜箔" title="特性对话框 - 铜箔" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框 - 铜箔</span></a></li><li><a href="#特性对话框---铜箔挖空选项卡" title="特性对话框 - 铜箔挖空选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框 - 铜箔挖空选项卡</span></a></li><li><a href="#特性对话框---铜箔挖空拐角" title="特性对话框 - 铜箔挖空拐角" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框 - 铜箔挖空拐角</span></a></li><li><a href="#特性对话框---铜箔挖空线段" title="特性对话框 - 铜箔挖空线段" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框 - 铜箔挖空线段</span></a></li><li><a href="#特性对话框---铜箔平面选项卡" title="特性对话框 - 铜箔平面选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框 - 铜箔平面选项卡</span></a></li><li><a href="#特性对话框---铜箔铜箔平面拐角" title="特性对话框 - 铜箔/铜箔平面拐角" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框 - 铜箔/铜箔平面拐角</span></a></li><li><a href="#特性对话框---铜箔铜箔平面线段" title="特性对话框 - 铜箔/铜箔平面线段" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框 - 铜箔/铜箔平面线段</span></a></li><li><a href="#特性对话框---拐角选项卡" title="特性对话框 - 拐角选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框 - 拐角选项卡</span></a></li><li><a href="#特性对话框---钻孔选项卡管脚" title="特性对话框 - 钻孔选项卡（管脚）" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框 - 钻孔选项卡（管脚）</span></a></li><li><a href="#特性对话框---钻孔选项卡过孔" title="特性对话框 - 钻孔选项卡（过孔）" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框 - 钻孔选项卡（过孔）</span></a></li><li><a href="#特性对话框---钻孔选项卡虚拟管脚" title="特性对话框 - 钻孔选项卡（虚拟管脚）" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框 - 钻孔选项卡（虚拟管脚）</span></a></li><li><a href="#特性对话框---扇出选项卡" title="特性对话框 - 扇出选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框 - 扇出选项卡</span></a></li><li><a href="#特性对话框---覆铜选项卡" title="特性对话框 - 覆铜选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框 - 覆铜选项卡</span></a></li><li><a href="#特性对话框---网格选项卡" title="特性对话框 - 网格选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框 - 网格选项卡</span></a></li><li><a href="#特性对话框---组选项卡" title="特性对话框 - 组选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框 - 组选项卡</span></a></li><li><a href="#特性对话框---禁止区域选项卡" title="特性对话框 - 禁止区域选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框 - 禁止区域选项卡</span></a></li><li><a href="#特性对话框---禁止区域段" title="特性对话框 - 禁止区域段" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框 - 禁止区域段</span></a></li><li><a href="#特性对话框层偏置选项卡" title="特性对话框，层偏置选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框，层偏置选项卡</span></a></li><li><a href="#特性对话框层选项卡" title="特性对话框，层选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框，层选项卡</span></a></li><li><a href="#特性对话框长度选项卡" title="特性对话框，长度选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框，长度选项卡</span></a></li><li><a href="#特性对话框网络选项卡" title="特性对话框，网络选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框，网络选项卡</span></a></li><li><a href="#特性对话框无属性选项卡" title="特性对话框，无属性选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框，无属性选项卡</span></a></li><li><a href="#特性对话框焊盘入口选项卡" title="特性对话框，焊盘入口选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框，焊盘入口选项卡</span></a></li><li><a href="#特性对话框焊盘栈选项卡管脚" title="特性对话框，焊盘栈选项卡（管脚）" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框，焊盘栈选项卡（管脚）</span></a></li><li><a href="#特性对话框焊盘栈选项卡过孔" title="特性对话框，焊盘栈选项卡（过孔）" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框，焊盘栈选项卡（过孔）</span></a></li><li><a href="#特性对话框焊盘栈选项卡虚拟管脚" title="特性对话框，焊盘栈选项卡（虚拟管脚）" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框，焊盘栈选项卡（虚拟管脚）</span></a></li><li><a href="#差分对特性对话框配对选项卡" title="差分对特性对话框，配对选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">差分对特性对话框，配对选项卡</span></a></li><li><a href="#特性对话框管脚选项卡" title="特性对话框，管脚选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框，管脚选项卡</span></a></li><li><a href="#特性对话框管脚对选项卡" title="特性对话框，管脚对选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框，管脚对选项卡</span></a></li><li><a href="#特性对话框布线选项卡" title="特性对话框，布线选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框，布线选项卡</span></a></li><li><a href="#特性对话框相同网络选项卡" title="特性对话框，相同网络选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框，相同网络选项卡</span></a></li><li><a href="#特性对话框测试点选项卡" title="特性对话框，测试点选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框，测试点选项卡</span></a></li><li><a href="#特性对话框测试点选项卡网络" title="特性对话框，测试点选项卡（网络）" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框，测试点选项卡（网络）</span></a></li><li><a href="#特性对话框测试点选项卡组件或过孔类型" title="特性对话框，测试点选项卡（组件或过孔类型）" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框，测试点选项卡（组件或过孔类型）</span></a></li><li><a href="#特性对话框拓扑选项卡" title="特性对话框，拓扑选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框，拓扑选项卡</span></a></li><li><a href="#特性对话框导线选项卡" title="特性对话框，导线选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框，导线选项卡</span></a></li><li><a href="#特性对话框导线段选项卡" title="特性对话框，导线段选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框，导线段选项卡</span></a></li><li><a href="#特性对话框过孔选项卡" title="特性对话框，过孔选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框，过孔选项卡</span></a></li><li><a href="#特性对话框过孔偏置选项卡" title="特性对话框，过孔偏置选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框，过孔偏置选项卡</span></a></li><li><a href="#特性对话框虚拟管脚选项卡" title="特性对话框，虚拟管脚选项卡" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">特性对话框，虚拟管脚选项卡</span></a></li><li><a href="#选择层对话框" title="选择层对话框" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">选择层对话框</span></a></li><li><a href="#快捷键对话框" title="快捷键对话框" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">快捷键对话框</span></a></li><li><a href="#查看网络对话框" title="查看网络对话框" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">查看网络对话框</span></a></li></ul></nav></div></div></div></div></div></div></section></div>
     <div id="search-container"></div>
   </body>
 </html>
