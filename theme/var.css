@@ -40,7 +40,7 @@ h1, h2 {
     font-size: medium;
 }
 
-img {
+img:not(.rspress-logo) {
     display: block;
     margin-left: auto;
     margin-right: auto;
