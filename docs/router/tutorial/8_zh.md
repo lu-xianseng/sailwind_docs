@@ -34,13 +34,13 @@ Design Verification 命令可检查设计中的间距、连通性、高速和平
 
 如果尚未运行，请启动 SailWind Router 并打开\SailWind Projects\Samples 文件夹中的**previewrouterverify.pcb**文件。
 
-## SailWind Router 与SailWind Layout 的设计验证对比
+## SailWind Router 与SailWind Layout 的设计验证对比 \{#1}
 
 SailWind Router 包含许多高级功能，包括可选的组件规则高速设计规则支持、SMD 过孔、差分对和等长规则。使用这些高级规则的设计可以通过 SailWind Router 中的 Design Verification 命令进行检查。
 
 SailWind Layout 不支持这些高级功能的设计验证；但是，您可以在 SailWind Layout 中访问组件规则、SMD 过孔、差分对和等长规则的检查。这样您就可以在不来回切换 SailWind Layout 和SailWind Router 的情况下查找和修正设计错误。
 
-## 在 SailWind Router 中检查设计规则
+## 在 SailWind Router 中检查设计规则 \{#2}
 
 **Options 按钮 > Design Verification 选项卡**
 

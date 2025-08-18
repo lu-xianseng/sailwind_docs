@@ -2,7 +2,7 @@
 
 Welcome to SailWind Layout, a powerful yet easy to use printed circuit board layout application.
 
-## PCB Layout Quickstart
+## PCB Layout Quickstart \{#1}
 
 SailWind Layout provides the tools you need to lay out your PCB design, from creating a decal library for your components to generating output for fabrication.
 

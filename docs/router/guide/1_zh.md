@@ -20,7 +20,7 @@
 
 7. [步骤 7 生成报告](#page-3-0)
 
-## 步骤 1 - 加载 SailWind Layout 文件
+## 步骤 1 - 加载 SailWind Layout 文件 \{#1}
 
 SailWind Router 可读取和写入原生 SailWind Layout 设计文件。
 
@@ -42,7 +42,7 @@ SailWind Router 可读取和写入原生 SailWind Layout 设计文件。
 
 > 替代方案：按 Delete 键。
 
-## 步骤 2 - 分配默认设计属性
+## 步骤 2 - 分配默认设计属性 \{#2}
 
 在 SailWind Layout 中设置的所有设计属性和设计规则在加载 SailWind Layout 文件时会自动传输到 SailWind Router。不过，您也可以在 SailWind Router 中更改它们。
 
@@ -72,7 +72,7 @@ SailWind Router 可读取和写入原生 SailWind Layout 设计文件。
 
 有关每个选项卡的更多信息，请点击选项卡中的 **帮助**。
 
-## 步骤 3 - 分配布线选项
+## 步骤 3 - 分配布线选项 \{#3}
 
 您在 SailWind Layout 中设置的所有设计和显示选项都会自动传输到 SailWind Router。不过，您也可以在 SailWind Router 中更改它们。此外，SailWind Router 还包含一些独特的自动布线选项。
 
@@ -84,7 +84,7 @@ SailWind Router 可读取和写入原生 SailWind Layout 设计文件。
 
 点击 **帮助** 按钮获取有关每个选项卡功能的更多信息。
 
-## 步骤 4 - 定义策略
+## 步骤 4 - 定义策略 \{#4}
 
 自动布线功能会依次执行多个自动布线操作。您可以通过定义 *自动布线策略* 来指定这些操作及其在 SailWind Router 中的执行顺序。
 
@@ -98,7 +98,7 @@ SailWind Router 可读取和写入原生 SailWind Layout 设计文件。
 
     b. 选中相应的"暂停"复选框以在过程完成后立即暂停自动布线。
 
-## 步骤 5 - 定义布线顺序
+## 步骤 5 - 定义布线顺序 \{#5}
 
 您可以为每个过程类型定义自动布线器布线所有组件和网络对象的顺序。这称为布线顺序。
 
@@ -116,7 +116,7 @@ SailWind Router 可读取和写入原生 SailWind Layout 设计文件。
 
 6. 点击 **确定**。
 
-## 步骤 6 - 自动布线设计
+## 步骤 6 - 自动布线设计 \{#6}
 
 使用布线工具栏控制自动布线器。
 
@@ -137,7 +137,7 @@ SailWind Router 可读取和写入原生 SailWind Layout 设计文件。
 
 2. 点击 **开始自动布线** 按钮开始自动布线设计。
 
-## 步骤 7 - 生成报告
+## 步骤 7 - 生成报告 \{#7}
 
 自动布线例程完成后，会生成详细说明结果的布线报告。报告链接出现在输出窗口的 **状态** 选项卡中。
 

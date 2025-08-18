@@ -17,7 +17,7 @@
 
 如果 `SailWind Layout` 尚未运行，请启动并打开位于\SailWind Projects\Samples 文件夹中的**previewpreroute.pcb**主页。
 
-## 为自动布线准备设计文件
+## 为自动布线准备设计文件 \{#1}
 
 在开始自动布线之前，必须确保设计文件已正确设置为适合 `SailWind Router` 自动布线。
 
@@ -38,7 +38,7 @@
 
 **工具**菜单 > **长度最小化替代方案**：按 Ctrl+M。
 
-## 将设计传输至 `SailWind Router` 进行自动布线
+## 将设计传输至 `SailWind Router` 进行自动布线 \{#2}
 
 在 `SailWind Router` 中自动布线 PCB 设计的过程始于 `SailWind Router` 链接。
 

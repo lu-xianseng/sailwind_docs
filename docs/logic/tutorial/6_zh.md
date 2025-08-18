@@ -9,7 +9,7 @@
 
 如果尚未运行，请启动 SailWind Logic 并打开\SailWind Projects\Samples 文件夹中的**previewconnect.sch**文件。
 
-## 创建并连接总线
+## 创建并连接总线 \{#1}
 在以下章节中，您将添加一条总线并将 U7 连接到该总线（下图中虚线部分）。总线用于简化原理图中的网络连接以提高可读性。通常从一个元件连接到另一个元件的网络被"合并"到总线中，使原理图连接更清晰。
 
 ![](/logic/tutorial/6/_page_0_Figure_8.jpeg)

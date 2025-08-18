@@ -2,7 +2,7 @@
 
 在将设计导入 SailWind Router 之前，您的设计必须满足特定要求。仔细准备设计以满足所有先决条件后，您可以使用同步流程在 SailWind Layout 和SailWind Router 之间来回切换进行导入。
 
-## SailWind Router 高级功能 ಠ_ಠ
+## SailWind Router 高级功能 ಠ_ಠ \{#1}
 
 SailWind Router 提供的高级功能使您能够执行布线、布局和设计规则检查，其详细程度超越 SailWind Layout。
 
@@ -59,7 +59,7 @@ SailWind Router 包含以下高级功能：
 
   - 对于选择性自动布线，选择一个元件或网络，然后**右键**单击并选择其中一个手动布线选项（布线、扇出、优化、调谐或居中）。为获得最佳效果，完成后保护布线以确保在后续任何批量自动布线期间保持不变。
 
-## 在 SailWind Router 中打开设计的先决条件 ಠ_ಠ
+## 在 SailWind Router 中打开设计的先决条件 ಠ_ಠ \{#2}
 
 在将设计导入 SailWind Router 工作区之前，您必须完成许多先决任务。您的特定设计可能需要也可能不需要某些任务。
 
@@ -113,7 +113,7 @@ SailWind Router 包含以下高级功能：
 
 - 创建任何所需的 2D 线项目，如标题块、板标记（板上的文本）、图形元素、阻焊层浮雕（SM 层上的铜）、公司徽标以及您公司标准要求的其他项目
 
-## 同步模式
+## 同步模式 \{#3}
 
 同步模式链接 SailWind Layout 和SailWind Router。当您在 SailWind Router 中工作时，您所做的更改也会出现在 SailWind Layout 中；当您在 SailWind Layout 中工作时，更改会出现在 SailWind Router 中。当您处于同步模式时，您可以立即在两个程序之间切换，但您在非活动程序中能做的事情会受到限制。
 
@@ -127,7 +127,7 @@ SailWind Router 包含以下高级功能：
 
 [ 启用同步模式 ](#page-4-1) [ 在同步模式下发送设计到 SailWind Router ](#page-5-0) [ 切换到 SailWind Layout ](#page-5-1) [ 同步模式中不支持的操作 ](#page-6-0) [ 设计不同步时重新同步 ](#page-7-0) [ 退出同步模式 ](#page-7-1)
 
-### 启用同步模式
+### 启用同步模式 \{#3-1}
 
 同步模式链接 SailWind Layout 和SailWind Router，使设计同时出现在两个程序中，使您能够在任一工具中工作而无需先在一个程序中关闭设计。
 
@@ -150,7 +150,7 @@ SailWind Router 包含以下高级功能：
 
 6. 重新启动 SailWind Layout。
 
-### 在同步模式下发送设计到 SailWind Router
+### 在同步模式下发送设计到 SailWind Router \{#3-2}
 
 使用同步模式将您的设计传输到 SailWind Router，同时保持设计在 SailWind Layout 中打开。
 
@@ -169,7 +169,7 @@ SailWind Router 包含以下高级功能：
 SailWind Router 打开并加载您的设计。
 
 
-### 切换到 SailWind Layout
+### 切换到 SailWind Layout \{#3-3}
 
 您可以快速将设计从 SailWind Router 移回 SailWind Layout 环境。
 
@@ -182,7 +182,7 @@ SailWind Router 打开并加载您的设计。
 
 > [!tip] 要切换回 SailWind Router，请单击 SailWind Layout 主工具栏上的**布线**按钮。
 
-### 同步模式中不支持的操作 ಠ_ಠ
+### 同步模式中不支持的操作 ಠ_ಠ \{#3-4}
 
 同步模式不支持某些命令和选项。如果您执行这些命令之一或更改其中一个选项，SailWind Layout 和SailWind Router 将变得不同步。
 
@@ -229,7 +229,7 @@ SailWind Router 打开并加载您的设计。
 - 过孔图案
 
 
-### 设计不同步时重新同步
+### 设计不同步时重新同步 \{#3-5}
 
 如果您执行不受支持的命令或更改不受支持的选项，非活动程序将变得不同步。状态栏显示同步状态 - 活动、非活动或不同步。您必须在 SailWind Layout 或SailWind Router 中重新同步设计。
 
@@ -257,7 +257,7 @@ DisplayWarnings=0
 之前不同步的程序会更新为最新的设计更改并成为活动程序。
 
 
-### 退出同步模式
+### 退出同步模式 \{#3-6}
 
 您可以在进行设计更改后随时退出同步模式。
 
