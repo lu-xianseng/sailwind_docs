@@ -57,24 +57,24 @@
 | Keypad (.) (Zoom Mode only) | 向下拖动缩小。                                                                 |
 | Alt+Z                       | 将可选对象缩放到工作区最大视图  |
 | Ctrl+W                      | 切换缩放模式开/关                                                           |
-| Click                       | 在指针位置放大（缩放模式）                                                |
+| Click                       | 在鼠标位置放大（缩放模式）                                                |
 | Page Up                     |                                                                                   |
 | Space Bar                   |                                                                                   |
 | Keypad (9)                  |                                                                                   |
-| Right-Click                 | 在指针位置缩小（缩放模式）                                               |
+| Right-Click                 | 在鼠标位置缩小（缩放模式）                                               |
 | Page Down                   |                                                                                   |
 | Keypad (3)                  |                                                                                   |
-| Page Up                     | 在指针位置放大                                                            |
+| Page Up                     | 在鼠标位置放大                                                            |
 | Keypad (9)                  |                                                                                   |
 | Ctrl+Wheel Fwd              |                                                                                   |
-| Page Down                   | 在指针位置缩小                                                           |
+| Page Down                   | 在鼠标位置缩小                                                           |
 | Keypad (3)                  |                                                                                   |
 | Ctrl+Wheel Back             |                                                                                   |
-| Down Arrow                  | 将指针向下移动一个设计网格                                             |
-| Up Arrow                    | 将指针向上移动一个设计网格                                               |
-| Left Arrow                  | 将指针向左移动一个设计网格                                             |
-| Right Arrow                 | 将指针向右移动一个设计网格                                            |
-| Middle-Click                | 平移视图使指针位置居中                                             |
+| Down Arrow                  | 将鼠标向下移动一个设计网格                                             |
+| Up Arrow                    | 将鼠标向上移动一个设计网格                                               |
+| Left Arrow                  | 将鼠标向左移动一个设计网格                                             |
+| Right Arrow                 | 将鼠标向右移动一个设计网格                                            |
+| Middle-Click                | 平移视图使鼠标位置居中                                             |
 | Keypad (0)                  | 位置                                                                          |
 | Insert                      |                                                                                   |
 | Alt+Middle+Drag             | 动态平移                                                                   |
@@ -102,8 +102,8 @@
 | Alt+A             | 添加圆弧（交互式布线）                                                                      |
 | Backspace         | 移除导线上最后一个拐角或 2D 线上最后一个拐角（多边形绘制模式） |
 | Shift+S           | 拉伸（交互式布线模式）                                                                    |
-| Click             | 完成（交互式布线）当指针靠近有效完成点时                       |
-| Double-Click      | 完成（交互式布线）当指针靠近有效完成点时                       |
+| Click             | 完成（交互式布线）当鼠标靠近有效完成点时                       |
+| Double-Click      | 完成（交互式布线）当鼠标靠近有效完成点时                       |
 | Ctrl+Click        | 结束（交互式布线）                                                                             |
 | Ctrl+Alt+Click    |                                                                                                       |
 | Ctrl+M            | 运行长度最小化                                                                               |
@@ -138,7 +138,7 @@
 |                                 |                                                                                                             | 鼠标按钮替代                                        |
 | 快捷键                        |                                                                                                             | 描述                                                       |
 | M                               |                                                                                                             | 为当前模式打开弹出菜单（同右键点击） |
-| Space Bar                       | 激活左键点击以添加拐角、选择项目、完成等操作；在当前指针位置 |                                                                   |
+| Space Bar                       | 激活左键点击以添加拐角、选择项目、完成等操作；在当前鼠标位置 |                                                                   |
 |                                 |                                                                                                             | 层列表导航                                             |
 | 快捷键                        |                                                                                                             | 描述                                                       |
 | Alt+Up ArrowAlt+Scroll Back |                                                                                                             | 将当前层更改为列表中的下一个 - 降序列表  |
