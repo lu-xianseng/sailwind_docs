@@ -4,84 +4,6 @@
 :Date  :2025/05/12
 """
 
-# 提示词：
-
-"""
-
-使用python实现以下需求：
-
-输入：
-   a、file_path，一个目录
-   b、目录下包含多个.md文件
-需求：
-   1、输出字段为三个：需求名称、所属模块、需求说明
-   2、列名顺序为：需求名称、所属模块、需求说明
-   3、所属模块：用md内容的各级标题以/拼接而成
-   4、需求名称：需求名为最末级的标题
-   5、需求说明：需求说明为属于最末级标题下的正文内容
-   6、按一个需求一行进行输出
-   7、如果一级标题中有“🚧”，则将其替换为“”
-   8、如果非一级标题中有“🚧”，则忽略此模块及其子模块，不需要输出此行
-   9、一级标题及其内容输出，不需要输出此行
-输出：
-   将.md文件内容按需求输出到excel中
-
-
-示例：
-
-# 第 1 章 SailWind Logic 快速开始
-
-SailWind Logic 是一种强大的多页原理图捕获解决方案，可为 SailWind Layout 构建有效的前端环境。
-
-## 步骤 1 - 开始新设计
-
-1、xxx
-
-2、xxx
-
-## 步骤 2 - 选择纸张尺寸
-
-1、xxx
-
-2、xxx
-
-## 步骤 3 - 添加元件和连接器符号
-
-您可以根据需要在设计中添加元件和连接器符号。
-
-### 添加元件
-
-1、xxx
-
-2、xxx
-
-### 添加连接器符号
-
-1、xxx
-
-2、xxx
-
-## 步骤 4 - 添加总线
-
-1、xxx
-
-2、xxx
-
-
-输出为：
-| 需求名称              | 所属模块                                                     | 需求说明               |
-| --------------------- | ------------------------------------------------------------ | ---------------------- |
-| 步骤 1 - 开始新设计   | 第 1 章 SailWind Logic 快速开始/步骤 1 - 开始新设计          | 1、xxx<br/><br/>2、xxx |
-| 步骤 2 - 选择纸张尺寸 | 第 1 章 SailWind Logic 快速开始/步骤 2 - 选择纸张尺寸        | 1、xxx<br/><br/>2、xxx |
-| 添加元件              | 第 1 章 SailWind Logic 快速开始/步骤 3 - 添加元件和连接器符号/添加元件 | 1、xxx<br/><br/>2、xxx |
-| 添加连接器符号        | 第 1 章 SailWind Logic 快速开始/步骤 3 - 添加元件和连接器符号/添加连接器符号 | 1、xxx<br/><br/>2、xxx |
-| 步骤 4 - 添加总线     | 第 1 章 SailWind Logic 快速开始/步骤 4 - 添加总线            | 1、xxx<br/><br/>2、xxx |
-
-
-备注：输出示例使用md表格表示，实际输出为写入excel文件
-
-"""
-
 import os
 import re
 from pathlib import Path
@@ -89,7 +11,7 @@ from pathlib import Path
 import pandas as pd
 
 
-def parse_md_file(file_path):
+def parse_md_file(file_path, ignore_flag=None):
     with open(file_path, 'r', encoding='utf-8') as f:
         lines = f.readlines()
 
@@ -147,18 +69,20 @@ def parse_md_file(file_path):
         # 生成路径
         sorted_levels = sorted(current_levels.keys())
         path = '-'.join([current_levels[l] for l in sorted_levels])
-        heading['path'] = path.replace(" ", "_").replace(">", "_").replace("/", "_").replace("\\", "_").replace("__", "_")
+        heading['path'] = path.replace(" ", "_").replace(">", "_").replace("/", "_").replace("\\", "_").replace("__",
+                                                                                                                "_")
 
     # 收集末级标题的内容
     entries = []
     for heading in headings:
+
+        # 如果有忽略标志且标题中包含忽略标志，则跳过
+        if ignore_flag and any(flag in heading['path'] for flag in ignore_flag):
+            continue
+
         # 跳过一级标题
         if heading['level'] == 1:
             continue
-
-        # 跳过非一级标题中包含“🚧”的模块
-        # if heading['level'] != 1 and "🚧" in heading['title']:
-        #     continue
 
         if heading['is_last']:
             start = heading['start_line'] + 1
@@ -174,44 +98,31 @@ def parse_md_file(file_path):
     return entries
 
 
-def process_directory(file_path, output_excel, ignore_files):
+def process_directory(file_path, output_excel, ignore_flag=None):
     all_entries = []
     for root, _, files in os.walk(file_path):
-        for file in files:
-            if file.lower().endswith('.md') and (not ignore_files or file not in ignore_files):
-                if file.endswith('.md'):
-                    full_path = os.path.join(root, file)
-                    entries = parse_md_file(full_path)
-                    all_entries.extend(entries)
+        md_files = [f for f in files if f.endswith('.md')]
+        sorted_files = sorted(md_files, key=lambda x: int(x.split('_')[0]))
+        for file in sorted_files:
+            if file.endswith('.md'):
+                full_path = os.path.join(root, file)
+                entries = parse_md_file(full_path, ignore_flag)
+                all_entries.extend(entries)
 
     # 创建DataFrame并保存Excel
     df = pd.DataFrame(all_entries, columns=['需求名称', '所属模块', '需求说明'])
+    # 判断 output_excel 目录是否存在，如果不存在则创建
+    output_excel.parent.mkdir(parents=True, exist_ok=True)
+    # 保存为Excel文件
     df.to_excel(output_excel, index=False, engine='openpyxl')
 
 
 if __name__ == "__main__":
-    file_path = Path(r"D:\hugh\code\sailwind3.0_docs\docs\layout\guide")
-    output_file = Path(__file__).parent / "layout_guide.xlsx"
-    ignore_files = [
-        "20_zh.md",
-        "22_zh.md",
-        "23_zh.md",
-        "33_zh.md",
-        "42_zh.md",
-        "43_zh.md",
-        "44_zh.md",
-        "46_zh.md",
-        "47_zh.md",
-        "48_zh.md",
-        "49_zh.md",
-        "50_zh.md",
-        "51_zh.md",
-        "52_zh.md",
-        "53_zh.md",
-        "54_zh.md",
-        "55_zh.md",
-    ]
+    file_path = Path(r"D:\hugh\code\pz\layout\guide")
+    output_file = Path(__file__).parent / "product_demand" / "layout_guide.xlsx"
 
-    process_directory(file_path, output_file, ignore_files)
+    ignore_flag = ["🚧", "ಠ_ಠ", "❌"]
+
+    process_directory(file_path, output_file, ignore_flag)
 
     print(f"处理完成，结果已保存至：{output_file}")
