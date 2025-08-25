@@ -22,10 +22,11 @@ def parse_md_file(file_path, ignore_flag=None):
         if match:
             level = len(match.group(1))
             title = match.group(2).strip()
+            title = re.sub(r" \\\{.+\}","", title)
 
-            # 将一级标题中的"🚧"替换为“”
-            if level == 1:
-                title = title.replace("🚧", "") if "🚧" in title else title
+            # 将一级标题中的"🚧"替换为""
+            # if level == 1:
+            #     title = title.replace("🚧", "") if "🚧" in title else title
 
             headings.append({
                 'level': level,
@@ -88,11 +89,13 @@ def parse_md_file(file_path, ignore_flag=None):
             start = heading['start_line'] + 1
             end = heading['end_line'] + 1  # 切片需要包含最后一行
             content_lines = lines[start:end]
-            content = ''.join(content_lines).strip()
+            content = ''.join(content_lines).strip().replace("**", '"')
+
             entries.append({
                 '需求名称': heading['title'],
                 '所属模块': heading['path'],
-                '需求说明': content
+                '需求说明': content,
+                # '测试点设计要求': ""
             })
 
     return entries
@@ -110,7 +113,7 @@ def process_directory(file_path, output_excel, ignore_flag=None):
                 all_entries.extend(entries)
 
     # 创建DataFrame并保存Excel
-    df = pd.DataFrame(all_entries, columns=['需求名称', '所属模块', '需求说明'])
+    df = pd.DataFrame(all_entries, columns=['需求名称', '所属模块', '需求说明', '测试点设计要求'])
     # 判断 output_excel 目录是否存在，如果不存在则创建
     output_excel.parent.mkdir(parents=True, exist_ok=True)
     # 保存为Excel文件
@@ -118,8 +121,8 @@ def process_directory(file_path, output_excel, ignore_flag=None):
 
 
 if __name__ == "__main__":
-    file_path = Path(r"D:\hugh\code\pz\layout\guide")
-    output_file = Path(__file__).parent / "product_demand" / "layout_guide.xlsx"
+    file_path = Path(r"D:\hugh\code\sailwind3.0_docs\docs\logic\guide")
+    output_file = Path(__file__).parent / "product_demand" / "logic_guide.xlsx"
 
     ignore_flag = ["🚧", "ಠ_ಠ", "❌"]
 
