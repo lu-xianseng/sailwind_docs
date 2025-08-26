@@ -105,7 +105,7 @@ SailWind Router 提供了多种选择设计对象的方式。
 您可以使用选择筛选器工具栏(Selection Filter toolbar)上的特殊筛选器选择对象的部分。
 
 
-> [!warning] 您可以通过全局/常规选项(Global / General Options)第 441 页中的"通过以下方式区分高亮对象"列表设置选中对象在屏幕上的显示方式。
+> [!warning] 您可以通过全局/常规选项(Global / General Options)中的"通过以下方式区分高亮对象"列表设置选中对象在屏幕上的显示方式。
 
 使用以下选择筛选器命令筛选选择：
 
