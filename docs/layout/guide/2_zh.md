@@ -10,8 +10,6 @@
 > [!warning] 
 本文档中的图片仅供参考，旨在帮助用户更好地理解软件操作。如因版本更新导致界面差异，请以实际使用的 `SailWind Layout` 界面为准。
 
-![](/layout/guide/2/_page_1_Figure_1.jpeg)
-
 **表 1. GUI 元素**
 
 | 元素       | 描述                                                                                                                                                                                                                                                                                             |

@@ -9,13 +9,50 @@
     --rp-code-title-bg: rgba(250, 192, 61, 0.15);
     --rp-code-block-bg: rgba(214, 188, 70, 0.05);
     --rp-home-hero-name-background: linear-gradient(120deg, #244e9e 10%, #8a57c8);
+
+    --h2-line-color: #ff7e5f;
+    --transition-speed: 0.3s;
 }
 
-h1, h2 {
+h1 {
     background: var(--rp-home-hero-name-background);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+h2 {
+    position: relative;
+    display: inline-block;
+    background: var(--rp-home-hero-name-background);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 28px;
+    /*margin: 25px 0 15px;*/
+    padding-bottom: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 4px;
+    background: var(--h2-line-color);
+    transition: width var(--transition-speed) ease;
+    border-radius: 2px;
+}
+
+h2:hover::after {
+    width: 100%;
+}
+
+h2:hover {
+    transform: translateX(10px);
 }
 
 .rspress-nav-menu-item {
