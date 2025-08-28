@@ -70,8 +70,10 @@ def parse_md_file(file_path, ignore_flag=None):
         # 生成路径
         sorted_levels = sorted(current_levels.keys())
         path = '-'.join([current_levels[l] for l in sorted_levels])
-        heading['path'] = path.replace(" ", "_").replace(">", "_").replace("/", "_").replace("\\", "_").replace("__",
-                                                                                                                "_")
+        heading['path'] = re.sub(r'[ >/\\\\]+', '_', path).strip('_')
+        # heading['path'] = path.replace(" ", "_").replace(">", "_").replace("/", "_").replace("\\", "_").replace("__",
+        #                                                                                                         "_")
+
 
     # 收集末级标题的内容
     entries = []
@@ -101,16 +103,27 @@ def parse_md_file(file_path, ignore_flag=None):
     return entries
 
 
-def process_directory(file_path, output_excel, ignore_flag=None):
+def find_files_by_extension(directory, extensions):
+    """
+    在指定目录中递归查找指定扩展名的文件
+    """
+    if isinstance(extensions, str):
+        extensions = [extensions]
+
+    found_files = []
+    for root, _, files in os.walk(directory):
+        found_files = [os.path.join(root, file) for file in files if any(file.endswith(ext) for ext in extensions)]
+
+    found_files = sorted(found_files, key=lambda x: int(os.path.basename(x).split('_')[0]))
+    return found_files
+
+
+def process_directory(directory, output_excel, ignore_flag=None):
     all_entries = []
-    for root, _, files in os.walk(file_path):
-        md_files = [f for f in files if f.endswith('.md')]
-        sorted_files = sorted(md_files, key=lambda x: int(x.split('_')[0]))
-        for file in sorted_files:
-            if file.endswith('.md'):
-                full_path = os.path.join(root, file)
-                entries = parse_md_file(full_path, ignore_flag)
-                all_entries.extend(entries)
+    found_files = find_files_by_extension(directory, r".md")
+    for file in found_files:
+        entries = parse_md_file(file, ignore_flag)
+        all_entries.extend(entries)
 
     # 创建DataFrame并保存Excel
     df = pd.DataFrame(all_entries, columns=['需求名称', '所属模块', '需求说明', '测试点设计要求'])
@@ -121,11 +134,11 @@ def process_directory(file_path, output_excel, ignore_flag=None):
 
 
 if __name__ == "__main__":
-    file_path = Path(r"D:\hugh\code\sailwind3.0_docs\docs\logic\guide")
+    directory = Path(r"D:\hugh\code\sailwind3.0_docs\docs\logic\guide")
     output_file = Path(__file__).parent / "product_demand" / "logic_guide.xlsx"
 
     ignore_flag = ["🚧", "ಠ_ಠ", "❌"]
 
-    process_directory(file_path, output_file, ignore_flag)
+    process_directory(directory, output_file, ignore_flag)
 
     print(f"处理完成，结果已保存至：{output_file}")
