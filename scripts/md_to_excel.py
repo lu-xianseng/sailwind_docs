@@ -11,28 +11,48 @@ from pathlib import Path
 import pandas as pd
 
 
-def parse_md_file(file_path, ignore_flag=None):
+def get_md_headings(file_path):
+    """
+    提取 Markdown 文件中的所有标题信息，包括父级标题
+    :param file_path: Markdown文件路径
+    :return: 包含标题信息的列表，每个标题包含level、title、start_line、end_line和parent_title
+    """
     with open(file_path, 'r', encoding='utf-8') as f:
         lines = f.readlines()
 
-    # 提取所有标题信息
     headings = []
+    parent_stack = []  # 用于跟踪各级标题的父级关系
+
     for line_num, line in enumerate(lines):
         match = re.match(r'^(#+)\s*(.*)$', line.strip())
         if match:
             level = len(match.group(1))
-            title = match.group(2).strip()
-            title = re.sub(r" \\\{.+\}","", title)
+            title = re.sub(r" \\\{.+", "", match.group(2).strip())  # 清理标题中的特殊标记
 
-            # 将一级标题中的"🚧"替换为""
-            # if level == 1:
-            #     title = title.replace("🚧", "") if "🚧" in title else title
+            # 确定父级标题
+            parent_title = ""
+            if parent_stack:
+                # 找到当前级别的前一个同级或更高级标题作为父级
+                for i in range(len(parent_stack) - 1, -1, -1):
+                    if parent_stack[i]['level'] < level:
+                        parent_title = parent_stack[i]['title']
+                        break
 
             headings.append({
                 'level': level,
                 'title': title,
                 'start_line': line_num,
-                'end_line': None
+                'end_line': None,
+                'parent_title': parent_title
+            })
+
+            # 更新父级栈
+            # 移除同级或更低级的标题
+            while parent_stack and parent_stack[-1]['level'] >= level:
+                parent_stack.pop()
+            parent_stack.append({
+                'level': level,
+                'title': title
             })
 
     # 确定每个标题的结束行
@@ -41,6 +61,13 @@ def parse_md_file(file_path, ignore_flag=None):
             headings[i]['end_line'] = headings[i + 1]['start_line'] - 1
         else:
             headings[i]['end_line'] = len(lines) - 1
+
+    return headings
+
+
+def parse_md_file(file_path, ignore_flag=None):
+    # 提取 Markdown 文件中的所有标题信息
+    headings = get_md_headings(file_path)
 
     # 判断是否为末级标题
     # 遍历所有标题，检查后续是否存在更高级或同级标题
@@ -71,9 +98,9 @@ def parse_md_file(file_path, ignore_flag=None):
         sorted_levels = sorted(current_levels.keys())
         path = '-'.join([current_levels[l] for l in sorted_levels])
         heading['path'] = re.sub(r'[ >/\\\\]+', '_', path).strip('_')
-        # heading['path'] = path.replace(" ", "_").replace(">", "_").replace("/", "_").replace("\\", "_").replace("__",
-        #                                                                                                         "_")
 
+    with open(file_path, 'r', encoding='utf-8') as f:
+        lines = f.readlines()
 
     # 收集末级标题的内容
     entries = []
