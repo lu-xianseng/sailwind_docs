@@ -478,14 +478,6 @@ HKEY\_CURRENT\_USER\\Software\\Mentor Graphics<version>\\SailWind Layout\\Status
 
 ### CIS 🚧 \{#3-6}
 
-:::danger{title=问题说明}
-
-输出窗口没有 CIS Tab
-
-待产品确认
-
-:::
-
 CIS 选项卡会显示来自 CIS 的元件信息（如图所示）。您可以：
 
 1. 指定要使用的数据源的新配置并选择在 CIS 选项卡中显示的内容。
