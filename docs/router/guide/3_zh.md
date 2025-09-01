@@ -57,7 +57,7 @@ SailWind Router 包含以下高级功能：
 
     > [!tip] 即使您计划手动布线设计，也可以使用自动布线器对设计进行"首次尝试"，以确定最紧密的通道和最有问题的区域。
 
-  - 对于选择性自动布线，选择一个元件或网络，然后**右键**单击并选择其中一个手动布线选项（布线、扇出、优化、调谐或居中）。为获得最佳效果，完成后保护布线以确保在后续任何批量自动布线期间保持不变。
+  - 对于选择性自动布线，选择一个元件或网络，然后**右键**点击并选择其中一个手动布线选项（布线、扇出、优化、调谐或居中）。为获得最佳效果，完成后保护布线以确保在后续任何批量自动布线期间保持不变。
 
 ## 在 SailWind Router 中打开设计的先决条件 ಠ_ಠ \{#2}
 
@@ -136,17 +136,17 @@ SailWind Router 包含以下高级功能：
 
 🏃‍♂️‍**步骤**
 
-1. 在 SailWind Layout 中，单击**工具 > 选项**菜单项。
+1. 在 SailWind Layout 中，点击**工具 > 选项**。
 
-2. 在[选项对话框](/logic/guide/24_zh.md#78)中，单击**全局**类别，**同步**子类别。
+2. 在[选项对话框](/logic/guide/24_zh.md#78)中，点击**全局**类别，**同步**子类别。
 
 3. 在 Layout 和Router 同步区域，选中启用复选框。
 
    切换到 SailWind Router 会自动将 SailWind Layout 中的设计置于 DRC 关闭模式（SailWind Router 中的 DRC 模式不受影响）；因此，您可能希望选中"返回时恢复 DRC 模式"复选框。此设置会在您切换回 SailWind Layout 时恢复切换到 SailWind Router 之前存在的 DRC 模式。根据设计的大小，恢复 DRC 模式可能需要几分钟。
 
-4. 要在切换到同步模式时收到设计被置于 DRC 关闭模式的警告，请单击"警告切换到 DRC 关闭模式"（如果您在步骤 3 中选中"返回时恢复 DRC 模式"复选框，则此复选框不可用）。
+4. 要在切换到同步模式时收到设计被置于 DRC 关闭模式的警告，请点击"警告切换到 DRC 关闭模式"（如果您在步骤 3 中选中"返回时恢复 DRC 模式"复选框，则此复选框不可用）。
 
-5. 单击**确定**。
+5. 点击**确定**。
 
 6. 重新启动 SailWind Layout。
 
@@ -160,9 +160,9 @@ SailWind Router 包含以下高级功能：
 
 2. 使用以下方法之一切换到 SailWind Router：
 
-	- 在标准工具栏上，单击**布线**按钮。
+	- 在标准工具栏上，点击**布线**按钮。
 
-	- 单击**工具 > SailWind Router**菜单项，在 [SailWind Router 链接对话框](/logic/guide/24_zh.md#83)中选择一个操作并单击**继续**。
+	- 点击**工具 > SailWind Router**，在 [SailWind Router 链接对话框](/logic/guide/24_zh.md#83)中选择一个操作并点击**继续**。
 
 👀‍**结果**
 
@@ -175,12 +175,12 @@ SailWind Router 打开并加载您的设计。
 
 🏃‍♂️‍**步骤**
 
-1. 在主工具栏上，单击**Layout**按钮。
+1. 在主工具栏上，点击**Layout**按钮。
 
 2. SailWind Layout 打开并加载您的设计。
 
 
-> [!tip] 要切换回 SailWind Router，请单击 SailWind Layout 主工具栏上的**布线**按钮。
+> [!tip] 要切换回 SailWind Router，请点击 SailWind Layout 主工具栏上的**布线**按钮。
 
 ### 同步模式中不支持的操作 ಠ_ಠ \{#3-4}
 
@@ -237,9 +237,9 @@ SailWind Router 打开并加载您的设计。
 
 要重新同步两个程序：
 
-- 如果 SailWind Router 为"活动"且 SailWind Layout 为"不同步"，请在 SailWind Router 的主工具栏上单击**Layout**按钮。
+- 如果 SailWind Router 为"活动"且 SailWind Layout 为"不同步"，请在 SailWind Router 的主工具栏上点击**Layout**按钮。
 
-- 如果 SailWind Layout 为"活动"且 SailWind Router 为"不同步"，请在 SailWind Layout 的主工具栏上单击**布线**按钮。
+- 如果 SailWind Layout 为"活动"且 SailWind Router 为"不同步"，请在 SailWind Layout 的主工具栏上点击**布线**按钮。
 
 
 > [!warning] 要在 SailWind Layout 和SailWind Router 之间切换时关闭许可证警告的显示，请在*SailWindRouter.ini*文件中键入以下文本（之后不需要重新启动 SailWind Router）：
