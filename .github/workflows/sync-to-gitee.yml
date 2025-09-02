@@ -2,11 +2,11 @@ name: Sync to Gitee
 
 on:
   push:
-    branches: [ main, gh-pages ]
-#  workflow_run:
-#    workflows: [ "Deploy" ]
-#    types:
-#      - completed
+    branches: [ main ]
+  workflow_run:
+    workflows: [ "Deploy" ]
+    types:
+      - completed
 
 jobs:
   sync:
