@@ -70,10 +70,10 @@
 | Page Down                   | 在鼠标位置缩小                                                           |
 | Keypad (3)                  |                                                                                   |
 | Ctrl+Wheel Back             |                                                                                   |
-| Down Arrow                  | 将鼠标向下移动一个设计网格                                             |
-| Up Arrow                    | 将鼠标向上移动一个设计网格                                               |
-| Left Arrow                  | 将鼠标向左移动一个设计网格                                             |
-| Right Arrow                 | 将鼠标向右移动一个设计网格                                            |
+| Down Arrow                  | 将鼠标向下移动一个设计格栅                                             |
+| Up Arrow                    | 将鼠标向上移动一个设计格栅                                               |
+| Left Arrow                  | 将鼠标向左移动一个设计格栅                                             |
+| Right Arrow                 | 将鼠标向右移动一个设计格栅                                            |
 | Middle-Click                | 平移视图使鼠标位置居中                                             |
 | Keypad (0)                  | 位置                                                                          |
 | Insert                      |                                                                                   |
@@ -115,7 +115,7 @@
 | Double-Click      | 结束蛇形导线式布线（交互式布线）                                                                |
 | Shift+N           | 切换动态重连开/关                                                                       |
 | Shift+D           | 切换"动态布线"模式开/关（交互式布线）                                       |
-| Alt+G             | 切换捕捉到布线网格开/关                                                                    |
+| Alt+G             | 切换捕捉到布线格栅开/关                                                                    |
 | Shift+G           | 切换保护带开/关                                                                             |
 | Shift+R           | 切换规则（元件/常规）                                                                      |
 | Tab               | 切换导线（单独布线模式）                                                                  |
