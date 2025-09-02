@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content="Rspress v1.45.3">
     <title data-rh="true">第 19 章 手动布线 - SailWind</title><meta data-rh="true" name="description" content="SailWind"/>
-  <script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script><link rel="icon" href="/sailwind_docs/favicon.ico"><script defer src="/sailwind_docs/static/js/styles.2d9a7716.js"></script><script defer src="/sailwind_docs/static/js/lib-react.36f9b428.js"></script><script defer src="/sailwind_docs/static/js/lib-router.971f4280.js"></script><script defer src="/sailwind_docs/static/js/8552.ee284d24.js"></script><script defer src="/sailwind_docs/static/js/index.dd0ceab8.js"></script><link href="/sailwind_docs/static/css/styles.3f735cf8.css" rel="stylesheet"></head>
+  <script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script><link rel="icon" href="/sailwind_docs/favicon.ico"><script defer src="/sailwind_docs/static/js/styles.2d9a7716.js"></script><script defer src="/sailwind_docs/static/js/lib-react.36f9b428.js"></script><script defer src="/sailwind_docs/static/js/lib-router.971f4280.js"></script><script defer src="/sailwind_docs/static/js/8552.c5c0315f.js"></script><script defer src="/sailwind_docs/static/js/index.35dcf574.js"></script><link href="/sailwind_docs/static/css/styles.3f735cf8.css" rel="stylesheet"></head>
 
   <body >
     <div id="root"><div class="navContainer_d18b1 rspress-nav px-6  sticky_ddfa7"><div class="container_e4235 flex justify-between items-center h-full"><div class="navBarTitle_c5f07"><a href="/sailwind_docs/index.html" class="link_a7cea flex items-center w-full h-full text-base font-semibold transition-opacity duration-300 hover:opacity-60"><div class="mr-1 min-w-8"><img src="/sailwind_docs/logo.png" alt="logo" id="logo" class="rspress-logo"/></div><span>SailWind</span></a></div><div class="flex flex-1 justify-end items-center"><div class="rightNav_a2fea"><div class="flex sm:flex-1 items-center sm:pl-4 sm:pr-2"><div class="rspress-nav-search-button navSearchButton_df1fb"><button><svg width="18" height="18" viewBox="0 0 32 32"><path fill="var(--rp-c-gray)" d="m29 27.586-7.552-7.552a11.018 11.018 0 1 0-1.414 1.414L27.586 29ZM4 13a9 9 0 1 1 9 9 9.01 9.01 0 0 1-9-9"></path></svg><p class="searchWord_af2c1">搜索</p><div style="opacity:0"><span></span><span>K</span></div></button></div><div class="mobileNavSearchButton_d85a9"><svg width="24" height="24" viewBox="0 0 32 32"><path fill="var(--rp-c-gray)" d="m29 27.586-7.552-7.552a11.018 11.018 0 1 0-1.414 1.414L27.586 29ZM4 13a9 9 0 1 1 9 9 9.01 9.01 0 0 1-9-9"></path></svg></div></div><div class="rspress-nav-menu menu h-14"><a href="/sailwind_docs/logic/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center">原理图 (Logic)</div></a><a href="/sailwind_docs/layout/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center">物理版图 (Layout)</div></a><a href="/sailwind_docs/router/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154 activeItem_a28b5 text-sm font-medium mx-1.5 px-3 py-2 flex items-center">自动布线 (Router)</div></a><a href="/sailwind_docs/lpcreator/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center">焊盘图形 (LPW)</div></a><a href="/sailwind_docs/about.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center">关于</div></a></div><div class="flex-center flex-row"><div class="mx-2"><div class="md:mr-2 rspress-nav-appearance"><div class="p-1 border border-solid border-gray-300 text-gray-400  cursor-pointer rounded-md hover:border-gray-600 hover:text-gray-600 dark:hover:border-gray-200 dark:hover:text-gray-200 transition-all duration-300 w-7 h-7"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" class="dark:hidden" width="18" height="18" fill="currentColor"><path d="M12 18c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6m0-10c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4M12 4c-.6 0-1-.4-1-1V1c0-.6.4-1 1-1s1 .4 1 1v2c0 .6-.4 1-1 1M12 24c-.6 0-1-.4-1-1v-2c0-.6.4-1 1-1s1 .4 1 1v2c0 .6-.4 1-1 1M5.6 6.6c-.3 0-.5-.1-.7-.3L3.5 4.9c-.4-.4-.4-1 0-1.4s1-.4 1.4 0l1.4 1.4c.4.4.4 1 0 1.4-.1.2-.4.3-.7.3M19.8 20.8c-.3 0-.5-.1-.7-.3l-1.4-1.4c-.4-.4-.4-1 0-1.4s1-.4 1.4 0l1.4 1.4c.4.4.4 1 0 1.4-.2.2-.5.3-.7.3M3 13H1c-.6 0-1-.4-1-1s.4-1 1-1h2c.6 0 1 .4 1 1s-.4 1-1 1M23 13h-2c-.6 0-1-.4-1-1s.4-1 1-1h2c.6 0 1 .4 1 1s-.4 1-1 1M4.2 20.8c-.3 0-.5-.1-.7-.3-.4-.4-.4-1 0-1.4l1.4-1.4c.4-.4 1-.4 1.4 0s.4 1 0 1.4l-1.4 1.4c-.2.2-.4.3-.7.3M18.4 6.6c-.3 0-.5-.1-.7-.3-.4-.4-.4-1 0-1.4l1.4-1.4c.4-.4 1-.4 1.4 0s.4 1 0 1.4l-1.4 1.4c-.2.2-.5.3-.7.3"></path></svg><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" class="hidden dark:block" width="18" height="18" fill="currentColor"><path d="M12.1 22h-.9c-5.5-.5-9.5-5.4-9-10.9.4-4.8 4.2-8.6 9-9 .4 0 .8.2 1 .5s.2.8-.1 1.1c-2 2.7-1.4 6.4 1.3 8.4 2.1 1.6 5 1.6 7.1 0 .3-.2.7-.3 1.1-.1.3.2.5.6.5 1-.2 2.7-1.5 5.1-3.6 6.8-1.9 1.4-4.1 2.2-6.4 2.2M9.3 4.4c-2.9 1-5 3.6-5.2 6.8-.4 4.4 2.8 8.3 7.2 8.7 2.1.2 4.2-.4 5.8-1.8 1.1-.9 1.9-2.1 2.4-3.4-2.5.9-5.3.5-7.5-1.1-2.8-2.2-3.9-5.9-2.7-9.2"></path></svg></div></div></div><div class="social-links menu-item_e90a6 flex-center relative"><div class="flex-center h-full gap-x-4 transition-colors duration-300 md:mr-2"><a href="https://github.com/mikigo/sailwind_docs/" target="_blank" rel="noopener noreferrer" class="social-links"><div class="social-links-icon_a4ad0"><div><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a></div></div></div></div><div class="mobileNavMenu_e7045"><div class="navScreen_ec30c  rspress-nav-screen" id="navScreen"><div class="container_c935d"><div class="navMenu_b887b"><div class="navMenuItem_e7978 w-full"><a href="/sailwind_docs/logic/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center">原理图 (Logic)</div></a></div><div class="navMenuItem_e7978 w-full"><a href="/sailwind_docs/layout/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center">物理版图 (Layout)</div></a></div><div class="navMenuItem_e7978 w-full"><a href="/sailwind_docs/router/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154 activeItem_a28b5 text-sm font-medium mx-1.5 px-3 py-2 flex items-center">自动布线 (Router)</div></a></div><div class="navMenuItem_e7978 w-full"><a href="/sailwind_docs/lpcreator/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center">焊盘图形 (LPW)</div></a></div><div class="navMenuItem_e7978 w-full"><a href="/sailwind_docs/about.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center">关于</div></a></div></div><div class="flex-center flex-col gap-2"><div class="mt-2 navAppearance_bf893 flex justify-center"></div><div class="social-links menu-item_e90a6 flex-center relative"><div class="flex-center h-full gap-x-4 transition-colors duration-300 md:mr-2"><a href="https://github.com/mikigo/sailwind_docs/" target="_blank" rel="noopener noreferrer" class="social-links"><div class="social-links-icon_a4ad0"><div><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a></div></div></div></div></div><button aria-label="mobile hamburger" class=" rspress-mobile-hamburger navHamburger_ac64c text-gray-500"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="currentColor"><circle cx="8" cy="16" r="2" fill="currentColor"></circle><circle cx="16" cy="16" r="2" fill="currentColor"></circle><circle cx="24" cy="16" r="2" fill="currentColor"></circle></svg></button></div></div></div></div><section><div class="docLayout_af141 pt-0"><aside class="sidebar_dd719 rspress-sidebar "><div class="navTitleMask_fb17c"><div class="navBarTitle_c5f07"><a href="/sailwind_docs/index.html" class="link_a7cea flex items-center w-full h-full text-base font-semibold transition-opacity duration-300 hover:opacity-60"><div class="mr-1 min-w-8"><img src="/sailwind_docs/logo.png" alt="logo" id="logo" class="rspress-logo"/></div><span>SailWind</span></a></div></div><div class="rspress-scrollbar sidebarContent_da296"><nav class="pb-2"><a href="/sailwind_docs/router/index.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:14px;margin-left:0;border-radius:0 var(--rp-radius) var(--rp-radius) 0;padding-left:24px;font-weight:bold"><span>章节预览</span></div></a><section class="rspress-sidebar-section mt-0.5 block" style="margin-left:0"><div class="rspress-sidebar-collapse flex justify-between items-center menuItem_ac22e" style="border-radius:0 var(--rp-radius) var(--rp-radius) 0;cursor:pointer"><h2 class="py-2 px-3 text-sm font-medium flex" style="font-size:14px;padding-left:24px;font-weight:bold"><span class="flex-center" style="font-size:14px">指南(Guide)</span></h2><div class="collapseContainer_d6e4e p-2 rounded-xl"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(0deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div class="transition-all duration-300 ease-in-out" style="overflow:hidden;max-height:0"><div class="rspress-sidebar-group transition-opacity duration-500 ease-in-out" style="opacity:0;margin-left:12px"><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/1_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 1 章 自动布线快速入门 ಠ_ಠ</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/2_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 2 章 交互式布线快速入门 ಠ_ಠ</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/3_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 3 章 设计准备</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/4_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 4 章 文件操作</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/5_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 5 章 界面元素 ಠ_ಠ</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/6_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 6 章 无模命令与快捷键</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/7_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 7 章 视图</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/8_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 8 章 撤销、重做、重复与删除</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/9_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 9 章 搜索与选择</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/10_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 10 章 电气网络</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/11_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 11 章 设置规则</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/12_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 12 章 启用设计规则检查</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/13_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 13 章 元件放置</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/14_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 14 章 虚拟管脚</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/15_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 15 章 覆铜平面与铜形状</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/16_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 16 章 布线设置</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/17_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 17 章 自动布线</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/18_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 18 章 选择性自动布线</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/19_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItemActive_de63c mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 19 章 手动布线</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/20_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 20 章 手动编辑</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/21_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 21 章 设计验证</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/22_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 22 章 报告</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/23_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 23 章 授权许可</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/24_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 24 章 SailWind Router 对话框 ಠ_ಠ</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/25_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 25 章 软件启动选项</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/26_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 26 章 自定义界面 ಠ_ಠ</span></div></a></div></div></div></section><section class="rspress-sidebar-section mt-0.5 block" style="margin-left:0"><div class="rspress-sidebar-collapse flex justify-between items-center menuItem_ac22e" style="border-radius:0 var(--rp-radius) var(--rp-radius) 0;cursor:pointer"><h2 class="py-2 px-3 text-sm font-medium flex" style="font-size:14px;padding-left:24px;font-weight:bold"><span class="flex-center" style="font-size:14px">教程(Tutorial)</span></h2><div class="collapseContainer_d6e4e p-2 rounded-xl"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(0deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div class="transition-all duration-300 ease-in-out" style="overflow:hidden;max-height:0"><div class="rspress-sidebar-group transition-opacity duration-500 ease-in-out" style="opacity:0;margin-left:12px"><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/tutorial/1_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>学习用户界面</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/tutorial/2_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>约束条件分配</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/tutorial/3_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>设计准备</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/tutorial/4_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>元件放置</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/tutorial/5_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>交互式布线创建导线</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/tutorial/6_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>使用交互式布线创建高速导线</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/tutorial/7_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>使用 SailWind Router 进行自动布线</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/tutorial/8_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>设计规则检查</span></div></a></div></div></div></section><section class="rspress-sidebar-section mt-0.5 block" style="margin-left:0"><div class="rspress-sidebar-collapse flex justify-between items-center menuItem_ac22e" style="border-radius:0 var(--rp-radius) var(--rp-radius) 0;cursor:pointer"><h2 class="py-2 px-3 text-sm font-medium flex" style="font-size:14px;padding-left:24px;font-weight:bold"><span class="flex-center" style="font-size:14px">快速参考(Quick Reference)</span></h2><div class="collapseContainer_d6e4e p-2 rounded-xl"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(0deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div class="transition-all duration-300 ease-in-out" style="overflow:hidden;max-height:0"><div class="rspress-sidebar-group transition-opacity duration-500 ease-in-out" style="opacity:0;margin-left:12px"><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/qr/modless.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>无模命令</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/qr/shortcut.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>键盘快捷键</span></div></a></div></div></div></section></nav></div></aside><div class="flex-1 relative min-w-0"><div class="rspress-sidebar-menu-container "><div class="rspress-sidebar-menu"><button type="button" class="flex-center mr-auto"><div class="text-md mr-2"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg></div><span class="text-sm">Menu</span></button><button type="button" class="flex-center ml-auto"><span class="text-sm">本页目录</span><div class="text-md mr-2" style="transform:rotate(0deg);transition:transform 0.2s ease-out;margin-top:2px"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></button><div class="rspress-local-toc-container "><ul><li><a href="#1" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">交互式布线工作流程 ಠ_ಠ</span></a></li><li><a href="#2" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">交互式布线设置</span></a></li><li><a href="#2-1" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">设置网络拓扑</span></a></li><li><a href="#2-2" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">受保护对象</span></a></li><li><a href="#2-2-1" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">在交互式布线时保护导线和过孔</span></a></li><li><a href="#2-2-2" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">保护现有对象</span></a></li><li><a href="#2-2-3" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">取消保护现有对象</span></a></li><li><a href="#2-3" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">交互式布线的显示选项</span></a></li><li><a href="#2-3-1" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">动态布线</span></a></li><li><a href="#2-3-2" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">显示过孔引导</span></a></li><li><a href="#2-3-3" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">完成点</span></a></li><li><a href="#2-3-4" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">显示障碍物周围的间距</span></a></li><li><a href="#2-3-5" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">显示受保护对象</span></a></li><li><a href="#2-3-6" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">显示飞线</span></a></li><li><a href="#2-3-7" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">高亮网络</span></a></li><li><a href="#3" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">设计规则检查与交互式布线 ಠ_ಠ</span></a></li><li><a href="#4" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">交互式布线</span></a></li><li><a href="#4-1" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">导线推挤 ಠ_ಠ</span></a></li><li><a href="#4-2" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">带长度监控的交互式布线 ಠ_ಠ</span></a></li><li><a href="#4-3" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">监控导线长度</span></a></li><li><a href="#4-4" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">创建导线</span></a></li><li><a href="#4-5" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">结束导线</span></a></li><li><a href="#4-5-1" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">完成导线连接</span></a></li><li><a href="#4-5-2" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">用过孔或测试点结束导线</span></a></li><li><a href="#4-5-3" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">结束不完整的导线</span></a></li><li><a href="#5" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">使用元件规则创建导线</span></a></li><li><a href="#6" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">使用元件规则结束导线</span></a></li><li><a href="#7" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">布线至 SMD 管脚</span></a></li><li><a href="#8" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">从 SMD 管脚布线</span></a></li><li><a href="#9" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">从受限层上的 SMD 管脚布线</span></a></li><li><a href="#10" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">跟随形状</span></a></li><li><a href="#11" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">增加导线长度</span></a></li><li><a href="#11-1" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">以默认振幅添加蛇形线</span></a></li><li><a href="#11-2" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">以自定义振幅添加蛇形线</span></a></li><li><a href="#11-3" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">向现有导线添加蛇形线</span></a></li><li><a href="#11-3-1" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">添加蛇形线以满足长度规则</span></a></li><li><a href="#11-3-2" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">在指定区域添加蛇形线</span></a></li><li><a href="#12" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">斜接 ಠ_ಠ</span></a></li><li><a href="#13" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">拐角</span></a></li><li><a href="#13-1" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">交互式布线时添加拐角</span></a></li><li><a href="#13-2" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">向现有导线添加拐角</span></a></li><li><a href="#14" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">圆弧</span></a></li><li><a href="#14-1" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">添加自由绘制圆弧</span></a></li><li><a href="#14-2" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">添加指定半径圆弧</span></a></li><li><a href="#15" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">过孔</span></a></li><li><a href="#15-1" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">过孔模式 ಠ_ಠ</span></a></li><li><a href="#15-2" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">设置过孔类型</span></a></li><li><a href="#15-3" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">保护过孔</span></a></li><li><a href="#15-4" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">在过孔栅格上添加过孔</span></a></li><li><a href="#15-5" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">使用层切换和添加过孔更改到特定层</span></a></li><li><a href="#15-6" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">交互式布线时添加过孔</span></a></li><li><a href="#15-7" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">向现有导线添加过孔</span></a></li><li><a href="#15-8" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">添加缝合过孔</span></a></li><li><a href="#16" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">布线到布铜区和飞线显示 ಠ_ಠ</span></a></li><li><a href="#17" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">差分对</span></a></li><li><a href="#17-1" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">差分对原理 ಠ_ಠ</span></a></li><li><a href="#17-2" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">创建差分对导线</span></a></li><li><a href="#17-3" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">设置过孔对模式</span></a></li><li><a href="#17-4" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">终止差分对导线</span></a></li><li><a href="#17-4-1" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">完成差分对导线连接</span></a></li><li><a href="#17-4-2" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">以过孔对或测试点对结束差分对导线</span></a></li><li><a href="#17-4-3" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">以未完成状态结束差分对导线</span></a></li><li><a href="#17-5" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">分割差分对导线</span></a></li><li><a href="#18" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">布线时更改导线属性</span></a></li></ul></div></div></div><div class="content_ff766 rspress-doc-container flex"><div class="flex-1 overflow-x-auto"><div class="rspress-doc"><!--$--><h1 id="第-19-章-手动布线" class="rspress-doc-title text-3xl mb-10 leading-10 tracking-tight title_fb7eb">第 19 章 手动布线<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#第-19-章-手动布线">#</a></h1>
@@ -19,62 +19,62 @@
 <p class="my-4 leading-7"><strong class="font-semibold">必要设置：</strong></p>
 <ul class="list-disc pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7"><a href="/sailwind_docs/index.html" class="link_a7cea  link_a9ef4 inline-link_f855c">设置设计规则，如导线共享和元件入口</a></p>
+<p class="my-4 leading-7">设置设计规则，如导线共享和元件入口</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7"><a href="#page-2-1" class="link_a7cea  link_a9ef4 inline-link_f855c">设置网络拓扑</a></p>
+<p class="my-4 leading-7"><a href="#2-1" class="link_a7cea  link_a9ef4 inline-link_f855c">设置网络拓扑</a></p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7"><a href="#page-2-0" class="link_a7cea  link_a9ef4 inline-link_f855c">设置布线选项，如动态、推挤、布线角度等</a></p>
+<p class="my-4 leading-7">设置布线选项，如动态、推挤、布线角度等</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7"><a href="#page-3-0" class="link_a7cea  link_a9ef4 inline-link_f855c">选择是否保护导线</a></p>
+<p class="my-4 leading-7">选择是否保护导线</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7"><a href="#page-5-0" class="link_a7cea  link_a9ef4 inline-link_f855c">设置显示选项用于布线</a></p>
+<p class="my-4 leading-7">设置显示选项用于布线</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7"><a href="#page-15-0" class="link_a7cea  link_a9ef4 inline-link_f855c">选择是否监控导线长度</a></p>
+<p class="my-4 leading-7">选择是否<a href="#4-3" class="link_a7cea  link_a9ef4 inline-link_f855c">监控导线长度</a></p>
 </li>
 </ul>
 <p class="my-4 leading-7"><a href="#4" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式布线</a>步骤：</p>
 <ol class="list-decimal pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7"><a href="#page-15-1" class="link_a7cea  link_a9ef4 inline-link_f855c">创建导线</a></p>
+<p class="my-4 leading-7">创建导线</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7"><a href="#page-17-0" class="link_a7cea  link_a9ef4 inline-link_f855c">结束导线</a></p>
+<p class="my-4 leading-7">结束导线</p>
 </li>
 </ol>
 <p class="my-4 leading-7">添加其他布线元素：</p>
 <ul class="list-disc pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7"><a href="#page-29-1" class="link_a7cea  link_a9ef4 inline-link_f855c">添加拐角</a></p>
+<p class="my-4 leading-7">添加拐角</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7"><a href="#page-32-0" class="link_a7cea  link_a9ef4 inline-link_f855c">添加圆弧</a></p>
+<p class="my-4 leading-7">添加圆弧</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7"><a href="#page-37-0" class="link_a7cea  link_a9ef4 inline-link_f855c">添加过孔</a></p>
+<p class="my-4 leading-7">添加过孔</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
 <p class="my-4 leading-7">添加测试点</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">增加导线<a href="#page-23-0" class="link_a7cea  link_a9ef4 inline-link_f855c">长度</a></p>
+<p class="my-4 leading-7"><a href="#11" class="link_a7cea  link_a9ef4 inline-link_f855c">增加导线长度</a></p>
 </li>
 </ul>
 <h2 id="2" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">交互式布线设置<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#2">#</a></h2>
 <p class="my-4 leading-7">阅读以下主题以了解有关设置<a href="#4" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式布线</a>的更多信息。</p>
-<p class="my-4 leading-7"><a href="#page-2-1" class="link_a7cea  link_a9ef4 inline-link_f855c">设置网络拓扑</a></p>
-<p class="my-4 leading-7"><a href="#page-3-0" class="link_a7cea  link_a9ef4 inline-link_f855c">受保护对象</a></p>
-<p class="my-4 leading-7"><a href="#page-5-0" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式布线的显示选项</a></p>
+<p class="my-4 leading-7"><a href="#2-1" class="link_a7cea  link_a9ef4 inline-link_f855c">设置网络拓扑</a></p>
+<p class="my-4 leading-7"><a href="#2-2" class="link_a7cea  link_a9ef4 inline-link_f855c">受保护对象</a></p>
+<p class="my-4 leading-7"><a href="#2-3" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式布线的显示选项</a></p>
 <h3 id="2-1" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">设置网络拓扑<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#2-1">#</a></h3>
 <p class="my-4 leading-7">您可以为网络设置不同的拓扑类型，这会影响它们在<a href="#4" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式布线</a>、自动布线或编辑导线时的布线方式。拓扑类型决定了连接网络中各管脚的顺序。</p>
 <p class="my-4 leading-7">如果未选择任何内容，将显示<strong class="font-semibold">设计特性</strong>对话框，使您能够全局设置拓扑。如果选择了网络或网络类，将显示特定属性对话框，使您能够为所选网络设置拓扑。</p>
 <p class="my-4 leading-7">🙊<strong class="font-semibold">限制</strong></p>
 <ul class="list-disc pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2"><strong class="font-semibold">拓扑</strong>选项卡不会出现在管脚、过孔、电气网络、管脚对组和<a href="/sailwind_docs/layout/guide/Dialogs/52_zh.html#22" class="link_a7cea  link_a9ef4 inline-link_f855c">管脚对属性对话框</a>中。</li>
+<li class="[&amp;:not(:first-child)]:mt-2"><strong class="font-semibold">拓扑</strong>选项卡不会出现在管脚、过孔、电气网络、管脚对组和管脚对属性对话框中。</li>
 </ul>
 <p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
 <ol class="list-decimal pl-5 my-4 leading-7">
@@ -97,20 +97,20 @@
 <h3 id="2-2" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">受保护对象<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#2-2">#</a></h3>
 <p class="my-4 leading-7">您可以在<a href="#4" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式布线</a>或导线编辑时保护对象。当您保护对象时，不能推挤、取消布线、移动、重新布线或以其他方式编辑它们。您可以保护的对象包括导线段、导线、过孔和测试点。</p>
 <p class="my-4 leading-7">SailWind Router 自动保护 SailWind Layout 中定义的复用对象和跳线。但它不保护组合。</p>
-<p class="my-4 leading-7">在<a href="#page-3-1" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式</a>布线时保护导线和过孔 <a href="#page-3-2" class="link_a7cea  link_a9ef4 inline-link_f855c">保护现有对象</a> <a href="#page-4-0" class="link_a7cea  link_a9ef4 inline-link_f855c">取消保护现有对象</a></p>
+<p class="my-4 leading-7"><a href="#2-2-1" class="link_a7cea  link_a9ef4 inline-link_f855c">在交互式布线时保护导线和过孔</a> <a href="#2-2-2" class="link_a7cea  link_a9ef4 inline-link_f855c">保护现有对象</a> <a href="#2-2-3" class="link_a7cea  link_a9ef4 inline-link_f855c">取消保护现有对象</a></p>
 <h4 id="2-2-1" class="mt-8 leading-6 text-lg title_fb7eb">在交互式布线时保护导线和过孔<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#2-2-1">#</a></h4>
 <p class="my-4 leading-7">您可以在<a href="#4" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式布线</a>期间保护导线和过孔，以防止例如意外编辑。</p>
 <p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
 <ol class="list-decimal pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">点击<strong class="font-semibold">工具 &gt; 选项</strong>；然后在<a href="/sailwind_docs/logic/guide/24_zh.html#78" class="link_a7cea  link_a9ef4 inline-link_f855c">选项对话框</a>中，点击<strong class="font-semibold">布线</strong>类别 &gt; <strong class="font-semibold">常规</strong>子类别</p>
+<p class="my-4 leading-7">点击<strong class="font-semibold">工具 &gt; 选项</strong>；然后在选项对话框中，点击<strong class="font-semibold">布线</strong>类别 &gt; <strong class="font-semibold">常规</strong>子类别</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
 <p class="my-4 leading-7">在<a href="#4" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式布线</a>之前，选中&quot;创建段时保护导线和过孔&quot;复选框</p>
 <p class="my-4 leading-7">作为替代方案，在布线导线时，<strong class="font-semibold">右键</strong>点击并选择弹出菜单中的<strong class="font-semibold">保护导线和过孔</strong>。SailWind Router 保护当前导线段回到最后一个拐角以及任何后续导线。&quot;保护导线和过孔&quot;命令仅影响当前操作；它不会更改<strong class="font-semibold">布线</strong>类别 &gt; <strong class="font-semibold">常规</strong>子类别中复选框的状态。</p>
 <p class="my-4 leading-7">当您在<a href="#4" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式布线</a>期间启用保护时，SailWind Router 会在您创建对象时保护它们。如果您不是动态布线，SailWind Router 会在您点击添加拐角时保护导线段。如果在布线导线时插入过孔或测试点，软件也会保护它们。</p>
 <div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
-<p class="my-4 leading-7"> 选中&quot;区分受保护的导线和过孔&quot;框（<a href="/sailwind_docs/logic/guide/24_zh.html#78" class="link_a7cea  link_a9ef4 inline-link_f855c">选项对话框</a> &gt; 全局类别 &gt; 常规子类别）以不同方式显示受保护的导线、网络、过孔和测试点与未受保护的对象。例如，这可以将受保护的对象显示为边框而不是填充的导线。导线的显示在完成布线后更改，而不是在添加导线时更改。</p>
+<p class="my-4 leading-7"> 选中&quot;区分受保护的导线和过孔&quot;框（选项对话框 &gt; 全局类别 &gt; 常规子类别）以不同方式显示受保护的导线、网络、过孔和测试点与未受保护的对象。例如，这可以将受保护的对象显示为边框而不是填充的导线。导线的显示在完成布线后更改，而不是在添加导线时更改。</p>
 </div></div>
 </li>
 </ol>
@@ -142,7 +142,7 @@
 </ol>
 <h3 id="2-3" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">交互式布线的显示选项<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#2-3">#</a></h3>
 <p class="my-4 leading-7">几个功能控制导线和障碍物在 SailWind Router 中的显示方式。</p>
-<p class="my-4 leading-7"><a href="#page-5-1" class="link_a7cea  link_a9ef4 inline-link_f855c">动态布线</a> <a href="#page-5-2" class="link_a7cea  link_a9ef4 inline-link_f855c">显示</a>过孔引导 <a href="#page-6-0" class="link_a7cea  link_a9ef4 inline-link_f855c">完成点</a> <a href="#page-6-1" class="link_a7cea  link_a9ef4 inline-link_f855c">显示障碍物周围的间距</a> <a href="#page-6-2" class="link_a7cea  link_a9ef4 inline-link_f855c">显示受保护对象</a> <a href="#page-6-3" class="link_a7cea  link_a9ef4 inline-link_f855c">显示飞线</a> <a href="#page-7-0" class="link_a7cea  link_a9ef4 inline-link_f855c">高亮网络</a></p>
+<p class="my-4 leading-7">动态布线 <a href="#2-3-2" class="link_a7cea  link_a9ef4 inline-link_f855c">显示过孔引导</a> 完成点 <a href="#2-3-4" class="link_a7cea  link_a9ef4 inline-link_f855c">显示障碍物周围的间距</a> <a href="#2-3-5" class="link_a7cea  link_a9ef4 inline-link_f855c">显示受保护对象</a> 显示飞线 高亮网络</p>
 <h4 id="2-3-1" class="mt-8 leading-6 text-lg title_fb7eb">动态布线<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#2-3-1">#</a></h4>
 <p class="my-4 leading-7">当您布线时，导线的飞线部分会动态布线到网络中离鼠标最近的端点。您可以切换此功能的开关状态。</p>
 <p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
@@ -181,7 +181,7 @@
 <p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
 <ol class="list-decimal pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">点击<strong class="font-semibold">工具 &gt; 选项</strong>；然后在<a href="/sailwind_docs/logic/guide/24_zh.html#78" class="link_a7cea  link_a9ef4 inline-link_f855c">选项对话框</a>中，点击<strong class="font-semibold">全局</strong>类别 &gt; <strong class="font-semibold">常规</strong>子类别</p>
+<p class="my-4 leading-7">点击<strong class="font-semibold">工具 &gt; 选项</strong>；然后在选项对话框中，点击<strong class="font-semibold">全局</strong>类别 &gt; <strong class="font-semibold">常规</strong>子类别</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
 <p class="my-4 leading-7">选中&quot;显示对象保护带&quot;复选框</p>
@@ -192,7 +192,7 @@
 <p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
 <ol class="list-decimal pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">点击<strong class="font-semibold">工具 &gt; 选项</strong>；然后在<a href="/sailwind_docs/logic/guide/24_zh.html#78" class="link_a7cea  link_a9ef4 inline-link_f855c">选项对话框</a>中，点击<strong class="font-semibold">全局</strong>类别 &gt; <strong class="font-semibold">常规</strong>子类别</p>
+<p class="my-4 leading-7">点击<strong class="font-semibold">工具 &gt; 选项</strong>；然后在选项对话框中，点击<strong class="font-semibold">全局</strong>类别 &gt; <strong class="font-semibold">常规</strong>子类别</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
 <p class="my-4 leading-7">选中&quot;区分受保护的导线和过孔&quot;复选框。或者，使用&quot;I&quot;快捷键</p>
@@ -205,7 +205,7 @@
 <p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
 <ol class="list-decimal pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">点击<strong class="font-semibold">工具 &gt; 选项</strong>；然后在<a href="/sailwind_docs/logic/guide/24_zh.html#78" class="link_a7cea  link_a9ef4 inline-link_f855c">选项对话框</a>中，点击<strong class="font-semibold">全局</strong>类别 &gt; <strong class="font-semibold">常规</strong>子类别</p>
+<p class="my-4 leading-7">点击<strong class="font-semibold">工具 &gt; 选项</strong>；然后在选项对话框中，点击<strong class="font-semibold">全局</strong>类别 &gt; <strong class="font-semibold">常规</strong>子类别</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
 <p class="my-4 leading-7">选中&quot;以推荐宽度显示飞线&quot;复选框。否则飞线显示为细连接线</p>
@@ -220,10 +220,10 @@
 <p class="my-4 leading-7">您可以使用<strong class="font-semibold">U</strong>快捷键打开和关闭飞线可见性。此快捷键不会影响选定或高亮飞线的可见性</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">您可以通过将&quot;连接&quot;颜色与&quot;背景&quot;颜色匹配来隐藏飞线，使用<a href="/sailwind_docs/logic/guide/24_zh.html#78" class="link_a7cea  link_a9ef4 inline-link_f855c">选项对话框</a>的颜色页面</p>
+<p class="my-4 leading-7">您可以通过将&quot;连接&quot;颜色与&quot;背景&quot;颜色匹配来隐藏飞线，使用选项对话框的颜色页面</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">您可以使用<a href="/sailwind_docs/layout/guide/Dialogs/55_zh.html#23" class="link_a7cea  link_a9ef4 inline-link_f855c">查看网络对话框</a>设置飞线可见性，可以全局设置整个设计，也可以单独设置选定的飞线</p>
+<p class="my-4 leading-7">您可以使用<a href="/sailwind_docs/router/guide/24_zh.html#83" class="link_a7cea  link_a9ef4 inline-link_f855c">查看网络对话框</a>设置飞线可见性，可以全局设置整个设计，也可以单独设置选定的飞线</p>
 </li>
 </ul>
 <h4 id="2-3-7" class="mt-8 leading-6 text-lg title_fb7eb">高亮网络<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#2-3-7">#</a></h4>
@@ -231,7 +231,7 @@
 <p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
 <ol class="list-decimal pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">点击<strong class="font-semibold">工具 &gt; 选项</strong>；然后在<a href="/sailwind_docs/logic/guide/24_zh.html#78" class="link_a7cea  link_a9ef4 inline-link_f855c">选项对话框</a>中，点击全局类别 &gt; 常规子类别</p>
+<p class="my-4 leading-7">点击<strong class="font-semibold">工具 &gt; 选项</strong>；然后在选项对话框中，点击全局类别 &gt; 常规子类别</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
 <p class="my-4 leading-7">在高亮对象显示区域，在&quot;通过以下方式区分高亮对象&quot;列表中，选择&quot;暗显其他对象颜色&quot;。您也可以使用 H快捷键更改此设置。更多信息，请参阅视图控制</p>
@@ -243,11 +243,11 @@
 <p class="my-4 leading-7">选择要高亮的网络</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">点击<strong class="font-semibold">编辑 &gt; 高亮</strong>。您也可以在<a href="/sailwind_docs/layout/guide/Dialogs/55_zh.html#23" class="link_a7cea  link_a9ef4 inline-link_f855c">查看网络对话框</a>中使用高亮列。您还可以使用<strong class="font-semibold">H</strong>快捷键与网络名称一起打开和关闭网络的高亮</p>
+<p class="my-4 leading-7">点击<strong class="font-semibold">编辑 &gt; 高亮</strong>。您也可以在<a href="/sailwind_docs/router/guide/24_zh.html#83" class="link_a7cea  link_a9ef4 inline-link_f855c">查看网络对话框</a>中使用高亮列。您还可以使用<strong class="font-semibold">H</strong>快捷键与网络名称一起打开和关闭网络的高亮</p>
 </li>
 </ol>
 <h2 id="3" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">设计规则检查与交互式布线 ಠ_ಠ<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#3">#</a></h2>
-<p class="my-4 leading-7">打开<a href="/sailwind_docs/layout/guide/19_zh.html#1-6" class="link_a7cea  link_a9ef4 inline-link_f855c">设计规则检查</a>并将其设置为&quot;防止&quot;，以避免在<a href="#4" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式布线</a>、布线编辑和放置编辑操作期间违反设计规则。</p>
+<p class="my-4 leading-7">打开设计规则检查并将其设置为&quot;防止&quot;，以避免在<a href="#4" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式布线</a>、布线编辑和放置编辑操作期间违反设计规则。</p>
 <p class="my-4 leading-7">当您启用间距检查并将其设置为&quot;防止&quot;时，通常不能在移动鼠标时创建违规，因为您不能以违反设计规则的方式创建或编辑布线对象。例如，如果您尝试在两个管脚之间布线导线，并且导线没有足够的间距，导线会在到达管脚的间距边界之前停止。在管脚附近点击会在遇到障碍物之前的最后一个有效点添加拐角。因为导线没有违反间距边界，所以不会发生违规。但是，在<a href="#4" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式布线</a>时放置过孔可能会创建违规。如果放置过孔创建了违规，操作会取消而不放置过孔。</p>
 <p class="my-4 leading-7">SailWind Router 还可以防止您在一个属性对话框或<a href="/sailwind_docs/router/guide/5_zh.html#4" class="link_a7cea  link_a9ef4 inline-link_f855c">电子表格窗口</a>中编辑对象属性时可能无意中创建的违规。例如，如果您选择导线段并将其宽度更改为由于间距违规而不适合的值，SailWind Router 会阻止更改。</p>
 <p class="my-4 leading-7"><strong class="font-semibold">导线共享规则</strong></p>
@@ -255,26 +255,26 @@
 <p class="my-4 leading-7">您可以共享安装在外部层（布线受限）上的 SMD 管脚，共享一个否则无法共享的管脚。为了在受限层上提供对管脚的访问，创建一个短导线以过孔结束的扇出。将 SMD 管脚连接到过孔的导线成为子网。子网在过孔处连接到网络的其他部分，而不与网络的任何其他部分共享段。这种扇出称为<em>复合扇出</em>。</p>
 <p class="my-4 leading-7"><img src="/sailwind_docs/router/guide/19/_page_8_Figure_10.jpeg" alt=""/></p>
 <p class="my-4 leading-7"><strong class="font-semibold">导线宽度和元件规则</strong></p>
-<p class="my-4 leading-7">SailWind Router 在从管脚或过孔开始时使用推荐的导线宽度。当从导线段、导线拐角或端点布线时，软件使用所选导线的当前宽度。当此大小不能使用时（例如由于间距），SailWind Router 改用推荐的导线宽度。如果推荐的导线宽度仍然太大，SailWind Router 尝试使用焊盘宽度，最后是最小导线宽度。这仅在您选中<a href="/sailwind_docs/logic/guide/24_zh.html#78" class="link_a7cea  link_a9ef4 inline-link_f855c">选项对话框</a><strong class="font-semibold">布线</strong>选项卡上的&quot;允许在焊盘处导线缩颈&quot;复选框时发生。</p>
+<p class="my-4 leading-7">SailWind Router 在从管脚或过孔开始时使用推荐的导线宽度。当从导线段、导线拐角或端点布线时，软件使用所选导线的当前宽度。当此大小不能使用时（例如由于间距），SailWind Router 改用推荐的导线宽度。如果推荐的导线宽度仍然太大，SailWind Router 尝试使用焊盘宽度，最后是最小导线宽度。这仅在您选中选项对话框<strong class="font-semibold">布线</strong>选项卡上的&quot;允许在焊盘处导线缩颈&quot;复选框时发生。</p>
 <p class="my-4 leading-7">SailWind Router 在布线时也使用元件规则。元件规则之一指定每个元件的导线宽度。当同时定义了元件规则和导线宽度规则时，软件使用元件规则集中的宽度规则。</p>
 <p class="my-4 leading-7">当您退出具有唯一导线宽度规则的元件管脚时，将应用元件宽度规则。</p>
-<p class="my-4 leading-7">在设计属性、网络属性、管脚对属性或<a href="/sailwind_docs/layout/guide/Dialogs/47_zh.html#31" class="link_a7cea  link_a9ef4 inline-link_f855c">元件属性对话框</a>的<strong class="font-semibold">布线</strong>选项卡上设置最大、推荐和最小导线宽度。</p>
+<p class="my-4 leading-7">在设计属性、网络属性、管脚对属性或元件属性对话框的<strong class="font-semibold">布线</strong>选项卡上设置最大、推荐和最小导线宽度。</p>
 <p class="my-4 leading-7"><strong class="font-semibold">同网络规则和拐角</strong></p>
 <p class="my-4 leading-7">同网络拐角规则决定了在布线导线时，您可以将第一个拐角放置在离焊盘边缘多远的地方。这些规则也代表了同一网络中导线之间的最小距离。除非启用软规则，否则不能在离元件管脚、过孔焊盘或铜边界边缘太近的地方添加拐角。</p>
-<p class="my-4 leading-7">在<strong class="font-semibold">设计特性</strong>对话框的<strong class="font-semibold">同网络</strong>选项卡上设置同网络规则。使用设计属性或<a href="/sailwind_docs/layout/guide/Dialogs/47_zh.html#31" class="link_a7cea  link_a9ef4 inline-link_f855c">元件属性对话框</a>的<strong class="font-semibold">焊盘入口</strong>选项卡中的&quot;必要时忽略第一个拐角规则以完成导线&quot;复选框设置第一个拐角规则是硬规则还是软规则。</p>
+<p class="my-4 leading-7">在<strong class="font-semibold">设计特性</strong>对话框的<strong class="font-semibold">同网络</strong>选项卡上设置同网络规则。使用设计属性或元件属性对话框的<strong class="font-semibold">焊盘入口</strong>选项卡中的&quot;必要时忽略第一个拐角规则以完成导线&quot;复选框设置第一个拐角规则是硬规则还是软规则。</p>
 <p class="my-4 leading-7"><strong class="font-semibold">焊盘入口规则和动态<a href="#4" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式布线</a></strong></p>
 <p class="my-4 leading-7">当使用动态<a href="#4" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式布线</a>时，任何从焊盘或布铜区退出的导线都会遵守焊盘入口规则。如果清除&quot;动态布线&quot;复选框，导线不会自动保持焊盘入口规则。</p>
 <p class="my-4 leading-7">焊盘入口规则定义了导线如何进入和退出元件焊盘，并管理焊盘和导线连接处的导线模式质量。SailWind Router 为所有布线角度和焊盘方向保持焊盘入口规则。</p>
 <p class="my-4 leading-7">在选定元件的属性对话框的<strong class="font-semibold">焊盘入口</strong>选项卡上设置焊盘入口规则。</p>
 <p class="my-4 leading-7"><strong class="font-semibold">拓扑规则</strong></p>
 <p class="my-4 leading-7">当布线具有保护拓扑类型的网络时，SailWind Router 禁用动态布线功能以保持网络顺序。您只能按照管脚对定义的顺序连接网络；但是，您可以在分支的任何点连接。例如，您可以连接到连接到目标连接管脚的任何导线或过孔。如果您正在布线高速网络，您可以点击重新连接到最终目的地。</p>
-<p class="my-4 leading-7">更多信息，请参阅设置网络<a href="#page-2-1" class="link_a7cea  link_a9ef4 inline-link_f855c">拓扑</a>。</p>
+<p class="my-4 leading-7">更多信息，请参阅<a href="#2-1" class="link_a7cea  link_a9ef4 inline-link_f855c">设置网络拓扑</a>。</p>
 <p class="my-4 leading-7"><strong class="font-semibold">编辑导线和同网络间距规则</strong></p>
 <p class="my-4 leading-7">同网络规则在您完成编辑操作后验证。对于同网络焊盘到拐角规则，仅保持导线退出焊盘后的第一个拐角。不保持同网络导线到拐角规则。</p>
 <h2 id="4" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">交互式布线<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#4">#</a></h2>
 <p class="my-4 leading-7"><a href="#4" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式布线</a>功能允许您手动布线，可以通过点击并移动鼠标绘制导线路径，或自动跟随鼠标绘制的路径。</p>
-<p class="my-4 leading-7">有关在<a href="#4" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式布线</a>中使用设计规则的信息，请参阅<a href="#page-8-0" class="link_a7cea  link_a9ef4 inline-link_f855c">设计规则检查与交互式</a> <a href="#page-8-0" class="link_a7cea  link_a9ef4 inline-link_f855c">布线</a>。</p>
-<p class="my-4 leading-7">导线 <a href="#page-10-1" class="link_a7cea  link_a9ef4 inline-link_f855c">推挤</a> <a href="#page-12-0" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式</a> 带长度监控的布线 <a href="#page-15-0" class="link_a7cea  link_a9ef4 inline-link_f855c">监控</a> 导线长度 <a href="#page-15-1" class="link_a7cea  link_a9ef4 inline-link_f855c">创建</a> 导线 <a href="#page-17-0" class="link_a7cea  link_a9ef4 inline-link_f855c">结束</a> 导线</p>
+<p class="my-4 leading-7">有关在<a href="#4" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式布线</a>中使用设计规则的信息，请参阅设计规则检查与交互式 布线。</p>
+<p class="my-4 leading-7">导线 推挤 交互式 带长度监控的布线 监控 导线长度 创建 导线 结束 导线</p>
 <h3 id="4-1" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">导线推挤 ಠ_ಠ<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#4-1">#</a></h3>
 <p class="my-4 leading-7">当您布线新导线时，推挤器会自动移动现有导线和过孔。</p>
 <p class="my-4 leading-7">推挤导线时请注意以下限制：</p>
@@ -298,7 +298,7 @@
 <p class="my-4 leading-7"><img src="/sailwind_docs/router/guide/19/_page_10_Figure_13.jpeg" alt=""/></p>
 <p class="my-4 leading-7"><strong class="font-semibold">图 66. 推挤前后的导线</strong></p>
 <p class="my-4 leading-7">如果被推挤的导线遇到不可移动的障碍物（如受保护的过孔），被推挤的导线会&quot;跳过&quot;该障碍物。SailWind 布线器在导线跳过对象时保持间距规则。</p>
-<p class="my-4 leading-7">更多信息，请参阅<a href="#page-2-0" class="link_a7cea  link_a9ef4 inline-link_f855c">&quot;交互式布线设置</a>&quot;。</p>
+<p class="my-4 leading-7">更多信息，请参阅&quot;<a href="#2" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式布线设置</a>&quot;。</p>
 <p class="my-4 leading-7"><img src="/sailwind_docs/router/guide/19/_page_11_Figure_1.jpeg" alt=""/></p>
 <p class="my-4 leading-7"><img src="/sailwind_docs/router/guide/19/_page_11_Figure_2.jpeg" alt=""/></p>
 <p class="my-4 leading-7"><strong class="font-semibold">图 68. 推挤导线为新导线腾出空间</strong></p>
@@ -342,7 +342,7 @@
 <p class="my-4 leading-7">当您<a href="#4" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式布线</a>时，已布线长度和估计总长度会显示在鼠标附近。显示已布线和估计长度的功能称为<em>导线长度监控器</em>。</p>
 <p class="my-4 leading-7"><strong class="font-semibold">图 69. 已布线长度和估计总长度</strong></p>
 <p class="my-4 leading-7"><strong class="font-semibold">带长度规则的布线导线</strong></p>
-<p class="my-4 leading-7">当布线带有长度规则的导线时，导线长度监控器会显示网络、电气网络或管脚对的已布线长度、最小长度规则和最大长度规则。还会显示进度指示条，如<a href="#page-12-1" class="link_a7cea  link_a9ef4 inline-link_f855c">图 70</a>所示。</p>
+<p class="my-4 leading-7">当布线带有长度规则的导线时，导线长度监控器会显示网络、电气网络或管脚对的已布线长度、最小长度规则和最大长度规则。还会显示进度指示条，如图 70所示。</p>
 <p class="my-4 leading-7"><strong class="font-semibold">图 70. 带长度规则的布线导线</strong></p>
 <p class="my-4 leading-7"><img src="/sailwind_docs/router/guide/19/_page_12_Figure_10.jpeg" alt=""/></p>
 <p class="my-4 leading-7"><strong class="font-semibold">长度计算</strong></p>
@@ -353,7 +353,7 @@
 <p class="my-4 leading-7"><strong class="font-semibold">飞线长度</strong></p>
 <p class="my-4 leading-7">导线长度监控器将飞线长度计算为当前导线段（附加到鼠标）的终点到其目的地的距离。当飞线动态布线到连接点时，飞线长度会重新计算。布线角度也会影响此计算。</p>
 <p class="my-4 leading-7"><strong class="font-semibold">进度指示器</strong></p>
-<p class="my-4 leading-7">对于带有长度规则的导线，进度指示器显示当前管脚对或整个网络的估计总长度，具体取决于&quot;显示管脚对的估计长度&quot;设置。如果选中此复选框，进度指示器显示当前管脚对的估计长度。清除复选框时，指示器显示整个网络的估计长度。请注意，此设置会影响显示上的估计长度在从一个焊盘布线到下一个焊盘时是否满足或违反长度规则。<a href="#page-13-0" class="link_a7cea  link_a9ef4 inline-link_f855c">图 72</a>显示了&quot;显示管脚对的估计长度&quot;复选框选中和清除时同一网络的进度指示器。</p>
+<p class="my-4 leading-7">对于带有长度规则的导线，进度指示器显示当前管脚对或整个网络的估计总长度，具体取决于&quot;显示管脚对的估计长度&quot;设置。如果选中此复选框，进度指示器显示当前管脚对的估计长度。清除复选框时，指示器显示整个网络的估计长度。请注意，此设置会影响显示上的估计长度在从一个焊盘布线到下一个焊盘时是否满足或违反长度规则。图 72显示了&quot;显示管脚对的估计长度&quot;复选框选中和清除时同一网络的进度指示器。</p>
 <p class="my-4 leading-7"><img src="/sailwind_docs/router/guide/19/_page_13_Figure_8.jpeg" alt=""/></p>
 <p class="my-4 leading-7"><img src="/sailwind_docs/router/guide/19/_page_13_Figure_9.jpeg" alt=""/></p>
 <p class="my-4 leading-7"><strong class="font-semibold">监控器显示</strong></p>
@@ -369,7 +369,7 @@
 <tbody>
 <tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
 <td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">最小/最大长度规则</td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">显示当前已布线长度、总长度、最小网络长度规则，以及它是在网络、电气网络还是管脚对<a href="/sailwind_docs/logic/guide/16_zh.html#7" class="link_a7cea  link_a9ef4 inline-link_f855c">规则层次结构</a>级别应用的。</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">显示当前已布线长度、总长度、最小网络长度规则，以及它是在网络、电气网络还是管脚对<a href="/sailwind_docs/router/guide/11_zh.html#3" class="link_a7cea  link_a9ef4 inline-link_f855c">规则层次结构</a>级别应用的。</td>
 </tr>
 <tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
 <td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">匹配长度规则</td>
@@ -449,7 +449,7 @@
 <p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
 <ol class="list-decimal pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">点击<strong class="font-semibold">工具 &gt; 选项</strong>菜单项；然后在<a href="/sailwind_docs/logic/guide/24_zh.html#78" class="link_a7cea  link_a9ef4 inline-link_f855c">选项对话框</a>中，点击<strong class="font-semibold">全局</strong>类别 &gt; <strong class="font-semibold">常规</strong>子类别。</p>
+<p class="my-4 leading-7">点击<strong class="font-semibold">工具 &gt; 选项</strong>菜单项；然后在选项对话框中，点击<strong class="font-semibold">全局</strong>类别 &gt; <strong class="font-semibold">常规</strong>子类别。</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
 <p class="my-4 leading-7">在&quot;鼠标设置&quot;区域，选中&quot;长度监控器&quot;复选框。</p>
@@ -466,7 +466,7 @@
 </ol>
 <h3 id="4-4" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">创建导线<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#4-4">#</a></h3>
 <p class="my-4 leading-7">通过布线创建导线。在布线之前，您必须选择起点并启动<a href="#4" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式布线</a>。您可以从铜多边形和网络对象（如管脚、虚拟管脚、过孔、导线、导线段、导线拐角、T 型连接、飞线和导线终点）<a href="#4" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式布线</a>。</p>
-<p class="my-4 leading-7">更多信息，请参阅&quot;创建<a href="#page-46-0" class="link_a7cea  link_a9ef4 inline-link_f855c">差分</a>对导线<a href="#page-46-0" class="link_a7cea  link_a9ef4 inline-link_f855c">&quot;</a>。</p>
+<p class="my-4 leading-7">更多信息，请参阅&quot;<a href="#17-2" class="link_a7cea  link_a9ef4 inline-link_f855c">创建差分对导线</a>&quot;。</p>
 <p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
 <ol class="list-decimal pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
@@ -482,42 +482,42 @@
 <p class="my-4 leading-7">如果在步骤 2 中选择了属于多个管脚对的管脚，则可以更改选择用于<a href="#4" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式布线</a>的管脚对。要选择不同的管脚对进行布线，请<strong class="font-semibold">右键</strong>点击并点击<strong class="font-semibold">切换管脚对</strong>。</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">向要创建导线的方向移动鼠标。有关跟随另一个形状的导线的说明，请参阅<a href="#page-22-0" class="link_a7cea  link_a9ef4 inline-link_f855c">&quot;跟随形状&quot;</a>。</p>
+<p class="my-4 leading-7">向要创建导线的方向移动鼠标。有关跟随另一个形状的导线的说明，请参阅&quot;跟随形状&quot;。</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
 <p class="my-4 leading-7">必要时，在布线时添加以下内容：</p>
 <ul class="list-disc pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7"><a href="#page-29-1" class="link_a7cea  link_a9ef4 inline-link_f855c">拐角</a> 在不使用动态布线时需要。动态布线时可选。拐角通常会改变导线的方向。</p>
+<p class="my-4 leading-7">拐角 在不使用动态布线时需要。动态布线时可选。拐角通常会改变导线的方向。</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7"><a href="#page-37-0" class="link_a7cea  link_a9ef4 inline-link_f855c">过孔</a> 在布线时更改层。</p>
+<p class="my-4 leading-7">过孔 在布线时更改层。</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
 <p class="my-4 leading-7">测试点第页 使您的设计可测试。</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7"><a href="#page-32-0" class="link_a7cea  link_a9ef4 inline-link_f855c">&quot;圆弧&quot;</a> 创建圆弧段。</p>
+<p class="my-4 leading-7">&quot;圆弧&quot; 创建圆弧段。</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7"><a href="#page-23-0" class="link_a7cea  link_a9ef4 inline-link_f855c">长度</a> 使用蛇形线满足长度规则。</p>
+<p class="my-4 leading-7">长度 使用蛇形线满足长度规则。</p>
 </li>
 </ul>
 <p class="my-4 leading-7">	移动鼠标时，可能会出现防护带，指示障碍物。</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">要在<a href="#4" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式布线</a>时更改导线属性（如宽度和层），请参阅<a href="#page-51-0" class="link_a7cea  link_a9ef4 inline-link_f855c">&quot;更改</a>导线<a href="#page-51-0" class="link_a7cea  link_a9ef4 inline-link_f855c">属性</a>布线时&quot; <a href="#page-51-0" class="link_a7cea  link_a9ef4 inline-link_f855c"></a>。导线宽度可能会阻止您在障碍物之间布线。如果选中&quot;允许在焊盘处导线缩颈&quot;复选框（<a href="/sailwind_docs/logic/guide/24_zh.html#78" class="link_a7cea  link_a9ef4 inline-link_f855c">选项对话框</a> &gt; <strong class="font-semibold">布线</strong>类别 &gt; <strong class="font-semibold">常规</strong>子类别），您可以通过点击添加拐角自动缩颈导线。导线宽度自动更改为最小导线宽度。清除障碍物后，再次点击返回之前的导线宽度。</p>
+<p class="my-4 leading-7">要在<a href="#4" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式布线</a>时更改导线属性（如宽度和层），请参阅&quot;更改导线属性布线时&quot; 。导线宽度可能会阻止您在障碍物之间布线。如果选中&quot;允许在焊盘处导线缩颈&quot;复选框（选项对话框 &gt; <strong class="font-semibold">布线</strong>类别 &gt; <strong class="font-semibold">常规</strong>子类别），您可以通过点击添加拐角自动缩颈导线。导线宽度自动更改为最小导线宽度。清除障碍物后，再次点击返回之前的导线宽度。</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">如<a href="#page-17-0" class="link_a7cea  link_a9ef4 inline-link_f855c">结束</a>导线中所述结束导线。</p>
+<p class="my-4 leading-7">如结束导线中所述结束导线。</p>
 </li>
 </ol>
 <h3 id="4-5" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">结束导线<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#4-5">#</a></h3>
 <p class="my-4 leading-7">SailWind 布线器提供了三种在<a href="#4" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式布线</a>时结束导线的方法。</p>
 <div class="rspress-directive warning"><div class="rspress-directive-title">WARNING</div><div class="rspress-directive-content">
-<p class="my-4 leading-7"> 差分对需要一些特定步骤。更多信息，请参阅结束<a href="#page-49-0" class="link_a7cea  link_a9ef4 inline-link_f855c">差分</a>对<a href="#page-49-0" class="link_a7cea  link_a9ef4 inline-link_f855c">导线</a>。</p>
+<p class="my-4 leading-7"> 差分对需要一些特定步骤。更多信息，请参阅结束差分对导线。</p>
 </div></div>
-<p class="my-4 leading-7">完成导线<a href="#page-17-1" class="link_a7cea  link_a9ef4 inline-link_f855c">连接</a> <a href="#page-18-0" class="link_a7cea  link_a9ef4 inline-link_f855c">结束</a>带过孔或测试点的导线 结束导线使其<a href="#page-18-1" class="link_a7cea  link_a9ef4 inline-link_f855c">不完整</a></p>
+<p class="my-4 leading-7"><a href="#4-5-1" class="link_a7cea  link_a9ef4 inline-link_f855c">完成导线连接</a> 结束带过孔或测试点的导线 结束导线使其不完整</p>
 <h4 id="4-5-1" class="mt-8 leading-6 text-lg title_fb7eb">完成导线连接<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#4-5-1">#</a></h4>
 <p class="my-4 leading-7">当鼠标靠近有效完成点时，鼠标会变为双圆圈。在重新布线期间，鼠标变为单圆圈以指示有效完成点。</p>
 <p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
@@ -543,7 +543,7 @@
 <p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
 <ol class="list-decimal pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7"><strong class="font-semibold">右键</strong>点击，选择弹出菜单中的**<a href="/sailwind_docs/layout/guide/32_zh.html#9-3" class="link_a7cea  link_a9ef4 inline-link_f855c">结束过孔模式</a>**，然后选择以下<a href="/sailwind_docs/layout/guide/32_zh.html#9-3" class="link_a7cea  link_a9ef4 inline-link_f855c">结束过孔模式</a>之一：</p>
+<p class="my-4 leading-7"><strong class="font-semibold">右键</strong>点击，选择弹出菜单中的<strong class="font-semibold">结束过孔模式</strong>，然后选择以下结束过孔模式之一：</p>
 <ul class="list-disc pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
 <p class="my-4 leading-7"><strong class="font-semibold">无过孔结束</strong> 无过孔结束。</p>
@@ -557,12 +557,12 @@
 </ul>
 </li>
 </ol>
-<p class="my-4 leading-7">SailWind 布线器使用您选择的<a href="/sailwind_docs/layout/guide/32_zh.html#9-3" class="link_a7cea  link_a9ef4 inline-link_f855c">结束过孔模式</a>，直到您选择新模式。</p>
+<p class="my-4 leading-7">SailWind 布线器使用您选择的结束过孔模式，直到您选择新模式。</p>
 <ol start="2" class="list-decimal pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">按住 Ctrl 键并点击结束导线。</li>
 </ol>
 <p class="my-4 leading-7">👀‍<strong class="font-semibold">结果</strong></p>
-<p class="my-4 leading-7">当您结束导线时，如果<a href="/sailwind_docs/logic/guide/24_zh.html#78" class="link_a7cea  link_a9ef4 inline-link_f855c">选项对话框</a> &gt; <strong class="font-semibold">布线</strong>类别 &gt; &quot;常规子类别&quot;中启用了&quot;完成时平滑导线&quot;复选框，则会自动运行平滑过程。</p>
+<p class="my-4 leading-7">当您结束导线时，如果选项对话框 &gt; <strong class="font-semibold">布线</strong>类别 &gt; &quot;常规子类别&quot;中启用了&quot;完成时平滑导线&quot;复选框，则会自动运行平滑过程。</p>
 <p class="my-4 leading-7">如果在鼠标位于另一层的同一网络的导线上时<a href="#4-5-2" class="link_a7cea  link_a9ef4 inline-link_f855c">用过孔或测试点结束导线</a>，则过孔会连接到该导线。例外情况：</p>
 <ul class="list-disc pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
@@ -575,10 +575,10 @@
 <h4 id="4-5-3" class="mt-8 leading-6 text-lg title_fb7eb">结束不完整的导线<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#4-5-3">#</a></h4>
 <p class="my-4 leading-7">您可以选择结束导线以便稍后完成。</p>
 <p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<p class="my-4 leading-7"><strong class="font-semibold">右键</strong>点击并点击<strong class="font-semibold">结束</strong>。<a href="/sailwind_docs/layout/guide/32_zh.html#9-3" class="link_a7cea  link_a9ef4 inline-link_f855c">结束过孔模式</a>必须设置为<strong class="font-semibold">无过孔结束</strong>。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">右键</strong>点击并点击<strong class="font-semibold">结束</strong>。结束过孔模式必须设置为<strong class="font-semibold">无过孔结束</strong>。</p>
 <p class="my-4 leading-7">👀‍<strong class="font-semibold">结果</strong></p>
 <p class="my-4 leading-7">如果在完成点上点击<strong class="font-semibold">结束</strong>，则导线会完成而不是结束。</p>
-<p class="my-4 leading-7">当您结束导线时，如果在<a href="/sailwind_docs/logic/guide/24_zh.html#78" class="link_a7cea  link_a9ef4 inline-link_f855c">选项对话框</a>、布线类别、常规子类别中选中&quot;完成时平滑导线&quot;复选框，则会自动运行平滑过程。</p>
+<p class="my-4 leading-7">当您结束导线时，如果在选项对话框、布线类别、常规子类别中选中&quot;完成时平滑导线&quot;复选框，则会自动运行平滑过程。</p>
 <h2 id="5" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">使用元件规则创建导线<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#5">#</a></h2>
 <p class="my-4 leading-7">如果从具有元件规则的元件、过孔或导线段开始布线，新导线将受到元件规则的约束。您可以选择何时停止使用元件规则并开始使用导线规则来创建导线和差分对。</p>
 <p class="my-4 leading-7">🙊<strong class="font-semibold">限制</strong></p>
@@ -621,7 +621,7 @@
 <p class="my-4 leading-7"><strong class="font-semibold">右键</strong>点击并选择弹出菜单中的<strong class="font-semibold">切换规则</strong>，停止使用导线规则并开始使用元件规则。元件规则自动生效，鼠标处会出现&quot;CR&quot;图形表示元件规则处于活动状态。</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">使用<a href="#page-17-0" class="link_a7cea  link_a9ef4 inline-link_f855c">&quot;结束</a>导线&quot;<a href="#page-17-0" class="link_a7cea  link_a9ef4 inline-link_f855c"></a>中描述的方法之一完成导线。SailWind Router 从您添加的最后一个拐角到完成点保持元件规则。最后添加的拐角成为虚拟点。</p>
+<p class="my-4 leading-7">使用&quot;结束导线&quot;中描述的方法之一完成导线。SailWind Router 从您添加的最后一个拐角到完成点保持元件规则。最后添加的拐角成为虚拟点。</p>
 </li>
 </ol>
 <h2 id="7" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">布线至 SMD 管脚<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#7">#</a></h2>
@@ -629,7 +629,7 @@
 <p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
 <ol class="list-decimal pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">使用<strong class="font-semibold">设计特性</strong>对话框或<a href="/sailwind_docs/layout/guide/Dialogs/47_zh.html#31" class="link_a7cea  link_a9ef4 inline-link_f855c">元件属性对话框</a>的<strong class="font-semibold">同网络</strong>选项卡设置 SMD 过孔。</p>
+<p class="my-4 leading-7">使用<strong class="font-semibold">设计特性</strong>对话框或元件属性对话框的<strong class="font-semibold">同网络</strong>选项卡设置 SMD 过孔。</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
 <p class="my-4 leading-7">在<a href="#4" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式布线</a>过程中，指向您想要结束导线的另一层上的 SMD 管脚，按住 Shift 键并点击以在 SMD 管脚处添加过孔。或者，在<a href="#4" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式布线</a>过程中，指向您想要结束导线的另一层上的 SMD 管脚并双击。Route 自动布线过程将完成导线并在 SMD 处添加过孔。跳过步骤 3。</p>
@@ -643,13 +643,13 @@
 <p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
 <ol class="list-decimal pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">使用<strong class="font-semibold">设计特性</strong>对话框或<a href="/sailwind_docs/layout/guide/Dialogs/47_zh.html#31" class="link_a7cea  link_a9ef4 inline-link_f855c">元件属性对话框</a>的<strong class="font-semibold">同网络</strong>选项卡设置 SMD 过孔选项。</p>
+<p class="my-4 leading-7">使用<strong class="font-semibold">设计特性</strong>对话框或元件属性对话框的<strong class="font-semibold">同网络</strong>选项卡设置 SMD 过孔选项。</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
 <p class="my-4 leading-7">从元件管脚开始<a href="#4" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式布线</a>。</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">添加过孔。当前类型的过孔将出现在 SMD 管脚处。更多信息请参见<a href="#page-35-0" class="link_a7cea  link_a9ef4 inline-link_f855c">&quot;过孔&quot;</a><a href="#page-35-0" class="link_a7cea  link_a9ef4 inline-link_f855c"></a>。</p>
+<p class="my-4 leading-7">添加过孔。当前类型的过孔将出现在 SMD 管脚处。更多信息请参见&quot;过孔&quot;。</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
 <p class="my-4 leading-7">继续布线。</p>
@@ -660,7 +660,7 @@
 <p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
 <ol class="list-decimal pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">使用<strong class="font-semibold">设计特性</strong>对话框或<a href="/sailwind_docs/layout/guide/Dialogs/47_zh.html#31" class="link_a7cea  link_a9ef4 inline-link_f855c">元件属性对话框</a>的<strong class="font-semibold">同网络</strong>选项卡设置 SMD 过孔选项。</p>
+<p class="my-4 leading-7">使用<strong class="font-semibold">设计特性</strong>对话框或元件属性对话框的<strong class="font-semibold">同网络</strong>选项卡设置 SMD 过孔选项。</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
 <p class="my-4 leading-7">选择表面贴装元件或管脚。</p>
@@ -699,8 +699,8 @@
 <p class="my-4 leading-7">设计中的预存元素，特别是导线和过孔，保持原样；跟随模式的工作方式就像您保护了所有网络并禁用了 Plower。当跟随过程遇到来自其他网络的导线或过孔时，它会绕开障碍物布线。</p>
 <h2 id="11" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">增加导线长度<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#11">#</a></h2>
 <p class="my-4 leading-7">使用蛇形线为导线或差分对增加长度，使其满足网络、电气网络或管脚对的长度规则。</p>
-<p class="my-4 leading-7">有关设置布线长度约束选项的更多信息，请参见&quot;<a href="/sailwind_docs/layout/guide/Dialogs/51_zh.html#48" class="link_a7cea  link_a9ef4 inline-link_f855c">选项对话框，布线类别，常规子类别</a>&quot;。</p>
-<p class="my-4 leading-7"><a href="#page-23-1" class="link_a7cea  link_a9ef4 inline-link_f855c">以默认振幅添加蛇形线</a> <a href="#page-24-0" class="link_a7cea  link_a9ef4 inline-link_f855c">以自定义振幅添加蛇形线</a> 向现有导线添加<a href="#page-26-0" class="link_a7cea  link_a9ef4 inline-link_f855c">蛇形线</a></p>
+<p class="my-4 leading-7">有关设置布线长度约束选项的更多信息，请参见&quot;<a href="/sailwind_docs/router/guide/24_zh.html#33" class="link_a7cea  link_a9ef4 inline-link_f855c">选项对话框，布线类别，常规子类别</a>&quot;。</p>
+<p class="my-4 leading-7"><a href="#11-1" class="link_a7cea  link_a9ef4 inline-link_f855c">以默认振幅添加蛇形线</a> <a href="#11-2" class="link_a7cea  link_a9ef4 inline-link_f855c">以自定义振幅添加蛇形线</a> <a href="#11-3" class="link_a7cea  link_a9ef4 inline-link_f855c">向现有导线添加蛇形线</a></p>
 <h3 id="11-1" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">以默认振幅添加蛇形线<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#11-1">#</a></h3>
 <p class="my-4 leading-7">您可以通过添加蛇形线来<a href="#11" class="link_a7cea  link_a9ef4 inline-link_f855c">增加导线长度</a>。</p>
 <p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
@@ -712,10 +712,10 @@
 <p class="my-4 leading-7">将鼠标移动到您想要放置蛇形线的方向。根据您的布线角度，您可以以任何角度创建蛇形线。</p>
 </li>
 </ol>
-<p class="my-4 leading-7">蛇形线基于最小振幅和最小间隙设置（<a href="/sailwind_docs/layout/guide/Dialogs/51_zh.html#48" class="link_a7cea  link_a9ef4 inline-link_f855c">选项对话框，布线类别，常规子类别</a>）出现。蛇形线的振幅以导线为中心，如下所示。</p>
+<p class="my-4 leading-7">蛇形线基于最小振幅和最小间隙设置（<a href="/sailwind_docs/router/guide/24_zh.html#33" class="link_a7cea  link_a9ef4 inline-link_f855c">选项对话框，布线类别，常规子类别</a>）出现。蛇形线的振幅以导线为中心，如下所示。</p>
 <p class="my-4 leading-7"><strong class="font-semibold">图 73. <a href="#11-1" class="link_a7cea  link_a9ef4 inline-link_f855c">以默认振幅添加蛇形线</a></strong></p>
 <p class="my-4 leading-7"><img src="/sailwind_docs/router/guide/19/_page_23_Figure_12.jpeg" alt=""/></p>
-<p class="my-4 leading-7">蛇形线的间隙基于最小间隙设置（<a href="/sailwind_docs/logic/guide/24_zh.html#78" class="link_a7cea  link_a9ef4 inline-link_f855c">选项对话框</a> &gt; <strong class="font-semibold">布线</strong>类别 &gt; <strong class="font-semibold">调整</strong>子类别）。</p>
+<p class="my-4 leading-7">蛇形线的间隙基于最小间隙设置（选项对话框 &gt; <strong class="font-semibold">布线</strong>类别 &gt; <strong class="font-semibold">调整</strong>子类别）。</p>
 <p class="my-4 leading-7">您还可以添加使用默认振幅但不以导线为中心的蛇形线，如下所示。开始蛇形线，点击进入第一部分，然后将鼠标移动到您想要放置蛇形线的方向。</p>
 <p class="my-4 leading-7"><strong class="font-semibold">图 74. 添加非居中蛇形线</strong></p>
 <p class="my-4 leading-7"><img src="/sailwind_docs/router/guide/19/_page_24_Figure_2.jpeg" alt=""/></p>
@@ -749,7 +749,7 @@
 <p class="my-4 leading-7">将鼠标移动到您想要放置蛇形线的方向。</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7"><strong class="font-semibold">右键</strong>点击并选择弹出菜单中的<strong class="font-semibold">完成蛇形线</strong>以结束蛇形线并继续布线。或者，双击以结束蛇形线。蛇形线的间隙基于<a href="/sailwind_docs/logic/guide/24_zh.html#78" class="link_a7cea  link_a9ef4 inline-link_f855c">选项对话框</a> &gt; <strong class="font-semibold">布线</strong>类别 &gt; <strong class="font-semibold">调整</strong>子类别中的最小间隙设置。在添加蛇形线时无法调整间隙。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">右键</strong>点击并选择弹出菜单中的<strong class="font-semibold">完成蛇形线</strong>以结束蛇形线并继续布线。或者，双击以结束蛇形线。蛇形线的间隙基于选项对话框 &gt; <strong class="font-semibold">布线</strong>类别 &gt; <strong class="font-semibold">调整</strong>子类别中的最小间隙设置。在添加蛇形线时无法调整间隙。</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
 <p class="my-4 leading-7">添加蛇形线后对其进行保护，以防止自动布线器（或其他编辑操作）删除或调整它们。</p>
@@ -760,13 +760,13 @@
 <p class="my-4 leading-7">当您<a href="#11-3" class="link_a7cea  link_a9ef4 inline-link_f855c">向现有导线添加蛇形线</a>时，您有两个选择：</p>
 <ul class="list-disc pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">您可以添加蛇形线，仅增加足够的长度<a href="#page-26-1" class="link_a7cea  link_a9ef4 inline-link_f855c">以满足网络长度规则</a><a href="#page-26-1" class="link_a7cea  link_a9ef4 inline-link_f855c"></a>。</p>
+<p class="my-4 leading-7">您可以添加蛇形线，仅增加足够的长度以满足网络长度规则。</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">您可以<a href="#page-26-2" class="link_a7cea  link_a9ef4 inline-link_f855c">指定导线的哪一部分</a><a href="#page-26-2" class="link_a7cea  link_a9ef4 inline-link_f855c"></a>转换为蛇形线。</p>
+<p class="my-4 leading-7">您可以指定导线的哪一部分转换为蛇形线。</p>
 </li>
 </ul>
-<p class="my-4 leading-7"><a href="#page-26-1" class="link_a7cea  link_a9ef4 inline-link_f855c">添加蛇形线以满足长度规则</a> <a href="#page-26-2" class="link_a7cea  link_a9ef4 inline-link_f855c">在指定区域添加蛇形线</a></p>
+<p class="my-4 leading-7"><a href="#11-3-1" class="link_a7cea  link_a9ef4 inline-link_f855c">添加蛇形线以满足长度规则</a> <a href="#11-3-2" class="link_a7cea  link_a9ef4 inline-link_f855c">在指定区域添加蛇形线</a></p>
 <h4 id="11-3-1" class="mt-8 leading-6 text-lg title_fb7eb">添加蛇形线以满足长度规则<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#11-3-1">#</a></h4>
 <p class="my-4 leading-7">您可以向导线添加蛇形线，增加其布线长度以满足您的长度规则。</p>
 <p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
@@ -786,7 +786,7 @@
 <p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
 <ol class="list-decimal pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在<a href="/sailwind_docs/logic/tutorial/2_zh.html#4-1" class="link_a7cea  link_a9ef4 inline-link_f855c">选择过滤器</a>工具栏中，点击<strong class="font-semibold">路径</strong>按钮启用路径选择。</p>
+<p class="my-4 leading-7">在选择过滤器工具栏中，点击<strong class="font-semibold">路径</strong>按钮启用路径选择。</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
 <p class="my-4 leading-7">点击导线或导线段指定蛇形线位置的起点。</p>
@@ -800,7 +800,7 @@
 </ol>
 <h2 id="12" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">斜接 ಠ_ಠ<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#12">#</a></h2>
 <p class="my-4 leading-7">使用斜接指定用对角线线段或弧线替换拐角的值。</p>
-<p class="my-4 leading-7">在<a href="/sailwind_docs/logic/guide/24_zh.html#78" class="link_a7cea  link_a9ef4 inline-link_f855c">选项对话框</a>的<strong class="font-semibold">布线</strong>选项卡上设置的斜接比率值指定蛇形线拐角的斜接比率。SailWind Router 使用以下公式计算半径：</p>
+<p class="my-4 leading-7">在选项对话框的<strong class="font-semibold">布线</strong>选项卡上设置的斜接比率值指定蛇形线拐角的斜接比率。SailWind Router 使用以下公式计算半径：</p>
 <div class="language-bash"><div class="rspress-code-content rspress-scrollbar"><code>
 (&lt;导线宽度&gt; / 2) × 比率
 
@@ -922,20 +922,20 @@
 <p class="my-4 leading-7">SailWind Router 将拐角放置在距离鼠标最近且符合当前布线栅格设置和设计规则的位置。当您选择布线栅格的&quot;对齐对象到栅格&quot;复选框（位于<strong class="font-semibold">设计特性</strong>对话框的<strong class="font-semibold">栅格</strong>选项卡）时，SailWind Router 会将拐角放置在至少一个栅格坐标上。</p>
 <p class="my-4 leading-7">下图展示了栅格上的拐角放置。</p>
 <p class="my-4 leading-7"><img src="/sailwind_docs/router/guide/19/_page_29_Figure_4.jpeg" alt=""/></p>
-<p class="my-4 leading-7">当您从焊盘退出后放置第一个拐角时，SailWind Router 会保持第一拐角规则<a href="#page-29-2" class="link_a7cea  link_a9ef4 inline-link_f855c">（图</a> <a href="#page-29-2" class="link_a7cea  link_a9ef4 inline-link_f855c">77</a>)，除非您在<strong class="font-semibold">设计特性</strong>对话框的<strong class="font-semibold">焊盘入口</strong>选项卡上选择了&quot;忽略第一拐角规则&quot;复选框。此复选框使第一拐角规则变为软规则。</p>
+<p class="my-4 leading-7">当您从焊盘退出后放置第一个拐角时，SailWind Router 会保持第一拐角规则（图 77)，除非您在<strong class="font-semibold">设计特性</strong>对话框的<strong class="font-semibold">焊盘入口</strong>选项卡上选择了&quot;忽略第一拐角规则&quot;复选框。此复选框使第一拐角规则变为软规则。</p>
 <p class="my-4 leading-7"><img src="/sailwind_docs/router/guide/19/_page_29_Figure_6.jpeg" alt=""/></p>
-<p class="my-4 leading-7"><a href="#page-29-1" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式布线时添加拐角</a> 向现有导线<a href="#page-30-0" class="link_a7cea  link_a9ef4 inline-link_f855c">添加拐角</a></p>
+<p class="my-4 leading-7"><a href="#13-1" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式布线时添加拐角</a> <a href="#13-2" class="link_a7cea  link_a9ef4 inline-link_f855c">向现有导线添加拐角</a></p>
 <h3 id="13-1" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">交互式布线时添加拐角<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#13-1">#</a></h3>
 <p class="my-4 leading-7">您可以在使用或未使用动态布线时添加拐角。</p>
 <p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
 <p class="my-4 leading-7">在<a href="#4" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式布线</a>过程中，点击以输入拐角。或者，<strong class="font-semibold">右键</strong>点击并选择弹出菜单中的<strong class="font-semibold">添加拐角</strong>。SailWind Router 会移除任何导线环路并添加拐角。如果在导线端点位于完成点上时点击<strong class="font-semibold">添加拐角</strong>，导线将完成。</p>
 <p class="my-4 leading-7"><strong class="font-semibold">图 76. 栅格对齐的导线拐角</strong></p>
 <div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
-<p class="my-4 leading-7"> 如果添加拐角后导线遇到不可移动的障碍物（例如元件管脚），最后输入的导线拐角会自动移动到允许导线通过障碍物的新位置，如下所示。这仅在您不使用动态布线且选择了&quot;调整导线段绕过障碍物&quot;复选框（<a href="/sailwind_docs/logic/guide/24_zh.html#78" class="link_a7cea  link_a9ef4 inline-link_f855c">选项对话框</a> &gt; <strong class="font-semibold">布线</strong>类别 &gt; <strong class="font-semibold">常规</strong>子类别）时发生。</p>
+<p class="my-4 leading-7"> 如果添加拐角后导线遇到不可移动的障碍物（例如元件管脚），最后输入的导线拐角会自动移动到允许导线通过障碍物的新位置，如下所示。这仅在您不使用动态布线且选择了&quot;调整导线段绕过障碍物&quot;复选框（选项对话框 &gt;<strong class="font-semibold">布线</strong>类别 &gt; <strong class="font-semibold">常规</strong>子类别）时发生。</p>
 </div></div>
 <p class="my-4 leading-7"><img src="/sailwind_docs/router/guide/19/_page_30_Figure_2.jpeg" alt=""/></p>
 <p class="my-4 leading-7">当您从非栅格对齐的焊盘进行动态布线时，SailWind Router 会在距离鼠标最近且位于布线栅格上的点添加拐角。当您从非栅格对齐的焊盘进行非动态布线时，SailWind Router 会在栅格线上添加拐角，而不是在栅格交点处。</p>
-<p class="my-4 leading-7">进行动态布线时会保持焊盘入口设置。可在<strong class="font-semibold">设计特性</strong>对话框或<a href="/sailwind_docs/layout/guide/Dialogs/47_zh.html#31" class="link_a7cea  link_a9ef4 inline-link_f855c">元件属性对话框</a>的<strong class="font-semibold">焊盘入口</strong>选项卡上设置焊盘入口。</p>
+<p class="my-4 leading-7">进行动态布线时会保持焊盘入口设置。可在<strong class="font-semibold">设计特性</strong>对话框或元件属性对话框的<strong class="font-semibold">焊盘入口</strong>选项卡上设置焊盘入口。</p>
 <p class="my-4 leading-7"><img src="/sailwind_docs/router/guide/19/_page_30_Figure_5.jpeg" alt=""/></p>
 <p class="my-4 leading-7"><strong class="font-semibold">图 79. 从非栅格对齐焊盘布线</strong></p>
 <h3 id="13-2" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">向现有导线添加拐角<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#13-2">#</a></h3>
@@ -946,7 +946,7 @@
 <p class="my-4 leading-7">选择导线段，然后<strong class="font-semibold">右键</strong>点击并选择弹出菜单中的<strong class="font-semibold">添加拐角</strong>。或者，在布线编辑工具栏上点击<strong class="font-semibold">添加拐角</strong>按钮。</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">将鼠标移动到拐角的目标位置并点击。在选择点会出现一个拐角。还会显示栅格线，指示从导线端点开始的 45 度角。这使得放置对角拐角更加容易。添加拐角时，SailWind Router 不会平滑相邻段，即使您已选择&quot;平滑相邻段&quot;复选框（<a href="/sailwind_docs/logic/guide/24_zh.html#78" class="link_a7cea  link_a9ef4 inline-link_f855c">选项对话框</a> &gt; <strong class="font-semibold">布线</strong>类别 &gt; <strong class="font-semibold">常规</strong>子类别）。</p>
+<p class="my-4 leading-7">将鼠标移动到拐角的目标位置并点击。在选择点会出现一个拐角。还会显示栅格线，指示从导线端点开始的 45 度角。这使得放置对角拐角更加容易。添加拐角时，SailWind Router 不会平滑相邻段，即使您已选择&quot;平滑相邻段&quot;复选框（选项对话框 &gt; <strong class="font-semibold">布线</strong>类别 &gt; <strong class="font-semibold">常规</strong>子类别）。</p>
 </li>
 </ol>
 <div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
@@ -954,7 +954,7 @@
 </div></div>
 <h2 id="14" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">圆弧<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#14">#</a></h2>
 <p class="my-4 leading-7"><a href="#4" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式布线</a>时，您可以添加自由绘制的圆弧或指定半径的圆弧。此功能在布线差分对时也可用。在圆弧模式下布线差分对时，您不能使用以下命令：添加过孔、添加测试点、添加蛇形导线式导线、完成、层切换、层、切换规则。</p>
-<p class="my-4 leading-7"><a href="#page-32-1" class="link_a7cea  link_a9ef4 inline-link_f855c">添加自由绘制圆弧</a> <a href="#page-32-2" class="link_a7cea  link_a9ef4 inline-link_f855c">添加指定半径圆弧</a></p>
+<p class="my-4 leading-7"><a href="#14-1" class="link_a7cea  link_a9ef4 inline-link_f855c">添加自由绘制圆弧</a> <a href="#14-2" class="link_a7cea  link_a9ef4 inline-link_f855c">添加指定半径圆弧</a></p>
 <h3 id="14-1" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">添加自由绘制圆弧<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#14-1">#</a></h3>
 <p class="my-4 leading-7">向单条导线、差分对或差分对的单条导线<a href="#14-1" class="link_a7cea  link_a9ef4 inline-link_f855c">添加自由绘制圆弧</a>。</p>
 <p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
@@ -964,7 +964,7 @@
 </li>
 </ol>
 <div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
-<p class="my-4 leading-7">添加圆弧后请确保保护它们，因为自动布线操作和<a href="#4" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式布线</a>中的推挤可能会移除未受保护的圆弧。要在添加时保护圆弧，请在<a href="/sailwind_docs/logic/guide/24_zh.html#78" class="link_a7cea  link_a9ef4 inline-link_f855c">选项对话框</a> &gt; <strong class="font-semibold">布线</strong>类别 &gt; <strong class="font-semibold">常规</strong>子类别中选择&quot;创建段时保护导线和过孔&quot;复选框。或者，在<a href="#4" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式布线</a>时，<strong class="font-semibold">右键</strong>点击并选择弹出菜单中的<strong class="font-semibold">保护导线和过孔</strong>。</p>
+<p class="my-4 leading-7">添加圆弧后请确保保护它们，因为自动布线操作和<a href="#4" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式布线</a>中的推挤可能会移除未受保护的圆弧。要在添加时保护圆弧，请在选项对话框 &gt; <strong class="font-semibold">布线</strong>类别 &gt; <strong class="font-semibold">常规</strong>子类别中选择&quot;创建段时保护导线和过孔&quot;复选框。或者，在<a href="#4" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式布线</a>时，<strong class="font-semibold">右键</strong>点击并选择弹出菜单中的<strong class="font-semibold">保护导线和过孔</strong>。</p>
 </div></div>
 <ol start="2" class="list-decimal pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
@@ -1000,7 +1000,7 @@
 </li>
 </ol>
 <div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
-<p class="my-4 leading-7">添加圆弧后请确保保护它们，因为自动布线操作和<a href="#4" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式布线</a>中的推挤可能会移除未受保护的圆弧。要在添加时保护圆弧，请在<a href="/sailwind_docs/logic/guide/24_zh.html#78" class="link_a7cea  link_a9ef4 inline-link_f855c">选项对话框</a> &gt; <strong class="font-semibold">布线</strong>类别 &gt; <strong class="font-semibold">常规</strong>子类别中选择&quot;创建段时保护导线和过孔&quot;复选框。或者，在<a href="#4" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式布线</a>时，<strong class="font-semibold">右键</strong>点击并选择弹出菜单中的<strong class="font-semibold">保护导线和过孔</strong>。</p>
+<p class="my-4 leading-7">添加圆弧后请确保保护它们，因为自动布线操作和<a href="#4" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式布线</a>中的推挤可能会移除未受保护的圆弧。要在添加时保护圆弧，请在选项对话框 &gt; <strong class="font-semibold">布线</strong>类别 &gt; <strong class="font-semibold">常规</strong>子类别中选择&quot;创建段时保护导线和过孔&quot;复选框。或者，在<a href="#4" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式布线</a>时，<strong class="font-semibold">右键</strong>点击并选择弹出菜单中的<strong class="font-semibold">保护导线和过孔</strong>。</p>
 </div></div>
 <ol start="2" class="list-decimal pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
@@ -1021,7 +1021,7 @@
 <p class="my-4 leading-7">如果 DRC 模式的间距设置为&quot;阻止&quot;，并且启用了推挤，SailWind Router 会移动障碍物，为过孔创建空间而不违反设计规则。</p>
 <p class="my-4 leading-7">SailWind Router 对进行中的导线使用当前过孔类型，前提是过孔偏置规则（在属性对话框的<strong class="font-semibold">过孔偏置</strong>选项卡上设置）允许。如果当前过孔类型不允许用于导线，SailWind Router 会选择另一个有效的过孔类型。使用新的或不同的过孔后，SailWind Router 会将其用于后续的过孔添加。</p>
 <p class="my-4 leading-7">在差分对的受控间隙区域布线导线时，SailWind Router 会在两条导线上添加过孔。在圆弧模式下布线差分对时不能添加过孔。</p>
-<p class="my-4 leading-7">过孔<a href="#page-35-1" class="link_a7cea  link_a9ef4 inline-link_f855c">模式</a> <a href="#page-36-0" class="link_a7cea  link_a9ef4 inline-link_f855c">设置</a>过孔类型 <a href="#page-36-1" class="link_a7cea  link_a9ef4 inline-link_f855c">保护</a>过孔 <a href="#page-37-1" class="link_a7cea  link_a9ef4 inline-link_f855c">添加</a>过孔到过孔栅格 使用层切换和添加过孔<a href="#page-37-2" class="link_a7cea  link_a9ef4 inline-link_f855c">更改</a>到特定层 <a href="#4" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式布线</a>时<a href="#page-37-0" class="link_a7cea  link_a9ef4 inline-link_f855c">添加</a>过孔 向<a href="#page-38-0" class="link_a7cea  link_a9ef4 inline-link_f855c">现有</a>导线添加过孔 添加<a href="#page-38-1" class="link_a7cea  link_a9ef4 inline-link_f855c">缝合</a>过孔</p>
+<p class="my-4 leading-7">过孔模式 <a href="#15-2" class="link_a7cea  link_a9ef4 inline-link_f855c">设置过孔类型</a> 保护过孔 添加过孔到过孔栅格 <a href="#15-5" class="link_a7cea  link_a9ef4 inline-link_f855c">使用层切换和添加过孔更改到特定层</a> <a href="#15-6" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式布线时添加过孔</a> <a href="#15-7" class="link_a7cea  link_a9ef4 inline-link_f855c">向现有导线添加过孔</a> <a href="#15-8" class="link_a7cea  link_a9ef4 inline-link_f855c">添加缝合过孔</a></p>
 <h3 id="15-1" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">过孔模式 ಠ_ಠ<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#15-1">#</a></h3>
 <p class="my-4 leading-7">过孔模式决定了插入过孔时使用哪种过孔类型。</p>
 <p class="my-4 leading-7">SailWind Router 根据以下几个要求选择过孔：</p>
@@ -1030,7 +1030,7 @@
 <p class="my-4 leading-7">根据过孔偏置规则确定网络或管脚对允许的过孔。</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">根据您在 SailWind Layout 的<a href="/sailwind_docs/layout/guide/Dialogs/52_zh.html#2" class="link_a7cea  link_a9ef4 inline-link_f855c">焊盘栈属性对话框</a>中设置的层钻孔设置，确定哪些过孔对层更改是合法的。</p>
+<p class="my-4 leading-7">根据您在 SailWind Layout 的焊盘栈属性对话框中设置的层钻孔设置，确定哪些过孔对层更改是合法的。</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
 <p class="my-4 leading-7">如果有多个过孔符合条件，则选择焊盘尺寸最小但又大于导线宽度的过孔。</p>
@@ -1071,10 +1071,10 @@
 <p class="my-4 leading-7">网络属性对话框</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7"><a href="/sailwind_docs/layout/guide/Dialogs/52_zh.html#22" class="link_a7cea  link_a9ef4 inline-link_f855c">管脚对属性对话框</a></p>
+<p class="my-4 leading-7">管脚对属性对话框</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7"><a href="/sailwind_docs/layout/guide/Dialogs/47_zh.html#31" class="link_a7cea  link_a9ef4 inline-link_f855c">元件属性对话框</a></p>
+<p class="my-4 leading-7">元件属性对话框</p>
 </li>
 </ul>
 <p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
@@ -1087,13 +1087,13 @@
 </li>
 </ol>
 <p class="my-4 leading-7">👀‍<strong class="font-semibold">结果</strong></p>
-<p class="my-4 leading-7">如果您选择了&quot;开启推挤器&quot;复选框（<a href="/sailwind_docs/logic/guide/24_zh.html#78" class="link_a7cea  link_a9ef4 inline-link_f855c">选项对话框</a> &gt; <strong class="font-semibold">布线</strong>类别 &gt; <strong class="font-semibold">常规</strong>子类别）并且更改了现有过孔的过孔类型，SailWind Router 可能会推挤导线和其他可移动障碍物为新过孔类型腾出空间。</p>
+<p class="my-4 leading-7">如果您选择了&quot;开启推挤器&quot;复选框（选项对话框 &gt; <strong class="font-semibold">布线</strong>类别 &gt; <strong class="font-semibold">常规</strong>子类别）并且更改了现有过孔的过孔类型，SailWind Router 可能会推挤导线和其他可移动障碍物为新过孔类型腾出空间。</p>
 <h3 id="15-3" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">保护过孔<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#15-3">#</a></h3>
 <p class="my-4 leading-7">在添加到设计时保护导线和过孔。布线操作不能拆除或以其他方式修改过孔。</p>
 <p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
 <ol class="list-decimal pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">点击<strong class="font-semibold">工具 &gt; 选项</strong>；然后，在<a href="/sailwind_docs/logic/guide/24_zh.html#78" class="link_a7cea  link_a9ef4 inline-link_f855c">选项对话框</a>中，点击<strong class="font-semibold">布线</strong>类别 &gt; <strong class="font-semibold">常规</strong>子类别。</p>
+<p class="my-4 leading-7">点击<strong class="font-semibold">工具 &gt; 选项</strong>；然后，在选项对话框中，点击<strong class="font-semibold">布线</strong>类别 &gt; <strong class="font-semibold">常规</strong>子类别。</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
 <p class="my-4 leading-7">选择&quot;创建段时保护导线和过孔&quot;复选框。如果您在<strong class="font-semibold">设计特性</strong>对话框的<strong class="font-semibold">布线</strong>选项卡中选择&quot;需要时推挤受保护的导线&quot;复选框，则可以移动受保护的过孔。</p>
@@ -1111,11 +1111,11 @@
 </li>
 </ol>
 <div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
-<p class="my-4 leading-7">如果您选择&quot;平滑相邻段&quot;复选框（<a href="/sailwind_docs/logic/guide/24_zh.html#78" class="link_a7cea  link_a9ef4 inline-link_f855c">选项对话框</a> &gt; <strong class="font-semibold">布线</strong>类别 &gt; <strong class="font-semibold">常规</strong>子类别），SailWind Router 会平滑与过孔相邻的导线段。</p>
+<p class="my-4 leading-7">如果您选择&quot;平滑相邻段&quot;复选框（选项对话框 &gt;<strong class="font-semibold">布线</strong>类别 &gt; <strong class="font-semibold">常规</strong>子类别），SailWind Router 会平滑与过孔相邻的导线段。</p>
 </div></div>
 <h3 id="15-5" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">使用层切换和添加过孔更改到特定层<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#15-5">#</a></h3>
 <p class="my-4 leading-7">添加过孔会自动切换到其他布线层（在双层设计中）或层对中的其他层（对于多层设计）。如果您在未配对的层上布线，添加过孔会切换到配对层设置中编号最低的层。</p>
-<p class="my-4 leading-7">您可以在<a href="/sailwind_docs/logic/guide/24_zh.html#78" class="link_a7cea  link_a9ef4 inline-link_f855c">选项对话框</a> &gt; <strong class="font-semibold">布线</strong>类别 &gt; <strong class="font-semibold">常规</strong>子类别中设置层对。您还可以将层更改操作与添加过孔命令结合使用以切换到特定层。</p>
+<p class="my-4 leading-7">您可以在选项对话框 &gt; <strong class="font-semibold">布线</strong>类别 &gt; <strong class="font-semibold">常规</strong>子类别中设置层对。您还可以将层更改操作与添加过孔命令结合使用以切换到特定层。</p>
 <p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
 <ol class="list-decimal pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
@@ -1153,7 +1153,7 @@
 </ol>
 <h2 id="16" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">布线到布铜区和飞线显示 ಠ_ಠ<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#16">#</a></h2>
 <p class="my-4 leading-7">SailWind Layout 和 SailWind Router 都支持布线到布铜区。但在某些情况下，SailWind Layout 看不到布铜区已连接，并显示飞线。相比之下，SailWind Router 不显示飞线，也不添加布线，因为它认为这些对象已连接。SailWind Router 的行为保存在布线设计文件中，可以传回 SailWind Layout。</p>
-<p class="my-4 leading-7">要在 SailWind Layout 中再次显示设计的飞线，请<a href="/sailwind_docs/router/guide/16_zh.html#1" class="link_a7cea  link_a9ef4 inline-link_f855c">执行长度最小化</a>或在 SailWind Layout 中修改<a href="/sailwind_docs/layout/tutorial/7_zh.html#6" class="link_a7cea  link_a9ef4 inline-link_f855c">平面网络布线</a>。</p>
+<p class="my-4 leading-7">要在 SailWind Layout 中再次显示设计的飞线，请<a href="/sailwind_docs/router/guide/16_zh.html#1" class="link_a7cea  link_a9ef4 inline-link_f855c">执行长度最小化</a>或在 SailWind Layout 中修改<a href="/sailwind_docs/router/tutorial/5_zh.html#2" class="link_a7cea  link_a9ef4 inline-link_f855c">平面网络布线</a>。</p>
 <p class="my-4 leading-7">SailWind Layout 和 SailWind Router 在某些情况下表现出这种行为。</p>
 <p class="my-4 leading-7"><strong class="font-semibold">通过过孔连接</strong></p>
 <p class="my-4 leading-7">您可以通过过孔从不同层连接到布铜区。在下图中，导线和布铜区位于不同层。SailWind Router 不显示飞线，因为导线和布铜区被视为已连接。然而，SailWind Layout 显示飞线，因为它不考虑来自另一层的连接。</p>
@@ -1191,11 +1191,11 @@
 </table>
 <h2 id="17" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">差分对<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#17">#</a></h2>
 <p class="my-4 leading-7">SailWind Router 完全支持差分对的实现。</p>
-<p class="my-4 leading-7"><a href="#page-40-1" class="link_a7cea  link_a9ef4 inline-link_f855c">差分对原理</a></p>
-<p class="my-4 leading-7"><a href="#page-46-0" class="link_a7cea  link_a9ef4 inline-link_f855c">差分对导线创建</a></p>
-<p class="my-4 leading-7"><a href="#page-47-0" class="link_a7cea  link_a9ef4 inline-link_f855c">设置过孔对模式</a></p>
-<p class="my-4 leading-7"><a href="#page-49-0" class="link_a7cea  link_a9ef4 inline-link_f855c">终止差分对导线</a></p>
-<p class="my-4 leading-7"><a href="#page-51-1" class="link_a7cea  link_a9ef4 inline-link_f855c">拆分差分对导线</a></p>
+<p class="my-4 leading-7">差分对原理</p>
+<p class="my-4 leading-7">差分对导线创建</p>
+<p class="my-4 leading-7"><a href="#17-3" class="link_a7cea  link_a9ef4 inline-link_f855c">设置过孔对模式</a></p>
+<p class="my-4 leading-7"><a href="#17-4" class="link_a7cea  link_a9ef4 inline-link_f855c">终止差分对导线</a></p>
+<p class="my-4 leading-7">拆分差分对导线</p>
 <h3 id="17-1" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">差分对原理 ಠ_ಠ<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#17-1">#</a></h3>
 <p class="my-4 leading-7">差分对是 SailWind Router 并行布线的导线，在尽可能长的总长度上保持固定的布线间距。差分对通常传输两个相位相差 180 度的电信号。固定的布线间距有助于实现差分信号所需的特定且均匀的阻抗。</p>
 <p class="my-4 leading-7">SailWind Router 会识别 SailWind Layout 创建的差分对对象。</p>
@@ -1346,13 +1346,13 @@
 <p class="my-4 leading-7">为了满足差分对的最小长度属性，在控制间距区域中插入对称的差分对蛇形线。如果有足够的板空间，自动布线器可以插入满足所需长度的蛇形线，或者您可以<a href="/sailwind_docs/router/tutorial/6_zh.html#2" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式添加蛇形线</a>。</p>
 <p class="my-4 leading-7"><img src="/sailwind_docs/router/guide/19/_page_45_Figure_6.jpeg" alt=""/></p>
 <p class="my-4 leading-7"><strong class="font-semibold">图 87. 差分对蛇形线结构</strong></p>
-<p class="my-4 leading-7">更多信息，请参考&quot;创建<a href="#page-46-0" class="link_a7cea  link_a9ef4 inline-link_f855c">差分</a>对导线&quot;和&quot;终止<a href="#page-49-0" class="link_a7cea  link_a9ef4 inline-link_f855c">差分</a>对导线&quot;。</p>
+<p class="my-4 leading-7">更多信息，请参考&quot;<a href="#17-2" class="link_a7cea  link_a9ef4 inline-link_f855c">创建差分对导线</a>&quot;和&quot;<a href="#17-4" class="link_a7cea  link_a9ef4 inline-link_f855c">终止差分对导线</a>&quot;。</p>
 <p class="my-4 leading-7"><strong class="font-semibold">长度匹配</strong></p>
 <p class="my-4 leading-7">如果您运行任何自动布线操作或在差分对上运行 Tune 传递类型，自动布线器尝试精确匹配两个对成员的长度。在可能的情况下，它会在导线的肩部区域向较短的对成员添加长度，而不推挤或移动障碍物。</p>
 <p class="my-4 leading-7">自动布线器通过向较短的导线添加小蛇形线来增加长度。自动布线器首先尝试在肩部区域添加蛇形线。如果两个肩部区域都无法容纳小蛇形线，自动布线器会在控制间距区域中尽可能靠近肩部区域添加蛇形线。</p>
 <h3 id="17-2" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">创建差分对导线<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#17-2">#</a></h3>
 <p class="my-4 leading-7">通过<a href="#4" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式布线</a><a href="#17-2" class="link_a7cea  link_a9ef4 inline-link_f855c">创建差分对导线</a>。在布线之前，您需要为差分对选择一个起点并启动<a href="#4" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式布线</a>。</p>
-<p class="my-4 leading-7">要布线单条导线，请参见<a href="#page-15-1" class="link_a7cea  link_a9ef4 inline-link_f855c">&quot;创建</a>导线&quot;<a href="#page-15-1" class="link_a7cea  link_a9ef4 inline-link_f855c"></a>。</p>
+<p class="my-4 leading-7">要布线单条导线，请参见&quot;创建导线&quot;。</p>
 <div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
 <p class="my-4 leading-7">您可以在布线差分对时添加弧线。</p>
 </div></div>
@@ -1385,22 +1385,22 @@
 <p class="my-4 leading-7">如有必要，在布线控制间距区域时添加以下内容：</p>
 <ul class="list-disc pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7"><a href="#page-29-1" class="link_a7cea  link_a9ef4 inline-link_f855c">拐角</a> 如果您在没有动态的情况下布线则需要。如果有动态则可选。拐角改变导线的方向。</p>
+<p class="my-4 leading-7">拐角 如果您在没有动态的情况下布线则需要。如果有动态则可选。拐角改变导线的方向。</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7"><a href="#page-32-0" class="link_a7cea  link_a9ef4 inline-link_f855c">&quot;弧线&quot;</a> 创建弧线段。</p>
+<p class="my-4 leading-7">&quot;弧线&quot; 创建弧线段。</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7"><a href="#page-51-1" class="link_a7cea  link_a9ef4 inline-link_f855c">拆分</a> 允许导线通过暂时超过对布线间距绕过障碍物的两侧。</p>
+<p class="my-4 leading-7">拆分 允许导线通过暂时超过对布线间距绕过障碍物的两侧。</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">过孔<a href="#page-47-0" class="link_a7cea  link_a9ef4 inline-link_f855c">对—</a> 在布线时变更层。要变更过孔对方向，<strong class="font-semibold">右键</strong>点击，选择弹出菜单中的<strong class="font-semibold">过孔模式</strong>，然后点击新的过孔模式。</p>
+<p class="my-4 leading-7">过孔对— 在布线时变更层。要变更过孔对方向，<strong class="font-semibold">右键</strong>点击，选择弹出菜单中的<strong class="font-semibold">过孔模式</strong>，然后点击新的过孔模式。</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
 <p class="my-4 leading-7">测试点第页 使您的设计可测试。</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7"><a href="#page-23-0" class="link_a7cea  link_a9ef4 inline-link_f855c">长度</a> 满足长度规则。</p>
+<p class="my-4 leading-7">长度 满足长度规则。</p>
 </li>
 </ul>
 </li>
@@ -1415,7 +1415,7 @@
 <p class="my-4 leading-7">要在布线时变更布线角度，<strong class="font-semibold">右键</strong>点击，选择弹出菜单中的<strong class="font-semibold">布线角度</strong>，然后点击新角度。</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">如&quot;终止<a href="#page-49-0" class="link_a7cea  link_a9ef4 inline-link_f855c">差分</a>对导线&quot;<a href="#page-49-0" class="link_a7cea  link_a9ef4 inline-link_f855c"></a>所述结束导线。</p>
+<p class="my-4 leading-7">如&quot;<a href="#17-4" class="link_a7cea  link_a9ef4 inline-link_f855c">终止差分对导线</a>&quot;所述结束导线。</p>
 </li>
 </ol>
 <h3 id="17-3" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">设置过孔对模式<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#17-3">#</a></h3>
@@ -1433,7 +1433,7 @@
 <p class="my-4 leading-7"><strong class="font-semibold">图 88. 可用过孔对模式</strong></p>
 <h3 id="17-4" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">终止差分对导线<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#17-4">#</a></h3>
 <p class="my-4 leading-7">在<a href="#4" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式布线</a>时，您可以通过三种方式之一<a href="#17-4" class="link_a7cea  link_a9ef4 inline-link_f855c">终止差分对导线</a>。</p>
-<p class="my-4 leading-7">完成差分对导线<a href="#page-49-1" class="link_a7cea  link_a9ef4 inline-link_f855c">连接</a> <a href="#page-50-0" class="link_a7cea  link_a9ef4 inline-link_f855c">终止</a>带有过孔对或测试点对的差分对导线 <a href="#17-4" class="link_a7cea  link_a9ef4 inline-link_f855c">终止差分对导线</a>使其<a href="#page-50-1" class="link_a7cea  link_a9ef4 inline-link_f855c">不完整</a></p>
+<p class="my-4 leading-7"><a href="#17-4-1" class="link_a7cea  link_a9ef4 inline-link_f855c">完成差分对导线连接</a> 终止带有过孔对或测试点对的差分对导线 <a href="#17-4" class="link_a7cea  link_a9ef4 inline-link_f855c">终止差分对导线</a>使其不完整</p>
 <h4 id="17-4-1" class="mt-8 leading-6 text-lg title_fb7eb">完成差分对导线连接<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#17-4-1">#</a></h4>
 <p class="my-4 leading-7">SailWind Router 提供专门用于完成差分对导线的命令。</p>
 <p class="my-4 leading-7">🙊<strong class="font-semibold">限制</strong></p>
@@ -1452,18 +1452,18 @@
 </li>
 </ol>
 <p class="my-4 leading-7">👀‍<strong class="font-semibold">结果</strong></p>
-<p class="my-4 leading-7">如果您启用了<a href="/sailwind_docs/layout/guide/19_zh.html#1-6" class="link_a7cea  link_a9ef4 inline-link_f855c">设计规则检查</a>(DRC)预防模式，并且在尝试完成导线时收到错误消息，或者操作未完成，<strong class="font-semibold">右键</strong>点击并点击<strong class="font-semibold">解释最后错误</strong>。DRC 会解释原因。如果您使错误标记可见，则会出现错误标记。如果您启用了 DRC 解释模式，DRC 会自动解释错误，您可以接受错误（<strong class="font-semibold">右键</strong>点击并点击<strong class="font-semibold">继续错误</strong>）或拒绝它（按 Esc 键或<strong class="font-semibold">右键</strong>点击并点击<strong class="font-semibold">取消</strong>）。</p>
+<p class="my-4 leading-7">如果您启用了设计规则检查(DRC)预防模式，并且在尝试完成导线时收到错误消息，或者操作未完成，<strong class="font-semibold">右键</strong>点击并点击<strong class="font-semibold">解释最后错误</strong>。DRC 会解释原因。如果您使错误标记可见，则会出现错误标记。如果您启用了 DRC 解释模式，DRC 会自动解释错误，您可以接受错误（<strong class="font-semibold">右键</strong>点击并点击<strong class="font-semibold">继续错误</strong>）或拒绝它（按 Esc 键或<strong class="font-semibold">右键</strong>点击并点击<strong class="font-semibold">取消</strong>）。</p>
 <p class="my-4 leading-7">如果您使用 DRC 预防或解释模式进行间距检查，可以暂时关闭间距检查以完成导线。为此，在布线时，<strong class="font-semibold">右键</strong>点击并点击<strong class="font-semibold">检查间距</strong>。然后您可以完成导线，即使您正在创建间距违规。在间距检查关闭时，您可以违反间距边界并创建间距违规。当您点击完成操作时，错误标记会出现在工作区中每个错误的位置，错误消息会出现在<a href="/sailwind_docs/router/guide/5_zh.html#4" class="link_a7cea  link_a9ef4 inline-link_f855c">电子表格窗口</a>中。您可以在间距检查关闭时继续其他操作。要在布线期间重新激活间距检查，<strong class="font-semibold">右键</strong>点击并点击<strong class="font-semibold">检查间距</strong>。</p>
 <p class="my-4 leading-7">🙊<strong class="font-semibold">限制</strong></p>
 <p class="my-4 leading-7">您只能在<a href="#4" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式布线</a>、导线编辑和放置编辑操作中使用 DRC。</p>
 <h4 id="17-4-2" class="mt-8 leading-6 text-lg title_fb7eb">以过孔对或测试点对结束差分对导线<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#17-4-2">#</a></h4>
 <p class="my-4 leading-7">您可以选择用过孔对或测试点对来结束导线。</p>
 <p class="my-4 leading-7">🙊<strong class="font-semibold">限制</strong></p>
-<p class="my-4 leading-7">如果当前导线段是圆弧，则不能用过孔或测试点结束任何导线。如果在圆弧中结束导线，无论&quot;<a href="/sailwind_docs/layout/guide/32_zh.html#9-3" class="link_a7cea  link_a9ef4 inline-link_f855c">结束过孔模式</a>&quot;如何设置，导线都将直接结束而不添加过孔或测试点。</p>
+<p class="my-4 leading-7">如果当前导线段是圆弧，则不能用过孔或测试点结束任何导线。如果在圆弧中结束导线，无论&quot;结束过孔模式&quot;如何设置，导线都将直接结束而不添加过孔或测试点。</p>
 <p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
 <ol class="list-decimal pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7"><strong class="font-semibold">右键</strong>点击，选择弹出菜单中的**<a href="/sailwind_docs/layout/guide/32_zh.html#9-3" class="link_a7cea  link_a9ef4 inline-link_f855c">结束过孔模式</a>**，然后点击以下任一<a href="/sailwind_docs/layout/guide/32_zh.html#9-3" class="link_a7cea  link_a9ef4 inline-link_f855c">结束过孔模式</a>：</p>
+<p class="my-4 leading-7"><strong class="font-semibold">右键</strong>点击，选择弹出菜单中的<strong class="font-semibold">结束过孔模式</strong>，然后点击以下任一结束过孔模式：</p>
 <ul class="list-disc pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
 <p class="my-4 leading-7"><strong class="font-semibold">无过孔结束</strong> 不添加过孔对直接结束。</p>
@@ -1475,7 +1475,7 @@
 <p class="my-4 leading-7"><strong class="font-semibold">测试点结束</strong> 在当前测试点类型的栅格上，以最接近鼠标的位置用测试点对结束；该过孔对同时也是测试点。障碍物会自动避让以容纳过孔对。</p>
 </li>
 </ul>
-<p class="my-4 leading-7">	SailWind Router 将使用您选择的<a href="/sailwind_docs/layout/guide/32_zh.html#9-3" class="link_a7cea  link_a9ef4 inline-link_f855c">结束过孔模式</a>，直到您选择新模式。</p>
+<p class="my-4 leading-7">	SailWind Router 将使用您选择的结束过孔模式，直到您选择新模式。</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
 <p class="my-4 leading-7">按 Ctrl+点击<a href="#4-5-2" class="link_a7cea  link_a9ef4 inline-link_f855c">用过孔或测试点结束导线</a>，或<strong class="font-semibold">右键</strong>点击并选择弹出菜单中的<strong class="font-semibold">结束</strong>。</p>
@@ -1486,13 +1486,13 @@
 <p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
 <ol class="list-decimal pl-5 my-4 leading-7">
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7"><strong class="font-semibold">右键</strong>点击并选择弹出菜单中的<strong class="font-semibold">结束</strong>。除非是从圆弧结束，否则必须将<a href="/sailwind_docs/layout/guide/32_zh.html#9-3" class="link_a7cea  link_a9ef4 inline-link_f855c">结束过孔模式</a>设置为&quot;无过孔结束&quot;。（从圆弧结束时，导线会自动以无过孔或测试点的方式结束。）</p>
+<p class="my-4 leading-7"><strong class="font-semibold">右键</strong>点击并选择弹出菜单中的<strong class="font-semibold">结束</strong>。除非是从圆弧结束，否则必须将结束过孔模式设置为&quot;无过孔结束&quot;。（从圆弧结束时，导线会自动以无过孔或测试点的方式结束。）</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
 <p class="my-4 leading-7">如果在完成点上点击<strong class="font-semibold">结束</strong>（），导线将完成而非结束。</p>
 </li>
 <li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">当您结束导线时，如果在&quot;<a href="/sailwind_docs/logic/guide/24_zh.html#78" class="link_a7cea  link_a9ef4 inline-link_f855c">选项对话框</a> &gt; 布线类别 &gt; 常规子类别&quot;中选中&quot;完成时平滑导线&quot;复选框，将自动运行平滑处理。</p>
+<p class="my-4 leading-7">当您结束导线时，如果在&quot;选项对话框 &gt; 布线类别 &gt; 常规子类别&quot;中选中&quot;完成时平滑导线&quot;复选框，将自动运行平滑处理。</p>
 </li>
 </ol>
 <p class="my-4 leading-7"><strong class="font-semibold">删除过孔</strong></p>
@@ -1514,7 +1514,7 @@
 <p class="my-4 leading-7">必要时，您可以在<a href="#4" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式布线</a>过程中更改导线属性。</p>
 <p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
 <ol class="list-decimal pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">要在<a href="/sailwind_docs/layout/guide/32_zh.html#13-7" class="link_a7cea  link_a9ef4 inline-link_f855c">布线时切换层</a>，<strong class="font-semibold">右键</strong>点击，选择弹出菜单中的<strong class="font-semibold">层</strong>，然后选择要继续布线的层。导线段（从最后一个拐角或导线起点开始）将移动到新层。</li>
+<li class="[&amp;:not(:first-child)]:mt-2">要在布线时切换层，<strong class="font-semibold">右键</strong>点击，选择弹出菜单中的<strong class="font-semibold">层</strong>，然后选择要继续布线的层。导线段（从最后一个拐角或导线起点开始）将移动到新层。</li>
 </ol>
 <p class="my-4 leading-7">要选择未列出的层，点击<strong class="font-semibold">选择</strong>。</p>
 <p class="my-4 leading-7">或者，<strong class="font-semibold">右键</strong>点击并选择弹出菜单中的<strong class="font-semibold">层切换</strong>切换到层对中的另一层。您也可以使用 Alt+滚轮按钮滚动切换层。</p>
@@ -1551,7 +1551,7 @@
 </li>
 </ul>
 </li>
-</ol><!--/$--></div><div class="rspress-doc-footer"><footer class="mt-8"><div class="xs:flex pb-5 px-2 justify-end items-center"><div class="flex text-sm text-text-2 leading-6 sm:leading-8 font-medium"><p>最近更新时间<!-- -->: <span>2025/9/1 07:38:02</span></p></div></div><div class="flex flex-col"></div><div class="flex flex-col sm:flex-row sm:justify-around gap-4 pt-6"><div class="prev_c92d1 flex flex-col"><a href="/sailwind_docs/router/guide/18_zh.html" class="link_a7cea pager-link_e0d2d"><span class="desc_dcc01">上一页</span><span class="title_a3acb">第 18 章 选择性自动布线</span></a></div><div class="next_c11be flex flex-col"><a href="/sailwind_docs/router/guide/20_zh.html" class="link_a7cea pager-link_e0d2d next_ad355"><span class="desc_dcc01">下一页</span><span class="title_a3acb">第 20 章 手动编辑</span></a></div></div></footer></div></div><div class="aside-container_bc5fa"><div class="flex flex-col"><div id="aside-container" class="relative text-sm font-medium"><div class="leading-7 block text-sm font-semibold pl-3">本页目录</div><nav class="mt-1"><ul class="relative"><li><a href="#1" title="交互式布线工作流程 ಠ_ಠ" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">交互式布线工作流程 ಠ_ಠ</span></a></li><li><a href="#2" title="交互式布线设置" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">交互式布线设置</span></a></li><li><a href="#2-1" title="设置网络拓扑" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">设置网络拓扑</span></a></li><li><a href="#2-2" title="受保护对象" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">受保护对象</span></a></li><li><a href="#2-2-1" title="在交互式布线时保护导线和过孔" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">在交互式布线时保护导线和过孔</span></a></li><li><a href="#2-2-2" title="保护现有对象" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">保护现有对象</span></a></li><li><a href="#2-2-3" title="取消保护现有对象" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">取消保护现有对象</span></a></li><li><a href="#2-3" title="交互式布线的显示选项" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">交互式布线的显示选项</span></a></li><li><a href="#2-3-1" title="动态布线" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">动态布线</span></a></li><li><a href="#2-3-2" title="显示过孔引导" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">显示过孔引导</span></a></li><li><a href="#2-3-3" title="完成点" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">完成点</span></a></li><li><a href="#2-3-4" title="显示障碍物周围的间距" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">显示障碍物周围的间距</span></a></li><li><a href="#2-3-5" title="显示受保护对象" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">显示受保护对象</span></a></li><li><a href="#2-3-6" title="显示飞线" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">显示飞线</span></a></li><li><a href="#2-3-7" title="高亮网络" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">高亮网络</span></a></li><li><a href="#3" title="设计规则检查与交互式布线 ಠ_ಠ" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">设计规则检查与交互式布线 ಠ_ಠ</span></a></li><li><a href="#4" title="交互式布线" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">交互式布线</span></a></li><li><a href="#4-1" title="导线推挤 ಠ_ಠ" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">导线推挤 ಠ_ಠ</span></a></li><li><a href="#4-2" title="带长度监控的交互式布线 ಠ_ಠ" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">带长度监控的交互式布线 ಠ_ಠ</span></a></li><li><a href="#4-3" title="监控导线长度" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">监控导线长度</span></a></li><li><a href="#4-4" title="创建导线" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">创建导线</span></a></li><li><a href="#4-5" title="结束导线" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">结束导线</span></a></li><li><a href="#4-5-1" title="完成导线连接" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">完成导线连接</span></a></li><li><a href="#4-5-2" title="用过孔或测试点结束导线" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">用过孔或测试点结束导线</span></a></li><li><a href="#4-5-3" title="结束不完整的导线" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">结束不完整的导线</span></a></li><li><a href="#5" title="使用元件规则创建导线" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">使用元件规则创建导线</span></a></li><li><a href="#6" title="使用元件规则结束导线" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">使用元件规则结束导线</span></a></li><li><a href="#7" title="布线至 SMD 管脚" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">布线至 SMD 管脚</span></a></li><li><a href="#8" title="从 SMD 管脚布线" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">从 SMD 管脚布线</span></a></li><li><a href="#9" title="从受限层上的 SMD 管脚布线" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">从受限层上的 SMD 管脚布线</span></a></li><li><a href="#10" title="跟随形状" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">跟随形状</span></a></li><li><a href="#11" title="增加导线长度" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">增加导线长度</span></a></li><li><a href="#11-1" title="以默认振幅添加蛇形线" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">以默认振幅添加蛇形线</span></a></li><li><a href="#11-2" title="以自定义振幅添加蛇形线" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">以自定义振幅添加蛇形线</span></a></li><li><a href="#11-3" title="向现有导线添加蛇形线" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">向现有导线添加蛇形线</span></a></li><li><a href="#11-3-1" title="添加蛇形线以满足长度规则" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">添加蛇形线以满足长度规则</span></a></li><li><a href="#11-3-2" title="在指定区域添加蛇形线" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">在指定区域添加蛇形线</span></a></li><li><a href="#12" title="斜接 ಠ_ಠ" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">斜接 ಠ_ಠ</span></a></li><li><a href="#13" title="拐角" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">拐角</span></a></li><li><a href="#13-1" title="交互式布线时添加拐角" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">交互式布线时添加拐角</span></a></li><li><a href="#13-2" title="向现有导线添加拐角" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">向现有导线添加拐角</span></a></li><li><a href="#14" title="圆弧" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">圆弧</span></a></li><li><a href="#14-1" title="添加自由绘制圆弧" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">添加自由绘制圆弧</span></a></li><li><a href="#14-2" title="添加指定半径圆弧" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">添加指定半径圆弧</span></a></li><li><a href="#15" title="过孔" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">过孔</span></a></li><li><a href="#15-1" title="过孔模式 ಠ_ಠ" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">过孔模式 ಠ_ಠ</span></a></li><li><a href="#15-2" title="设置过孔类型" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">设置过孔类型</span></a></li><li><a href="#15-3" title="保护过孔" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">保护过孔</span></a></li><li><a href="#15-4" title="在过孔栅格上添加过孔" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">在过孔栅格上添加过孔</span></a></li><li><a href="#15-5" title="使用层切换和添加过孔更改到特定层" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">使用层切换和添加过孔更改到特定层</span></a></li><li><a href="#15-6" title="交互式布线时添加过孔" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">交互式布线时添加过孔</span></a></li><li><a href="#15-7" title="向现有导线添加过孔" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">向现有导线添加过孔</span></a></li><li><a href="#15-8" title="添加缝合过孔" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">添加缝合过孔</span></a></li><li><a href="#16" title="布线到布铜区和飞线显示 ಠ_ಠ" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">布线到布铜区和飞线显示 ಠ_ಠ</span></a></li><li><a href="#17" title="差分对" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">差分对</span></a></li><li><a href="#17-1" title="差分对原理 ಠ_ಠ" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">差分对原理 ಠ_ಠ</span></a></li><li><a href="#17-2" title="创建差分对导线" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">创建差分对导线</span></a></li><li><a href="#17-3" title="设置过孔对模式" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">设置过孔对模式</span></a></li><li><a href="#17-4" title="终止差分对导线" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">终止差分对导线</span></a></li><li><a href="#17-4-1" title="完成差分对导线连接" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">完成差分对导线连接</span></a></li><li><a href="#17-4-2" title="以过孔对或测试点对结束差分对导线" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">以过孔对或测试点对结束差分对导线</span></a></li><li><a href="#17-4-3" title="以未完成状态结束差分对导线" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">以未完成状态结束差分对导线</span></a></li><li><a href="#17-5" title="分割差分对导线" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">分割差分对导线</span></a></li><li><a href="#18" title="布线时更改导线属性" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">布线时更改导线属性</span></a></li></ul></nav></div></div></div></div></div></div></section></div>
+</ol><!--/$--></div><div class="rspress-doc-footer"><footer class="mt-8"><div class="xs:flex pb-5 px-2 justify-end items-center"><div class="flex text-sm text-text-2 leading-6 sm:leading-8 font-medium"><p>最近更新时间<!-- -->: <span>2025/9/2 03:10:36</span></p></div></div><div class="flex flex-col"></div><div class="flex flex-col sm:flex-row sm:justify-around gap-4 pt-6"><div class="prev_c92d1 flex flex-col"><a href="/sailwind_docs/router/guide/18_zh.html" class="link_a7cea pager-link_e0d2d"><span class="desc_dcc01">上一页</span><span class="title_a3acb">第 18 章 选择性自动布线</span></a></div><div class="next_c11be flex flex-col"><a href="/sailwind_docs/router/guide/20_zh.html" class="link_a7cea pager-link_e0d2d next_ad355"><span class="desc_dcc01">下一页</span><span class="title_a3acb">第 20 章 手动编辑</span></a></div></div></footer></div></div><div class="aside-container_bc5fa"><div class="flex flex-col"><div id="aside-container" class="relative text-sm font-medium"><div class="leading-7 block text-sm font-semibold pl-3">本页目录</div><nav class="mt-1"><ul class="relative"><li><a href="#1" title="交互式布线工作流程 ಠ_ಠ" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">交互式布线工作流程 ಠ_ಠ</span></a></li><li><a href="#2" title="交互式布线设置" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">交互式布线设置</span></a></li><li><a href="#2-1" title="设置网络拓扑" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">设置网络拓扑</span></a></li><li><a href="#2-2" title="受保护对象" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">受保护对象</span></a></li><li><a href="#2-2-1" title="在交互式布线时保护导线和过孔" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">在交互式布线时保护导线和过孔</span></a></li><li><a href="#2-2-2" title="保护现有对象" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">保护现有对象</span></a></li><li><a href="#2-2-3" title="取消保护现有对象" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">取消保护现有对象</span></a></li><li><a href="#2-3" title="交互式布线的显示选项" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">交互式布线的显示选项</span></a></li><li><a href="#2-3-1" title="动态布线" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">动态布线</span></a></li><li><a href="#2-3-2" title="显示过孔引导" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">显示过孔引导</span></a></li><li><a href="#2-3-3" title="完成点" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">完成点</span></a></li><li><a href="#2-3-4" title="显示障碍物周围的间距" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">显示障碍物周围的间距</span></a></li><li><a href="#2-3-5" title="显示受保护对象" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">显示受保护对象</span></a></li><li><a href="#2-3-6" title="显示飞线" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">显示飞线</span></a></li><li><a href="#2-3-7" title="高亮网络" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">高亮网络</span></a></li><li><a href="#3" title="设计规则检查与交互式布线 ಠ_ಠ" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">设计规则检查与交互式布线 ಠ_ಠ</span></a></li><li><a href="#4" title="交互式布线" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">交互式布线</span></a></li><li><a href="#4-1" title="导线推挤 ಠ_ಠ" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">导线推挤 ಠ_ಠ</span></a></li><li><a href="#4-2" title="带长度监控的交互式布线 ಠ_ಠ" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">带长度监控的交互式布线 ಠ_ಠ</span></a></li><li><a href="#4-3" title="监控导线长度" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">监控导线长度</span></a></li><li><a href="#4-4" title="创建导线" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">创建导线</span></a></li><li><a href="#4-5" title="结束导线" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">结束导线</span></a></li><li><a href="#4-5-1" title="完成导线连接" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">完成导线连接</span></a></li><li><a href="#4-5-2" title="用过孔或测试点结束导线" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">用过孔或测试点结束导线</span></a></li><li><a href="#4-5-3" title="结束不完整的导线" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">结束不完整的导线</span></a></li><li><a href="#5" title="使用元件规则创建导线" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">使用元件规则创建导线</span></a></li><li><a href="#6" title="使用元件规则结束导线" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">使用元件规则结束导线</span></a></li><li><a href="#7" title="布线至 SMD 管脚" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">布线至 SMD 管脚</span></a></li><li><a href="#8" title="从 SMD 管脚布线" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">从 SMD 管脚布线</span></a></li><li><a href="#9" title="从受限层上的 SMD 管脚布线" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">从受限层上的 SMD 管脚布线</span></a></li><li><a href="#10" title="跟随形状" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">跟随形状</span></a></li><li><a href="#11" title="增加导线长度" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">增加导线长度</span></a></li><li><a href="#11-1" title="以默认振幅添加蛇形线" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">以默认振幅添加蛇形线</span></a></li><li><a href="#11-2" title="以自定义振幅添加蛇形线" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">以自定义振幅添加蛇形线</span></a></li><li><a href="#11-3" title="向现有导线添加蛇形线" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">向现有导线添加蛇形线</span></a></li><li><a href="#11-3-1" title="添加蛇形线以满足长度规则" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">添加蛇形线以满足长度规则</span></a></li><li><a href="#11-3-2" title="在指定区域添加蛇形线" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">在指定区域添加蛇形线</span></a></li><li><a href="#12" title="斜接 ಠ_ಠ" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">斜接 ಠ_ಠ</span></a></li><li><a href="#13" title="拐角" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">拐角</span></a></li><li><a href="#13-1" title="交互式布线时添加拐角" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">交互式布线时添加拐角</span></a></li><li><a href="#13-2" title="向现有导线添加拐角" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">向现有导线添加拐角</span></a></li><li><a href="#14" title="圆弧" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">圆弧</span></a></li><li><a href="#14-1" title="添加自由绘制圆弧" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">添加自由绘制圆弧</span></a></li><li><a href="#14-2" title="添加指定半径圆弧" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">添加指定半径圆弧</span></a></li><li><a href="#15" title="过孔" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">过孔</span></a></li><li><a href="#15-1" title="过孔模式 ಠ_ಠ" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">过孔模式 ಠ_ಠ</span></a></li><li><a href="#15-2" title="设置过孔类型" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">设置过孔类型</span></a></li><li><a href="#15-3" title="保护过孔" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">保护过孔</span></a></li><li><a href="#15-4" title="在过孔栅格上添加过孔" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">在过孔栅格上添加过孔</span></a></li><li><a href="#15-5" title="使用层切换和添加过孔更改到特定层" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">使用层切换和添加过孔更改到特定层</span></a></li><li><a href="#15-6" title="交互式布线时添加过孔" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">交互式布线时添加过孔</span></a></li><li><a href="#15-7" title="向现有导线添加过孔" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">向现有导线添加过孔</span></a></li><li><a href="#15-8" title="添加缝合过孔" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">添加缝合过孔</span></a></li><li><a href="#16" title="布线到布铜区和飞线显示 ಠ_ಠ" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">布线到布铜区和飞线显示 ಠ_ಠ</span></a></li><li><a href="#17" title="差分对" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">差分对</span></a></li><li><a href="#17-1" title="差分对原理 ಠ_ಠ" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">差分对原理 ಠ_ಠ</span></a></li><li><a href="#17-2" title="创建差分对导线" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">创建差分对导线</span></a></li><li><a href="#17-3" title="设置过孔对模式" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">设置过孔对模式</span></a></li><li><a href="#17-4" title="终止差分对导线" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">终止差分对导线</span></a></li><li><a href="#17-4-1" title="完成差分对导线连接" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">完成差分对导线连接</span></a></li><li><a href="#17-4-2" title="以过孔对或测试点对结束差分对导线" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">以过孔对或测试点对结束差分对导线</span></a></li><li><a href="#17-4-3" title="以未完成状态结束差分对导线" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">以未完成状态结束差分对导线</span></a></li><li><a href="#17-5" title="分割差分对导线" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">分割差分对导线</span></a></li><li><a href="#18" title="布线时更改导线属性" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">布线时更改导线属性</span></a></li></ul></nav></div></div></div></div></div></div></section></div>
     <div id="search-container"></div>
   </body>
 </html>
