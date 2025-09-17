@@ -1775,6 +1775,7 @@ InStrRev 函数有以下参数：
 ```
 
 InStrRev("abcdbc", "bc")
+```
 
 ### Left
 
