@@ -24,5 +24,12 @@
     "label": "快速参考(Quick Reference)",
     "collapsed": true,
     "overviewHeaders": [1]
+  },
+  {
+    "type": "dir",
+    "name": "scripts",
+    "label": "命令参考(Command Reference)",
+    "collapsed": true,
+    "overviewHeaders": [1]
   }
 ]

@@ -54,7 +54,7 @@ def merge_markdown_files(directory, output_filename="merged.md"):
 if __name__ == "__main__":
     root_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-    target_directory = os.path.join(root_dir, "scripts", "26")
+    target_directory = os.path.join(root_dir, "scripts", "3")
 
     if os.path.isdir(target_directory):
         merge_markdown_files(target_directory)
