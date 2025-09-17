@@ -90,7 +90,7 @@ if __name__ == "__main__":
     # args = parser.parse_args()
     # document_dir = args.document_dir
 
-    document_dir = r"docs/router/tutrial"
+    document_dir = r"D:\hugh\code\sailwind3.0_docs\docs\logic\scripts"
     input_dir = project_path / document_dir
     # input_dir = r"D:\hugh\code\sailwind3.0_docs\docs\v4\lpcreator"
     main(input_dir)
