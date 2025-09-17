@@ -1,0 +1,1213 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Rspress v1.45.6">
+    <title data-rh="true">第 4 章 SPICE 网表属性术语表 - SailWind</title><meta data-rh="true" name="description" content="SailWind"/>
+  <script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script><link rel="icon" href="/sailwind_docs/favicon.ico"><script defer src="/sailwind_docs/static/js/styles.250a77ff.js"></script><script defer src="/sailwind_docs/static/js/lib-react.36f9b428.js"></script><script defer src="/sailwind_docs/static/js/lib-router.971f4280.js"></script><script defer src="/sailwind_docs/static/js/2407.974bbf1c.js"></script><script defer src="/sailwind_docs/static/js/index.c85221c6.js"></script><link href="/sailwind_docs/static/css/styles.b5129506.css" rel="stylesheet"></head>
+
+  <body >
+    <div id="root"><div class="navContainer_d18b1 rspress-nav px-6  sticky_ddfa7"><div class="container_e4235 flex justify-between items-center h-full"><div class="navBarTitle_c5f07"><a href="/sailwind_docs/index.html" class="link_a7cea flex items-center w-full h-full text-base font-semibold transition-opacity duration-300 hover:opacity-60"><div class="mr-1 min-w-8"><img src="/sailwind_docs/logo.png" alt="logo" id="logo" class="rspress-logo"/></div><span>SailWind</span></a></div><div class="flex flex-1 justify-end items-center"><div class="rightNav_a2fea"><div class="flex sm:flex-1 items-center sm:pl-4 sm:pr-2"><div class="rspress-nav-search-button navSearchButton_df1fb"><button><svg width="18" height="18" viewBox="0 0 32 32"><path fill="var(--rp-c-gray)" d="m29 27.586-7.552-7.552a11.018 11.018 0 1 0-1.414 1.414L27.586 29ZM4 13a9 9 0 1 1 9 9 9.01 9.01 0 0 1-9-9"></path></svg><p class="searchWord_af2c1">搜索</p><div style="opacity:0"><span></span><span>K</span></div></button></div><div class="mobileNavSearchButton_d85a9"><svg width="24" height="24" viewBox="0 0 32 32"><path fill="var(--rp-c-gray)" d="m29 27.586-7.552-7.552a11.018 11.018 0 1 0-1.414 1.414L27.586 29ZM4 13a9 9 0 1 1 9 9 9.01 9.01 0 0 1-9-9"></path></svg></div></div><div class="rspress-nav-menu menu h-14"><a href="/sailwind_docs/logic/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154 activeItem_a28b5 text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">原理图 (Logic)</div></a><a href="/sailwind_docs/layout/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">物理版图 (Layout)</div></a><a href="/sailwind_docs/router/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">自动布线 (Router)</div></a><a href="/sailwind_docs/lpcreator/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">焊盘图形 (LPW)</div></a><a href="/sailwind_docs/about.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">关于</div></a></div><div class="flex-center flex-row"><div class="mx-2"><div class="md:mr-2 rspress-nav-appearance"><div class="p-1 border border-solid border-gray-300 text-gray-400  cursor-pointer rounded-md hover:border-gray-600 hover:text-gray-600 dark:hover:border-gray-200 dark:hover:text-gray-200 transition-all duration-300 w-7 h-7"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" class="dark:hidden" width="18" height="18" fill="currentColor"><path d="M12 18c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6m0-10c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4M12 4c-.6 0-1-.4-1-1V1c0-.6.4-1 1-1s1 .4 1 1v2c0 .6-.4 1-1 1M12 24c-.6 0-1-.4-1-1v-2c0-.6.4-1 1-1s1 .4 1 1v2c0 .6-.4 1-1 1M5.6 6.6c-.3 0-.5-.1-.7-.3L3.5 4.9c-.4-.4-.4-1 0-1.4s1-.4 1.4 0l1.4 1.4c.4.4.4 1 0 1.4-.1.2-.4.3-.7.3M19.8 20.8c-.3 0-.5-.1-.7-.3l-1.4-1.4c-.4-.4-.4-1 0-1.4s1-.4 1.4 0l1.4 1.4c.4.4.4 1 0 1.4-.2.2-.5.3-.7.3M3 13H1c-.6 0-1-.4-1-1s.4-1 1-1h2c.6 0 1 .4 1 1s-.4 1-1 1M23 13h-2c-.6 0-1-.4-1-1s.4-1 1-1h2c.6 0 1 .4 1 1s-.4 1-1 1M4.2 20.8c-.3 0-.5-.1-.7-.3-.4-.4-.4-1 0-1.4l1.4-1.4c.4-.4 1-.4 1.4 0s.4 1 0 1.4l-1.4 1.4c-.2.2-.4.3-.7.3M18.4 6.6c-.3 0-.5-.1-.7-.3-.4-.4-.4-1 0-1.4l1.4-1.4c.4-.4 1-.4 1.4 0s.4 1 0 1.4l-1.4 1.4c-.2.2-.5.3-.7.3"></path></svg><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" class="hidden dark:block" width="18" height="18" fill="currentColor"><path d="M12.1 22h-.9c-5.5-.5-9.5-5.4-9-10.9.4-4.8 4.2-8.6 9-9 .4 0 .8.2 1 .5s.2.8-.1 1.1c-2 2.7-1.4 6.4 1.3 8.4 2.1 1.6 5 1.6 7.1 0 .3-.2.7-.3 1.1-.1.3.2.5.6.5 1-.2 2.7-1.5 5.1-3.6 6.8-1.9 1.4-4.1 2.2-6.4 2.2M9.3 4.4c-2.9 1-5 3.6-5.2 6.8-.4 4.4 2.8 8.3 7.2 8.7 2.1.2 4.2-.4 5.8-1.8 1.1-.9 1.9-2.1 2.4-3.4-2.5.9-5.3.5-7.5-1.1-2.8-2.2-3.9-5.9-2.7-9.2"></path></svg></div></div></div><div class="social-links menu-item_e90a6 flex-center relative"><div class="flex-center h-full gap-x-4 transition-colors duration-300 md:mr-2"><a href="https://github.com/mikigo/sailwind_docs/" target="_blank" rel="noopener noreferrer" class="social-links"><div class="social-links-icon_a4ad0"><div><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a></div></div></div></div><div class="mobileNavMenu_e7045"><div class="navScreen_ec30c  rspress-nav-screen" id="navScreen"><div class="container_c935d"><div class="navMenu_b887b"><div class="navMenuItem_e7978 w-full"><a href="/sailwind_docs/logic/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154 activeItem_a28b5 text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">原理图 (Logic)</div></a></div><div class="navMenuItem_e7978 w-full"><a href="/sailwind_docs/layout/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">物理版图 (Layout)</div></a></div><div class="navMenuItem_e7978 w-full"><a href="/sailwind_docs/router/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">自动布线 (Router)</div></a></div><div class="navMenuItem_e7978 w-full"><a href="/sailwind_docs/lpcreator/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">焊盘图形 (LPW)</div></a></div><div class="navMenuItem_e7978 w-full"><a href="/sailwind_docs/about.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">关于</div></a></div></div><div class="flex-center flex-col gap-2"><div class="mt-2 navAppearance_bf893 flex justify-center"></div><div class="social-links menu-item_e90a6 flex-center relative"><div class="flex-center h-full gap-x-4 transition-colors duration-300 md:mr-2"><a href="https://github.com/mikigo/sailwind_docs/" target="_blank" rel="noopener noreferrer" class="social-links"><div class="social-links-icon_a4ad0"><div><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a></div></div></div></div></div><button aria-label="mobile hamburger" class=" rspress-mobile-hamburger navHamburger_ac64c text-gray-500"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="currentColor"><circle cx="8" cy="16" r="2" fill="currentColor"></circle><circle cx="16" cy="16" r="2" fill="currentColor"></circle><circle cx="24" cy="16" r="2" fill="currentColor"></circle></svg></button></div></div></div></div><section><div class="docLayout_af141 pt-0"><aside class="sidebar_dd719 rspress-sidebar "><div class="navTitleMask_fb17c"><div class="navBarTitle_c5f07"><a href="/sailwind_docs/index.html" class="link_a7cea flex items-center w-full h-full text-base font-semibold transition-opacity duration-300 hover:opacity-60"><div class="mr-1 min-w-8"><img src="/sailwind_docs/logo.png" alt="logo" id="logo" class="rspress-logo"/></div><span>SailWind</span></a></div></div><div class="rspress-scrollbar sidebarContent_da296"><nav class="pb-2"><a href="/sailwind_docs/logic/index.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:14px;margin-left:0;border-radius:0 var(--rp-radius) var(--rp-radius) 0;padding-left:24px;font-weight:bold"><span>章节预览</span></div></a><section class="rspress-sidebar-section mt-0.5 block" style="margin-left:0"><div class="rspress-sidebar-collapse flex justify-between items-center menuItem_ac22e" style="border-radius:0 var(--rp-radius) var(--rp-radius) 0;cursor:pointer"><h2 class="py-2 px-3 text-sm font-medium flex" style="font-size:14px;padding-left:24px;font-weight:bold"><span class="flex-center" style="font-size:14px">指南(Guide)</span></h2><div class="collapseContainer_d6e4e p-2 rounded-xl"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(0deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div class="transition-all duration-300 ease-in-out" style="overflow:hidden;max-height:0"><div class="rspress-sidebar-group transition-opacity duration-500 ease-in-out" style="opacity:0;margin-left:12px"><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/1_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 1 章 SailWind Logic 快速开始 ಠ_ಠ</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/2_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 2 章 开始 SailWind Logic</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/3_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 3 章 用户界面</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/4_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 4 章 文件操作</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/5_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 5 章 设计设置</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/6_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 6 章 管理库和库数据</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/7_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 7 章 库元件</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/8_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 8 章 特殊示意图符号</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/9_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 9 章 设计和编辑基础</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/10_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 10 章 原理图元件</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/11_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 11 章 图页</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/12_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 12 章 非电气对象</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/13_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 13 章 连接</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/14_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 14 章 层次化设计</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/15_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 15 章 原理图对象修改</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/16_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 16 章 规则</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/17_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 17 章 报告</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/18_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 18 章 与 Layout 和 Router 协作</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/19_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 19 章 绘图和打印</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/20_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 20 章 对象链接与嵌入 ❌</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/21_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 21 章 使用高级程序 ❌</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/22_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 22 章 自定义界面 ಠ_ಠ</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/23_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 23 章 崩溃检测、BMW 和 BLT ಠ_ಠ</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/24_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 24 章 SailWind Logic 对话框 ಠ_ಠ</span></div></a></div></div></div></section><section class="rspress-sidebar-section mt-0.5 block" style="margin-left:0"><div class="rspress-sidebar-collapse flex justify-between items-center menuItem_ac22e" style="border-radius:0 var(--rp-radius) var(--rp-radius) 0;cursor:pointer"><h2 class="py-2 px-3 text-sm font-medium flex" style="font-size:14px;padding-left:24px;font-weight:bold"><span class="flex-center" style="font-size:14px">教程(Tutorial)</span></h2><div class="collapseContainer_d6e4e p-2 rounded-xl"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(0deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div class="transition-all duration-300 ease-in-out" style="overflow:hidden;max-height:0"><div class="rspress-sidebar-group transition-opacity duration-500 ease-in-out" style="opacity:0;margin-left:12px"><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/2_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>学习用户界面教程</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/3_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>创建库元件教程</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/4_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>添加与复制元件教程</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/5_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>添加连接教程</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/6_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>添加总线教程</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/7_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>编辑设计元素教程</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/8_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>分配约束教程</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/9_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>创建报告教程</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/10_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>连接 SailWind Layout教程</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/11_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>更新原理图设计变更教程</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/12_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>打印和绘制电路图教程</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/13_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>管理多页原理图教程</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/14_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>模拟仿真设计教程</span></div></a></div></div></div></section><section class="rspress-sidebar-section mt-0.5 block" style="margin-left:0"><div class="rspress-sidebar-collapse flex justify-between items-center menuItem_ac22e" style="border-radius:0 var(--rp-radius) var(--rp-radius) 0;cursor:pointer"><h2 class="py-2 px-3 text-sm font-medium flex" style="font-size:14px;padding-left:24px;font-weight:bold"><span class="flex-center" style="font-size:14px">快速参考(Quick Reference)</span></h2><div class="collapseContainer_d6e4e p-2 rounded-xl"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(0deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div class="transition-all duration-300 ease-in-out" style="overflow:hidden;max-height:0"><div class="rspress-sidebar-group transition-opacity duration-500 ease-in-out" style="opacity:0;margin-left:12px"><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/qr/modless.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>无模命令</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/qr/shortcut.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>键盘快捷键</span></div></a></div></div></div></section><section class="rspress-sidebar-section mt-0.5 block" style="margin-left:0"><div class="rspress-sidebar-collapse flex justify-between items-center menuItem_ac22e" style="border-radius:0 var(--rp-radius) var(--rp-radius) 0;cursor:pointer"><h2 class="py-2 px-3 text-sm font-medium flex" style="font-size:14px;padding-left:24px;font-weight:bold"><span class="flex-center" style="font-size:14px">命令参考(Command Reference)</span></h2><div class="collapseContainer_d6e4e p-2 rounded-xl"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(0deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div class="transition-all duration-300 ease-in-out" style="overflow:hidden;max-height:0"><div class="rspress-sidebar-group transition-opacity duration-500 ease-in-out" style="opacity:0;margin-left:12px"><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/scripts/1_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 1 章 Logic 自动化服务器</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/scripts/2_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 2 章 自动化服务器参考</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/scripts/3_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 3 章 宏</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/scripts/4_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItemActive_de63c mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 4 章 SPICE 网表属性术语表</span></div></a></div></div></div></section></nav></div></aside><div class="flex-1 relative min-w-0"><div class="rspress-sidebar-menu-container "><div class="rspress-sidebar-menu"><button type="button" class="flex-center mr-auto"><div class="text-md mr-2"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg></div><span class="text-sm">Menu</span></button><button type="button" class="flex-center ml-auto"><span class="text-sm">本页目录</span><div class="text-md mr-2" style="transform:rotate(0deg);transition:transform 0.2s ease-out;margin-top:2px"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></button><div class="rspress-local-toc-container "><ul><li><a href="#a2d" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">A2D</span></a></li><li><a href="#abstol" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">ABSTOL</span></a></li><li><a href="#acdctran" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">AC/DC/TRAN</span></a></li><li><a href="#acct" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">ACCT</span></a></li><li><a href="#ad" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">AD</span></a></li><li><a href="#amplitude" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">AMPLITUDE</span></a></li><li><a href="#as" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">AS</span></a></li><li><a href="#bulk" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">BULK</span></a></li><li><a href="#chgtol" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">CHGTOL</span></a></li><li><a href="#cptime" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">CPTIME</span></a></li><li><a href="#current" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">CURRENT</span></a></li><li><a href="#d2a" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">D2A</span></a></li><li><a href="#damping" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">DAMPING</span></a></li><li><a href="#dc" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">DC</span></a></li><li><a href="#endfreq" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">ENDFREQ</span></a></li><li><a href="#endval" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">ENDVAL</span></a></li><li><a href="#freq_carrier" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">FREQ_CARRIER</span></a></li><li><a href="#freq_signal" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">FREQ_SIGNAL</span></a></li><li><a href="#frequency" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">FREQUENCY</span></a></li><li><a href="#gain" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">GAIN</span></a></li><li><a href="#generator" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">GENERATOR</span></a></li><li><a href="#gmin" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">GMIN</span></a></li><li><a href="#i1-i2-i3-" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">I1, I2, I3, ...</span></a></li><li><a href="#ic" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">IC</span></a></li><li><a href="#increment" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">INCREMENT</span></a></li><li><a href="#init" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">INIT</span></a></li><li><a href="#initial" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">INITIAL</span></a></li><li><a href="#inputsource" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">INPUTSOURCE</span></a></li><li><a href="#itl1" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">ITL1</span></a></li><li><a href="#itl2" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">ITL2</span></a></li><li><a href="#itl4" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">ITL4</span></a></li><li><a href="#itl5" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">ITL5</span></a></li><li><a href="#l" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">L</span></a></li><li><a href="#label" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">LABEL</span></a></li><li><a href="#library" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">LIBRARY</span></a></li><li><a href="#limpts" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">LIMPTS</span></a></li><li><a href="#linoctdec" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">LIN/OCT/DEC</span></a></li><li><a href="#list" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">LIST</span></a></li><li><a href="#mod_index" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">MOD_INDEX</span></a></li><li><a href="#model" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">MODEL</span></a></li><li><a href="#no_pins" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">NO_PINS</span></a></li><li><a href="#node" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">NODE</span></a></li><li><a href="#nodeset" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">NODESET</span></a></li><li><a href="#noecho" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">NOECHO</span></a></li><li><a href="#noisesource" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">NOISESOURCE</span></a></li><li><a href="#nopage" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">NOPAGE</span></a></li><li><a href="#numdgt" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">NUMDGT</span></a></li><li><a href="#numpoints" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">NUMPOINTS</span></a></li><li><a href="#numrun" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">NUMRUN</span></a></li><li><a href="#offset" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">OFFSET</span></a></li><li><a href="#opts" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">OPTS</span></a></li><li><a href="#order" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">ORDER</span></a></li><li><a href="#out" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">OUT</span></a></li><li><a href="#output" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">OUTPUT</span></a></li><li><a href="#parnam" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">PARNAM</span></a></li><li><a href="#phase" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">PHASE</span></a></li><li><a href="#pinorder" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">PINORDER</span></a></li><li><a href="#pivrel" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">PIVREL</span></a></li><li><a href="#prefix" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">PREFIX</span></a></li><li><a href="#probe" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">PROBE</span></a></li><li><a href="#pulsed" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">PULSED</span></a></li><li><a href="#reltol" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">RELTOL</span></a></li><li><a href="#sourcename" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">SOURCENAME</span></a></li><li><a href="#startfreq" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">STARTFREQ</span></a></li><li><a href="#startval" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">STARTVAL</span></a></li><li><a href="#tdelay" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">TDELAY</span></a></li><li><a href="#temp1-temp2-temp3-" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">TEMP1, TEMP2, TEMP3, ...</span></a></li><li><a href="#tfall" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">TFALL</span></a></li><li><a href="#tfinal" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">TFINAL</span></a></li><li><a href="#ti-t2-t3--t9" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">TI, T2, T3, ... T9</span></a></li><li><a href="#tnom" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">TNOM</span></a></li><li><a href="#tperiod" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">TPERIOD</span></a></li><li><a href="#tpulwidth" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">TPULWIDTH</span></a></li><li><a href="#v1-v2-v3--v9" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">V1, V2, V3, ..., V9</span></a></li><li><a href="#value" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">VALUE</span></a></li><li><a href="#vamplitude" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">VAMPLITUDE</span></a></li><li><a href="#vinitial" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">VINITIAL</span></a></li><li><a href="#vntol" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">VNTOL</span></a></li><li><a href="#voffset" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">VOFFSET</span></a></li><li><a href="#voltage" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">VOLTAGE</span></a></li><li><a href="#vpulsed" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">VPULSED</span></a></li><li><a href="#w" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">W</span></a></li><li><a href="#width" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">WIDTH</span></a></li><li><a href="#ymax" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">YMAX</span></a></li></ul></div></div></div><div class="content_ff766 rspress-doc-container flex"><div class="flex-1 overflow-x-auto"><div class="rspress-doc"><!--$--><h1 id="第-4-章-spice-网表属性术语表" class="rspress-doc-title text-3xl mb-10 leading-10 tracking-tight title_fb7eb">第 4 章 SPICE 网表属性术语表<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#第-4-章-spice-网表属性术语表">#</a></h1>
+<p class="my-4 leading-7">本节描述的属性可应用于您的模拟设计。所有模拟属性在添加时均以 <code>sim.analog.</code> 为前缀。例如，在使用模型文件时，您需要将 <code>sim.analog.model</code> 属性添加到元件上。该格式不区分大小写。</p>
+<table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
+<thead>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">LIN/OCT/DEC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">LIST</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">MOD_INDEX</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">MODEL</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">NO_PINS</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">NODE</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">NODESET</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">NOECHO</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">NOISESOURCE</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">NOPAGE</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">NUMDGT</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">NUMPOINTS</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">NUMRUN</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">OFFSET</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">OPTS</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">ORDER</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">OUT</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">OUTPUT</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">PARNAM</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">PHASE</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">PINORDER</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">PIVREL</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">PREFIX</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">PROBE</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">PULSED</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">RELTOL</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">SOURCENAME</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">STARTFREQ</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">STARTVAL</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">TDELAY</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">TEMP1, TEMP2, TEMP3,</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">TFALL</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">TFINAL</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">TI, T2, T3,  T9</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">TNOM</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">TPERIOD</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">TPULWIDTH</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">V1, V2, V3, , V9</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">VALUE</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">VAMPLITUDE</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">VINITIAL</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">VNTOL</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">VOFFSET</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">VOLTAGE</td>
+</tr>
+</tbody>
+</table>
+<h2 id="a2d" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">A2D<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#a2d">#</a></h2>
+<p class="my-4 leading-7">A2D 网络属性在 ViewSim/AD 中指定模数信号连接上的一个模型名称（用于表示一个缺失的接口元件）。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在原理图上，附着于网络段。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>A2D=TTLADMOD</code> 指定了 TTLADMOD 接口元件。</p>
+<h2 id="abstol" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">ABSTOL<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#abstol">#</a></h2>
+<p class="my-4 leading-7">OPTIONS 模拟报告生成器上的 ABSTOL 属性设置电流测量的精度（单位为安培）。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">默认值</strong></p>
+<p class="my-4 leading-7">默认属性为 <code>ABSTOL=1pa</code>。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>ABSTOL=1E–6A</code> 表示电流测量精度在 1 微安以内。<code>ABSTOL=1E– 12A</code> 表示电流测量精度在 1 皮安以内。</p>
+<h2 id="acdctran" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">AC/DC/TRAN<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#acdctran">#</a></h2>
+<p class="my-4 leading-7">AC/DC/TRAN 属性定义了运行蒙特卡洛分析时正在执行的分析类型（DC、AC、瞬态）。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">属性值</strong></p>
+<p class="my-4 leading-7">在值字段中使用以下关键字之一：</p>
+<table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
+<thead>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">关键字</th>
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">定义</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">AC</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">AC 分析</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">DC</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">DC 分析</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">TRAN</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">瞬态分析</td>
+</tr>
+</tbody>
+</table>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>AC/DC/TRAN=AC</code> 表示每次运行仿真时都将执行 AC 分析。</p>
+<h2 id="acct" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">ACCT<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#acct">#</a></h2>
+<p class="my-4 leading-7">OPTIONS 模拟报告生成器上的 ACCT 属性会输出分析的摘要。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">属性值</strong></p>
+<p class="my-4 leading-7">指定此属性时请勿使用属性值（或等号字符）。</p>
+<h2 id="ad" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">AD<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#ad">#</a></h2>
+<p class="my-4 leading-7">AD 属性定义了 FET 中漏极区域的大小。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">ORDER 属性</strong></p>
+<p class="my-4 leading-7">您必须在 ORDER 属性中标识此属性以供解释。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>AD=2u</code> 表示漏极面积为 2 微米。</p>
+<h2 id="amplitude" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">AMPLITUDE<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#amplitude">#</a></h2>
+<p class="my-4 leading-7">AMPLITUDE 属性设置 SFFM 和 ISFFM 模拟符号上的最大电压或电流摆幅，以及 ISIN 符号上的最大电流摆幅。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">属性值</strong></p>
+<p class="my-4 leading-7">此属性的值将替换波形公式中的 &quot;amp&quot;。请参阅 PSpice 帮助文件中 I 和 V 下的波形公式。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>AMPLITUDE=100E-3A</code> 表示最大电流摆幅为 100 毫安。</p>
+<h2 id="as" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">AS<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#as">#</a></h2>
+<p class="my-4 leading-7">AS 属性定义了 FET 源极区域的大小。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">ORDER 属性</strong></p>
+<p class="my-4 leading-7">您必须在 ORDER 属性中标识此属性以供解释。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>AS=1u</code> 表示源极面积为 1 微米。</p>
+<h2 id="bulk" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">BULK<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#bulk">#</a></h2>
+<p class="my-4 leading-7">BULK 属性附着于一个 3 引脚 FET 符号。它指定了四引脚晶体管的第四个引脚或体衬底将连接到哪里。必须使用此属性才能将所有晶体管引脚包含在仿真文件中。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<h2 id="chgtol" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">CHGTOL<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#chgtol">#</a></h2>
+<p class="my-4 leading-7">CHGTOL 属性在 OPTIONS 模拟报告生成器上报告电荷的最佳精度（单位为库仑）。</p>
+<p class="my-4 leading-7">有关更多信息，请参阅 HSpice 或 PSpice 帮助文件。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">默认值</strong></p>
+<p class="my-4 leading-7">默认属性为 <code>CHGTOL=.01pC</code>。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>CHGTOL=1E–3C</code> 表示电荷测量精度在 1 毫库仑以内。<code>CHGTOL=1E–6C</code> 表示电荷测量精度在 1 微库仑以内。</p>
+<h2 id="cptime" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">CPTIME<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#cptime">#</a></h2>
+<p class="my-4 leading-7">OPTIONS 模拟报告生成器上的 CPTIME 属性提供此次运行允许的时间（单位为秒）。</p>
+<p class="my-4 leading-7">有关更多信息，请参阅 HSpice 或 PSpice 帮助文件。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">默认值</strong></p>
+<p class="my-4 leading-7">默认属性为 <code>CPTIME=1E6</code>。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>CPTIME=3600</code> 表示此次运行最多需要一小时完成。</p>
+<h2 id="current" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">CURRENT<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#current">#</a></h2>
+<p class="my-4 leading-7">CURRENT 属性指定 IDC 模拟符号上存在的电流安培数。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">ORDER 属性</strong></p>
+<p class="my-4 leading-7">您必须在 ORDER 属性中标识此属性以供解释。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>CURRENT=25E-3</code> 表示 IDC 元件上存在 25 毫安电流。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">VOLTAGE 属性</strong></p>
+<p class="my-4 leading-7">在 DC 元件上使用 VOLTAGE 属性。</p>
+<h2 id="d2a" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">D2A<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#d2a">#</a></h2>
+<p class="my-4 leading-7">D2A 网络属性在 The Simulator/AD 中指定数模信号连接上的一个模型名称（用于表示一个缺失的接口元件）。</p>
+<p class="my-4 leading-7">在原理图上，附着于网络段。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>D2A=TTLDAMOD</code> 指定了 TTLDAMOD 接口元件。</p>
+<h2 id="damping" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">DAMPING<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#damping">#</a></h2>
+<p class="my-4 leading-7">DAMPING 属性指定 SIN 和 ISIN 模拟符号上波形的阻尼因子。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">属性值</strong></p>
+<p class="my-4 leading-7">此属性的值将替换波形公式中的 &quot;df&quot;。请参阅 PSpice 帮助文件中 I 和 V 下的波形公式。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">ORDER 属性</strong></p>
+<p class="my-4 leading-7">您必须在 ORDER 属性中标识此属性以供解释。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>DAMPING=1</code> 表示阻尼因子为 1。</p>
+<h2 id="dc" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">DC<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#dc">#</a></h2>
+<p class="my-4 leading-7">DC 属性指示 AMMETER 或 UAMMETER 符号两端的电压量。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>DC=15</code> 表示该元件两端有 15 伏电压。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">测量电流</strong></p>
+<p class="my-4 leading-7">如果您使用 METER 类型的符号测量电流（例如 AMMETER 或 UAMMETER），请按如下方式指定 DC 和 PROBE 属性：</p>
+<p class="my-4 leading-7"><code>DC=0</code></p>
+<p class="my-4 leading-7"><code>PROBE=I</code></p>
+<h2 id="endfreq" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">ENDFREQ<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#endfreq">#</a></h2>
+<p class="my-4 leading-7">ENDFREQ 属性指定 BODEPLOT 模拟报告生成器上频率扫描的最终频率。</p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">属性值</strong></p>
+<p class="my-4 leading-7">该属性值必须大于 STARTFREQ 属性的值。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>ENDFREQ=100MEGHz</code> 表示最终扫描频率为 100 兆赫兹。</p>
+<h2 id="endval" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">ENDVAL<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#endval">#</a></h2>
+<p class="my-4 leading-7">ENDVAL 属性指定 SWEEP 模拟报告生成器上扫描的终点。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">属性值</strong></p>
+<p class="my-4 leading-7">由于扫描可以沿任一方向进行，因此 ENDVAL 的值可以大于或小于 STARTVAL 属性的值。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>ENDVAL=5mA</code> 表示结束扫描电流为 5 毫安。</p>
+<h2 id="freq_carrier" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">FREQ_CARRIER<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#freq_carrier">#</a></h2>
+<p class="my-4 leading-7">FREQ_CARRIER 属性指定 SFFM 和 ISFFM 模拟符号上波形的载波频率。</p>
+<p class="my-4 leading-7">有关更多信息，请参阅 HSpice 或 PSpice 帮助文件。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">属性值</strong></p>
+<p class="my-4 leading-7">此属性的值将替换波形公式中的 &quot;fc&quot;。请参阅 PSpice 帮助文件中 I 和 V 下的波形公式。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>FREQ\_CARRIER=101MEGHz</code> 表示载波频率为 101 兆赫兹。</p>
+<h2 id="freq_signal" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">FREQ_SIGNAL<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#freq_signal">#</a></h2>
+<p class="my-4 leading-7">FREQ_SIGNAL 属性指定 SFFM 和 ISFFM 模拟符号上波形的调制频率。</p>
+<p class="my-4 leading-7">有关更多信息，请参阅 HSpice 或 PSpice 帮助文件。</p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">属性值</strong></p>
+<p class="my-4 leading-7">此属性的值将替换波形公式中的 &quot;fm&quot;。请参阅 PSpice 帮助文件中 I 和 V 下的波形公式。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>FREQ\_SIGNAL=20KHz</code> 表示调制频率为 20 千赫兹。</p>
+<h2 id="frequency" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">FREQUENCY<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#frequency">#</a></h2>
+<p class="my-4 leading-7">FREQUENCY 属性指定 SIN 和 ISIN 模拟符号上波形的频率。</p>
+<p class="my-4 leading-7">有关更多信息，请参阅 HSpice 或 PSpice 帮助文件。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">属性值</strong></p>
+<p class="my-4 leading-7">此属性的值将替换波形公式中的 &quot;freq&quot;。请参阅 PSpice 帮助文件中 I 和 V 下的波形公式。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>FREQUENCY=5MEGHz</code> 表示频率为 5 兆赫兹。</p>
+<h2 id="gain" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">GAIN<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#gain">#</a></h2>
+<p class="my-4 leading-7">GAIN 属性指定 CCCS、VCVS、VCCS 和 CCVS 模拟组件引起的放大倍数。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>GAIN=3E–3</code> 表示该组件将电路参数乘以 0.003。</p>
+<h2 id="generator" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">GENERATOR<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#generator">#</a></h2>
+<p class="my-4 leading-7">GENERATOR 属性标识您希望对模拟电路执行的模拟分析类型。属性值标识模拟网表生成器将插入到 Spice 电路文件 <code>*.cir</code> 中的 Spice 语句。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">注意</strong></p>
+<p class="my-4 leading-7">所有模拟测试仪器都需要 GENERATOR 属性以及 CLASS 和 PREFIX 属性。</p>
+<p class="my-4 leading-7">PowerWorks 随附提供了每种分析类型的符号。这些符号具有适当的 GENERATOR 属性值。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在测试仪器符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">属性值</strong></p>
+<p class="my-4 leading-7">GENERATOR 属性接受以下值：</p>
+<p class="my-4 leading-7">注意：每个值前面需加一个点（例如 <code>.SENS</code>，而不是 <code>SENS</code>）。</p>
+<p class="my-4 leading-7">GENERATOR 属性可以接受多个值。例如：</p>
+<div class="language-bash"><div class="rspress-code-content rspress-scrollbar"><code>
+GENERATOR = .AC, .DC, .FOUR
+
+</code></div></div>
+<table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
+<thead>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">属性值</th>
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">仪器名称</th>
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">符号名称</th>
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">分析描述</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">.AC</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Bodeplot</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">BODEPLOT.1</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">将设计中的每个独立 AC 源扫过一系列频率，并计算电路在每个扫描频率下的频率响应。</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">.CSDF\PROBE</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">CSDF</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">CSDF.1</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">通用仿真数据格式；这是 ViewSpice 特有的；它使 ViewSpice 生成一个包含电路中所有电压和电流的 ASCII 文件；分析电压、电流、可靠性。</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">.DC</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">DC 扫描</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">SWEEP.1</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">将电路的输入源扫过一系列电压或电流，并计算电路在每个指定电压或电流下的偏置点。</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">.FOUR</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">傅里叶</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FOURIER.1</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">对瞬态分析的结果执行傅里叶分量分解。请注意，这与 ViewTrace 执行的 FFT（快速傅里叶变换）不同。</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">.LIB</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">库</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">LIB.1</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">指示一个或多个 ViewSpice 或 HSPICE 模型在外部库中定义。</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">.LOADBIAS</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">加载偏置点 (仅 ViewSpice)</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">LBIAS.1</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">加载使用 SAVEBIAS 保存的偏置点文件。这是 ViewSpice 特有的。</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">.MC</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">蒙特卡洛</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">MC.1</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">计算器件容差对设计性能的影响；还模拟设计多个副本的制造。这是 ViewSpice 特有的。</td>
+</tr>
+</tbody>
+</table>
+<p class="my-4 leading-7"><strong class="font-semibold">表 27. GENERATOR 属性 - 可能的值</strong></p>
+<table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
+<thead>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">属性值</th>
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">仪器名称</th>
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">符号名称</th>
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">分析描述</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">.NOISE</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">噪声</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">NOISE.1</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">估算电路的输入和输出噪声。</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">.OP</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">偏置点</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">OP.1</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">计算设计中器件的工作条件，并将这些计算列在仿真输出文件中。</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">.OPTIONS</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">选项</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">OPTIONS.1</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">允许您设置参数以控制指定分析的运行方式或其结果的显示方式。</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">.PARAM</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">参数 (仅 ViewSpice)</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">.PARAM</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"></td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">.SAVEBIAS</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">保存偏置点 (仅 ViewSpice)</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">SBIAS.1</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">将指定时间的偏置点保存到指定文件中。这是 ViewSpice 特有的。</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">.SENS</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">灵敏度</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">SENSITIVITY.1</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">计算每个节点电压对设计中每个有源器件的小信号灵敏度。</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">.STEP</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">步进 (仅 ViewSpice)</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">STEP.1</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">使用不同的参数值重新仿真电路。对于运行多个瞬态或 AC 分析非常有用。这是 ViewSpice 特有的。</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">.TEMP</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">温度</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">TEMP.1</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">将电路设置为特定的摄氏温度，以便分析可以计算电路在该温度下的工作方式。</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">.TF</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">传递函数</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">TRANSFCT.1</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">计算电路相对于其偏置点的小信号增益、输入阻抗和输出阻抗。</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">.TRAN</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">瞬态扫描或示波器</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">TRANS.1</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">也称为瞬态分析；生成关于电路在指定时间段内操作的视觉和文本报告。</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">.WCASE</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">最坏情况 (仅 ViewSpice)</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">WCASE.1</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">通过多次运行（每次运行改变一个参数）进行电路的灵敏度和最坏情况分析。计算每个变化参数的输出灵敏度，并进行最终运行，改变所有参数以产生最坏情况。这是 PSpice 特有的。</td>
+</tr>
+</tbody>
+</table>
+<table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
+<thead>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider"></th>
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider"></th>
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">表 27. GENERATOR 属性 - 可能的值（续）</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"></td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"></td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"></td>
+</tr>
+</tbody>
+</table>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>GENERATOR=.TRAN</code> 表示您希望将瞬态分析信息作为模拟仿真输入的一部分。</p>
+<h2 id="gmin" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">GMIN<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#gmin">#</a></h2>
+<p class="my-4 leading-7">OPTIONS 模拟报告生成器上的 GMIN 属性指定任何支路使用的最小电导（单位为姆欧）。</p>
+<p class="my-4 leading-7">有关更多信息，请参阅 HSpice 或 PSpice 帮助文件。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>GMIN=3</code> 表示最小电导为 3 姆欧。</p>
+<h2 id="i1-i2-i3-" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">I1, I2, I3, ...<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#i1-i2-i3-">#</a></h2>
+<p class="my-4 leading-7">I1 属性指定 IPWL 模拟符号在 T1 属性指定的时间段内产生的电流量。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">ORDER 属性</strong></p>
+<p class="my-4 leading-7">您必须在 IPWL 的 ORDER 属性中标识此属性以供解释。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">T1 属性</strong></p>
+<p class="my-4 leading-7">T1 属性指定产生电流的时间段。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>I1=2E–3A</code> 表示在 T1 时间段产生 2 毫安电流。</p>
+<h2 id="ic" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">IC<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#ic">#</a></h2>
+<p class="my-4 leading-7">IC 属性在网络和模拟组件上设置初始条件。您可以为节点分配初始电压，或者为电路元件分配初始条件。</p>
+<p class="my-4 leading-7">有关更多信息，请参阅 HSpice 或 PSpice 帮助文件。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在原理图上，附着于网络或组件。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">ORDER 属性</strong></p>
+<p class="my-4 leading-7">您必须在 ORDER 属性中标识此属性以供解释。</p>
+<h2 id="increment" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">INCREMENT<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#increment">#</a></h2>
+<p class="my-4 leading-7">INCREMENT 属性指定 SWEEP 模拟报告生成器上进行分析的扫描间隔。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">属性值</strong></p>
+<p class="my-4 leading-7">属性值必须大于 0。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>INCREMENT=.1V</code> 表示每次源电压改变 0.1 伏时都对电路进行一次分析。</p>
+<h2 id="init" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">INIT<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#init">#</a></h2>
+<p class="my-4 leading-7">OSCILLOSCOPE 模拟报告生成器上的 INIT 属性指示模拟器使用指定的初始条件。</p>
+<p class="my-4 leading-7">有关更多信息，请参阅 HSpice 或 PSpice 帮助文件。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">属性值</strong></p>
+<p class="my-4 leading-7">属性值为 <code>INIT=UIC</code>。</p>
+<h2 id="initial" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">INITIAL<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#initial">#</a></h2>
+<p class="my-4 leading-7">INITIAL 属性指定 IPULSE 模拟符号上波形的起始电流。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">ORDER 属性</strong></p>
+<p class="my-4 leading-7">您必须在 ORDER 属性中标识此属性以供解释。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>INITIAL=1E–6</code> 表示 IPULSE 组件的初始值为一微安。</p>
+<h2 id="inputsource" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">INPUTSOURCE<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#inputsource">#</a></h2>
+<p class="my-4 leading-7">INPUTSOURCE 属性指定 XFERFUNC 模拟报告生成器上测量增益时所依据的输入源组件的 REFDES 或标签名称。</p>
+<p class="my-4 leading-7">SailWind 逻辑命令参考 453</p>
+<p class="my-4 leading-7">有关更多信息，请参阅 HSpice 或 PSpice 帮助文件。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>INPUTSOURCE=VIN</code> 表示将针对组件 VIN 测量增益。</p>
+<h2 id="itl1" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">ITL1<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#itl1">#</a></h2>
+<p class="my-4 leading-7">OPTIONS 模拟报告生成器上的 ITL1 属性指定了如果电路不包含 NODESET 属性时，系统可以执行 DC 或偏置点分析迭代的总次数。</p>
+<p class="my-4 leading-7">有关更多信息，请参阅 HSpice 或 PSpice 帮助文件。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">默认值</strong></p>
+<p class="my-4 leading-7">默认属性值为 <code>ITL1=100</code>。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>ITL1=300</code>。此增加改变了迭代限制，如果发生故障，可以帮助实现 DC 收敛。</p>
+<h2 id="itl2" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">ITL2<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#itl2">#</a></h2>
+<p class="my-4 leading-7">OPTIONS 模拟报告生成器上的 ITL2 属性指定了在存在 NODESET 属性的情况下，系统可以执行 DC 或偏置点分析迭代的最大次数。</p>
+<p class="my-4 leading-7">有关更多信息，请参阅 HSpice 或 PSpice 帮助文件。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">默认值</strong></p>
+<p class="my-4 leading-7">默认属性值为 <code>ITL2=20</code>。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>ITL2=50</code> 表示在存在 NODESET 属性的情况下，系统最多可以执行 50 次 DC 或偏置点分析。</p>
+<h2 id="itl4" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">ITL4<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#itl4">#</a></h2>
+<p class="my-4 leading-7">OPTIONS 模拟报告生成器上的 ITL4 属性指定了瞬态分析在任何一个分析点上将执行的最大迭代次数。</p>
+<p class="my-4 leading-7">有关更多信息，请参阅 HSpice 或 PSpice 帮助文件。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">默认值</strong></p>
+<p class="my-4 leading-7">默认属性值为 <code>ITL4=10</code>。</p>
+<h2 id="itl5" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">ITL5<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#itl5">#</a></h2>
+<p class="my-4 leading-7">OPTIONS 模拟报告生成器上的 ITL5 属性指定了瞬态分析对所有分析点将执行的最大迭代次数。</p>
+<p class="my-4 leading-7">有关更多信息，请参阅 HSpice 或 PSpice 帮助文件。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">默认值</strong></p>
+<p class="my-4 leading-7">默认属性值为 <code>ITL5=5000</code>。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>ITL5=100</code> 表示瞬态分析可以执行 100 次。<code>ITL5=0</code> 表示瞬态分析的执行次数没有限制。</p>
+<h2 id="l" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">L<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#l">#</a></h2>
+<p class="my-4 leading-7">L 属性定义了模拟 FET 沟道的长度（单位为米）。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">ORDER 属性</strong></p>
+<p class="my-4 leading-7">您必须在 ORDER 属性中标识此属性以供解释。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>L=5u</code> 表示沟道长度为 5 微米。</p>
+<h2 id="label" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">LABEL<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#label">#</a></h2>
+<p class="my-4 leading-7">LABEL 属性指定您希望分配给此模拟源组件的唯一名称，以便在项目原理图中将其与类似组件区分开。将 LABEL 属性附加到组件上，与使用 <strong class="font-semibold">Add &gt; Label</strong> 命令为组件创建标签具有相同的效果。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7">属性 <code>LABEL=VIN</code> 将名称 VIN 分配给该符号的此组件实例，就像您已将 VIN 标签附加到该组件实例一样。</p>
+<h2 id="library" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">LIBRARY<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#library">#</a></h2>
+<p class="my-4 leading-7">您只能将 LIBRARY 属性放置在 LIB 符号上。LIBRARY 属性标识了 LIB 符号所代表的 Spice 模型库。</p>
+<h2 id="limpts" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">LIMPTS<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#limpts">#</a></h2>
+<p class="my-4 leading-7">OPTIONS 模拟报告生成器上的 LIMPTS 属性指定了任何分析中允许的最大数据点数。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>LIMPTS=2000</code> 表示任何打印表或图中最多可以包含 2000 个分析点。</p>
+<h2 id="linoctdec" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">LIN/OCT/DEC<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#linoctdec">#</a></h2>
+<p class="my-4 leading-7">LIN/OCT/DEC 属性指定要在 BODEPLOT 模拟报告生成器上执行的扫描类型。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">属性值</strong></p>
+<p class="my-4 leading-7">在值字段中使用以下关键字之一来定义扫描<strong class="font-semibold">类型</strong>：</p>
+<table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
+<thead>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">关键字</th>
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">定义</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">DEC</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">十倍频程</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">LIN</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">线性</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">OCT</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">倍频程</td>
+</tr>
+</tbody>
+</table>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>LIN/OCT/DEC=DEC</code> 表示仿真结果按十倍频程测量。</p>
+<h2 id="list" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">LIST<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#list">#</a></h2>
+<p class="my-4 leading-7">OPTIONS 模拟报告生成器上的 LIST 属性指示系统输出组件摘要。</p>
+<p class="my-4 leading-7">有关更多信息，请参阅 HSpice 或 PSpice 帮助文件。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">属性值</strong></p>
+<p class="my-4 leading-7">指定此属性时请勿使用属性值（或等号字符）。</p>
+<h2 id="mod_index" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">MOD_INDEX<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#mod_index">#</a></h2>
+<p class="my-4 leading-7">MOD_INDEX 属性指定 SFFM 和 ISFFM 模拟符号上调制频率的乘数。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">属性值</strong></p>
+<p class="my-4 leading-7">此属性的值将替换波形公式中的 &quot;mod&quot;。请参阅 PSpice 帮助文件中 I 和 V 下的波形公式。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>MOD\_INDEX=1</code> 表示调制频率为 1。</p>
+<h2 id="model" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">MODEL<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#model">#</a></h2>
+<p class="my-4 leading-7">MODEL 属性定义了系统用于仿真此组件的模型文件。仿真 <code>*.mod</code> 文件存储在 Analog Models 子目录中。每个 SPICE 模型必须有一个单独的 .mod 文件。一个模型文件可以有子电路部分，但不能将多个模型存储在一个文件中，因为软件没有从文件中提取不同模型的机制。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">器件类型</strong> RAM, ROM <strong class="font-semibold">模拟放置位置</strong> 在符号上。<strong class="font-semibold">模拟示例</strong> <code>MODEL=Q2N3904</code> 告诉系统使用 &quot;q2n3904&quot; 模型来仿真此组件。</p>
+<h2 id="no_pins" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">NO_PINS<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#no_pins">#</a></h2>
+<p class="my-4 leading-7">NO_PINS 属性会覆盖符号的 PINORDER 属性。使用 NO_PINS 属性允许您使用 ORDER 属性而不是 PINORDER 属性来确定模拟组件引脚顺序。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">属性值</strong></p>
+<p class="my-4 leading-7">NO_PINS 属性接受 1 或 TRUE 作为其值。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">PINORDER 和 ORDER 属性</strong></p>
+<p class="my-4 leading-7">通常，PINORDER 属性控制默认顺序。您也可以使用 ORDER 属性来指定引脚顺序。如果您在符号上指定了 NO_PINS 属性，这将覆盖 PINORDER 属性，系统将使用 ORDER 属性中的引脚顺序。</p>
+<h2 id="node" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">NODE<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#node">#</a></h2>
+<p class="my-4 leading-7">OPTIONS 模拟报告生成器上的 NODE 属性指示系统输出网络列表或表格。</p>
+<p class="my-4 leading-7">有关更多信息，请参阅 HSpice 或 PSpice 帮助文件。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">属性值</strong></p>
+<p class="my-4 leading-7">指定此属性时请勿使用属性值（或等号字符）。</p>
+<h2 id="nodeset" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">NODESET<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#nodeset">#</a></h2>
+<p class="my-4 leading-7">NODESET 属性定义了您认为网络上存在的电压。模拟器使用您的估计值作为初始条件，用于在计算偏置点期间确定网络上的实际电压。</p>
+<p class="my-4 leading-7">有关更多信息，请参阅 HSpice 或 PSpice 帮助文件。</p>
+<p class="my-4 leading-7">在原理图上，附着于网络。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>NODESET=3</code> 告诉模拟器将初始电压猜测为 3 伏。这会在 <code>*.cir</code> 文件中添加以下行：</p>
+<p class="my-4 leading-7">.NODESET V([<strong class="font-semibold">网络名称</strong>])=<strong class="font-semibold">n</strong>V</p>
+<h2 id="noecho" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">NOECHO<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#noecho">#</a></h2>
+<p class="my-4 leading-7">OPTIONS 模拟报告生成器上的 NOECHO 属性指示系统不列出输入文件。</p>
+<p class="my-4 leading-7">有关更多信息，请参阅 PSpice 帮助文件。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">属性值</strong></p>
+<p class="my-4 leading-7">指定此属性时请勿使用属性值（或等号字符）。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7">此属性在 <code>*.cir</code> 文件中添加以下行：</p>
+<p class="my-4 leading-7">.OPTIONS NOECHO</p>
+<h2 id="noisesource" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">NOISESOURCE<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#noisesource">#</a></h2>
+<p class="my-4 leading-7">NOISESOURCE 属性指定 NOISE 模拟报告生成器上测量噪声时所依据的输入信号和噪声源组件的 REFDES 或标签名称。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>NOISESOURCE=VIN</code> 表示将针对组件 VIN 处的噪声量测量噪声。</p>
+<h2 id="nopage" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">NOPAGE<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#nopage">#</a></h2>
+<p class="my-4 leading-7">OPTIONS 模拟报告生成器上的 NOPAGE 属性指示系统不分页，也不为输出的每个主要部分打印页眉/横幅。</p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">属性值</strong></p>
+<p class="my-4 leading-7">指定此属性时请勿使用属性值（或等号字符）。</p>
+<h2 id="numdgt" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">NUMDGT<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#numdgt">#</a></h2>
+<p class="my-4 leading-7">OPTIONS 模拟报告生成器上的 NUMDGT 属性指定了表中每列（每列对应一个输出变量）打印的有效数字位数。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>NUMDGT=6</code> 表示每个输出变量精确到 6 位数字。</p>
+<h2 id="numpoints" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">NUMPOINTS<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#numpoints">#</a></h2>
+<p class="my-4 leading-7">NUMPOINTS 属性指定 BODEPLOT 模拟报告生成器上每次扫描分析中的数据点数。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">LIN/OCT/DEC 属性</strong></p>
+<p class="my-4 leading-7">LIN/OCT/DEC 属性指定仿真结果的测量扫描类型。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>NUMPOINTS=10</code> 表示如果存在 <code>LIN/OCT/DEC=OCT</code> 属性，则每次扫描分析每倍频程包含 10 个数据点。</p>
+<h2 id="numrun" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">NUMRUN<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#numrun">#</a></h2>
+<p class="my-4 leading-7">MC 模拟报告生成器上的 NUMRUN 属性指定在蒙特卡洛分析期间运行 DC、AC 或瞬态分析的次数。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>NUMRUN=10</code> 表示除了标称仿真外，还将运行 10 次 DC、AC 或瞬态分析。</p>
+<h2 id="offset" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">OFFSET<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#offset">#</a></h2>
+<p class="my-4 leading-7">OFFSET 属性指定在 SFFM 和 ISFFM 模拟符号上测量 DC 电压或电流时 Y 轴上的位置。此属性也用于指定在 ISIN 模拟符号上测量电流时 Y 轴上的位置。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">属性值</strong></p>
+<p class="my-4 leading-7">此属性的值将替换波形公式中的 &quot;voff&quot;。请参阅 PSpice 帮助文件中 I 和 V 下的波形公式。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>OFFSET=50mA</code> 表示此组件产生的功率在对应于 50 毫安的 Y 轴附近测量。</p>
+<h2 id="opts" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">OPTS<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#opts">#</a></h2>
+<p class="my-4 leading-7">OPTIONS 模拟报告生成器上的 OPTS 属性列出所有选项的值。</p>
+<p class="my-4 leading-7">有关更多信息，请参阅 HSpice 帮助文件。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">属性值</strong></p>
+<p class="my-4 leading-7">指定此属性时请勿使用属性值（或等号字符）。</p>
+<h2 id="order" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">ORDER<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#order">#</a></h2>
+<p class="my-4 leading-7">ORDER 属性指定仿真文件中包含哪些信息以及信息的格式。仿真文件仅包含 ORDER 属性值字段中列出的属性。</p>
+<p class="my-4 leading-7">仅在必要时在您的设计中使用 ORDER 属性。例如，将 ORDER 附加到符号上以将符号定义包含在仿真文件中。</p>
+<p class="my-4 leading-7">每个 SPICE 模型必须有一个单独的 .mod 文件。一个模型文件可以有子电路部分，但不能将多个模型存储在一个文件中，因为软件没有从文件中提取不同模型的机制。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">属性值</strong></p>
+<p class="my-4 leading-7">您可以通过在 ORDER 属性中属性名称关键字的末尾放置以下字符之一来改变属性输入到仿真文件中的方式：</p>
+<table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
+<thead>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">字符</th>
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">定义</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">$</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">仅输入属性值</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">=</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">输入整个属性</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">&amp;</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">插入引用组件的 SPICE 名称（通过内部名称引用）</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">[</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">写入连接到该引脚的网络的名称或编号。请参阅 .MC 报告生成器中的一些示例。这可以与属性 <code>NO_PINS = TRUE</code> 一起使用，该属性禁用组件名称后默认输出节点编号的功能。</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">&quot; &quot;</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">定义始终可作为输出的字面量</td>
+</tr>
+</tbody>
+</table>
+<p class="my-4 leading-7"><strong class="font-semibold">表 28. ORDER 属性 - 控制属性值的字符</strong></p>
+<p class="my-4 leading-7">除非您希望空格出现在 SPICE 输入文件中，否则不必在 ORDER 属性中列出的项目之间插入空格。这是因为空格被读取为属性字符串的一部分。例如：</p>
+<div class="language-bash"><div class="rspress-code-content rspress-scrollbar"><code>
+ORDER=K1$ K2$K3$&quot; V(&quot;K4$&quot;)&quot;
+
+</code></div></div>
+<p class="my-4 leading-7">其中 K1=1, K2=2, K3=3, K4=4，这将在 SPICE 输入文件中产生：</p>
+<p class="my-4 leading-7"><strong class="font-semibold">1 23 V(4)</strong></p>
+<p class="my-4 leading-7"><strong class="font-semibold">特殊情况关键字</strong></p>
+<p class="my-4 leading-7">SPICE 网表生成器识别两个特殊情况关键字：NOT4ECAD 和 WL。当它在元件中找到关键字 NOT4ECAD 时：</p>
+<ul class="list-disc pl-5 my-4 leading-7">
+<li class="[&amp;:not(:first-child)]:mt-2">
+<p class="my-4 leading-7">对于 Dracula：它从面板中移除此元件。</p>
+</li>
+<li class="[&amp;:not(:first-child)]:mt-2">
+<p class="my-4 leading-7">对于 Spice：它仅移除关键字 &quot;NOT4ECAD&quot;</p>
+</li>
+</ul>
+<p class="my-4 leading-7">当 SPICE 网表生成器找到关键字 <code>WL=wval/lval</code> 时，会创建两个参数：W=wval 和 L=lval。wspice.cfg 文件中设置的 WL_SPLIT 参数启用此功能。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7">对于 <code>BULK=VDD</code> 和 <code>MODEL=PSS</code> 属性，<code>ORDER=BULK\$MODEL=</code> 属性会导致在仿真文件中产生以下条目：</p>
+<div class="language-bash"><div class="rspress-code-content rspress-scrollbar"><code>
+VDD MODEL=PSS
+
+</code></div></div>
+<h2 id="out" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">OUT<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#out">#</a></h2>
+<p class="my-4 leading-7">OUT 属性指定 WIDTH 模拟报告生成器上打印表中每行文本的字符数。</p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">属性值</strong></p>
+<p class="my-4 leading-7">在值字段中使用 80 或 132 分别指定 80 或 132 个字符。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>OUT=80</code>（默认值）表示打印表的每行允许 80 个字符。</p>
+<h2 id="output" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">OUTPUT<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#output">#</a></h2>
+<p class="my-4 leading-7">OUTPUT 属性指定从 MC 模拟报告生成器上的蒙特卡洛分析生成多少输出信息。</p>
+<p class="my-4 leading-7">有关更多信息，请参阅 HSpice 或 PSpice 帮助文件。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>OUTPUT=ALL</code> 表示应生成每次蒙特卡洛分析的所有输出。</p>
+<h2 id="parnam" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">PARNAM<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#parnam">#</a></h2>
+<p class="my-4 leading-7">SPICE 网表生成器使用 PARNAM 属性允许您通过层次结构网表传递参数。PARNAM 属性引用组件的 .SUBCKT 行在层次结构网表中，并将所需参数添加到子电路调用中。以下条件适用于 PARNAM 属性：</p>
+<p class="my-4 leading-7">您不需要使用 PARNAM 属性来生成层次结构网表。PARNAM 属性只是向 .cir 文件添加额外信息。</p>
+<p class="my-4 leading-7">如果您正在创建扁平网表，SPICE 网表生成器将忽略 PARNAM 属性。PARNAM 属性的值是您要传递的参数。参数必须按照您打算使用的模拟仿真器可接受的格式定义。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在原理图上，附着于组件。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7">如果一个打算使用 SPICE 进行仿真的模拟符号具有以下属性：</p>
+<div class="language-bash"><div class="rspress-code-content rspress-scrollbar"><code>
+REFDES = X1
+
+| 假设有两个名为 In 和 OUT 的节点
+
+PARNAM = PARAMS: @W=1.0U @L=1.0U
+
+ORDER = PARAMS: @W= @L=
+
+W = 5.0U
+
+L = 5.0U
+
+</code></div></div>
+<p class="my-4 leading-7">SPICE 网表生成器将在 .cir 文件中产生以下子电路调用：</p>
+<div class="language-bash"><div class="rspress-code-content rspress-scrollbar"><code>
+.SUBCKT FOO IN OUT PARAMS: W=1.0U L=1.0U
+
+X1 IN OUT FOO PARAMS: W=5.0u L=5.0U
+
+</code></div></div>
+<p class="my-4 leading-7">如果一个打算使用 HSpice 进行仿真的模拟符号具有以下属性：</p>
+<div class="language-bash"><div class="rspress-code-content rspress-scrollbar"><code>
+REFDES = X1
+
+| 假设有两个名为 In 和 OUT 的节点
+
+PARNAM = @W=1.0U @L=1.0U
+
+ORDER = @W= @L=
+
+W = 5.0U
+
+L = 5.0U
+
+</code></div></div>
+<p class="my-4 leading-7">SPICE 网表生成器将在 .cir 文件中产生以下子电路调用：</p>
+<div class="language-bash"><div class="rspress-code-content rspress-scrollbar"><code>
+.SUBCKT FOO IN OUT W=1.0U L=1.0U
+
+</code></div></div>
+<h2 id="phase" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">PHASE<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#phase">#</a></h2>
+<p class="my-4 leading-7">PHASE 属性指定 AC、IAC、SIN 和 ISIN 模拟符号上多个波形的相对相位（单位为度）。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">属性值</strong></p>
+<p class="my-4 leading-7">此属性的值将替换波形公式中的 &quot;phase&quot;。请参阅 PSpice 帮助文件中 I 和 V 下的波形公式。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>PHASE=90</code> 表示相位为 90 度。</p>
+<h2 id="pinorder" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">PINORDER<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#pinorder">#</a></h2>
+<p class="my-4 leading-7">PINORDER 属性确定连接到精确引脚的网表在 SPICE 网表中列出的顺序。只有连接到精确引脚（在 pinorder 属性中定义的引脚）的网表才会列在 SPICE 网表中。</p>
+<p class="my-4 leading-7">此属性值中引脚的分隔符为：&quot; ,\t\n&quot;</p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">属性值</strong></p>
+<p class="my-4 leading-7">属性值是引脚名称标签，而不是引脚编号。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">附加信息</strong></p>
+<p class="my-4 leading-7">通常，PINORDER 属性控制默认顺序。您也可以使用 ORDER 属性来指定引脚顺序。如果您在符号上指定了 NO_PINS 属性，这将覆盖 PINORDER 属性，系统将使用 ORDER 属性中的引脚顺序。</p>
+<h2 id="pivrel" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">PIVREL<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#pivrel">#</a></h2>
+<p class="my-4 leading-7">OPTIONS 模拟报告生成器上的 PIVREL 属性指定矩阵求解中主元选取所需的相对量级。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">附加信息</strong></p>
+<p class="my-4 leading-7">有关更多信息，请参阅 Spice 帮助文件或数学教科书中的以下主题：</p>
+<ul class="list-disc pl-5 my-4 leading-7">
+<li class="[&amp;:not(:first-child)]:mt-2">
+<p class="my-4 leading-7">方程组求解</p>
+</li>
+<li class="[&amp;:not(:first-child)]:mt-2">
+<p class="my-4 leading-7">高斯消元法</p>
+</li>
+<li class="[&amp;:not(:first-child)]:mt-2">
+<p class="my-4 leading-7">部分主元选取</p>
+</li>
+</ul>
+<h2 id="prefix" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">PREFIX<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#prefix">#</a></h2>
+<p class="my-4 leading-7">PREFIX 属性值被 SPICE 网表生成器用于以 SPICE 兼容格式唯一标识每个模拟组件。SPICE 网表生成器将每个组件的 PREFIX 属性值前缀到其 REFDES 属性值，并将整个字符串写入 .cir 文件。.cir 文件用作 ViewSpice 模拟仿真器的输入。所有模拟符号都需要此属性。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">属性值</strong></p>
+<p class="my-4 leading-7">以下是相应类型组件的默认前缀：</p>
+<table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
+<thead>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">关键字</th>
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">定义</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">B</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">砷化镓场效应晶体管</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">C</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">电容器</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">D</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">二极管</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">E</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">电压控制电压源</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">F</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">电流控制电流源</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">G</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">电压控制电流源</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">H</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">电流控制电压源</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">I</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">独立电流源</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">J</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">结型场效应晶体管</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">K</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">变压器</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">L</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">电感器</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">M</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">金属氧化物半导体场效应晶体管</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">O</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">数字输出</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Q</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">双极晶体管</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">R</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">电阻器</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">S</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">电压控制开关</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">T</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">传输线</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">V</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">独立电压源</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">W</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">子电路</td>
+</tr>
+</tbody>
+</table>
+<p class="my-4 leading-7"><strong class="font-semibold">表 29. PREFIX 属性 - 前缀列表</strong></p>
+<p class="my-4 leading-7">请参阅相应的仿真器文档以确定在此属性的值字段中使用哪个前缀。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7">例如，如果一个组件具有 <code>REFDES = U2</code> 和 <code>PREFIX = R</code>，则该组件被写入 .cir 文件为 RU2，这告诉仿真器组件 U2 是一个电阻器。</p>
+<h2 id="probe" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">PROBE<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#probe">#</a></h2>
+<p class="my-4 leading-7">PROBE 属性指定模拟组件是测量电流 (I) 还是电压 (V)。</p>
+<p class="my-4 leading-7">在原理图上，附着于网络或符号。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">属性值</strong></p>
+<p class="my-4 leading-7">在值字段中使用 I 或 V 分别指定电流或电压。将以下任何关键字后缀附加到字母 I 或 V 以精确定义测量：</p>
+<table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
+<thead>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">关键字</th>
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">定义</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">DB</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">分贝</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">M</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">幅度</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">P</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">相位</td>
+</tr>
+</tbody>
+</table>
+<p class="my-4 leading-7"><strong class="font-semibold">重复属性</strong></p>
+<p class="my-4 leading-7">您不能将同一属性多次附加到对象上，但组件和网络/总线段的 PROBE 属性除外。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>PROBE=IP</code> 表示正在测量电流相位。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">DC 属性</strong></p>
+<p class="my-4 leading-7">如果您使用 METER 类型的符号测量电流（例如 AMMETER 或 UAMMETER），请为 DC 属性值指定 0。</p>
+<h2 id="pulsed" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">PULSED<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#pulsed">#</a></h2>
+<p class="my-4 leading-7">PULSED 属性指定 IPULSE 模拟符号的最大电流摆幅。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<h2 id="reltol" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">RELTOL<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#reltol">#</a></h2>
+<p class="my-4 leading-7">OPTIONS 模拟报告生成器上的 RELTOL 属性指定电压和电流测量的相对精度。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">默认值</strong></p>
+<p class="my-4 leading-7">默认属性值为 <code>RELTOL=0.001</code>。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>RELTOL=.001</code> 表示相对电压和电流测量精度为 0.1%。</p>
+<h2 id="sourcename" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">SOURCENAME<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#sourcename">#</a></h2>
+<p class="my-4 leading-7">SOURCENAME 属性指定 SWEEP 模拟报告生成器上正在扫描的电路源组件的 REFDES 或标签名称。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>SOURCENAME=VIN</code> 表示通过改变组件 VIN 的值来进行 DC 扫描分析。</p>
+<h2 id="startfreq" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">STARTFREQ<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#startfreq">#</a></h2>
+<p class="my-4 leading-7">STARTFREQ 属性指定 BODEPLOT 模拟报告生成器上频率扫描的起始频率。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">属性值</strong></p>
+<p class="my-4 leading-7">值必须大于 0 且小于 ENDFREQ 属性的值。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>STARTFREQ=15KHz</code> 表示起始扫描频率为 15 千赫兹。</p>
+<h2 id="startval" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">STARTVAL<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#startval">#</a></h2>
+<p class="my-4 leading-7">STARTVAL 属性指定 SWEEP 模拟报告生成器上扫描的起始电压或电流。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">属性值</strong></p>
+<p class="my-4 leading-7">扫描可以沿任一方向进行；因此，STARTVAL 的值可以是负值或正值。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>STARTVAL=–2.5V</code> 表示起始扫描电压为负 2.5 伏。</p>
+<h2 id="tdelay" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">TDELAY<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#tdelay">#</a></h2>
+<p class="my-4 leading-7">TDELAY 属性指定 PULSE、IPULSE、SIN 和 ISIN 组件开始规则波形所需的时间。</p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">属性值</strong></p>
+<p class="my-4 leading-7">此属性的值将替换波形公式中的 &quot;td&quot;。请参阅 PSpice 帮助文件中 I 和 V 下的波形公式。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>TDELAY=10ns</code> 表示规则波形的开始延迟 10 纳秒。</p>
+<h2 id="temp1-temp2-temp3-" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">TEMP1, TEMP2, TEMP3, ...<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#temp1-temp2-temp3-">#</a></h2>
+<p class="my-4 leading-7">TEMP1 属性指定 TEMP 模拟报告生成器上在仿真期间应用于电路的摄氏温度。当执行指定的分析（例如 DC 扫描或蒙特卡洛）时，电路将设置为指定温度。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">属性值</strong></p>
+<p class="my-4 leading-7">如果定义了多个值，系统将在每个指定的温度下仿真电路。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>TEMP1=125</code> 表示电路应在 125 摄氏度的温度下进行仿真。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">其他 TEMP 属性</strong></p>
+<p class="my-4 leading-7">每个额外的 TEMP 属性（TEMP2、TEMP3、TEMP4 等）定义了在指定分析期间要应用于电路的额外摄氏温度。</p>
+<h2 id="tfall" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">TFALL<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#tfall">#</a></h2>
+<p class="my-4 leading-7">TFALL 属性指定在 IPULSE 和 PULSE 模拟符号上从 PULSED 转换到 INITIAL 或从 VPULSED 转换到 VINITIAL 所需的时间。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">属性值</strong></p>
+<p class="my-4 leading-7">此属性的值将替换波形公式中的 &quot;tf&quot;。请参阅 PSpice 帮助文件中 I 和 V 下的波形公式。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>TFALL=10ns</code> 表示 PULSE 和 IPULSE 模拟符号上的转换时间为 10 纳秒。</p>
+<h2 id="tfinal" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">TFINAL<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#tfinal">#</a></h2>
+<p class="my-4 leading-7">TRANS 模拟报告生成器上的 TFINAL 属性指定测量仿真结果的总时间。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>TFINAL=100ns</code> 表示将在 TRANS 模拟报告生成器上测量 100 纳秒的仿真结果。</p>
+<h2 id="ti-t2-t3--t9" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">TI, T2, T3, ... T9<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#ti-t2-t3--t9">#</a></h2>
+<p class="my-4 leading-7">T1 属性指定在 PWL 或 IPWL 模拟符号上生成由 V1 或 I1 属性定义的电压或电流的时间段。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">ORDER 属性</strong></p>
+<p class="my-4 leading-7">您必须在 PWL 或 IPWL 的 ORDER 属性中标识此属性以供解释。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>T1=10ns</code> 表示在 10 纳秒时生成 V1 电压或 I1 电流。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">V1 和 I1 属性</strong></p>
+<p class="my-4 leading-7">使用 V1 属性指定 PWL 符号上的电压。使用 I1 属性指定 IPWL 符号上的电流。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">指定时间段</strong></p>
+<p class="my-4 leading-7">每增加一组 T1 和 V1，或 T1 和 I1，就定义一个额外的时间段以及生成的电压或电流量。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7">T2 定义了生成由 V2 或 I2 定义的电压或电流的时间段。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">时间/值对</strong></p>
+<p class="my-4 leading-7">时间/值对的最大数量为 9。要指定更多对，请使用文本文件。将每个数据点的时间/值对放在文本文件中。在原理图上的 PWL 或 IPWL 组件上添加 FILE 属性。</p>
+<h2 id="tnom" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">TNOM<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#tnom">#</a></h2>
+<p class="my-4 leading-7">TNOM 属性指定 OPTIONS 模拟报告生成器上的默认温度（单位为摄氏度）。</p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>TNOM=25</code> 表示默认温度为 25 摄氏度。</p>
+<h2 id="tperiod" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">TPERIOD<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#tperiod">#</a></h2>
+<p class="my-4 leading-7">TPERIOD 属性指定 PULSE 和 IPULSE 模拟符号上一个完整波形周期的时间长度。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>TPERIOD=50ns</code> 表示 20 兆赫兹波形。</p>
+<h2 id="tpulwidth" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">TPULWIDTH<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#tpulwidth">#</a></h2>
+<p class="my-4 leading-7">TPULWIDTH 属性指定 PULSE 和 IPULSE 模拟符号上脉冲处于活动状态的时间长度。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">属性值</strong></p>
+<p class="my-4 leading-7">此属性的值将替换波形公式中的 &quot;pw&quot;。请参阅 PSpice 帮助文件中 I 和 V 下的波形公式。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>TPULWIDTH=20ns</code> 表示活动脉冲宽度为 20 纳秒。</p>
+<h2 id="v1-v2-v3--v9" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">V1, V2, V3, ..., V9<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#v1-v2-v3--v9">#</a></h2>
+<p class="my-4 leading-7">V1 属性指定在 T1 属性指定的时间段内由 PWL 模拟符号产生的电压量。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">ORDER 属性</strong></p>
+<p class="my-4 leading-7">您必须在 PWL 的 ORDER 属性中标识此属性以供解释。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">T1 属性</strong></p>
+<p class="my-4 leading-7">T1 属性指定生成电压 V1 的时间段。</p>
+<p class="my-4 leading-7">SailWind 逻辑命令参考 471</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>V1=2V</code> 表示在 T1 时间段产生 2 伏电压。</p>
+<h2 id="value" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">VALUE<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#value">#</a></h2>
+<p class="my-4 leading-7">除了使用 VALUE 属性指定 R、L 或 C 值外，VALUE 属性还指定 AC 和 IAC 模拟符号上的相对小信号幅度。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">模拟放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">模拟示例</strong></p>
+<p class="my-4 leading-7">附加到 AC 组件时，<code>VALUE=5</code> 表示小信号幅度为 5 伏。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">模拟示例 2</strong></p>
+<p class="my-4 leading-7">附加到 R 组件时，<code>VALUE=5.1K</code> 表示电阻值为 5.1K 欧姆。</p>
+<h2 id="vamplitude" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">VAMPLITUDE<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#vamplitude">#</a></h2>
+<p class="my-4 leading-7">VAMPLITUDE 属性指定 SIN 模拟符号上的最大电压摆幅。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">属性值</strong></p>
+<p class="my-4 leading-7">此属性的值将替换波形公式中的 &quot;vampl&quot;。请参阅 PSpice 帮助文件中 I 和 V 下的波形公式。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>VAMPLITUDE=100E–3</code> 表示最大电压摆幅为 100 毫伏。</p>
+<h2 id="vinitial" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">VINITIAL<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#vinitial">#</a></h2>
+<p class="my-4 leading-7">VINITIAL 属性指定 PULSE 模拟符号上波形的起始电压。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>VINITIAL=5V</code> 表示起始电压为 5 伏。</p>
+<h2 id="vntol" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">VNTOL<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#vntol">#</a></h2>
+<p class="my-4 leading-7">OPTIONS 模拟报告生成器上的 VNTOL 属性指定电压测量的最佳精度（单位为伏特）。</p>
+<p class="my-4 leading-7">有关更多信息，请参阅 HSpice 或 PSpice 帮助文件。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">默认值</strong></p>
+<p class="my-4 leading-7">默认属性值为 <code>VNTOL=1uV</code>。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>VNTOL=1uV</code> 表示电压测量精度在 1 微伏以内。</p>
+<h2 id="voffset" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">VOFFSET<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#voffset">#</a></h2>
+<p class="my-4 leading-7">VOFFSET 属性指定在 SIN 模拟符号上测量 DC 电压时的 Y 轴点。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">属性值</strong></p>
+<p class="my-4 leading-7">此属性的值将替换波形公式中的 &quot;voff&quot; 参数。请参阅 PSpice 帮助文件中 I 和 V 下的波形公式。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>VOFFSET=50mV</code> 表示波形在对应于 50 毫伏的 Y 轴点附近测量。</p>
+<h2 id="voltage" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">VOLTAGE<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#voltage">#</a></h2>
+<p class="my-4 leading-7">VOLTAGE 属性指定 DC 模拟组件两端的电压。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">ORDER 属性</strong></p>
+<p class="my-4 leading-7">您必须在 ORDER 属性中标识此属性以供解释。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">CURRENT 属性</strong></p>
+<p class="my-4 leading-7">在 IDC 模拟组件上使用 CURRENT 属性。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">VPULSED 属性</strong></p>
+<p class="my-4 leading-7">如果设计包含冲突的属性值，仿真结果将不确定。例如，如果在设计中同时使用 VPULSED 属性和 VOLTAGE 属性，则 VPULSED 属性的值必须与 VOLTAGE 属性的值一致。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>VOLTAGE=5V</code> 表示该 DC 组件两端有 5 伏电压。</p>
+<h2 id="vpulsed" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">VPULSED<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#vpulsed">#</a></h2>
+<p class="my-4 leading-7">VPULSED 属性指定 PULSE 模拟符号在开启时的最大电压摆幅。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">VOLTAGE 属性</strong></p>
+<p class="my-4 leading-7">如果设计包含冲突的属性值，仿真结果将不确定。例如，如果在设计中同时使用 VPULSED 属性和 VOLTAGE 属性，则 VPULSED 属性的值必须与 VOLTAGE 属性的值一致。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>VPULSED=5V</code> 表示最大电压摆幅为 5 伏。</p>
+<h2 id="w" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">W<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#w">#</a></h2>
+<p class="my-4 leading-7">W 属性定义了模拟 FET 沟道的宽度（单位为米）。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">ORDER 属性</strong></p>
+<p class="my-4 leading-7">您必须在 ORDER 属性中标识此属性以供解释。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>W=3u</code> 表示沟道宽度为 3 微米。</p>
+<h2 id="width" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">WIDTH<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#width">#</a></h2>
+<p class="my-4 leading-7">OPTIONS 模拟报告生成器上的 WIDTH 属性指定打印表中每行文本的字符数。在值字段中使用 80 或 132 分别指定 80 或 132 个字符。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>WIDTH=80</code> 表示打印表中的每行可以包含 80 个字符。</p>
+<h2 id="ymax" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">YMAX<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#ymax">#</a></h2>
+<p class="my-4 leading-7">YMAX 属性指定 MC 模拟报告生成器上蒙特卡洛结果在 Y 方向上的最大允许偏差。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">放置位置</strong></p>
+<p class="my-4 leading-7">在符号上。</p>
+<p class="my-4 leading-7"><strong class="font-semibold">示例</strong></p>
+<p class="my-4 leading-7"><code>YMAX=5</code> 表示 Y 方向的最大偏差为 5。</p><!--/$--></div><div class="rspress-doc-footer"><footer class="mt-8"><div class="xs:flex pb-5 px-2 justify-end items-center"><div class="flex text-sm text-text-2 leading-6 sm:leading-8 font-medium"><p>最近更新时间<!-- -->: <span>2025/9/17 12:25:55</span></p></div></div><div class="flex flex-col"></div><div class="flex flex-col sm:flex-row sm:justify-around gap-4 pt-6"><div class="prev_c92d1 flex flex-col"><a href="/sailwind_docs/logic/scripts/3_zh.html" class="link_a7cea pager-link_e0d2d"><span class="desc_dcc01">上一页</span><span class="title_a3acb">第 3 章 宏</span></a></div><div class="next_c11be flex flex-col"></div></div></footer></div></div><div class="aside-container_bc5fa"><div class="flex flex-col"><div id="aside-container" class="relative text-sm font-medium"><div class="leading-7 block text-sm font-semibold pl-3">本页目录</div><nav class="mt-1"><ul class="relative"><li><a href="#a2d" title="A2D" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">A2D</span></a></li><li><a href="#abstol" title="ABSTOL" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">ABSTOL</span></a></li><li><a href="#acdctran" title="AC/DC/TRAN" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">AC/DC/TRAN</span></a></li><li><a href="#acct" title="ACCT" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">ACCT</span></a></li><li><a href="#ad" title="AD" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">AD</span></a></li><li><a href="#amplitude" title="AMPLITUDE" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">AMPLITUDE</span></a></li><li><a href="#as" title="AS" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">AS</span></a></li><li><a href="#bulk" title="BULK" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">BULK</span></a></li><li><a href="#chgtol" title="CHGTOL" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">CHGTOL</span></a></li><li><a href="#cptime" title="CPTIME" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">CPTIME</span></a></li><li><a href="#current" title="CURRENT" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">CURRENT</span></a></li><li><a href="#d2a" title="D2A" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">D2A</span></a></li><li><a href="#damping" title="DAMPING" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">DAMPING</span></a></li><li><a href="#dc" title="DC" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">DC</span></a></li><li><a href="#endfreq" title="ENDFREQ" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">ENDFREQ</span></a></li><li><a href="#endval" title="ENDVAL" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">ENDVAL</span></a></li><li><a href="#freq_carrier" title="FREQ_CARRIER" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">FREQ_CARRIER</span></a></li><li><a href="#freq_signal" title="FREQ_SIGNAL" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">FREQ_SIGNAL</span></a></li><li><a href="#frequency" title="FREQUENCY" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">FREQUENCY</span></a></li><li><a href="#gain" title="GAIN" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">GAIN</span></a></li><li><a href="#generator" title="GENERATOR" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">GENERATOR</span></a></li><li><a href="#gmin" title="GMIN" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">GMIN</span></a></li><li><a href="#i1-i2-i3-" title="I1, I2, I3, ..." class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">I1, I2, I3, ...</span></a></li><li><a href="#ic" title="IC" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">IC</span></a></li><li><a href="#increment" title="INCREMENT" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">INCREMENT</span></a></li><li><a href="#init" title="INIT" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">INIT</span></a></li><li><a href="#initial" title="INITIAL" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">INITIAL</span></a></li><li><a href="#inputsource" title="INPUTSOURCE" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">INPUTSOURCE</span></a></li><li><a href="#itl1" title="ITL1" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">ITL1</span></a></li><li><a href="#itl2" title="ITL2" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">ITL2</span></a></li><li><a href="#itl4" title="ITL4" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">ITL4</span></a></li><li><a href="#itl5" title="ITL5" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">ITL5</span></a></li><li><a href="#l" title="L" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">L</span></a></li><li><a href="#label" title="LABEL" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">LABEL</span></a></li><li><a href="#library" title="LIBRARY" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">LIBRARY</span></a></li><li><a href="#limpts" title="LIMPTS" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">LIMPTS</span></a></li><li><a href="#linoctdec" title="LIN/OCT/DEC" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">LIN/OCT/DEC</span></a></li><li><a href="#list" title="LIST" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">LIST</span></a></li><li><a href="#mod_index" title="MOD_INDEX" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">MOD_INDEX</span></a></li><li><a href="#model" title="MODEL" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">MODEL</span></a></li><li><a href="#no_pins" title="NO_PINS" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">NO_PINS</span></a></li><li><a href="#node" title="NODE" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">NODE</span></a></li><li><a href="#nodeset" title="NODESET" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">NODESET</span></a></li><li><a href="#noecho" title="NOECHO" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">NOECHO</span></a></li><li><a href="#noisesource" title="NOISESOURCE" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">NOISESOURCE</span></a></li><li><a href="#nopage" title="NOPAGE" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">NOPAGE</span></a></li><li><a href="#numdgt" title="NUMDGT" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">NUMDGT</span></a></li><li><a href="#numpoints" title="NUMPOINTS" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">NUMPOINTS</span></a></li><li><a href="#numrun" title="NUMRUN" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">NUMRUN</span></a></li><li><a href="#offset" title="OFFSET" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">OFFSET</span></a></li><li><a href="#opts" title="OPTS" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">OPTS</span></a></li><li><a href="#order" title="ORDER" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">ORDER</span></a></li><li><a href="#out" title="OUT" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">OUT</span></a></li><li><a href="#output" title="OUTPUT" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">OUTPUT</span></a></li><li><a href="#parnam" title="PARNAM" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">PARNAM</span></a></li><li><a href="#phase" title="PHASE" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">PHASE</span></a></li><li><a href="#pinorder" title="PINORDER" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">PINORDER</span></a></li><li><a href="#pivrel" title="PIVREL" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">PIVREL</span></a></li><li><a href="#prefix" title="PREFIX" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">PREFIX</span></a></li><li><a href="#probe" title="PROBE" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">PROBE</span></a></li><li><a href="#pulsed" title="PULSED" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">PULSED</span></a></li><li><a href="#reltol" title="RELTOL" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">RELTOL</span></a></li><li><a href="#sourcename" title="SOURCENAME" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">SOURCENAME</span></a></li><li><a href="#startfreq" title="STARTFREQ" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">STARTFREQ</span></a></li><li><a href="#startval" title="STARTVAL" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">STARTVAL</span></a></li><li><a href="#tdelay" title="TDELAY" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">TDELAY</span></a></li><li><a href="#temp1-temp2-temp3-" title="TEMP1, TEMP2, TEMP3, ..." class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">TEMP1, TEMP2, TEMP3, ...</span></a></li><li><a href="#tfall" title="TFALL" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">TFALL</span></a></li><li><a href="#tfinal" title="TFINAL" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">TFINAL</span></a></li><li><a href="#ti-t2-t3--t9" title="TI, T2, T3, ... T9" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">TI, T2, T3, ... T9</span></a></li><li><a href="#tnom" title="TNOM" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">TNOM</span></a></li><li><a href="#tperiod" title="TPERIOD" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">TPERIOD</span></a></li><li><a href="#tpulwidth" title="TPULWIDTH" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">TPULWIDTH</span></a></li><li><a href="#v1-v2-v3--v9" title="V1, V2, V3, ..., V9" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">V1, V2, V3, ..., V9</span></a></li><li><a href="#value" title="VALUE" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">VALUE</span></a></li><li><a href="#vamplitude" title="VAMPLITUDE" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">VAMPLITUDE</span></a></li><li><a href="#vinitial" title="VINITIAL" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">VINITIAL</span></a></li><li><a href="#vntol" title="VNTOL" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">VNTOL</span></a></li><li><a href="#voffset" title="VOFFSET" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">VOFFSET</span></a></li><li><a href="#voltage" title="VOLTAGE" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">VOLTAGE</span></a></li><li><a href="#vpulsed" title="VPULSED" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">VPULSED</span></a></li><li><a href="#w" title="W" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">W</span></a></li><li><a href="#width" title="WIDTH" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">WIDTH</span></a></li><li><a href="#ymax" title="YMAX" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">YMAX</span></a></li></ul></nav></div></div></div></div></div></div></section></div>
+    <div id="search-container"></div>
+  </body>
+</html>
