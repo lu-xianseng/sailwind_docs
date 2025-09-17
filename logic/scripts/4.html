@@ -1,0 +1,1183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Rspress v1.45.6">
+    <title data-rh="true">Chapter 4 SPICE Netlist Attribute Glossary - SailWind</title><meta data-rh="true" name="description" content="SailWind"/>
+  <script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script><link rel="icon" href="/sailwind_docs/favicon.ico"><script defer src="/sailwind_docs/static/js/styles.250a77ff.js"></script><script defer src="/sailwind_docs/static/js/lib-react.36f9b428.js"></script><script defer src="/sailwind_docs/static/js/lib-router.971f4280.js"></script><script defer src="/sailwind_docs/static/js/2407.2c3e4f4c.js"></script><script defer src="/sailwind_docs/static/js/index.2ec379ca.js"></script><link href="/sailwind_docs/static/css/styles.b5129506.css" rel="stylesheet"></head>
+
+  <body >
+    <div id="root"><div class="navContainer_d18b1 rspress-nav px-6  sticky_ddfa7"><div class="container_e4235 flex justify-between items-center h-full"><div class="navBarTitle_c5f07"><a href="/sailwind_docs/index.html" class="link_a7cea flex items-center w-full h-full text-base font-semibold transition-opacity duration-300 hover:opacity-60"><div class="mr-1 min-w-8"><img src="/sailwind_docs/logo.png" alt="logo" id="logo" class="rspress-logo"/></div><span>SailWind</span></a></div><div class="flex flex-1 justify-end items-center"><div class="rightNav_a2fea"><div class="flex sm:flex-1 items-center sm:pl-4 sm:pr-2"><div class="rspress-nav-search-button navSearchButton_df1fb"><button><svg width="18" height="18" viewBox="0 0 32 32"><path fill="var(--rp-c-gray)" d="m29 27.586-7.552-7.552a11.018 11.018 0 1 0-1.414 1.414L27.586 29ZM4 13a9 9 0 1 1 9 9 9.01 9.01 0 0 1-9-9"></path></svg><p class="searchWord_af2c1">搜索</p><div style="opacity:0"><span></span><span>K</span></div></button></div><div class="mobileNavSearchButton_d85a9"><svg width="24" height="24" viewBox="0 0 32 32"><path fill="var(--rp-c-gray)" d="m29 27.586-7.552-7.552a11.018 11.018 0 1 0-1.414 1.414L27.586 29ZM4 13a9 9 0 1 1 9 9 9.01 9.01 0 0 1-9-9"></path></svg></div></div><div class="rspress-nav-menu menu h-14"><a href="/sailwind_docs/logic/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154 activeItem_a28b5 text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">原理图 (Logic)</div></a><a href="/sailwind_docs/layout/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">物理版图 (Layout)</div></a><a href="/sailwind_docs/router/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">自动布线 (Router)</div></a><a href="/sailwind_docs/lpcreator/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">焊盘图形 (LPW)</div></a><a href="/sailwind_docs/about.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">关于</div></a></div><div class="flex-center flex-row"><div class="mx-2"><div class="md:mr-2 rspress-nav-appearance"><div class="p-1 border border-solid border-gray-300 text-gray-400  cursor-pointer rounded-md hover:border-gray-600 hover:text-gray-600 dark:hover:border-gray-200 dark:hover:text-gray-200 transition-all duration-300 w-7 h-7"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" class="dark:hidden" width="18" height="18" fill="currentColor"><path d="M12 18c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6m0-10c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4M12 4c-.6 0-1-.4-1-1V1c0-.6.4-1 1-1s1 .4 1 1v2c0 .6-.4 1-1 1M12 24c-.6 0-1-.4-1-1v-2c0-.6.4-1 1-1s1 .4 1 1v2c0 .6-.4 1-1 1M5.6 6.6c-.3 0-.5-.1-.7-.3L3.5 4.9c-.4-.4-.4-1 0-1.4s1-.4 1.4 0l1.4 1.4c.4.4.4 1 0 1.4-.1.2-.4.3-.7.3M19.8 20.8c-.3 0-.5-.1-.7-.3l-1.4-1.4c-.4-.4-.4-1 0-1.4s1-.4 1.4 0l1.4 1.4c.4.4.4 1 0 1.4-.2.2-.5.3-.7.3M3 13H1c-.6 0-1-.4-1-1s.4-1 1-1h2c.6 0 1 .4 1 1s-.4 1-1 1M23 13h-2c-.6 0-1-.4-1-1s.4-1 1-1h2c.6 0 1 .4 1 1s-.4 1-1 1M4.2 20.8c-.3 0-.5-.1-.7-.3-.4-.4-.4-1 0-1.4l1.4-1.4c.4-.4 1-.4 1.4 0s.4 1 0 1.4l-1.4 1.4c-.2.2-.4.3-.7.3M18.4 6.6c-.3 0-.5-.1-.7-.3-.4-.4-.4-1 0-1.4l1.4-1.4c.4-.4 1-.4 1.4 0s.4 1 0 1.4l-1.4 1.4c-.2.2-.5.3-.7.3"></path></svg><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" class="hidden dark:block" width="18" height="18" fill="currentColor"><path d="M12.1 22h-.9c-5.5-.5-9.5-5.4-9-10.9.4-4.8 4.2-8.6 9-9 .4 0 .8.2 1 .5s.2.8-.1 1.1c-2 2.7-1.4 6.4 1.3 8.4 2.1 1.6 5 1.6 7.1 0 .3-.2.7-.3 1.1-.1.3.2.5.6.5 1-.2 2.7-1.5 5.1-3.6 6.8-1.9 1.4-4.1 2.2-6.4 2.2M9.3 4.4c-2.9 1-5 3.6-5.2 6.8-.4 4.4 2.8 8.3 7.2 8.7 2.1.2 4.2-.4 5.8-1.8 1.1-.9 1.9-2.1 2.4-3.4-2.5.9-5.3.5-7.5-1.1-2.8-2.2-3.9-5.9-2.7-9.2"></path></svg></div></div></div><div class="social-links menu-item_e90a6 flex-center relative"><div class="flex-center h-full gap-x-4 transition-colors duration-300 md:mr-2"><a href="https://github.com/mikigo/sailwind_docs/" target="_blank" rel="noopener noreferrer" class="social-links"><div class="social-links-icon_a4ad0"><div><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a></div></div></div></div><div class="mobileNavMenu_e7045"><div class="navScreen_ec30c  rspress-nav-screen" id="navScreen"><div class="container_c935d"><div class="navMenu_b887b"><div class="navMenuItem_e7978 w-full"><a href="/sailwind_docs/logic/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154 activeItem_a28b5 text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">原理图 (Logic)</div></a></div><div class="navMenuItem_e7978 w-full"><a href="/sailwind_docs/layout/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">物理版图 (Layout)</div></a></div><div class="navMenuItem_e7978 w-full"><a href="/sailwind_docs/router/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">自动布线 (Router)</div></a></div><div class="navMenuItem_e7978 w-full"><a href="/sailwind_docs/lpcreator/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">焊盘图形 (LPW)</div></a></div><div class="navMenuItem_e7978 w-full"><a href="/sailwind_docs/about.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">关于</div></a></div></div><div class="flex-center flex-col gap-2"><div class="mt-2 navAppearance_bf893 flex justify-center"></div><div class="social-links menu-item_e90a6 flex-center relative"><div class="flex-center h-full gap-x-4 transition-colors duration-300 md:mr-2"><a href="https://github.com/mikigo/sailwind_docs/" target="_blank" rel="noopener noreferrer" class="social-links"><div class="social-links-icon_a4ad0"><div><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a></div></div></div></div></div><button aria-label="mobile hamburger" class=" rspress-mobile-hamburger navHamburger_ac64c text-gray-500"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="currentColor"><circle cx="8" cy="16" r="2" fill="currentColor"></circle><circle cx="16" cy="16" r="2" fill="currentColor"></circle><circle cx="24" cy="16" r="2" fill="currentColor"></circle></svg></button></div></div></div></div><section><div class="docLayout_af141 pt-0"><aside class="sidebar_dd719 rspress-sidebar "><div class="navTitleMask_fb17c"><div class="navBarTitle_c5f07"><a href="/sailwind_docs/index.html" class="link_a7cea flex items-center w-full h-full text-base font-semibold transition-opacity duration-300 hover:opacity-60"><div class="mr-1 min-w-8"><img src="/sailwind_docs/logo.png" alt="logo" id="logo" class="rspress-logo"/></div><span>SailWind</span></a></div></div><div class="rspress-scrollbar sidebarContent_da296"><nav class="pb-2"><a href="/sailwind_docs/logic/index.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:14px;margin-left:0;border-radius:0 var(--rp-radius) var(--rp-radius) 0;padding-left:24px;font-weight:bold"><span>章节预览</span></div></a><section class="rspress-sidebar-section mt-0.5 block" style="margin-left:0"><div class="rspress-sidebar-collapse flex justify-between items-center menuItem_ac22e" style="border-radius:0 var(--rp-radius) var(--rp-radius) 0;cursor:pointer"><h2 class="py-2 px-3 text-sm font-medium flex" style="font-size:14px;padding-left:24px;font-weight:bold"><span class="flex-center" style="font-size:14px">指南(Guide)</span></h2><div class="collapseContainer_d6e4e p-2 rounded-xl"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(0deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div class="transition-all duration-300 ease-in-out" style="overflow:hidden;max-height:0"><div class="rspress-sidebar-group transition-opacity duration-500 ease-in-out" style="opacity:0;margin-left:12px"><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/1_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 1 章 SailWind Logic 快速开始 ಠ_ಠ</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/2_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 2 章 开始 SailWind Logic</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/3_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 3 章 用户界面</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/4_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 4 章 文件操作</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/5_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 5 章 设计设置</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/6_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 6 章 管理库和库数据</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/7_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 7 章 库元件</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/8_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 8 章 特殊示意图符号</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/9_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 9 章 设计和编辑基础</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/10_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 10 章 原理图元件</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/11_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 11 章 图页</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/12_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 12 章 非电气对象</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/13_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 13 章 连接</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/14_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 14 章 层次化设计</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/15_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 15 章 原理图对象修改</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/16_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 16 章 规则</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/17_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 17 章 报告</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/18_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 18 章 与 Layout 和 Router 协作</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/19_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 19 章 绘图和打印</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/20_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 20 章 对象链接与嵌入 ❌</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/21_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 21 章 使用高级程序 ❌</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/22_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 22 章 自定义界面 ಠ_ಠ</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/23_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 23 章 崩溃检测、BMW 和 BLT ಠ_ಠ</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/24_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 24 章 SailWind Logic 对话框 ಠ_ಠ</span></div></a></div></div></div></section><section class="rspress-sidebar-section mt-0.5 block" style="margin-left:0"><div class="rspress-sidebar-collapse flex justify-between items-center menuItem_ac22e" style="border-radius:0 var(--rp-radius) var(--rp-radius) 0;cursor:pointer"><h2 class="py-2 px-3 text-sm font-medium flex" style="font-size:14px;padding-left:24px;font-weight:bold"><span class="flex-center" style="font-size:14px">教程(Tutorial)</span></h2><div class="collapseContainer_d6e4e p-2 rounded-xl"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(0deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div class="transition-all duration-300 ease-in-out" style="overflow:hidden;max-height:0"><div class="rspress-sidebar-group transition-opacity duration-500 ease-in-out" style="opacity:0;margin-left:12px"><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/2_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>学习用户界面教程</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/3_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>创建库元件教程</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/4_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>添加与复制元件教程</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/5_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>添加连接教程</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/6_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>添加总线教程</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/7_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>编辑设计元素教程</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/8_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>分配约束教程</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/9_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>创建报告教程</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/10_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>连接 SailWind Layout教程</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/11_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>更新原理图设计变更教程</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/12_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>打印和绘制电路图教程</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/13_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>管理多页原理图教程</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/14_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>模拟仿真设计教程</span></div></a></div></div></div></section><section class="rspress-sidebar-section mt-0.5 block" style="margin-left:0"><div class="rspress-sidebar-collapse flex justify-between items-center menuItem_ac22e" style="border-radius:0 var(--rp-radius) var(--rp-radius) 0;cursor:pointer"><h2 class="py-2 px-3 text-sm font-medium flex" style="font-size:14px;padding-left:24px;font-weight:bold"><span class="flex-center" style="font-size:14px">快速参考(Quick Reference)</span></h2><div class="collapseContainer_d6e4e p-2 rounded-xl"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(0deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div class="transition-all duration-300 ease-in-out" style="overflow:hidden;max-height:0"><div class="rspress-sidebar-group transition-opacity duration-500 ease-in-out" style="opacity:0;margin-left:12px"><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/qr/modless.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>无模命令</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/qr/shortcut.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>键盘快捷键</span></div></a></div></div></div></section></nav></div></aside><div class="flex-1 relative min-w-0"><div class="rspress-sidebar-menu-container "><div class="rspress-sidebar-menu"><button type="button" class="flex-center mr-auto"><div class="text-md mr-2"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg></div><span class="text-sm">Menu</span></button><button type="button" class="flex-center ml-auto"><span class="text-sm">本页目录</span><div class="text-md mr-2" style="transform:rotate(0deg);transition:transform 0.2s ease-out;margin-top:2px"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></button><div class="rspress-local-toc-container "><ul><li><a href="#a2d" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">A2D</span></a></li><li><a href="#abstol" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">ABSTOL</span></a></li><li><a href="#acdctran" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">AC/DC/TRAN</span></a></li><li><a href="#acct" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">ACCT</span></a></li><li><a href="#ad" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">AD</span></a></li><li><a href="#amplitude" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">AMPLITUDE</span></a></li><li><a href="#as" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">AS</span></a></li><li><a href="#bulk" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">BULK</span></a></li><li><a href="#chgtol" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">CHGTOL</span></a></li><li><a href="#cptime" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">CPTIME</span></a></li><li><a href="#current" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">CURRENT</span></a></li><li><a href="#d2a" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">D2A</span></a></li><li><a href="#damping" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">DAMPING</span></a></li><li><a href="#dc" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">DC</span></a></li><li><a href="#endfreq" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">ENDFREQ</span></a></li><li><a href="#endval" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">ENDVAL</span></a></li><li><a href="#frequency" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">FREQUENCY</span></a></li><li><a href="#gain" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">GAIN</span></a></li><li><a href="#generator" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">GENERATOR</span></a></li><li><a href="#gmin" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">GMIN</span></a></li><li><a href="#i1-i2-i3-" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">I1, I2, I3, ...</span></a></li><li><a href="#ic" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">IC</span></a></li><li><a href="#increment" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">INCREMENT</span></a></li><li><a href="#init" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">INIT</span></a></li><li><a href="#initial" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">INITIAL</span></a></li><li><a href="#inputsource" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">INPUTSOURCE</span></a></li><li><a href="#itl1" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">ITL1</span></a></li><li><a href="#itl2" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">ITL2</span></a></li><li><a href="#itl4" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">ITL4</span></a></li><li><a href="#itl5" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">ITL5</span></a></li><li><a href="#l" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">L</span></a></li><li><a href="#label" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">LABEL</span></a></li><li><a href="#library" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">LIBRARY</span></a></li><li><a href="#limpts" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">LIMPTS</span></a></li><li><a href="#linoctdec" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">LIN/OCT/DEC</span></a></li><li><a href="#list" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">LIST</span></a></li><li><a href="#model" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">MODEL</span></a></li><li><a href="#node" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">NODE</span></a></li><li><a href="#nodeset" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">NODESET</span></a></li><li><a href="#noecho" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">NOECHO</span></a></li><li><a href="#noisesource" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">NOISESOURCE</span></a></li><li><a href="#nopage" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">NOPAGE</span></a></li><li><a href="#numdgt" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">NUMDGT</span></a></li><li><a href="#numpoints" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">NUMPOINTS</span></a></li><li><a href="#numrun" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">NUMRUN</span></a></li><li><a href="#offset" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">OFFSET</span></a></li><li><a href="#opts" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">OPTS</span></a></li><li><a href="#order" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">ORDER</span></a></li><li><a href="#out" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">OUT</span></a></li><li><a href="#output" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">OUTPUT</span></a></li><li><a href="#parnam" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">PARNAM</span></a></li><li><a href="#phase" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">PHASE</span></a></li><li><a href="#pinorder" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">PINORDER</span></a></li><li><a href="#pivrel" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">PIVREL</span></a></li><li><a href="#prefix" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">PREFIX</span></a></li><li><a href="#probe" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">PROBE</span></a></li><li><a href="#pulsed" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">PULSED</span></a></li><li><a href="#reltol" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">RELTOL</span></a></li><li><a href="#sourcename" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">SOURCENAME</span></a></li><li><a href="#startfreq" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">STARTFREQ</span></a></li><li><a href="#startval" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">STARTVAL</span></a></li><li><a href="#tdelay" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">TDELAY</span></a></li><li><a href="#temp1-temp2-temp3-" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">TEMP1, TEMP2, TEMP3, ...</span></a></li><li><a href="#tfall" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">TFALL</span></a></li><li><a href="#tfinal" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">TFINAL</span></a></li><li><a href="#ti-t2-t3--t9" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">TI, T2, T3, ... T9</span></a></li><li><a href="#tnom" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">TNOM</span></a></li><li><a href="#tperiod" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">TPERIOD</span></a></li><li><a href="#tpulwidth" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">TPULWIDTH</span></a></li><li><a href="#v1-v2-v3--v9" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">V1, V2, V3, ..., V9</span></a></li><li><a href="#value" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">VALUE</span></a></li><li><a href="#vamplitude" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">VAMPLITUDE</span></a></li><li><a href="#vinitial" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">VINITIAL</span></a></li><li><a href="#vntol" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">VNTOL</span></a></li><li><a href="#voffset" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">VOFFSET</span></a></li><li><a href="#voltage" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">VOLTAGE</span></a></li><li><a href="#vpulsed" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">VPULSED</span></a></li><li><a href="#w" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">W</span></a></li><li><a href="#width" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">WIDTH</span></a></li><li><a href="#ymax" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">YMAX</span></a></li></ul></div></div></div><div class="content_ff766 rspress-doc-container flex"><div class="flex-1 overflow-x-auto"><div class="rspress-doc"><!--$--><h1 id="chapter-4-spice-netlist-attribute-glossary" class="rspress-doc-title text-3xl mb-10 leading-10 tracking-tight title_fb7eb">Chapter 4 SPICE Netlist Attribute Glossary<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#chapter-4-spice-netlist-attribute-glossary">#</a></h1>
+<p class="my-4 leading-7">The attributes described in this section can apply to your analog design. All analog attributes are prefixed with sim.analog. when added. For example, you add the sim.analog.model attribute to a part when using a model file. The format is not case sensitive.</p>
+<p class="my-4 leading-7"><a href="#page-2-0" class="link_a7cea  link_a9ef4 inline-link_f855c">A2D</a> <a href="#page-2-1" class="link_a7cea  link_a9ef4 inline-link_f855c">ABSTOL</a> <a href="#page-2-2" class="link_a7cea  link_a9ef4 inline-link_f855c">AC/DC/TRAN</a> <a href="#page-3-0" class="link_a7cea  link_a9ef4 inline-link_f855c">ACCT</a> <a href="#page-3-1" class="link_a7cea  link_a9ef4 inline-link_f855c">AD</a> <a href="#page-3-2" class="link_a7cea  link_a9ef4 inline-link_f855c">AMPLITUDE</a> <a href="#page-4-0" class="link_a7cea  link_a9ef4 inline-link_f855c">AS</a> <a href="#page-4-1" class="link_a7cea  link_a9ef4 inline-link_f855c">BULK</a> <a href="#page-4-2" class="link_a7cea  link_a9ef4 inline-link_f855c">CHGTOL</a> <a href="#page-5-0" class="link_a7cea  link_a9ef4 inline-link_f855c">CPTIME</a> <a href="#page-5-1" class="link_a7cea  link_a9ef4 inline-link_f855c">CURRENT</a> <a href="#page-5-2" class="link_a7cea  link_a9ef4 inline-link_f855c">D2A</a> <a href="#page-6-0" class="link_a7cea  link_a9ef4 inline-link_f855c">DAMPING</a> <a href="#page-6-1" class="link_a7cea  link_a9ef4 inline-link_f855c">DC</a> <a href="#page-6-2" class="link_a7cea  link_a9ef4 inline-link_f855c">ENDFREQ</a> <a href="#page-7-0" class="link_a7cea  link_a9ef4 inline-link_f855c">ENDVAL</a> <a href="#page-7-1" class="link_a7cea  link_a9ef4 inline-link_f855c">FREQ\_CARRIER</a> <a href="#page-7-2" class="link_a7cea  link_a9ef4 inline-link_f855c">FREQ\_SIGNAL</a> <a href="#page-8-0" class="link_a7cea  link_a9ef4 inline-link_f855c">FREQUENCY</a> <a href="#page-8-1" class="link_a7cea  link_a9ef4 inline-link_f855c">GAIN</a> <a href="#page-8-2" class="link_a7cea  link_a9ef4 inline-link_f855c">GENERATOR</a> <a href="#page-11-0" class="link_a7cea  link_a9ef4 inline-link_f855c">GMIN</a> <a href="#page-11-1" class="link_a7cea  link_a9ef4 inline-link_f855c">I1, I2, I3, ...</a> <a href="#page-11-2" class="link_a7cea  link_a9ef4 inline-link_f855c">IC</a> <a href="#page-12-0" class="link_a7cea  link_a9ef4 inline-link_f855c">INCREMENT</a> <a href="#page-12-1" class="link_a7cea  link_a9ef4 inline-link_f855c">INIT</a> <a href="#page-12-2" class="link_a7cea  link_a9ef4 inline-link_f855c">INITIAL</a> <a href="#page-12-3" class="link_a7cea  link_a9ef4 inline-link_f855c">INPUTSOURCE</a> <a href="#page-13-0" class="link_a7cea  link_a9ef4 inline-link_f855c">ITL1</a> <a href="#page-13-1" class="link_a7cea  link_a9ef4 inline-link_f855c">ITL2</a> <a href="#page-14-0" class="link_a7cea  link_a9ef4 inline-link_f855c">ITL4</a> <a href="#page-14-1" class="link_a7cea  link_a9ef4 inline-link_f855c">ITL5</a> <a href="#page-14-2" class="link_a7cea  link_a9ef4 inline-link_f855c">L</a> <a href="#page-15-0" class="link_a7cea  link_a9ef4 inline-link_f855c">LABEL</a> <a href="#page-15-1" class="link_a7cea  link_a9ef4 inline-link_f855c">LIBRARY</a> <a href="#page-15-2" class="link_a7cea  link_a9ef4 inline-link_f855c">LIMPTS</a></p>
+<table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
+<thead>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">LIN/OCT/DEC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">LIST</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">MOD_INDEX</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">MODEL</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">NO_PINS</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">NODE</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">NODESET</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">NOECHO</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">NOISESOURCE</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">NOPAGE</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">NUMDGT</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">NUMPOINTS</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">NUMRUN</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">OFFSET</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">OPTS</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">ORDER</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">OUT</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">OUTPUT</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">PARNAM</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">PHASE</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">PINORDER</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">PIVREL</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">PREFIX</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">PROBE</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">PULSED</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">RELTOL</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">SOURCENAME</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">STARTFREQ</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">STARTVAL</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">TDELAY</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">TEMP1, TEMP2, TEMP3,</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">TFALL</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">TFINAL</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">TI, T2, T3,  T9</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">TNOM</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">TPERIOD</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">TPULWIDTH</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">V1, V2, V3, , V9</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">VALUE</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">VAMPLITUDE</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">VINITIAL</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">VNTOL</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">VOFFSET</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">VOLTAGE</td>
+</tr>
+</tbody>
+</table>
+<p class="my-4 leading-7"><a href="#page-33-0" class="link_a7cea  link_a9ef4 inline-link_f855c">VPULSED</a> <a href="#page-33-1" class="link_a7cea  link_a9ef4 inline-link_f855c">W</a> <a href="#page-33-2" class="link_a7cea  link_a9ef4 inline-link_f855c">WIDTH</a> <a href="#page-34-0" class="link_a7cea  link_a9ef4 inline-link_f855c">YMAX</a></p>
+<h2 id="a2d" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">A2D<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#a2d">#</a></h2>
+<p class="my-4 leading-7">The A2D net attribute specifies a model name (to represent an absent interface component) on an analog–to–digital signal connection in ViewSim/AD.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the schematic, attached to a net segment.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">A2D=TTLADMOD specifies the TTLADMOD interface component.</p>
+<h2 id="abstol" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">ABSTOL<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#abstol">#</a></h2>
+<p class="my-4 leading-7">The ABSTOL attribute on the OPTIONS analog report generator sets the accuracy, in amps, of current measurements.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Default</strong></p>
+<p class="my-4 leading-7">The default attribute is ABSTOL=1pa.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">ABSTOL=1E–6A indicates that current measurements are accurate to within 1 micro amp. ABSTOL=1E– 12A indicates that current measurements are accurate to within 1 pico amp.</p>
+<h2 id="acdctran" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">AC/DC/TRAN<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#acdctran">#</a></h2>
+<p class="my-4 leading-7">The AC/DC/TRAN attribute defines what type of analysis (DC, AC, transient) is being done when the Monte–Carlo analysis is run.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Attribute Value</strong></p>
+<p class="my-4 leading-7">Use one of the following keywords in the value field:</p>
+<table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
+<thead>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">Keyword</th>
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">AC</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">AC analysis</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">DC</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">DC analysis</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">TRAN</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Transient analysis</td>
+</tr>
+</tbody>
+</table>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">AC/DC/TRAN=AC indicates that an AC analysis is to be performed each time simulation is run.</p>
+<h2 id="acct" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">ACCT<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#acct">#</a></h2>
+<p class="my-4 leading-7">The ACCT on the OPTIONS analog report generator outputs a summary of the analysis.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Attribute Value</strong></p>
+<p class="my-4 leading-7">Do not use an attribute value (or equal sign character) when specifying this attribute.</p>
+<h2 id="ad" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">AD<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#ad">#</a></h2>
+<p class="my-4 leading-7">The AD attribute defines the size of the drain area in a FET.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">The ORDER Attribute</strong></p>
+<p class="my-4 leading-7">You must identify this attribute in the ORDER attribute for interpretation.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">AD=2u indicates a drain area of 2 microns.</p>
+<h2 id="amplitude" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">AMPLITUDE<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#amplitude">#</a></h2>
+<p class="my-4 leading-7">The AMPLITUDE attribute sets maximum voltage or current swing on the SFFM and ISFFM analog symbols and the maximum current swing on the ISIN symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Attribute Value</strong></p>
+<p class="my-4 leading-7">The value of this attribute is substituted for &quot;amp&quot; in the waveform formula. Refer to the waveform formula under I and V in the PSpice Help file.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">AMPLITUDE=100E-3A indicates a maximum current swing of 100 milliamps.</p>
+<h2 id="as" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">AS<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#as">#</a></h2>
+<p class="my-4 leading-7">The AS attribute defines the size of the source area of a FET.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">The ORDER Attribute</strong></p>
+<p class="my-4 leading-7">You must identify this attribute in the ORDER attribute for interpretation.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">AS=1u indicates a source area of 1 micron.</p>
+<h2 id="bulk" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">BULK<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#bulk">#</a></h2>
+<p class="my-4 leading-7">The BULK attribute is attached to a 3–pin FET symbol. It specifies where the fourth pin or bulk substrate of a four–pin transistor will be connected. This attribute must be used to include all of the transistor pins in the simulation file.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<h2 id="chgtol" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">CHGTOL<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#chgtol">#</a></h2>
+<p class="my-4 leading-7">The CHGTOL attribute reports the best accuracy, in coulombs, of charges on the OPTIONS analog report generator.</p>
+<p class="my-4 leading-7">For more information, refer to the HSpice or PSpice Help files.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Default</strong></p>
+<p class="my-4 leading-7">The default attribute is CHGTOL=.01pC.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">CHGTOL=1E–3C indicates that measurements of charge are accurate to within 1 millicoulomb. CHGTOL=1E–6C indicates that measurements of charge are accurate to within 1 microcoulomb.</p>
+<h2 id="cptime" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">CPTIME<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#cptime">#</a></h2>
+<p class="my-4 leading-7">The CPTIME attribute on the OPTIONS analog report generator provides the time, in seconds, allowed for this run.</p>
+<p class="my-4 leading-7">For more information, refer to the HSpice or PSpice Help files.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Default</strong></p>
+<p class="my-4 leading-7">The default attribute is CPTIME=1E6.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">CPTIME=3600 indicates that this run can take up to one hour to complete.</p>
+<h2 id="current" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">CURRENT<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#current">#</a></h2>
+<p class="my-4 leading-7">The CURRENT attribute specifies the number of amps present on the IDC analog symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">The ORDER Attribute</strong></p>
+<p class="my-4 leading-7">You must identify this attribute in the ORDER attribute for interpretation.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">CURRENT=25E-3 indicates that there are 25 milliamps present on the IDC component.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">The VOLTAGE Attribute</strong></p>
+<p class="my-4 leading-7">Use the VOLTAGE attribute on the DC component.</p>
+<h2 id="d2a" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">D2A<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#d2a">#</a></h2>
+<p class="my-4 leading-7">The D2A net attribute specifies a model name (to represent an absent interface component) on an digital– to–analog signal connection in The Simulator/AD.</p>
+<p class="my-4 leading-7">On the schematic, attached to a net segment.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">D2A=TTLDAMOD specifies the TTLDAMOD interface component.</p>
+<h2 id="damping" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">DAMPING<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#damping">#</a></h2>
+<p class="my-4 leading-7">The DAMPING attribute specifies the damping factor of the waveform on the SIN and ISIN analog symbols.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Attribute Value</strong></p>
+<p class="my-4 leading-7">The value of this attribute is substituted for &quot;df&quot; in the waveform formula. Refer to the waveform formula under I and V in the PSpice Help file.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">The ORDER Attribute</strong></p>
+<p class="my-4 leading-7">You must identify this attribute in the ORDER attribute for interpretation.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">DAMPING=1 indicates a damping factor of 1.</p>
+<h2 id="dc" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">DC<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#dc">#</a></h2>
+<p class="my-4 leading-7">The DC attribute indicates the amount of voltage across the AMMETER or UAMMETER symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">DC=15 indicates that there are 15 volts across this component.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Measuring Current</strong></p>
+<p class="my-4 leading-7">If you are using a METER type symbol to measure current (such as, AMMETER or UAMMETER), specify the DC and PROBE attributes as follows:</p>
+<p class="my-4 leading-7">DC=0</p>
+<p class="my-4 leading-7">PROBE=I</p>
+<h2 id="endfreq" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">ENDFREQ<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#endfreq">#</a></h2>
+<p class="my-4 leading-7">The ENDFREQ attribute specifies the final frequency of a frequency sweep on the BODEPLOT analog report generator.</p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Attribute Value</strong></p>
+<p class="my-4 leading-7">The attribute value must be greater than the value of the STARTFREQ attribute.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">ENDFREQ=100MEGHz indicates a final sweep frequency of 100 Megahertz.</p>
+<h2 id="endval" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">ENDVAL<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#endval">#</a></h2>
+<p class="my-4 leading-7">The ENDVAL attribute specifies the end point of the sweep on the SWEEP analog report generator.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Attribute Value</strong></p>
+<p class="my-4 leading-7">Because the sweep can be in either direction, the value of ENDVAL can be greater or less than the value of the STARTVAL attribute.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">ENDVAL=5mA indicates an end sweep current of 5 milliamps.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">FREQ_CARRIER</strong></p>
+<p class="my-4 leading-7">The FREQ_CARRIER attribute specifies the carrier frequency of the waveform on the SFFM and ISFFM analog symbols.</p>
+<p class="my-4 leading-7">For more information, refer to the HSpice or PSpice Help file.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Attribute Value</strong></p>
+<p class="my-4 leading-7">The value of this attribute is substituted for &quot;fc&quot; in the waveform formula. Refer to the waveform formula under I and V in the PSpice Help file.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">FREQ_CARRIER=101MEGHz indicates a carrier frequency of 101 Megahertz.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">FREQ_SIGNAL</strong></p>
+<p class="my-4 leading-7">The FREQ_SIGNAL attribute specifies the modulation frequency of the waveform on the SFFM and ISFFM analog symbols.</p>
+<p class="my-4 leading-7">For more information, refer to the HSpice or PSpice Help file.</p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Attribute Value</strong></p>
+<p class="my-4 leading-7">The value of this attribute is substituted for &quot;fm&quot; in the waveform formula. Refer to the waveform formula under I and V in the PSpice Help file.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">FREQ_SIGNAL=20KHz indicates a modulation frequency of 20 Kilohertz.</p>
+<h2 id="frequency" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">FREQUENCY<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#frequency">#</a></h2>
+<p class="my-4 leading-7">The FREQUENCY attribute specifies the frequency of the waveform on the SIN and ISIN analog symbols.</p>
+<p class="my-4 leading-7">For more information, refer to the HSpice or PSpice Help file.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Attribute Value</strong></p>
+<p class="my-4 leading-7">The value of this attribute is substituted for &quot;freq&quot; in the waveform formula. Refer to the waveform formula under I and V in the PSpice Help file.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">FREQUENCY=5MEGHz indicates a frequency of 5 Megahertz.</p>
+<h2 id="gain" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">GAIN<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#gain">#</a></h2>
+<p class="my-4 leading-7">The GAIN attribute specifies the amplification caused by the CCCS, VCVS, VCCS, and CCVS analog components.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">GAIN=3E–3 indicates that this component multiplies a circuit parameter by 0.003.</p>
+<h2 id="generator" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">GENERATOR<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#generator">#</a></h2>
+<p class="my-4 leading-7">The GENERATOR attribute identifies the type of analog analysis that you wish to perform on the analog circuit. The attribute value identifies the Spice statement that the analog netlister will insert into the Spice circuit file, <em>*.cir</em>.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Notes</strong></p>
+<p class="my-4 leading-7">All analog test instruments require the GENERATOR attribute as well as the CLASS and PREFIX attributes.</p>
+<p class="my-4 leading-7">PowerWorks comes supplied with symbols for each analysis type. These symbols possess the appropriate GENERATOR attribute value.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the test instrument symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Attribute Value</strong></p>
+<p class="my-4 leading-7">The GENERATOR attribute accepts the following values:</p>
+<p class="my-4 leading-7">NOTE: Precede each value with a period (for example, .SENS, not SENS).</p>
+<p class="my-4 leading-7">The GENERATOR attribute can accept multiple values. For example:</p>
+<div class="language-bash"><div class="rspress-code-content rspress-scrollbar"><code>GENERATOR = .AC, .DC, .FOUR
+</code></div></div>
+<table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
+<thead>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">Attribute Value</th>
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">Instrument<!-- -->Name</th>
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">Symbol Name</th>
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">Analysis Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">.AC</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Bodeplot</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">BODEPLOT.1</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Sweeps each independent AC source in a<!-- -->design through a series of frequencies and<!-- -->calculates the frequency response of the<!-- -->circuit at each of the swept frequencies.</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">.CSDF\PROBE</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">CSDF</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">CSDF.1</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Common Simulation Data Format; this is<!-- -->ViewSpice specific; it causes ViewSpice<!-- -->to produce an ASCII file which contains all<!-- -->voltages and currents in a circuit; analyzes<!-- -->voltage, current, reliability.</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">.DC</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">DC Sweep</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">SWEEP.1</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Sweeps a circuit&#x27;s input source through a<!-- -->series of voltages or currents and calculates<!-- -->the bias point of the circuit at each of the<!-- -->specified voltages or currents.</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">.FOUR</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Fourier</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">FOURIER.1</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Performs a decomposition into Fourier<!-- -->components of the result of a transient<!-- -->analysis. Note that this is not the same as the<!-- -->FFT (Fast Fourier Transform) performed by<!-- -->ViewTrace.</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">.LIB</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Library</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">LIB.1</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Indicates that one or more ViewSpice or<!-- -->HSPICE models are defined in an external<!-- -->library.</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">.LOADBIAS</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Loadbias<!-- -->(ViewSpice<!-- -->only)</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">LBIAS.1</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Loads the bias point file saved with<!-- -->SAVEBIAS. This is specific to ViewSpice.</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">.MC</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Monte–Carlo</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">MC.1</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Calculates the effects of device tolerances on<!-- -->the design&#x27;s performance; also simulates the</td>
+</tr>
+</tbody>
+</table>
+<p class="my-4 leading-7"><strong class="font-semibold">Table 27. Generator Attribute - Possible Values</strong></p>
+<table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
+<thead>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">Attribute Value</th>
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">Instrument<!-- -->Name</th>
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">Symbol Name</th>
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">Analysis Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"></td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"></td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"></td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">manufacture of multiple copies of the design.<!-- -->This is specific to ViewSpice.</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">.NOISE</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Noise</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">NOISE.1</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Estimates the input and output noise of a<!-- -->circuit.</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">.OP</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Bias point</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">OP.1</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Calculates the operating conditions of<!-- -->devices in the design and lists these<!-- -->calculations in the simulation output file.</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">.OPTIONS</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Options</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">OPTIONS.1</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Lets you set parameters to control how a<!-- -->specified analysis is run or how its results<!-- -->appear.</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">.PARAM</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Parameter<!-- -->(ViewSpice<!-- -->only)</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">.PARAM</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"></td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">.SAVEBIAS</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Savebias<!-- -->(ViewSpice<!-- -->only)</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">SBIAS.1</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Saves bias points at specified times into a<!-- -->specified file. This is specific to ViewSpice.</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">.SENS</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Sensitivity</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">SENSITIVITY.1</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Calculates the small signal sensitivity of each<!-- -->node voltage to each of the active devices in<!-- -->the design.</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">.STEP</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Step<!-- -->(ViewSpice<!-- -->only)</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">STEP.1</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Re–simulates the circuit with different<!-- -->parameter values. Useful for running multiple<!-- -->transient or AC analyses. This is specific to<!-- -->ViewSpice.</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">.TEMP</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Temperature</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">TEMP.1</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Sets the circuit to a specific Centigrade<!-- -->temperature so an analysis can calculate how<!-- -->the circuit operates at that temperature.</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">.TF</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Transfer<!-- -->Function</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">TRANSFCT.1</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Calculates small signal gain, input impedance<!-- -->and output impedance of a circuit with<!-- -->respect to the circuit&#x27;s bias point.</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">.TRAN</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Transient<!-- -->Sweep or<!-- -->Oscilloscope</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">TRANS.1</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Also called transient analysis; generates<!-- -->visual and text reports about the circuit&#x27;s<!-- -->operation over a specified period of time.</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">.WCASE</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Worst Case<!-- -->(ViewSpice<!-- -->only)</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">WCASE.1</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Does sensitivity and worst case analysis<!-- -->of the circuit by making a number of<!-- -->runs, varying one parameter per run. The<!-- -->sensitivity of the output is calculated for each<!-- -->varied parameter and a final run is done with<!-- -->all parameters varied to produce a worst<!-- -->case. This is specific to PSpice.</td>
+</tr>
+</tbody>
+</table>
+<table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
+<thead>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider"></th>
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider"></th>
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">Table 27. Generator Attribute - Possible Values (continued)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"></td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"></td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"></td>
+</tr>
+</tbody>
+</table>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">GENERATOR=.TRAN indicates that you want to include transient analysis information as part of your analog simulation input.</p>
+<h2 id="gmin" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">GMIN<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#gmin">#</a></h2>
+<p class="my-4 leading-7">The GMIN attribute on the OPTIONS analog report generator specifies the minimum conductance, in mhos, used for any branch.</p>
+<p class="my-4 leading-7">For more information, refer to the HSpice or PSpice Help file.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">GMIN=3 indicates a minimum conductance of 3 mhos.</p>
+<h2 id="i1-i2-i3-" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">I1, I2, I3, ...<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#i1-i2-i3-">#</a></h2>
+<p class="my-4 leading-7">The I1 attribute specifies the amount of current generated by the IPWL analog symbol at the time period specified by the T1 attribute.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">The ORDER Attribute</strong></p>
+<p class="my-4 leading-7">You must identify this attribute in the ORDER attribute of the IPWL for interpretation.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">The T1 Attribute</strong></p>
+<p class="my-4 leading-7">The T1 attribute specifies the time period at which the current is generated.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">I1=2E–3A indicates that 2 milliamps are generated at the T1 time period.</p>
+<h2 id="ic" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">IC<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#ic">#</a></h2>
+<p class="my-4 leading-7">The IC attribute sets up initial conditions on nets and analog components. You can assign an initial voltage to a node, or you can assign initial conditions across a circuit element.</p>
+<p class="my-4 leading-7">For more information, refer to the HSpice or PSpice Help file.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the schematic, attached to a net or component.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">The ORDER Attribute</strong></p>
+<p class="my-4 leading-7">You must identify this attribute in the ORDER attribute for interpretation.</p>
+<h2 id="increment" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">INCREMENT<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#increment">#</a></h2>
+<p class="my-4 leading-7">The INCREMENT attribute specifies the interval during the sweep at which analyses are taken on the SWEEP analog report generator.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7">Attribute Value</p>
+<p class="my-4 leading-7">The attribute value must be greater than 0.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">INCREMENT=.1V indicates an analysis of the circuit is made each time source voltage is changed by 0.1 volts.</p>
+<h2 id="init" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">INIT<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#init">#</a></h2>
+<p class="my-4 leading-7">The INIT attribute on the OSCILLOSCOPE analog report generator instructs the simulator to use specified initial conditions.</p>
+<p class="my-4 leading-7">For more information, refer to the HSpice or PSpice Help file.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Attribute Value</strong></p>
+<p class="my-4 leading-7">The attribute value is INIT=UIC.</p>
+<h2 id="initial" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">INITIAL<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#initial">#</a></h2>
+<p class="my-4 leading-7">The INITIAL attribute specifies the starting current of the waveform on the IPULSE analog symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">The ORDER Attribute</strong></p>
+<p class="my-4 leading-7">You must identify this attribute in the ORDER attribute for interpretation.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">INITIAL=1E–6 indicates that the initial value of the IPULSE component is one microamp.</p>
+<h2 id="inputsource" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">INPUTSOURCE<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#inputsource">#</a></h2>
+<p class="my-4 leading-7">The INPUTSOURCE attribute specifies the REFDES or label name of the input source component against which gain is measured on the XFERFUNC analog report generator.</p>
+<p class="my-4 leading-7">SailWind Logic Command Reference 453</p>
+<p class="my-4 leading-7">For more information, refer to the HSpice or PSpice Help files.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">INPUTSOURCE=VIN indicates that gain is to be measured against the component VIN.</p>
+<h2 id="itl1" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">ITL1<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#itl1">#</a></h2>
+<p class="my-4 leading-7">The ITL1 attribute on the OPTIONS analog report generator specifies the total number of times that the system can perform DC or BIAS POINT analysis iterations if the circuit does not contain a NODESET attribute.</p>
+<p class="my-4 leading-7">For more information, refer to the HSpice or PSpice Help files.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Default</strong></p>
+<p class="my-4 leading-7">The default attribute value is ITL1=100.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">ITL1=300. This increase changes the limit of iterations and can help to achieve DC convergence if a failure occurs.</p>
+<h2 id="itl2" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">ITL2<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#itl2">#</a></h2>
+<p class="my-4 leading-7">The ITL2 attribute on the OPTIONS analog report generator specifies the maximum number of times that, with a NODESET attribute present, the system can perform DC or BIAS POINT analysis iterations.</p>
+<p class="my-4 leading-7">For more information, refer to the HSpice or PSpice Help file.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Default</strong></p>
+<p class="my-4 leading-7">The default attribute value is ITL2=20.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">ITL2=50 indicates that, with a NODESET attribute present, the system can perform DC or BIAS POINT analysis up to 50 times.</p>
+<h2 id="itl4" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">ITL4<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#itl4">#</a></h2>
+<p class="my-4 leading-7">The ITL4 attribute on the OPTIONS analog report generator specifies the maximum number of iteration times transient analysis will be performed for any one point in analysis.</p>
+<p class="my-4 leading-7">For more information, refer to the HSpice or PSpice Help file.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Default</strong></p>
+<p class="my-4 leading-7">The default attribute value is ITL4=10.</p>
+<h2 id="itl5" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">ITL5<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#itl5">#</a></h2>
+<p class="my-4 leading-7">The ITL5 attribute on the OPTIONS analog report generator specifies the maximum number of iteration times that transient analysis will be performed for all points in analysis.</p>
+<p class="my-4 leading-7">For more information, refer to the HSpice or PSpice Help file.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Default</strong></p>
+<p class="my-4 leading-7">The default attribute value is ITL5=5000.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">ITL5=100 indicates that transient analysis can be performed 100 times. ITL5=0 indicates that there is no limit on the number of times transient analysis can be performed.</p>
+<h2 id="l" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">L<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#l">#</a></h2>
+<p class="my-4 leading-7">The L attribute defines the length of an analog FET channel in meters.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">The ORDER Attribute</strong></p>
+<p class="my-4 leading-7">You must identify this attribute in the ORDER attribute for interpretation.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">L=5u indicates that the channel is 5 microns long.</p>
+<h2 id="label" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">LABEL<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#label">#</a></h2>
+<p class="my-4 leading-7">The LABEL attribute specifies a unique name you want to assign to this analog source component in order to differentiate it from similar components in a project schematic. Attaching a LABEL attribute to a component has the same effect as creating a label for the component using the <strong class="font-semibold">Add &gt; Label</strong> command.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">The attribute LABEL=VIN assigns the name VIN to this component instance of the symbol, just as if you had attached a label of VIN to the component instance.</p>
+<h2 id="library" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">LIBRARY<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#library">#</a></h2>
+<p class="my-4 leading-7">You can only place the LIBRARY attribute on the LIB symbol. The LIBRARY attribute identifies the Spice model library that the LIB symbol is meant to represent.</p>
+<h2 id="limpts" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">LIMPTS<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#limpts">#</a></h2>
+<p class="my-4 leading-7">The LIMPTS attribute on the OPTIONS analog report generator specifies the maximum number of data points allowed in any analysis.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">LIMPTS=2000 indicates that a maximum of 2000 points in any print table or plot can be included in an analysis.</p>
+<h2 id="linoctdec" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">LIN/OCT/DEC<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#linoctdec">#</a></h2>
+<p class="my-4 leading-7">The LIN/OCT/DEC attribute specifies the type of sweep to be performed on the BODEPLOT analog report generator.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Attribute Value</strong></p>
+<p class="my-4 leading-7">Use one of the following keywords in the value field to define sweep <strong class="font-semibold">type:</strong></p>
+<p class="my-4 leading-7">Keyword Definition</p>
+<table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
+<thead>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">DEC</th>
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">Decade</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">LIN</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Linear</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">OCT</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Octave</td>
+</tr>
+</tbody>
+</table>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">LIN/OCT/DEC=DEC indicates that simulation results are measured in decades.</p>
+<h2 id="list" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">LIST<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#list">#</a></h2>
+<p class="my-4 leading-7">The LIST attribute on the OPTIONS analog report generator directs the system to output a summary of components.</p>
+<p class="my-4 leading-7">For more information, refer to the HSpice or PSpice Help file.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Attribute Value</strong></p>
+<p class="my-4 leading-7">Do not use an attribute value (or equal sign character) when specifying this attribute.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">MOD_INDEX</strong></p>
+<p class="my-4 leading-7">The MOD_INDEX attribute specifies the multiplier of modulated frequency on SFFM and ISFFM analog symbols.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Attribute Value</strong></p>
+<p class="my-4 leading-7">The value of this attribute is substituted for &quot;mod&quot; in the waveform formula. Refer to the waveform formula under I and V in the PSpice Help file.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">MOD_INDEX=1 indicates a modulated frequency of 1.</p>
+<h2 id="model" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">MODEL<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#model">#</a></h2>
+<p class="my-4 leading-7">The MODEL attribute defines which model file the system uses to simulate this component. Simulation <em>.mod</em> files are stored in the Analog Models subdirectory. Each SPICE model must have a separate .mod file. A model file can have subcircuit sections, but multiple models cannot be stored in one file since there is no mechanism for the software to extract the different models from within the file.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Device Types</strong> RAM, ROM <strong class="font-semibold">Analog Placement</strong> On the symbol. <strong class="font-semibold">Analog Example</strong> MODEL=Q2N3904 tells the system to simulate this component using the &quot;q2n3904.&quot;</p>
+<p class="my-4 leading-7"><strong class="font-semibold">NO_PINS</strong></p>
+<p class="my-4 leading-7">The NO_PINS attribute overrides a symbol&#x27;s PINORDER attribute. Using the NO_PINS attributes allows you use the ORDER attribute instead of the PINORDER attribute to determine analog component pin order.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Attribute Value</strong></p>
+<p class="my-4 leading-7">The NO_PINS attribute accepts 1 or TRUE as its value.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">The PINORDER and ORDER Attributes</strong></p>
+<p class="my-4 leading-7">Normally, the PINORDER attribute controls the default sequence. You can also use the ORDER attribute to specify pin sequence. If you specify the NO_PINS attribute on the symbol, this overrides the PINORDER attribute and the system uses the pin sequence in the ORDER attribute.</p>
+<h2 id="node" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">NODE<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#node">#</a></h2>
+<p class="my-4 leading-7">The NODE attribute on the OPTIONS analog report generator directs the system to output a list or a table of nets.</p>
+<p class="my-4 leading-7">For more information, refer to the HSpice or PSpice Help file.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Attribute Value</strong></p>
+<p class="my-4 leading-7">Do not use an attribute value (or equal sign character) when specifying this attribute.</p>
+<h2 id="nodeset" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">NODESET<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#nodeset">#</a></h2>
+<p class="my-4 leading-7">The NODESET attribute defines what voltage you think is present on the net. The simulator uses your estimate as an initial condition for determining the actual voltage on the net during calculation of the bias point.</p>
+<p class="my-4 leading-7">For more information, refer to the HSpice or PSpice Help file.</p>
+<p class="my-4 leading-7">On the schematic, attached to a net.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">NODESET=3 tells the simulator to guess the initial voltage as 3 volts. This adds the following line in the <em>.cir</em> file:</p>
+<p class="my-4 leading-7">.NODESET V([<strong class="font-semibold">net_name</strong>])=<strong class="font-semibold">n</strong>V</p>
+<h2 id="noecho" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">NOECHO<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#noecho">#</a></h2>
+<p class="my-4 leading-7">The NOECHO attribute on the OPTIONS analog report generator directs the system not to list the input file.</p>
+<p class="my-4 leading-7">For more information, refer to the PSpice Help file.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Attribute Value</strong></p>
+<p class="my-4 leading-7">Do not use an attribute value (or equal sign character) when specifying this attribute.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">This attribute adds the following line in the <em>.cir</em> file:</p>
+<p class="my-4 leading-7">.OPTIONS NOECHO</p>
+<h2 id="noisesource" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">NOISESOURCE<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#noisesource">#</a></h2>
+<p class="my-4 leading-7">The NOISESOURCE attribute specifies the REFDES or label name of the input signal and noise source component against which noise is measured on the NOISE analog report generator.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">NOISESOURCE=VIN indicates that noise is to be measured against the amount of noise at the component VIN.</p>
+<h2 id="nopage" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">NOPAGE<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#nopage">#</a></h2>
+<p class="my-4 leading-7">The NOPAGE attribute on the OPTIONS analog report generator directs the system not to paginate, or print a header/banner for each major section of output.</p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Attribute Value</strong></p>
+<p class="my-4 leading-7">Do not use an attribute value (or equal sign character) when specifying this attribute.</p>
+<h2 id="numdgt" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">NUMDGT<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#numdgt">#</a></h2>
+<p class="my-4 leading-7">The NUMDGT attribute on the OPTIONS analog report generator specifies the number of significant digits printed in each column in a table (each column corresponds to one output variable).</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">NUMDGT=6 indicates that each output variable is precise to 6 digits.</p>
+<h2 id="numpoints" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">NUMPOINTS<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#numpoints">#</a></h2>
+<p class="my-4 leading-7">The NUMPOINTS attribute specifies the number of data points in each sweep analysis on the BODEPLOT analog report generator.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">The LIN/OCT/DEC Attribute</strong></p>
+<p class="my-4 leading-7">The LIN/OCT/DEC attribute specifies the sweep type that simulation results are measured in.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">NUMPOINTS=10 indicates that each sweep analysis contains 10 data points per octave if the LIN/OCT/ DEC=OCT attribute exists.</p>
+<h2 id="numrun" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">NUMRUN<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#numrun">#</a></h2>
+<p class="my-4 leading-7">The NUMRUN attribute on the MC analog report generator specifies the number of times the DC, AC, or transient analysis is run during a Monte Carlo analysis.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">NUMRUN=10 indicates that, in addition to nominal simulation, 10 passes of DC, AC, or transient analysis are to be run.</p>
+<h2 id="offset" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">OFFSET<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#offset">#</a></h2>
+<p class="my-4 leading-7">The OFFSET attribute specifies the location on the Y axis at which the DC voltage or current is measured on the SFFM and ISFFM analog symbols. This attribute is also used to specify the location on the Y axis at which the current is measured on the ISIN analog symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Attribute Value</strong></p>
+<p class="my-4 leading-7">The value of this attribute is substituted for &quot;voff&quot; in the waveform formula. Refer to the waveform formula under I and V in the PSpice Help file.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">OFFSET=50mA indicates that the power generated by this component is measured around the Y axis that corresponds to 50 milliamps.</p>
+<h2 id="opts" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">OPTS<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#opts">#</a></h2>
+<p class="my-4 leading-7">The OPTS attribute on the OPTIONS analog report generator lists the values of all of the options.</p>
+<p class="my-4 leading-7">For more information, refer to the HSpice Help file.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Attribute Value</strong></p>
+<p class="my-4 leading-7">Do not use an attribute value (or equal sign character) when specifying this attribute.</p>
+<h2 id="order" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">ORDER<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#order">#</a></h2>
+<p class="my-4 leading-7">The ORDER attribute specifies what information is included in the simulation file and how the information is formatted. The simulation file includes only those attributes listed in the value field of the ORDER attribute.</p>
+<p class="my-4 leading-7">Use the ORDER attribute in your design only where necessary. For example, attach ORDER to a symbol to include the symbol definition in the simulation file.</p>
+<p class="my-4 leading-7">Each SPICE model must have a separate .mod file. A model file can have subcircuit sections, but multiple models cannot be stored in one file since there is no mechanism for the software to extract the different models from within the file.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Attribute Value</strong></p>
+<p class="my-4 leading-7">You can alter the way that attributes are entered into the simulation file by placing one of the following characters at the end of the attribute&#x27;s name keyword in the ORDER attribute:</p>
+<table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
+<thead>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">Character</th>
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">$</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Only the attribute value is entered</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">=</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">The entire attribute is entered</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">&amp;</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Inserts the SPICE name of the referenced component, where the reference is by<!-- -->internal name. SPICE name of the referenced component, where the reference is by<!-- -->internal name.</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">[</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Writes the name or number of the net connected to that pin. See the .MC report<!-- -->generator for some examples. This can be used with the attribute NO_PINS = TRUE,<!-- -->which disables default output of node numbers after the component name.</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">&quot; &quot;</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Defines literals which are always available as output</td>
+</tr>
+</tbody>
+</table>
+<p class="my-4 leading-7"><strong class="font-semibold">Table 28. Order Attribute - Characters for Controlling Attribute Values</strong></p>
+<p class="my-4 leading-7">It is not necessary to insert spaces in between items listed in the ORDER attribute unless you want the spaces to appear in the SPICE input file. This is because spaces are read as part of the attribute string. For example:</p>
+<div class="language-bash"><div class="rspress-code-content rspress-scrollbar"><code>ORDER=K1$ K2$K3$&quot; V(&quot;K4$&quot;)&quot;
+</code></div></div>
+<p class="my-4 leading-7">Where K1=1, K2=2, K3=3, and K4=4, this produces in the SPICE input file:</p>
+<p class="my-4 leading-7"><strong class="font-semibold">1 23 V(4)</strong></p>
+<p class="my-4 leading-7"><strong class="font-semibold">Special Case Keywords</strong></p>
+<p class="my-4 leading-7">The SPICE Netlister recognizes two special case keywords: NOT4ECAD and WL. When it finds the keyword NOT4ECAD within an element:</p>
+<ul class="list-disc pl-5 my-4 leading-7">
+<li class="[&amp;:not(:first-child)]:mt-2">for Dracula: it removes this element from the deck.</li>
+<li class="[&amp;:not(:first-child)]:mt-2">for Spice: it removes only the keyword, &quot;NOT4ECAD&quot;</li>
+</ul>
+<p class="my-4 leading-7">When the SPICE Netlister finds the keyword WL=wval/lval, two parameters are created: W=wval and L=lval. The WL_SPLIT parameter set in the wspice.cfg file enables this feature.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">With the BULK=VDD and MODEL=PSS attributes, the ORDER=BULK$MODEL= attribute causes the following entry in the simulation file:</p>
+<div class="language-bash"><div class="rspress-code-content rspress-scrollbar"><code>VDD MODEL=PSS
+</code></div></div>
+<h2 id="out" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">OUT<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#out">#</a></h2>
+<p class="my-4 leading-7">The OUT attribute specifies the number of characters per line of text in a print table on the WIDTH analog report generator.</p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Attribute Value</strong></p>
+<p class="my-4 leading-7">Use 80 or 132 in the value field to specify 80 or 132 characters, respectively.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">OUT=80 (default value) indicates that 80 characters are allowed in each line of a print table.</p>
+<h2 id="output" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">OUTPUT<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#output">#</a></h2>
+<p class="my-4 leading-7">The OUTPUT attribute specifies how much output information is generated from Monte–Carlo analysis on the MC analog report generator.</p>
+<p class="my-4 leading-7">For more information, refer to the HSpice or PSpice Help file.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">OUTPUT=ALL indicates that all of the output from every Monte–Carlo analysis should be generated.</p>
+<h2 id="parnam" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">PARNAM<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#parnam">#</a></h2>
+<p class="my-4 leading-7">The PARNAM is used by the SPICE Netlister to allow you to pass parameters through a hierarchical netlist. The PARNAM attribute references the component&#x27;s .SUBCKT line in the hierarchical netlist and adds the desired parameter to the subcircuit call. The following conditions apply to the PARMAN attribute:</p>
+<p class="my-4 leading-7">You do not need to use the PARNAM attribute to generate a hierarchical netlist. The PARNAM attribute simply adds additional information to the .cir file.</p>
+<p class="my-4 leading-7">If you are creating a flat netlist the SPICE Netlister ignores the PARNAM attribute. The PARNAM attribute takes as its value the parameters you want to pass. The parameters must be defined in the format acceptable to the analog simulator you intend to use.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the schematic, attached to a component.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">If an analog symbol intended to be simulated using SPICE and possessed the following attributes:</p>
+<div class="language-bash"><div class="rspress-code-content rspress-scrollbar"><code>REFDES = X1
+| Assume two nodes named In and OUT
+PARNAM = PARAMS: @W=1.0U @L=1.0U
+ORDER = PARAMS: @W= @L=
+W = 5.0U
+L = 5.0U
+</code></div></div>
+<p class="my-4 leading-7">The Spice Netlister would produce the following subcircuit calls in the .cir file:</p>
+<div class="language-bash"><div class="rspress-code-content rspress-scrollbar"><code>.SUBCIT FOO IN OUT PARAMS: W=1.0U L=1.0U
+X1 IN OUT FOO PARAMS: W=5.0u L=5.0U
+</code></div></div>
+<p class="my-4 leading-7">If an analog symbol intended to be simulated using HSpice possessed the following attributes:</p>
+<div class="language-bash"><div class="rspress-code-content rspress-scrollbar"><code>REFDES = X1
+| Assume two nodes named In and OUT
+PARNAM = @W=1.0U @L=1.0U
+ORDER = @W= @L=
+W = 5.0U
+L = 5.0U
+</code></div></div>
+<p class="my-4 leading-7">The Spice Netlister would produce the following subcircuit calls in the .cir file:</p>
+<div class="language-bash"><div class="rspress-code-content rspress-scrollbar"><code>.SUBCIT FOO IN OUT W=1.0U L=1
+</code></div></div>
+<h2 id="phase" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">PHASE<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#phase">#</a></h2>
+<p class="my-4 leading-7">The PHASE attribute specifies relative phase, in degrees, of multiple waveforms on AC, IAC, SIN, and ISIN analog symbols.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Attribute Value</strong></p>
+<p class="my-4 leading-7">The value of this attribute is substituted for &quot;phase&quot; in the waveform formula. Refer to the waveform formula under I and V in the PSpice Help file.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">PHASE=90 indicates a phase of 90 degrees.</p>
+<h2 id="pinorder" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">PINORDER<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#pinorder">#</a></h2>
+<p class="my-4 leading-7">The PINORDER attribute determines the order in which nets attached to exact pins are listed in the SPICE netlist. Only those nets attached to exact pins (pins defined in the pinorder attribute) are listed in the SPICE netlist.</p>
+<p class="my-4 leading-7">Separators for pins in this attribute value are: &quot; ,\t\n&quot;</p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Attribute Value</strong></p>
+<p class="my-4 leading-7">The attribute value is the pin name label, not the pin number.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Additional Information</strong></p>
+<p class="my-4 leading-7">Normally, the PINORDER attribute controls the default sequence. You can also use the ORDER attribute to specify pin sequence. If you specify the NO_PINS attribute on the symbol, this overrides the PINORDER attribute and the system uses the pin sequence in the ORDER attribute.</p>
+<h2 id="pivrel" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">PIVREL<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#pivrel">#</a></h2>
+<p class="my-4 leading-7">The PIVREL attribute on the OPTIONS analog report generator specifies the relative magnitude required for pivot in the matrix solution.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Additional Information</strong></p>
+<p class="my-4 leading-7">For more information, refer to the Spice Help file or a math text book for the subjects:</p>
+<ul class="list-disc pl-5 my-4 leading-7">
+<li class="[&amp;:not(:first-child)]:mt-2">Solutions to systems of equations</li>
+<li class="[&amp;:not(:first-child)]:mt-2">Gaussian elimination</li>
+<li class="[&amp;:not(:first-child)]:mt-2">Partial pivoting</li>
+</ul>
+<h2 id="prefix" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">PREFIX<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#prefix">#</a></h2>
+<p class="my-4 leading-7">The PREFIX attribute value is used by the SPICE Netlister to uniquely identify each analog component in a SPICE compatible format. The SPICE Netlister prefixes each component&#x27;s PREFIX attribute value to its REFDES attribute value and writes the entire string to the .cir file. The .cir is used as input to ViewSpice the analog simulator. This attribute is required for all analog symbols.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Attribute Value</strong></p>
+<p class="my-4 leading-7">The following prefixes are defaults for the corresponding types of components:</p>
+<table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
+<thead>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">Keyword</th>
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">B</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Gallium arsenide field effect transistor</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">C</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Capacitor</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">D</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Diode</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">E</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Voltage–controlled voltage source</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">F</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Current–controlled current source</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">G</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Voltage–controlled current source</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">H</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Current–controlled voltage source</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">I</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Independent current source</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">J</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Junction field effect transistor</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">K</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Transformer</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">L</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Inductor</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">M</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Metal–oxide silicon field effect transistor</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">O</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Digital output</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Q</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Bipolar transistor</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">R</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Resistor</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">S</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Voltage–controlled switch</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">T</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Transmission line</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">V</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Independent voltage source</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">W</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Sub–circuit</td>
+</tr>
+</tbody>
+</table>
+<p class="my-4 leading-7"><strong class="font-semibold">Table 29. Prefix Attribute - List of Prefixes</strong></p>
+<p class="my-4 leading-7">Refer to appropriate simulator documentation to determine which prefix to use in the value field of this attribute.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">For example is a component has a REFDES = U2 and a PREFIX = R the component is written into the .cir file as RU2 which tells the simulator that component U2 is a resistor.</p>
+<h2 id="probe" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">PROBE<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#probe">#</a></h2>
+<p class="my-4 leading-7">The PROBE attribute specifies if the analog component is measuring current (I) or voltage (V).</p>
+<p class="my-4 leading-7">On the schematic, attached to a net or symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Attribute Value</strong></p>
+<p class="my-4 leading-7">Use I or V in the value field to specify current or voltage, respectively. Attach any of the following keyword suffixes to the letter I or V to precisely define measurement:</p>
+<table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
+<thead>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">Keyword</th>
+<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">DB</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Decibel</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">M</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Magnitude</td>
+</tr>
+<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">P</td>
+<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">Phase</td>
+</tr>
+</tbody>
+</table>
+<p class="my-4 leading-7"><strong class="font-semibold">Duplicate Attributes</strong></p>
+<p class="my-4 leading-7">You cannot attach the same attribute to an object more than once, except for the PROBE attribute on components and net/bus segments.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">PROBE=IP indicates that current phase is being measured.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">The DC Attribute</strong></p>
+<p class="my-4 leading-7">If you are using a METER type symbol to measure current (such as AMMETER or UAMMETER), specify 0 for the DC attribute value.</p>
+<h2 id="pulsed" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">PULSED<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#pulsed">#</a></h2>
+<p class="my-4 leading-7">The PULSED attribute specifies the maximum current swing of the IPULSE analog symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<h2 id="reltol" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">RELTOL<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#reltol">#</a></h2>
+<p class="my-4 leading-7">The RELTOL attribute on the OPTIONS analog report generator specifies relative accuracy of voltage and current measurements.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Default</strong></p>
+<p class="my-4 leading-7">The default attribute value is RELTOL=0.001.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">RELTOL=.001 indicates that relative voltage and current measurements are accurate to 0.1%.</p>
+<h2 id="sourcename" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">SOURCENAME<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#sourcename">#</a></h2>
+<p class="my-4 leading-7">The SOURCENAME attribute specifies the REFDES or label name of the component that is the source of the circuit being swept on the SWEEP analog report generator.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">SOURCENAME=VIN indicates that a DC sweep analysis is made by varying the value of the component VIN.</p>
+<h2 id="startfreq" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">STARTFREQ<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#startfreq">#</a></h2>
+<p class="my-4 leading-7">The STARTFREQ attribute specifies the initial frequency of a frequency sweep on the BODEPLOT analog report generator.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Attribute Value</strong></p>
+<p class="my-4 leading-7">Value must be greater than 0 and less than the value of the attribute.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">STARTFREQ=15KHz indicates a starting sweep frequency of 15 kilohertz.</p>
+<h2 id="startval" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">STARTVAL<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#startval">#</a></h2>
+<p class="my-4 leading-7">The STARTVAL attribute specifies the initial voltage or current of the sweep on the SWEEP analog report generator.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Attribute Value</strong></p>
+<p class="my-4 leading-7">The sweep can be in either direction; therefore, the value of STARTVAL can be negative or positive.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">STARTVAL=–2.5V indicates a starting sweep voltage of negative 2.5 volts.</p>
+<h2 id="tdelay" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">TDELAY<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#tdelay">#</a></h2>
+<p class="my-4 leading-7">The TDELAY attribute specifies the time it takes a PULSE, IPULSE, SIN, and ISIN component to begin a regular waveform.</p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Attribute Value</strong></p>
+<p class="my-4 leading-7">The value of this attribute is substituted for &quot;td&quot; in the waveform formula. Refer to the waveform formula under I and V in the PSpice Help file.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">TDELAY=10ns indicates that the start of a regular waveform is delayed by 10 nanoseconds.</p>
+<h2 id="temp1-temp2-temp3-" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">TEMP1, TEMP2, TEMP3, ...<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#temp1-temp2-temp3-">#</a></h2>
+<p class="my-4 leading-7">The TEMP1 attribute specifies a centigrade temperature on the TEMP analog report generator to apply to the circuit during simulation. When the specified analysis is performed (such as, DC SWEEP or MONTE– CARLO), the circuit is set to the specified temperature.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Attribute Value</strong></p>
+<p class="my-4 leading-7">If multiple values are defined, the system simulates the circuit at each of the temperatures specified.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">TEMP1=125 indicates that the circuit should be simulated at a temperature of 125 degrees centigrade.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Other TEMP Attributes</strong></p>
+<p class="my-4 leading-7">Each additional TEMP attribute (TEMP2, TEMP3, TEMP4, etc.) defines an additional centigrade temperature to be applied to the circuit during the specified analysis.</p>
+<h2 id="tfall" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">TFALL<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#tfall">#</a></h2>
+<p class="my-4 leading-7">The TFALL attribute specifies the time it takes to transition from PULSED to INITIAL or VPULSED to VINITIAL on the IPULSE and PULSE analog symbols.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Attribute Value</strong></p>
+<p class="my-4 leading-7">The value of this attribute is substituted for &quot;tf&quot; in the waveform formula. Refer to the waveform formula under I and V in the PSpice Help file.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">TFALL=10ns indicates a transition time of 10 nanoseconds on the PULSE and IPULSE analog symbols.</p>
+<h2 id="tfinal" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">TFINAL<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#tfinal">#</a></h2>
+<p class="my-4 leading-7">The TFINAL attribute on the TRANS analog report generator specifies the total time for which simulation results are measured.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">TFINAL=100ns indicates that simulation results will be measured for 100 nanoseconds on the TRANS analog report generator.</p>
+<h2 id="ti-t2-t3--t9" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">TI, T2, T3, ... T9<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#ti-t2-t3--t9">#</a></h2>
+<p class="my-4 leading-7">The T1 attribute specifies the time period at which the voltage or current defined by the V1 or I1 attribute is generated on the PWL or IPWL analog symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">The ORDER Attribute</strong></p>
+<p class="my-4 leading-7">You must identify this attribute in the ORDER attribute of the PWL or IPWL for interpretation.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">T1=10ns indicates that V1 voltage or I1 current is generated at 10 nanoseconds.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">The V1 and I1 Attributes</strong></p>
+<p class="my-4 leading-7">Use the V1 attribute to specify the voltage on the PWL symbol. Use the I1 attribute to specify the current on the IPWL symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Specifying Time Periods</strong></p>
+<p class="my-4 leading-7">Each additional set of T1 and V1, or T1 and I1, defines an additional time period and amount of voltage or current generated.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">T2 defines the time period during which the voltage or current defined with V2 or I2 is generated.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Time/Value Pairs</strong></p>
+<p class="my-4 leading-7">The maximum number of time/value pairs is nine. To specify more pairs, use a text file. Place time/value pairs for each data point in the text file. Add a FILE attribute to the PWL or IPWL component on the schematic.</p>
+<h2 id="tnom" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">TNOM<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#tnom">#</a></h2>
+<p class="my-4 leading-7">The TNOM attribute specifies the default temperature, in centigrade degrees, on the OPTIONS analog report generator.</p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">TNOM=25 indicates a default temperature of 25 degrees, centigrade.</p>
+<h2 id="tperiod" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">TPERIOD<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#tperiod">#</a></h2>
+<p class="my-4 leading-7">The TPERIOD attribute specifies the length of time of one complete waveform cycle on the PULSE and IPULSE analog symbols.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">TPERIOD=50ns indicates a 20 Megahertz waveform.</p>
+<h2 id="tpulwidth" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">TPULWIDTH<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#tpulwidth">#</a></h2>
+<p class="my-4 leading-7">The TPULWIDTH attribute specifies length of time the pulse is active on PULSE and IPULSE analog symbols.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Attribute Value</strong></p>
+<p class="my-4 leading-7">The value of this attribute is substituted for &quot;pw&quot; in the waveform formula. Refer to the waveform formula under I and V in the PSpice Help file.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">TPULWIDTH=20ns indicates an active pulse width of 20 nanoseconds.</p>
+<h2 id="v1-v2-v3--v9" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">V1, V2, V3, ..., V9<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#v1-v2-v3--v9">#</a></h2>
+<p class="my-4 leading-7">The V1 attribute specifies amount of voltage generated by the PWL analog symbol at the time period specified by the T1 attribute.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">The ORDER Attribute</strong></p>
+<p class="my-4 leading-7">You must identify this attribute in the ORDER attribute of the PWL for interpretation.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">The T1 Attribute</strong></p>
+<p class="my-4 leading-7">The T1 attribute specifies the time period at which the voltage V1 is generated.</p>
+<p class="my-4 leading-7">SailWind Logic Command Reference 471</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">V1=2V indicates that 2 volts are generated at the T1 time period.</p>
+<h2 id="value" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">VALUE<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#value">#</a></h2>
+<p class="my-4 leading-7">In addition to using the VALUE attribute to specify R, L, or C values, the VALUE attribute specifies relative small–signal amplitude on AC and IAC analog symbols.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Analog Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Analog Example</strong></p>
+<p class="my-4 leading-7">Attached to an AC component, VALUE=5 indicates a small–signal amplitude of 5 volts.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Analog Example 2</strong></p>
+<p class="my-4 leading-7">Attached to an R component, VALUE=5.1K indicates a 5.1K ohms resistance value.</p>
+<h2 id="vamplitude" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">VAMPLITUDE<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#vamplitude">#</a></h2>
+<p class="my-4 leading-7">The VAMPLITUDE attribute specifies maximum voltage swing on the SIN analog symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Attribute Value</strong></p>
+<p class="my-4 leading-7">The value of this attribute is substituted for &quot;vampl&quot; in the waveform formula. Refer to the waveform formula under I and V in the PSpice Help file.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">VAMPLITUDE=100E–3 indicates a maximum voltage swing of 100 millivolts.</p>
+<h2 id="vinitial" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">VINITIAL<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#vinitial">#</a></h2>
+<p class="my-4 leading-7">The VINITIAL attribute specifies the starting voltage of the waveform on the PULSE analog symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">VINITIAL=5V indicates a starting voltage of 5 volts.</p>
+<h2 id="vntol" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">VNTOL<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#vntol">#</a></h2>
+<p class="my-4 leading-7">The VNTOL attribute on the OPTIONS analog report generator specifies the best accuracy, in volts, of voltage measurements.</p>
+<p class="my-4 leading-7">For more information, refer to the HSpice or PSpice Help file.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Default</strong></p>
+<p class="my-4 leading-7">The default attribute value is VNTOL=1uV.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">VNTOL=1uV indicates that voltage measurements are accurate to within 1 micro volt.</p>
+<h2 id="voffset" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">VOFFSET<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#voffset">#</a></h2>
+<p class="my-4 leading-7">The VOFFSET attribute specifies the Y axis point at which DC voltage is measured on the SIN analog symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Attribute Value</strong></p>
+<p class="my-4 leading-7">The value of this attribute is substituted for the &quot;voff&quot; parameter in the waveform formula. Refer to the waveform formula under I and V in the PSpice Help file.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">VOFFSET=50mV indicates that the waveform is measured around the Y axis point that corresponds to 50 millivolts.</p>
+<h2 id="voltage" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">VOLTAGE<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#voltage">#</a></h2>
+<p class="my-4 leading-7">The VOLTAGE attribute specifies voltage across the DC analog component.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">The ORDER Attribute</strong></p>
+<p class="my-4 leading-7">You must identify this attribute in the ORDER attribute for interpretation.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">The CURRENT Attribute</strong></p>
+<p class="my-4 leading-7">Use the CURRENT attribute on the IDC analog component.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">The VPULSED Attribute</strong></p>
+<p class="my-4 leading-7">If the design contains conflicting attribute values, simulation results will be unspecified. For example, the value of the VPULSED attribute must agree with the value of the VOLTAGE attribute if both attributes are used in a design.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">VOLTAGE=5V indicates that there are 5 volts across this DC component.</p>
+<h2 id="vpulsed" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">VPULSED<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#vpulsed">#</a></h2>
+<p class="my-4 leading-7">The VPULSED attribute specifies the maximum voltage swing of the PULSE analog symbol when it is ON.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">The VOLTAGE Attribute</strong></p>
+<p class="my-4 leading-7">If the design contains conflicting attribute values, simulation results will be unspecified. For example, the value of the VPULSED attribute must agree with the value of the VOLTAGE attribute if both attributes are used in a design.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">VPULSED=5V indicates a maximum voltage swing of 5 volts.</p>
+<h2 id="w" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">W<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#w">#</a></h2>
+<p class="my-4 leading-7">The W attribute defines the width of an analog FET channel in meters.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">The ORDER Attribute</strong></p>
+<p class="my-4 leading-7">You must identify this attribute in the ORDER attribute for interpretation.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">W=3u indicates that the channel is 3 microns wide.</p>
+<h2 id="width" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">WIDTH<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#width">#</a></h2>
+<p class="my-4 leading-7">The WIDTH attribute on the OPTIONS analog report generator specifies the number of characters per line of text in a print table. Use 80 or 132 in the value field to specify 80 or 132 characters, respectively.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">WIDTH=80 indicates that each line in a print table can contain 80 characters.</p>
+<h2 id="ymax" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">YMAX<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#ymax">#</a></h2>
+<p class="my-4 leading-7">The YMAX attribute specifies maximum allowable deviation of Monte–Carlo results in the Y direction on the MC analog report generator.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Placement</strong></p>
+<p class="my-4 leading-7">On the symbol.</p>
+<p class="my-4 leading-7"><strong class="font-semibold">Example</strong></p>
+<p class="my-4 leading-7">YMAX=5 indicates that maximum deviation in the Y direction is 5.</p><!--/$--></div><div class="rspress-doc-footer"><footer class="mt-8"><div class="xs:flex pb-5 px-2 justify-end items-center"><div class="flex text-sm text-text-2 leading-6 sm:leading-8 font-medium"><p>最近更新时间<!-- -->: <span>2025/9/17 01:52:33</span></p></div></div><div class="flex flex-col"></div><div class="flex flex-col sm:flex-row sm:justify-around gap-4 pt-6"><div class="prev_c92d1 flex flex-col"></div><div class="next_c11be flex flex-col"><a href="/sailwind_docs/logic/index.html" class="link_a7cea pager-link_e0d2d next_ad355"><span class="desc_dcc01">下一页</span><span class="title_a3acb">章节预览</span></a></div></div></footer></div></div><div class="aside-container_bc5fa"><div class="flex flex-col"><div id="aside-container" class="relative text-sm font-medium"><div class="leading-7 block text-sm font-semibold pl-3">本页目录</div><nav class="mt-1"><ul class="relative"><li><a href="#a2d" title="A2D" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">A2D</span></a></li><li><a href="#abstol" title="ABSTOL" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">ABSTOL</span></a></li><li><a href="#acdctran" title="AC/DC/TRAN" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">AC/DC/TRAN</span></a></li><li><a href="#acct" title="ACCT" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">ACCT</span></a></li><li><a href="#ad" title="AD" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">AD</span></a></li><li><a href="#amplitude" title="AMPLITUDE" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">AMPLITUDE</span></a></li><li><a href="#as" title="AS" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">AS</span></a></li><li><a href="#bulk" title="BULK" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">BULK</span></a></li><li><a href="#chgtol" title="CHGTOL" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">CHGTOL</span></a></li><li><a href="#cptime" title="CPTIME" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">CPTIME</span></a></li><li><a href="#current" title="CURRENT" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">CURRENT</span></a></li><li><a href="#d2a" title="D2A" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">D2A</span></a></li><li><a href="#damping" title="DAMPING" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">DAMPING</span></a></li><li><a href="#dc" title="DC" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">DC</span></a></li><li><a href="#endfreq" title="ENDFREQ" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">ENDFREQ</span></a></li><li><a href="#endval" title="ENDVAL" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">ENDVAL</span></a></li><li><a href="#frequency" title="FREQUENCY" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">FREQUENCY</span></a></li><li><a href="#gain" title="GAIN" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">GAIN</span></a></li><li><a href="#generator" title="GENERATOR" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">GENERATOR</span></a></li><li><a href="#gmin" title="GMIN" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">GMIN</span></a></li><li><a href="#i1-i2-i3-" title="I1, I2, I3, ..." class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">I1, I2, I3, ...</span></a></li><li><a href="#ic" title="IC" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">IC</span></a></li><li><a href="#increment" title="INCREMENT" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">INCREMENT</span></a></li><li><a href="#init" title="INIT" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">INIT</span></a></li><li><a href="#initial" title="INITIAL" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">INITIAL</span></a></li><li><a href="#inputsource" title="INPUTSOURCE" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">INPUTSOURCE</span></a></li><li><a href="#itl1" title="ITL1" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">ITL1</span></a></li><li><a href="#itl2" title="ITL2" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">ITL2</span></a></li><li><a href="#itl4" title="ITL4" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">ITL4</span></a></li><li><a href="#itl5" title="ITL5" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">ITL5</span></a></li><li><a href="#l" title="L" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">L</span></a></li><li><a href="#label" title="LABEL" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">LABEL</span></a></li><li><a href="#library" title="LIBRARY" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">LIBRARY</span></a></li><li><a href="#limpts" title="LIMPTS" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">LIMPTS</span></a></li><li><a href="#linoctdec" title="LIN/OCT/DEC" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">LIN/OCT/DEC</span></a></li><li><a href="#list" title="LIST" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">LIST</span></a></li><li><a href="#model" title="MODEL" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">MODEL</span></a></li><li><a href="#node" title="NODE" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">NODE</span></a></li><li><a href="#nodeset" title="NODESET" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">NODESET</span></a></li><li><a href="#noecho" title="NOECHO" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">NOECHO</span></a></li><li><a href="#noisesource" title="NOISESOURCE" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">NOISESOURCE</span></a></li><li><a href="#nopage" title="NOPAGE" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">NOPAGE</span></a></li><li><a href="#numdgt" title="NUMDGT" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">NUMDGT</span></a></li><li><a href="#numpoints" title="NUMPOINTS" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">NUMPOINTS</span></a></li><li><a href="#numrun" title="NUMRUN" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">NUMRUN</span></a></li><li><a href="#offset" title="OFFSET" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">OFFSET</span></a></li><li><a href="#opts" title="OPTS" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">OPTS</span></a></li><li><a href="#order" title="ORDER" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">ORDER</span></a></li><li><a href="#out" title="OUT" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">OUT</span></a></li><li><a href="#output" title="OUTPUT" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">OUTPUT</span></a></li><li><a href="#parnam" title="PARNAM" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">PARNAM</span></a></li><li><a href="#phase" title="PHASE" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">PHASE</span></a></li><li><a href="#pinorder" title="PINORDER" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">PINORDER</span></a></li><li><a href="#pivrel" title="PIVREL" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">PIVREL</span></a></li><li><a href="#prefix" title="PREFIX" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">PREFIX</span></a></li><li><a href="#probe" title="PROBE" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">PROBE</span></a></li><li><a href="#pulsed" title="PULSED" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">PULSED</span></a></li><li><a href="#reltol" title="RELTOL" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">RELTOL</span></a></li><li><a href="#sourcename" title="SOURCENAME" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">SOURCENAME</span></a></li><li><a href="#startfreq" title="STARTFREQ" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">STARTFREQ</span></a></li><li><a href="#startval" title="STARTVAL" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">STARTVAL</span></a></li><li><a href="#tdelay" title="TDELAY" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">TDELAY</span></a></li><li><a href="#temp1-temp2-temp3-" title="TEMP1, TEMP2, TEMP3, ..." class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">TEMP1, TEMP2, TEMP3, ...</span></a></li><li><a href="#tfall" title="TFALL" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">TFALL</span></a></li><li><a href="#tfinal" title="TFINAL" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">TFINAL</span></a></li><li><a href="#ti-t2-t3--t9" title="TI, T2, T3, ... T9" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">TI, T2, T3, ... T9</span></a></li><li><a href="#tnom" title="TNOM" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">TNOM</span></a></li><li><a href="#tperiod" title="TPERIOD" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">TPERIOD</span></a></li><li><a href="#tpulwidth" title="TPULWIDTH" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">TPULWIDTH</span></a></li><li><a href="#v1-v2-v3--v9" title="V1, V2, V3, ..., V9" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">V1, V2, V3, ..., V9</span></a></li><li><a href="#value" title="VALUE" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">VALUE</span></a></li><li><a href="#vamplitude" title="VAMPLITUDE" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">VAMPLITUDE</span></a></li><li><a href="#vinitial" title="VINITIAL" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">VINITIAL</span></a></li><li><a href="#vntol" title="VNTOL" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">VNTOL</span></a></li><li><a href="#voffset" title="VOFFSET" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">VOFFSET</span></a></li><li><a href="#voltage" title="VOLTAGE" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">VOLTAGE</span></a></li><li><a href="#vpulsed" title="VPULSED" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">VPULSED</span></a></li><li><a href="#w" title="W" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">W</span></a></li><li><a href="#width" title="WIDTH" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">WIDTH</span></a></li><li><a href="#ymax" title="YMAX" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">YMAX</span></a></li></ul></nav></div></div></div></div></div></div></section></div>
+    <div id="search-container"></div>
+  </body>
+</html>
