@@ -59,7 +59,7 @@ if __name__ == "__main__":
     root_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     docs_dir = os.path.join(root_dir, "docs")
 
-    input_file = os.path.join(docs_dir, "router", "guide", "26.md")
+    input_file = os.path.join(docs_dir, "logic", "scripts", "4.md")
     if os.path.isfile(input_file):
         split_markdown_by_heading(input_file)
     else:
