@@ -1,6 +1,6 @@
 # 导入设计数据
 
-您可以将设计数据从多种外部源导入 `SailWind Layout`。将设计数据传入 `SailWind Layout` 最常见的方法是导入 SailWind 格式的 ASCII 文件。这是从原理图捕获产品（如 `SailWind Logic`）导入数据时使用的方法。
+您可以将设计数据从多种外部源导入 SailWind Layout。将设计数据传入 SailWind Layout 最常见的方法是导入 SailWind 格式的 ASCII 文件。这是从原理图捕获产品（如 SailWind Logic）导入数据时使用的方法。
 
 **本课程内容：**
 
@@ -9,7 +9,7 @@
 
 😎**前提**
 
-如果尚未运行，请启动 `SailWind Layout` 并打开位于 ·\SailWind Projects\Samples· 文件夹中的 **previewbrd.pcb** 文件。
+如果尚未运行，请启动 SailWind Layout 并打开位于 ·\SailWind Projects\Samples· 文件夹中的 **previewbrd.pcb** 文件。
 
 ## 从 ASCII 文件导入网络表 \{#1}
 
@@ -17,7 +17,7 @@
 
 > [!TIP]
 >
-> 以下是导入从 `SailWind Logic` 导出的 `SailWind Layout` 网络表的典型步骤。
+> 以下是导入从 SailWind Logic 导出的 SailWind Layout 网络表的典型步骤。
 
 **导入文件**
 

@@ -1,13 +1,13 @@
-# 使用 `SailWind Router` 进行自动布线
+# 使用 SailWind Router 进行自动布线
 
-通过 `SailWind Router` 链接，您可以在 `SailWind Layout` 中设置自动布线选项，然后将设计发送至 `SailWind Router` 进行自动布线。当自动布线完成后，`SailWind Router` 会自动关闭，并在 `SailWind Layout` 中打开一个新的会话，其中包含已布线的设计文件。
+通过 SailWind Router 链接，您可以在 SailWind Layout 中设置自动布线选项，然后将设计发送至 SailWind Router 进行自动布线。当自动布线完成后，SailWind Router 会自动关闭，并在 SailWind Layout 中打开一个新的会话，其中包含已布线的设计文件。
 
 该链接提供了两种选择：自动在当前设计文件中查看布线进度，或在后台进行自动布线以加快流程。
 
 **本教程内容：**
 
 - [为自动布线准备设计文件](#1)
-- [将设计传输至 `SailWind Router` 进行自动布线](#2)
+- [将设计传输至 SailWind Router 进行自动布线](#2)
 
 🙊**限制**
 
@@ -15,11 +15,11 @@
 
 😎**前提**
 
-如果 `SailWind Layout` 尚未运行，请启动并打开位于\SailWind Projects\Samples 文件夹中的**previewpreroute.pcb**主页。
+如果 SailWind Layout 尚未运行，请启动并打开位于\SailWind Projects\Samples 文件夹中的**previewpreroute.pcb**主页。
 
 ## 为自动布线准备设计文件 \{#1}
 
-在开始自动布线之前，必须确保设计文件已正确设置为适合 `SailWind Router` 自动布线。
+在开始自动布线之前，必须确保设计文件已正确设置为适合 SailWind Router 自动布线。
 
 **更新网络可见性**
 
@@ -38,22 +38,22 @@
 
 **工具**菜单 > **长度最小化替代方案**：按 Ctrl+M。
 
-## 将设计传输至 `SailWind Router` 进行自动布线 \{#2}
+## 将设计传输至 SailWind Router 进行自动布线 \{#2}
 
-在 `SailWind Router` 中自动布线 PCB 设计的过程始于 `SailWind Router` 链接。
+在 SailWind Router 中自动布线 PCB 设计的过程始于 SailWind Router 链接。
 
-本教程使用的设计文件包含一个需要高级规则许可选项的条件规则，但您可以在 `SailWind Router` 中打开设计文件后删除该条件规则并继续教程。以下提供了此解决方法的说明。
+本教程使用的设计文件包含一个需要高级规则许可选项的条件规则，但您可以在 SailWind Router 中打开设计文件后删除该条件规则并继续教程。以下提供了此解决方法的说明。
 
-**启动 `SailWind Router` 链接并分配链接选项**
+**启动 SailWind Router 链接并分配链接选项**
 
 1. **工具**菜单 > **SailWind Router**。
-2. 在 `SailWind Router` 链接对话框中，点击🖱️**前台自动布线**以观察自动布线过程。
+2. 在 SailWind Router 链接对话框中，点击🖱️**前台自动布线**以观察自动布线过程。
 3. 在选项区域，点击🖱️**格栅**，然后点击🖱️**设置**。
 4. 在选项对话框的格栅页面，关闭设计、过孔和扇出格栅的**对齐到格栅**复选框。
 5. 点击🖱️**确定**。
-6. 准备开始在 `SailWind Router` 中自动布线时，点击🖱️**继续**。片刻之后，`SailWind Router` 会话将出现并自动开始布线设计。
+6. 准备开始在 SailWind Router 中自动布线时，点击🖱️**继续**。片刻之后，SailWind Router 会话将出现并自动开始布线设计。
 
-**例外情况**：如果您没有高级规则许可选项，此过程将在此处停滞。设计文件会在 `SailWind Router` 中打开，并显示以下消息：“您未被许可使用设计中的高级规则进行布线。必须删除规则或获取高级规则许可。
+**例外情况**：如果您没有高级规则许可选项，此过程将在此处停滞。设计文件会在 SailWind Router 中打开，并显示以下消息：“您未被许可使用设计中的高级规则进行布线。必须删除规则或获取高级规则许可。
 
 	按照以下步骤[删除条件规则](/layout/guide/19_zh.md#5-18-1)并继续：
 	
@@ -69,23 +69,23 @@
 	
 	f. 在**工具**菜单中，指向**自动布线**并在子菜单中点击🖱️**开始**。
 
-> [!tip] 如果是首次运行 `SailWind Router` 链接，点击🖱️继续后会出现 `SailWind Router` 监视器。详细信息请参阅下一节。
+> [!tip] 如果是首次运行 SailWind Router 链接，点击🖱️继续后会出现 SailWind Router 监视器。详细信息请参阅下一节。
 
-如果之前运行过 `SailWind Router` 链接，点击🖱️继续后 `SailWind Router` 监视器将保留在 Windows 任务栏上。点击🖱️任务栏上的 `SailWind Router` 监视器按钮以打开其对话框。
+如果之前运行过 SailWind Router 链接，点击🖱️继续后 SailWind Router 监视器将保留在 Windows 任务栏上。点击🖱️任务栏上的 SailWind Router 监视器按钮以打开其对话框。
 
-**`SailWind Router` 监视器**
+**SailWind Router 监视器**
 
-使用 `SailWind Router` 监视器跟踪自动布线进度并设置布线后选项。
+使用 SailWind Router 监视器跟踪自动布线进度并设置布线后选项。
 
-1. 如果 `SailWind Router` 已完成设计布线，请关闭 `SailWind Router` 和包含已布线设计的第二个 `SailWind Layout` 窗口。再次使用 `SailWind Router` 链接并立即继续以下步骤。
-2. 在 `SailWind Router` 布线过程中，点击🖱️任务栏上的 `SailWind Router` 监视器按钮以打开其对话框。
-3. 点击🖱️**完成后关闭**，并确保**加载结果文件**和**完成后退出 `SailWind Router`**也已勾选✅。
-4. 等待 `SailWind Router` 完成自动布线。
+1. 如果 SailWind Router 已完成设计布线，请关闭 SailWind Router 和包含已布线设计的第二个 SailWind Layout 窗口。再次使用 SailWind Router 链接并立即继续以下步骤。
+2. 在 SailWind Router 布线过程中，点击🖱️任务栏上的 SailWind Router 监视器按钮以打开其对话框。
+3. 点击🖱️**完成后关闭**，并确保**加载结果文件**和**完成后退出 SailWind Router**也已勾选✅。
+4. 等待 SailWind Router 完成自动布线。
 
-   当 `SailWind Router` 完成自动布线后，`SailWind Router` 监视器对话框和 `SailWind Router` 会话将关闭。已布线的文件将在新的 `SailWind Layout` 会话中打开。
+   当 SailWind Router 完成自动布线后，SailWind Router 监视器对话框和 SailWind Router 会话将关闭。已布线的文件将在新的 SailWind Layout 会话中打开。
 
-   👀‍**结果**：`SailWind Router` 完成自动布线后，`SailWind Router` 链接会将文件返回到新的 `SailWind Layout` 会话中。此时，应关闭原始的 `SailWind Layout` 会话，以避免因重复实例导致的混淆。
+   👀‍**结果**：SailWind Router 完成自动布线后，SailWind Router 链接会将文件返回到新的 SailWind Layout 会话中。此时，应关闭原始的 SailWind Layout 会话，以避免因重复实例导致的混淆。
 
 5. 不要保存设计副本。
 
-**您已完成 `SailWind Router` 链接教程。**
+**您已完成 SailWind Router 链接教程。**

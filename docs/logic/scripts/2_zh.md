@@ -1864,7 +1864,7 @@ If p.Net Is Nothing Then
 
 ### Component.Selected 属性
 
-该属性设置或返回组件是否被选中。
+该属性设置或返回组件是否被选中✅。
 
 **用法**
 
@@ -1876,11 +1876,11 @@ Selected As Boolean
 
 **描述**
 
-当组件的一个或多个门被选中时，该组件即被视为选中状态。您也可以使用 [Document.SelectObjects 方法](#page-111-0) 或 [Objects.Select 方法](#page-206-0) 来选中 SailWind Logic 数据库对象。
+当组件的一个或多个门被选中✅时，该组件即被视为选中✅状态。您也可以使用 [Document.SelectObjects 方法](#page-111-0) 或 [Objects.Select 方法](#page-206-0) 来选中✅ SailWind Logic 数据库对象。
 
 **示例**
 
-以下示例代码仅选中组件 U1（假设它存在于打开的电路图中），并激活其所在的图纸。有关运行此示例的更多信息，请参阅第21页的"代码示例"。
+以下示例代码仅选中✅组件 U1（假设它存在于打开的电路图中），并激活其所在的图纸。有关运行此示例的更多信息，请参阅第21页的"代码示例"。
 
 ```
 Sub Main ActiveDocument.SelectObjects(,,False)
@@ -2814,7 +2814,7 @@ GetObjects([*type* As [PlogObjectType](#page-286-0) = plogObjectTypeAll], [*valu
 |----------|---------------------------------------------------------------------|--|
 | type     | [可选](#page-314) 要获取的 SailWind Logic 数据库对象类型。           |  |
 | name     | [可选] 要获取的对象的值或名称。                                      |  |
-| selected | [可选] True 表示仅获取选中的对象。False 表示获取所有对象。           |  |
+| selected | [可选] True 表示仅获取选中✅的对象。False 表示获取所有对象。           |  |
 
 **返回值**
 
@@ -2856,11 +2856,11 @@ Set objs = ActiveDocument.GetObjects
 
 MsgBox "示例1: " & objs.Count & " 个对象。"
 
-' 示例2：获取所有选中的对象
+' 示例2：获取所有选中✅的对象
 
 Set objs = ActiveDocument.GetObjects(,,True)
 
-MsgBox "示例2: " & objs.Count & " 个选中的对象。"
+MsgBox "示例2: " & objs.Count & " 个选中✅的对象。"
 
 ' 示例3：获取所有网络对象
 
@@ -3190,7 +3190,7 @@ Set objs = ActiveDocument.GetObjects(,,True)
 
 ```
 
-MsgBox "示例1: " & objs.Count & " 个选中对象(全部)。"
+MsgBox "示例1: " & objs.Count & " 个选中✅对象(全部)。"
 
 ' 示例2: 取消选择所有类型的所有对象
 
@@ -3198,7 +3198,7 @@ ActiveDocument.SelectObjects(,,False)
 
 Set objs = ActiveDocument.GetObjects(,,True)
 
-MsgBox "示例2: " & objs.Count & " 个选中对象(无)。"
+MsgBox "示例2: " & objs.Count & " 个选中✅对象(无)。"
 
 ' 示例3: 选择所有网络对象
 
@@ -3206,7 +3206,7 @@ ActiveDocument.SelectObjects(plogObjectTypeNet)
 
 Set objs = ActiveDocument.GetObjects(,,True)
 
-MsgBox "示例3: " & objs.Count & " 个选中对象(所有网络)。"
+MsgBox "示例3: " & objs.Count & " 个选中✅对象(所有网络)。"
 
 ' 示例4: 取消选择网络 VCC
 
@@ -3214,7 +3214,7 @@ ActiveDocument.SelectObjects(plogObjectTypeNet, "VCC", False)
 
 Set objs = ActiveDocument.GetObjects(,,True)
 
-MsgBox "示例4: " & objs.Count & " 个选中对象(除VCC外的所有网络)。"
+MsgBox "示例4: " & objs.Count & " 个选中✅对象(除VCC外的所有网络)。"
 
 ' 示例5: 仅选择名称以U开头的元件对象
 
@@ -3224,7 +3224,7 @@ ActiveDocument.SelectObjects(plogObjectTypeComponent, "U\*")
 
 Set objs = ActiveDocument.GetObjects(,,True)
 
-MsgBox "示例5: " & objs.Count & " 个选中的U\*元件对象。"
+MsgBox "示例5: " & objs.Count & " 个选中✅的U\*元件对象。"
 
 **相关主题**
 
@@ -4050,7 +4050,7 @@ End Sub
 
 ### Gate.Selected 属性
 
-该属性设置或返回门电路是否被选中。
+该属性设置或返回门电路是否被选中✅。
 
 **用法**
 
@@ -4066,7 +4066,7 @@ Selected As Boolean
 
 **示例**
 
-以下示例代码选中一个门电路，假设它存在于打开的电路图中。有关运行此示例的更多信息，请参阅第21页的"代码示例"。
+以下示例代码选中✅一个门电路，假设它存在于打开的电路图中。有关运行此示例的更多信息，请参阅第21页的"代码示例"。
 
 ```
 
@@ -5318,7 +5318,7 @@ Sub Main MsgBox "GND 连接了 " & ActiveDocument.Nets("GND").Pins.Count & " 个
 
 ### Net.Selected 属性
 
-该属性设置或返回网络是否被选中。
+该属性设置或返回网络是否被选中✅。
 
 **用法**
 
@@ -6006,7 +6006,7 @@ Parent As Documenton page 419
 
 ### PartType.Selected 属性
 
-此属性设置或返回元件类型的元件是否被选中。
+此属性设置或返回元件类型的元件是否被选中✅。
 
 **用法**
 
@@ -6018,7 +6018,7 @@ Selected As Boolean
 
 **描述**
 
-当此元件类型的一个或多个元件被选中时，该元件类型被视为已选中。您也可以使用 [Document.SelectObjects Method](#page-111-0) 或 [Objects.Select Method](#page-206-0) 方法选择 SailWind Logic 数据库对象。
+当此元件类型的一个或多个元件被选中✅时，该元件类型被视为已选中✅。您也可以使用 [Document.SelectObjects Method](#page-111-0) 或 [Objects.Select Method](#page-206-0) 方法选择 SailWind Logic 数据库对象。
 
 **示例**
 
@@ -6544,7 +6544,7 @@ End Sub
 
 ### Pin.Selected 属性
 
-此属性设置或返回引脚是否被选中。
+此属性设置或返回引脚是否被选中✅。
 
 **用法**
 
@@ -7020,7 +7020,7 @@ AddComponent (*PartType* As String, [*RefDes* As String], [*PositionX* As Double
 
 **示例**
 
-以下示例向活动图纸添加一个新部件并选中它。有关运行此示例的更多信息，请参见第21页的"代码示例"。
+以下示例向活动图纸添加一个新部件并选中✅它。有关运行此示例的更多信息，请参见第21页的"代码示例"。
 
 ```
 
@@ -7069,7 +7069,7 @@ AddGate(*PartType* As String, [*RefDes* As String], [*GateIndex* As Long], [*Pos
 
 **示例**
 
-以下示例将部件的第一个未使用门电路添加到活动图纸并选中它。有关运行此示例的更多信息，请参见第21页的"代码示例"。
+以下示例将部件的第一个未使用门电路添加到活动图纸并选中✅它。有关运行此示例的更多信息，请参见第21页的"代码示例"。
 
 ```
 
@@ -7117,7 +7117,7 @@ GetObjects([*type* As [PlogObjectType](#page-286-0) = plogObjectTypeAll], [*name
 |----------|-------------------------------------------------------------------------|
 | type     | [可选 第314页] 要获取的SailWind Logic数据库对象类型。    |
 | name     | [可选] 要获取对象的值或名称。                       |
-| selected | [可选] True表示仅获取选中的对象。False表示获取所有对象。 |
+| selected | [可选] True表示仅获取选中✅的对象。False表示获取所有对象。 |
 
 **返回值**
 
@@ -7153,11 +7153,11 @@ Set objs = ActiveDocument.ActiveSheet.GetObjects
 
 MsgBox "示例1: " & objs.Count & " 个对象。" 
 
-' 示例2: 获取所有选中的对象
+' 示例2: 获取所有选中✅的对象
 
 Set objs = ActiveDocument.ActiveSheet.GetObjects(,,True) 
 
-MsgBox "示例2: " & objs.Count & " 个选中的对象。" 
+MsgBox "示例2: " & objs.Count & " 个选中✅的对象。" 
 
 ' 示例3: 获取所有网络对象
 

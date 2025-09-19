@@ -27,7 +27,7 @@
 
 **元件类型示例：7404**
 
-您可以在 SailWind Logic 或 `SailWind Layout` 中创建元件类型，但 [CAE 封装](/logic/guide/7_zh.md#7)只能在 SailWind Logic 中创建，PCB 封装只能在 `SailWind Layout` 中创建。
+您可以在 SailWind Logic 或 SailWind Layout 中创建元件类型，但 [CAE 封装](/logic/guide/7_zh.md#7)只能在 SailWind Logic 中创建，PCB 封装只能在 SailWind Layout 中创建。
 
 **[CAE 封装](/logic/guide/7_zh.md#7)**
 
@@ -195,7 +195,7 @@
 
 > [!TIP]
 >
->  如果要在 `SailWind Layout` 中使用管脚交换、端子分配和拓扑工具，必须设置门的交换(管脚交换)和类型(管脚类型)值。本练习可以保留原样。
+>  如果要在 SailWind Layout 中使用管脚交换、端子分配和拓扑工具，必须设置门的交换(管脚交换)和类型(管脚类型)值。本练习可以保留原样。
 
 **[分配信号管脚](/logic/guide/7_zh.md#8-7-3)**
 

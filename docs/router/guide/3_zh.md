@@ -140,11 +140,11 @@ SailWind Router 包含以下高级功能：
 
 2. 在选项对话框中，点击🖱️**全局**类别，**同步**子类别。
 
-3. 在 Layout 和Router 同步区域，选中启用复选框。
+3. 在 Layout 和Router 同步区域，选中✅启用复选框。
 
-   切换到 SailWind Router 会自动将 SailWind Layout 中的设计置于 DRC 关闭模式（SailWind Router 中的 DRC 模式不受影响）；因此，您可能希望选中"返回时恢复 DRC 模式"复选框。此设置会在您切换回 SailWind Layout 时恢复切换到 SailWind Router 之前存在的 DRC 模式。根据设计的大小，恢复 DRC 模式可能需要几分钟。
+   切换到 SailWind Router 会自动将 SailWind Layout 中的设计置于 DRC 关闭模式（SailWind Router 中的 DRC 模式不受影响）；因此，您可能希望选中✅"返回时恢复 DRC 模式"复选框。此设置会在您切换回 SailWind Layout 时恢复切换到 SailWind Router 之前存在的 DRC 模式。根据设计的大小，恢复 DRC 模式可能需要几分钟。
 
-4. 要在切换到同步模式时收到设计被置于 DRC 关闭模式的警告，请点击🖱️"警告切换到 DRC 关闭模式"（如果您在步骤 3 中选中"返回时恢复 DRC 模式"复选框，则此复选框不可用）。
+4. 要在切换到同步模式时收到设计被置于 DRC 关闭模式的警告，请点击🖱️"警告切换到 DRC 关闭模式"（如果您在步骤 3 中选中✅"返回时恢复 DRC 模式"复选框，则此复选框不可用）。
 
 5. 点击🖱️**确定**。
 
