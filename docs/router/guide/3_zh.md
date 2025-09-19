@@ -242,7 +242,7 @@ SailWind Router 打开并加载您的设计。
 - 如果 SailWind Layout 为"活动"且 SailWind Router 为"不同步"，请在 SailWind Layout 的主工具栏上点击🖱️**布线**按钮。
 
 
-> [!warning] 要在 SailWind Layout 和SailWind Router 之间切换时关闭许可证警告的显示，请在*SailWindRouter.ini*文件中键入以下文本（之后不需要重新启动 SailWind Router）：
+> [!warning] 要在 SailWind Layout 和SailWind Router 之间切换时关闭许可证警告的显示，请在*SailWindRouter.ini*文件中键入⌨️以下文本（之后不需要重新启动 SailWind Router）：
 
 ```
 
