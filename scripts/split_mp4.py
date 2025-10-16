@@ -56,8 +56,10 @@ def extract_frames(video_path, output_folder, frame_rate=30):
 
 
 # 使用示例
-if __name__ == "__main__":
-    video_path = "Video_250910152119.mp4"  # 替换为你的视频路径
-    output_folder = "frames"  # 输出文件夹名称
 
-    extract_frames(video_path, output_folder, frame_rate=30)
+if __name__ == "__main__":
+    video_name = "Video_250926171143"
+    video_path = rf"C:\Users\DarkLii\Videos\数据蛙\数据蛙录屏软件\{video_name}.mp4"  # 替换为你的视频路径
+    output_folder = video_name  # 输出文件夹名称
+
+    extract_frames(video_path, output_folder, frame_rate=20)
