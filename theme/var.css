@@ -65,11 +65,11 @@ h2:hover {
     height: 35px;
 }
 
-.font-semibold {
-    color: #6253b7;
-    font-weight: bold;
-    font-size: medium;
-}
+/*.font-semibold {*/
+/*    color: #6253b7;*/
+/*    font-weight: bold;*/
+/*    font-size: medium;*/
+/*}*/
 
 .rspress-sidebar-item {
     color: #6253b7;
