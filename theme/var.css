@@ -10,12 +10,12 @@
     --rp-code-block-bg: rgba(214, 188, 70, 0.05);
     --rp-home-hero-name-background: linear-gradient(120deg, #244e9e 10%, #8a57c8);
 
-    --h2-line-color: #ff7e5f;
+    --h2-line-color: #6253b7;
     --transition-speed: 0.3s;
 }
 
 h1 {
-    background: var(--rp-home-hero-name-background);
+    background: #6253b7;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -24,10 +24,10 @@ h1 {
 h2 {
     position: relative;
     display: inline-block;
-    background: var(--rp-home-hero-name-background);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    /*background: var(--rp-home-hero-name-background);*/
+    /*background-clip: text;*/
+    /*-webkit-background-clip: text;*/
+    /*-webkit-text-fill-color: transparent;*/
     font-size: 28px;
     /*margin: 25px 0 15px;*/
     padding-bottom: 10px;
