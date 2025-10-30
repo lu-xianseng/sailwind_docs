@@ -1523,7 +1523,7 @@ Name As String
 
 **示例**
 
-以下示例代码检索打开的原理图中的所有组件，并将该列表放入自定义对话框列表框。当在列表框中选择组件时，示例在 SailWind Logic 中选择该组件。此示例使用 SailWind Logic 中 Sax Basic 引擎的用户对话框编辑器。更多信息请参阅 Sax Basic 编辑器在线帮助。
+以下示例代码检索打开的原理图中的所有组件，并将该列表放入自定义对话框列表框。当在列表框中选择👉组件时，示例在 SailWind Logic 中选择👉该组件。此示例使用 SailWind Logic 中 Sax Basic 引擎的用户对话框编辑器。更多信息请参阅 Sax Basic 编辑器在线帮助。
 
 有关运行此示例的更多信息，请参阅第21页的"代码示例"。
 
@@ -3144,7 +3144,7 @@ SaveTemp
 
 ### Document.SelectObjects 方法
 
-此方法选择或取消选择 SailWind Logic 数据库对象。
+此方法选择👉或取消选择👉 SailWind Logic 数据库对象。
 
 **用法**
 
@@ -3160,9 +3160,9 @@ SelectObjects([type As PlogObjectType = plogObjectTypeAll], [name As String], [s
 
 | 参数    | 描述                                                                      |
 |---------|--------------------------------------------------------------------------|
-| type    | [可选，见第314页] 要选择/取消选择的 SailWind Logic 数据库对象类型。       |
-| name    | [可选] 要选择/取消选择的对象的值或名称。                                  |
-| select  | [可选] True 表示选择，False 表示取消选择。                                |
+| type    | [可选，见第314页] 要选择👉/取消选择👉的 SailWind Logic 数据库对象类型。       |
+| name    | [可选] 要选择👉/取消选择👉的对象的值或名称。                                  |
+| select  | [可选] True 表示选择👉，False 表示取消选择👉。                                |
 
 **描述**
 
@@ -3174,7 +3174,7 @@ SelectObjects([type As PlogObjectType = plogObjectTypeAll], [name As String], [s
 
 **示例**
 
-以下示例代码展示了使用此方法的不同方式，使用 [Document.GetObjects 方法](#page-99-0) 和 [Objects.Count 属性](#page-196-0) 属性显示每种方式选择的对象数量。有关运行此示例的更多信息，请参阅第21页的"代码示例"。
+以下示例代码展示了使用此方法的不同方式，使用 [Document.GetObjects 方法](#page-99-0) 和 [Objects.Count 属性](#page-196-0) 属性显示每种方式选择👉的对象数量。有关运行此示例的更多信息，请参阅第21页的"代码示例"。
 
 ```
 
@@ -3182,7 +3182,7 @@ Sub Main
 
 Dim objs As Object 
 
-' 示例1: 选择所有类型的所有对象 
+' 示例1: 选择👉所有类型的所有对象 
 
 ActiveDocument.SelectObjects 
 
@@ -3192,7 +3192,7 @@ Set objs = ActiveDocument.GetObjects(,,True)
 
 MsgBox "示例1: " & objs.Count & " 个选中✅对象(全部)。"
 
-' 示例2: 取消选择所有类型的所有对象
+' 示例2: 取消选择👉所有类型的所有对象
 
 ActiveDocument.SelectObjects(,,False)
 
@@ -3200,7 +3200,7 @@ Set objs = ActiveDocument.GetObjects(,,True)
 
 MsgBox "示例2: " & objs.Count & " 个选中✅对象(无)。"
 
-' 示例3: 选择所有网络对象
+' 示例3: 选择👉所有网络对象
 
 ActiveDocument.SelectObjects(plogObjectTypeNet)
 
@@ -3208,7 +3208,7 @@ Set objs = ActiveDocument.GetObjects(,,True)
 
 MsgBox "示例3: " & objs.Count & " 个选中✅对象(所有网络)。"
 
-' 示例4: 取消选择网络 VCC
+' 示例4: 取消选择👉网络 VCC
 
 ActiveDocument.SelectObjects(plogObjectTypeNet, "VCC", False)
 
@@ -3216,7 +3216,7 @@ Set objs = ActiveDocument.GetObjects(,,True)
 
 MsgBox "示例4: " & objs.Count & " 个选中✅对象(除VCC外的所有网络)。"
 
-' 示例5: 仅选择名称以U开头的元件对象
+' 示例5: 仅选择👉名称以U开头的元件对象
 
 ActiveDocument.SelectObjects(,,False)
 
@@ -3313,7 +3313,7 @@ Document\_Save ()
 
 ### Document.SelectionChange 事件
 
-此事件在当前选择发生变化时发生。
+此事件在当前选择👉发生变化时发生。
 
 **用法**
 
@@ -3325,7 +3325,7 @@ Document\_SelectionChange ()
 
 **描述**
 
-此事件在当前选择发生变化时发生。
+此事件在当前选择👉发生变化时发生。
 
 **相关主题** [Document.SelectObjects 方法](#page-111-0) [Objects.Select 方法](#page-206-0)
 
@@ -3672,7 +3672,7 @@ Name As String
 
 **示例**
 
-以下示例代码按名称检索活动图纸中的所有门，并在自定义对话框中列出它们。当在列表框中选择一个门时，示例会在 SailWind Logic 中选择该门。
+以下示例代码按名称检索活动图纸中的所有门，并在自定义对话框中列出它们。当在列表框中选择👉一个门时，示例会在 SailWind Logic 中选择👉该门。
 
 此示例使用 SailWind Logic 中 Sax Basic 引擎的 UserDialog 编辑器。更多信息请参见 Sax Basic 编辑器在线帮助。有关运行此示例的更多信息，请参见第21页的"代码示例"。
 
@@ -4062,7 +4062,7 @@ Selected As Boolean
 
 **描述**
 
-您也可以使用[Document.SelectObjects 方法](#page-111-0)或[Objects.Select 方法](#page-206-0)选择SailWind Logic数据库对象。
+您也可以使用[Document.SelectObjects 方法](#page-111-0)或[Objects.Select 方法](#page-206-0)选择👉SailWind Logic数据库对象。
 
 **示例**
 
@@ -5072,7 +5072,7 @@ Normalize As String
 
 **描述**
 
-此方法选择适当的单位前缀，并在缺少单位时追加单位。例如，它将时间测量的文本从"5e-9"转换为"5ns"。
+此方法选择👉适当的单位前缀，并在缺少单位时追加单位。例如，它将时间测量的文本从"5e-9"转换为"5ns"。
 
 **示例**
 
@@ -5168,7 +5168,7 @@ Name As String
 
 **示例**
 
-以下示例代码检索打开的原理图中的所有网络，并将该列表放入自定义对话框中。当在列表框中选择网络时，示例在SailWind Logic中选择该网络。
+以下示例代码检索打开的原理图中的所有网络，并将该列表放入自定义对话框中。当在列表框中选择👉网络时，示例在SailWind Logic中选择👉该网络。
 
 此示例使用SailWind Logic中Sax Basic引擎的UserDialog编辑器。有关更多信息，请参阅Sax Basic编辑器在线帮助。有关运行此示例的更多信息，请参阅第21页的"代码示例"。
 
@@ -5330,11 +5330,11 @@ Selected As Boolean
 
 **描述**
 
-您也可以使用 [Document.SelectObjects Method](#page-111-0) 或 [Objects.Select Method](#page-206-0) 方法来选择 SailWind Logic 数据库对象。
+您也可以使用 [Document.SelectObjects Method](#page-111-0) 或 [Objects.Select Method](#page-206-0) 方法来选择👉 SailWind Logic 数据库对象。
 
 **示例**
 
-以下示例代码仅选择网络 GND，假设它在打开的示意图中存在。有关运行此示例的更多信息，请参见第21页的"代码示例"。
+以下示例代码仅选择👉网络 GND，假设它在打开的示意图中存在。有关运行此示例的更多信息，请参见第21页的"代码示例"。
 
 ```
 
@@ -5640,7 +5640,7 @@ Reset()
 
 ### Objects.Select 方法
 
-此方法选择或取消选择集合中的所有对象。
+此方法选择👉或取消选择👉集合中的所有对象。
 
 **用法**
 
@@ -5650,7 +5650,7 @@ Select([*bselect* As Boolean = True])
 
 | 参数    | 描述                                                 |
 |---------|------------------------------------------------------|
-| bSelect | [Optionalon page 314] True 表示选择。False 表示取消选择。 |
+| bSelect | [Optionalon page 314] True 表示选择👉。False 表示取消选择👉。 |
 
 **描述**
 
@@ -5658,7 +5658,7 @@ Select([*bselect* As Boolean = True])
 
 **示例**
 
-以下示例代码快速选择打开原理图中的所有门。有关运行此示例的更多信息，请参阅第 21 页的"代码示例"。
+以下示例代码快速选择👉打开原理图中的所有门。有关运行此示例的更多信息，请参阅第 21 页的"代码示例"。
 
 Sub Main
 
@@ -5858,7 +5858,7 @@ Name As String
 
 **示例**
 
-以下示例代码获取打开电路图中的所有元件类型，并将该列表放入自定义对话框列表框中。当在列表框中选择一个元件类型时，示例将在 SailWind Logic 中选择该元件类型的所有元件。此示例使用 SailWind Logic 中 Sax Basic 引擎的 UserDialog 编辑器。更多信息请参见 Sax Basic 编辑器在线帮助。
+以下示例代码获取打开电路图中的所有元件类型，并将该列表放入自定义对话框列表框中。当在列表框中选择👉一个元件类型时，示例将在 SailWind Logic 中选择👉该元件类型的所有元件。此示例使用 SailWind Logic 中 Sax Basic 引擎的 UserDialog 编辑器。更多信息请参见 Sax Basic 编辑器在线帮助。
 
 有关运行此示例的更多信息，请参见第 21 页的"代码示例"。
 
@@ -5920,7 +5920,7 @@ ActiveDocument.SelectObjects(plogObjectTypeAll, , False)
 
 Set pkg = ActiveDocument.PartTypes(ListPkgs(SuppValue%))
 
-'选择元件
+'选择👉元件
 
 pkg.Selected = True
 
@@ -6018,11 +6018,11 @@ Selected As Boolean
 
 **描述**
 
-当此元件类型的一个或多个元件被选中✅时，该元件类型被视为已选中✅。您也可以使用 [Document.SelectObjects Method](#page-111-0) 或 [Objects.Select Method](#page-206-0) 方法选择 SailWind Logic 数据库对象。
+当此元件类型的一个或多个元件被选中✅时，该元件类型被视为已选中✅。您也可以使用 [Document.SelectObjects Method](#page-111-0) 或 [Objects.Select Method](#page-206-0) 方法选择👉 SailWind Logic 数据库对象。
 
 **示例**
 
-以下示例代码仅选择元件类型 7400，假设它存在于打开的电路图中，并激活其所在的图纸。有关运行此示例的更多信息，请参见第 21 页的"代码示例"。
+以下示例代码仅选择👉元件类型 7400，假设它存在于打开的电路图中，并激活其所在的图纸。有关运行此示例的更多信息，请参见第 21 页的"代码示例"。
 
 ```
 
@@ -6326,7 +6326,7 @@ Name As String
 
 **示例**
 
-以下示例代码在自定义对话框中按名称列出所有引脚。当在列表框中选择一个引脚时，该示例也会在 SailWind Logic 中选择该引脚。
+以下示例代码在自定义对话框中按名称列出所有引脚。当在列表框中选择👉一个引脚时，该示例也会在 SailWind Logic 中选择👉该引脚。
 
 此示例使用 SailWind Logic 中 Sax Basic 引擎的 UserDialog 编辑器。更多信息请参阅 Sax Basic 编辑器在线帮助。有关运行此示例的更多信息，请参阅第21页的"代码示例"。
 
@@ -6556,11 +6556,11 @@ Selected As Boolean
 
 **描述**
 
-您也可以使用 [Document.SelectObjects 方法](#page-111-0) 或 [Objects.Select 方法](#page-206-0) 来选择 SailWind Logic 数据库对象。
+您也可以使用 [Document.SelectObjects 方法](#page-111-0) 或 [Objects.Select 方法](#page-206-0) 来选择👉 SailWind Logic 数据库对象。
 
 **示例**
 
-以下示例代码仅选择引脚 U1.1，假设它在打开的电路图中存在。有关运行此示例的更多信息，请参阅第21页的"代码示例"。
+以下示例代码仅选择👉引脚 U1.1，假设它在打开的电路图中存在。有关运行此示例的更多信息，请参阅第21页的"代码示例"。
 
 ```
 
@@ -7004,8 +7004,8 @@ AddComponent (*PartType* As String, [*RefDes* As String], [*PositionX* As Double
 |------------|------------------------------------------------------------------------------------------------------------------------------------------|
 | PartType:  | 必需的部件类型名称。                                                                                                                 |
 | RefDes:    | [可选 第314页] 此门电路所属部件的名称。如果未指定RefDes，<br>则使用下一个参考标识符。 |
-| PositionX: | [可选] 新门电路的x坐标。如果未指定PositionX，则会在当前图纸视图中<br>选择一个x坐标。    |
-| PositionY: | [可选] 新门电路的y坐标。如果未指定PositionY，则会在当前图纸视图中<br>选择一个y坐标。     |
+| PositionX: | [可选] 新门电路的x坐标。如果未指定PositionX，则会在当前图纸视图中<br>选择👉一个x坐标。    |
+| PositionY: | [可选] 新门电路的y坐标。如果未指定PositionY，则会在当前图纸视图中<br>选择👉一个y坐标。     |
 | DeltaX:    | [可选] 门电路之间的x坐标增量。如果未指定DeltaX，则自动<br>计算。                          |
 | DeltaY:    | [可选] 门电路之间的y坐标增量。如果未指定DeltaY，则自动<br>计算。                          |
 | Unit:      | [可选] 指定位置的单位。如果未指定Unit，则使用当前单位。<br>                                   |
@@ -7055,8 +7055,8 @@ AddGate(*PartType* As String, [*RefDes* As String], [*GateIndex* As Long], [*Pos
 | PartType  | 必需的部件类型名称。                                                                                                                          |
 | RefDes    | [可选 第314页] 此门电路所属部件的名称。如果未指定RefDes，<br>则使用下一个可用的参考标识符 |
 | GateIndex | [可选] 部件中的门电路索引。如果未指定GateIndex，则使用下一个可用的门电路<br>索引。                                       |
-| PositionX | [可选] 新门电路的x坐标。如果未指定PositionX，则会在当前图纸视图中<br>选择一个x坐标。             |
-| PositionY | [可选] 新门电路的y坐标。如果未指定PositionY，则会在当前图纸视图中<br>选择一个y坐标。              |
+| PositionX | [可选] 新门电路的x坐标。如果未指定PositionX，则会在当前图纸视图中<br>选择👉一个x坐标。             |
+| PositionY | [可选] 新门电路的y坐标。如果未指定PositionY，则会在当前图纸视图中<br>选择👉一个y坐标。              |
 | Unit      | [可选] 指定位置的单位。如果未指定Unit，则使用当前单位。<br>                                            |
 
 **返回值**
