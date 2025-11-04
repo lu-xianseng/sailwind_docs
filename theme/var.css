@@ -9,6 +9,8 @@
     --rp-code-title-bg: rgba(250, 192, 61, 0.15);
     --rp-code-block-bg: rgba(214, 188, 70, 0.05);
     --rp-home-hero-name-background: linear-gradient(120deg, #244e9e 10%, #8a57c8);
+
+    --rp-c-text-code: #278359
 }
 
 h1 {
