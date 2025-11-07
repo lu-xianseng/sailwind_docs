@@ -1,4 +1,4 @@
-# 第 3 章 设计准备
+# 第 3 章 设计准备 ಠ_ಠ
 
 在将设计导入 SailWind Router 之前，您的设计必须满足特定要求。仔细准备设计以满足所有先决条件后，您可以使用同步流程在 SailWind Layout 和SailWind Router 之间来回切换进行导入。
 
@@ -160,7 +160,7 @@ SailWind Router 包含以下高级功能：
 
 2. 使用以下方法之一切换到 SailWind Router：
 
-	- 在标准工具栏上，点击👆**布线**按钮。
+	- 在工具栏上，点击👆**布线**按钮。
 
 	- 点击👆**工具 > SailWind Router**，在 SailWind Router 链接对话框中选择👉一个操作并点击👆**继续**。
 
@@ -267,4 +267,4 @@ DisplayWarnings=0
 
 2. 要[退出同步模式](#3-6)，请关闭另一个应用程序。
 
-在同步模式下，**Layout**按钮（在 SailWind Router 标准工具栏上）不会将您的设计发送到 SailWind Layout 然后关闭 SailWind Router；因此，您必须手动关闭应用程序。但是，如果其中一个程序不同步，请确保保存更改（如果您想保留它们）。例如，如果您想继续在 SailWind Router 中工作，但不再希望处于同步模式，请关闭 SailWind Layout。出现提示时，保存您的设计。
+在同步模式下，**Layout**按钮（在 SailWind Router 工具栏上）不会将您的设计发送到 SailWind Layout 然后关闭 SailWind Router；因此，您必须手动关闭应用程序。但是，如果其中一个程序不同步，请确保保存更改（如果您想保留它们）。例如，如果您想继续在 SailWind Router 中工作，但不再希望处于同步模式，请关闭 SailWind Layout。出现提示时，保存您的设计。
