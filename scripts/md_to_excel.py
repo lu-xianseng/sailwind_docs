@@ -161,8 +161,8 @@ def process_directory(directory, output_excel, ignore_flag=None):
 
 
 if __name__ == "__main__":
-    directory = Path(r"D:\hugh\code\sailwind3.0_docs\docs\logic\guide")
-    output_file = Path(__file__).parent / "product_demand" / "logic_guide.xlsx"
+    directory = Path(r"C:\Users\Administrator\Desktop\code\sailwind_docs\docs\router\guide")
+    output_file = Path(__file__).parent / "router_guide.xlsx"
 
     ignore_flag = ["🚧", "ಠ_ಠ", "❌"]
 
