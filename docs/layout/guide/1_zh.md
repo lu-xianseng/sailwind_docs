@@ -1,29 +1,29 @@
 # 第 1 章 快速开始 ಠ_ಠ
 
-Welcome to SailWind Layout, a powerful yet easy to use printed circuit board layout application.
+欢迎使用 SailWind Layout —— 一款功能强大且易于使用的印制电路板（PCB）布局设计软件。
 
-## PCB Layout Quickstart \{#1}
+## PCB Layout 快速入门 \{#1}
 
-SailWind Layout provides the tools you need to lay out your PCB design, from creating a decal library for your components to generating output for fabrication.
+SailWind Layout 为您提供了完成 PCB 布局所需的全套工具，从为元器件创建封装库（Decal Library），到生成用于生产的输出文件。
 
-To get started quickly, click on any of the topics.
-- Create a library for your decals (footprints)
-  - Creating a New Library
-- Add decals to your parts
-  - Create decals for your parts
-  - Assign a decal to a part type (Netlist project)  
-- Import the schematic design
-  - Import a netlist
-- Set up the PCB layer structure
-- Create vias for routing
-  - Creation of vias
-- Create a board outline
-- Set up design rules or constraints
-  - Creation of Rules for Your Design
-- Set grids
-- Place parts
-- Route traces
-- Check for rules violations
-- Annotate the design
-- Generate reports
-- Output the design
+要快速上手，请点击以下任意主题：
+- 为您的封装创建库
+  - 创建新库
+- 为元器件添加封装
+  - 为元器件创建封装
+  - 为元件类型分配封装（适用于网表项目）
+- 导入原理图设计
+  - 导入网表（Netlist）
+- 设置 PCB 层叠结构
+- 创建用于布线的过孔（Via）
+  - 过孔的创建
+- 绘制电路板外形轮廓
+- 设置设计规则或约束条件
+  - 为您的设计创建规则
+- 设置栅格（Grid）
+- 放置元器件
+- 布线（绘制走线）
+- 检查设计规则违规
+- 为设计添加标注
+- 生成报告
+- 输出设计文件
