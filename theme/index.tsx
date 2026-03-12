@@ -1,10 +1,7 @@
 import './index.css';
 
-import Theme from 'rspress/theme';
+import { Layout } from '@rspress/core/theme-original';
+import { Card } from './Card';
 
-
-export default {
-  ...Theme,
-};
-
-export * from 'rspress/theme';
+export { Layout, Card };
+export * from '@rspress/core/theme-original';

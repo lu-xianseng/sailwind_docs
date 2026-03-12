@@ -14,7 +14,6 @@ def extract_frames(video_path, output_folder, frame_rate=30):
     # 创建输出文件夹
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
-
     # 打开视频文件
     cap = cv2.VideoCapture(video_path)
 

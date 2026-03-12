@@ -1,4 +1,4 @@
-import {defineConfig} from 'rspress/config';
+import { defineConfig } from '@rspress/core';
 import path from 'node:path';
 
 
@@ -13,28 +13,22 @@ export default defineConfig({
     icon: '/favicon.ico',
     logo:  '/logo.png',
     logoText: 'SailWind',
+    i18nSource: {
+        outlineTitle: { zh: '本页目录' },
+        prevPageText: { zh: '上一页' },
+        nextPageText: { zh: '下一页' },
+        lastUpdatedText: { zh: '最近更新时间' },
+        searchPlaceholderText: { zh: '搜索' },
+        sourceCodeText: { zh: '源码' },
+        'overview.filterNameText': { zh: '快速查找' },
+        'overview.filterPlaceholderText': { zh: '输入关键词' },
+        'overview.filterNoResultText': { zh: '未查询到结果' },
+    },
     themeConfig: {
         enableContentAnimation: true,
         enableAppearanceAnimation: true,
         enableScrollToTop: true,
         lastUpdated: true,
-        locales: [
-            {
-                lang: '',
-                outlineTitle: '本页目录',
-                prevPageText: '上一页',
-                nextPageText: '下一页',
-                lastUpdatedText: '最近更新时间',
-                searchPlaceholderText: '搜索',
-                sourceCodeText: '源码',
-                overview: {
-                    filterNameText: '快速查找',
-                    filterPlaceholderText: '输入关键词',
-                    filterNoResultText: '未查询到结果',
-                },
-                label: ''
-            }
-        ],
         socialLinks: [
             {
                 icon: 'github',
