@@ -1,269 +1,276 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="generator" content="Rspress v1.47.0">
-    <title data-rh="true">第 1 章 Logic 自动化服务器 - SailWind</title><meta data-rh="true" name="description" content="SailWind"/>
-  <script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script><link rel="icon" href="/sailwind_docs/favicon.ico"><script defer src="/sailwind_docs/static/js/styles.47bb66ab.js"></script><script defer src="/sailwind_docs/static/js/lib-react.36f9b428.js"></script><script defer src="/sailwind_docs/static/js/lib-router.8596f9d8.js"></script><script defer src="/sailwind_docs/static/js/6268.389194c9.js"></script><script defer src="/sailwind_docs/static/js/index.3778f1be.js"></script><link href="/sailwind_docs/static/css/styles.353f381e.css" rel="stylesheet"></head>
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 1 章 Logic 自动化服务器 - SailWind</title>
+<script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.classList.toggle('rp-dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script>
+<link href="/sailwind_docs/static/css/styles.d1090a2c1b.css" rel="stylesheet">
+<script defer src="/sailwind_docs/static/js/styles.a845351eed.js"></script>
+<script defer src="/sailwind_docs/static/js/lib-react.cae1a117e5.js"></script>
+<script defer src="/sailwind_docs/static/js/lib-router.90bfcb03a3.js"></script>
+<script defer src="/sailwind_docs/static/js/4048.8cfb7a4b43.js"></script>
+<script defer src="/sailwind_docs/static/js/index.81864f7d1c.js"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Rspress v2.0.5">
+<link rel="icon" href="/sailwind_docs/favicon.ico">
+<meta property="og:type" content="website">
+<meta property="og:title" content="第 1 章 Logic 自动化服务器 - SailWind">
+<meta name="description" content="本章介绍 SailWind Logic 中包含的自动化服务器功能。">
+<meta property="og:description" content="本章介绍 SailWind Logic 中包含的自动化服务器功能。"></head>
 
-  <body >
-    <div id="root"><div class="navContainer_d18b1 rspress-nav px-6  sticky_ddfa7"><div class="container_e4235 flex justify-between items-center h-full"><div class="navBarTitle_c5f07"><a href="/sailwind_docs/index.html" class="link_a7cea flex items-center w-full h-full text-base font-semibold transition-opacity duration-300 hover:opacity-60"><div class="mr-1 min-w-8"><img src="/sailwind_docs/logo.png" alt="logo" id="logo" class="rspress-logo"/></div><span>SailWind</span></a></div><div class="flex flex-1 justify-end items-center"><div class="rightNav_a2fea"><div class="flex sm:flex-1 items-center sm:pl-4 sm:pr-2"><div class="rspress-nav-search-button navSearchButton_df1fb"><button><svg width="18" height="18" viewBox="0 0 32 32"><path fill="var(--rp-c-gray)" d="m29 27.586-7.552-7.552a11.018 11.018 0 1 0-1.414 1.414L27.586 29ZM4 13a9 9 0 1 1 9 9 9.01 9.01 0 0 1-9-9"></path></svg><p class="searchWord_af2c1">搜索</p><div style="opacity:0"><span></span><span>K</span></div></button></div><div class="mobileNavSearchButton_d85a9"><svg width="24" height="24" viewBox="0 0 32 32"><path fill="var(--rp-c-gray)" d="m29 27.586-7.552-7.552a11.018 11.018 0 1 0-1.414 1.414L27.586 29ZM4 13a9 9 0 1 1 9 9 9.01 9.01 0 0 1-9-9"></path></svg></div></div><div class="rspress-nav-menu menu h-14"><a href="/sailwind_docs/logic/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154 activeItem_a28b5 text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">原理图 (Logic)</div></a><a href="/sailwind_docs/layout/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">物理版图 (Layout)</div></a><a href="/sailwind_docs/router/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">自动布线 (Router)</div></a><a href="/sailwind_docs/lpcreator/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">焊盘图形 (LPW)</div></a><a href="/sailwind_docs/about.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">关于</div></a></div><div class="flex-center flex-row"><div class="mx-2"><div class="md:mr-2 rspress-nav-appearance"><div class="p-1 border border-solid border-gray-300 text-gray-400  cursor-pointer rounded-md hover:border-gray-600 hover:text-gray-600 dark:hover:border-gray-200 dark:hover:text-gray-200 transition-all duration-300 w-7 h-7"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" class="dark:hidden" width="18" height="18" fill="currentColor"><path d="M12 18c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6m0-10c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4M12 4c-.6 0-1-.4-1-1V1c0-.6.4-1 1-1s1 .4 1 1v2c0 .6-.4 1-1 1M12 24c-.6 0-1-.4-1-1v-2c0-.6.4-1 1-1s1 .4 1 1v2c0 .6-.4 1-1 1M5.6 6.6c-.3 0-.5-.1-.7-.3L3.5 4.9c-.4-.4-.4-1 0-1.4s1-.4 1.4 0l1.4 1.4c.4.4.4 1 0 1.4-.1.2-.4.3-.7.3M19.8 20.8c-.3 0-.5-.1-.7-.3l-1.4-1.4c-.4-.4-.4-1 0-1.4s1-.4 1.4 0l1.4 1.4c.4.4.4 1 0 1.4-.2.2-.5.3-.7.3M3 13H1c-.6 0-1-.4-1-1s.4-1 1-1h2c.6 0 1 .4 1 1s-.4 1-1 1M23 13h-2c-.6 0-1-.4-1-1s.4-1 1-1h2c.6 0 1 .4 1 1s-.4 1-1 1M4.2 20.8c-.3 0-.5-.1-.7-.3-.4-.4-.4-1 0-1.4l1.4-1.4c.4-.4 1-.4 1.4 0s.4 1 0 1.4l-1.4 1.4c-.2.2-.4.3-.7.3M18.4 6.6c-.3 0-.5-.1-.7-.3-.4-.4-.4-1 0-1.4l1.4-1.4c.4-.4 1-.4 1.4 0s.4 1 0 1.4l-1.4 1.4c-.2.2-.5.3-.7.3"></path></svg><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" class="hidden dark:block" width="18" height="18" fill="currentColor"><path d="M12.1 22h-.9c-5.5-.5-9.5-5.4-9-10.9.4-4.8 4.2-8.6 9-9 .4 0 .8.2 1 .5s.2.8-.1 1.1c-2 2.7-1.4 6.4 1.3 8.4 2.1 1.6 5 1.6 7.1 0 .3-.2.7-.3 1.1-.1.3.2.5.6.5 1-.2 2.7-1.5 5.1-3.6 6.8-1.9 1.4-4.1 2.2-6.4 2.2M9.3 4.4c-2.9 1-5 3.6-5.2 6.8-.4 4.4 2.8 8.3 7.2 8.7 2.1.2 4.2-.4 5.8-1.8 1.1-.9 1.9-2.1 2.4-3.4-2.5.9-5.3.5-7.5-1.1-2.8-2.2-3.9-5.9-2.7-9.2"></path></svg></div></div></div><div class="social-links menu-item_e90a6 flex-center relative"><div class="flex-center h-full gap-x-4 transition-colors duration-300 md:mr-2"><a href="https://github.com/mikigo/sailwind_docs/" target="_blank" rel="noopener noreferrer" class="social-links"><div class="social-links-icon_a4ad0"><div><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a></div></div></div></div><div class="mobileNavMenu_e7045"><div class="navScreen_ec30c  rspress-nav-screen" id="navScreen"><div class="container_c935d"><div class="navMenu_b887b"><div class="navMenuItem_e7978 w-full"><a href="/sailwind_docs/logic/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154 activeItem_a28b5 text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">原理图 (Logic)</div></a></div><div class="navMenuItem_e7978 w-full"><a href="/sailwind_docs/layout/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">物理版图 (Layout)</div></a></div><div class="navMenuItem_e7978 w-full"><a href="/sailwind_docs/router/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">自动布线 (Router)</div></a></div><div class="navMenuItem_e7978 w-full"><a href="/sailwind_docs/lpcreator/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">焊盘图形 (LPW)</div></a></div><div class="navMenuItem_e7978 w-full"><a href="/sailwind_docs/about.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">关于</div></a></div></div><div class="flex-center flex-col gap-2"><div class="mt-2 navAppearance_bf893 flex justify-center"></div><div class="social-links menu-item_e90a6 flex-center relative"><div class="flex-center h-full gap-x-4 transition-colors duration-300 md:mr-2"><a href="https://github.com/mikigo/sailwind_docs/" target="_blank" rel="noopener noreferrer" class="social-links"><div class="social-links-icon_a4ad0"><div><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a></div></div></div></div></div><button aria-label="mobile hamburger" class=" rspress-mobile-hamburger navHamburger_ac64c text-gray-500"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="currentColor"><circle cx="8" cy="16" r="2" fill="currentColor"></circle><circle cx="16" cy="16" r="2" fill="currentColor"></circle><circle cx="24" cy="16" r="2" fill="currentColor"></circle></svg></button></div></div></div></div><section><div class="docLayout_af141 pt-0"><aside class="sidebar_dd719 rspress-sidebar "><div class="navTitleMask_fb17c"><div class="navBarTitle_c5f07"><a href="/sailwind_docs/index.html" class="link_a7cea flex items-center w-full h-full text-base font-semibold transition-opacity duration-300 hover:opacity-60"><div class="mr-1 min-w-8"><img src="/sailwind_docs/logo.png" alt="logo" id="logo" class="rspress-logo"/></div><span>SailWind</span></a></div></div><div class="rspress-scrollbar sidebarContent_da296"><nav class="pb-2"><a href="/sailwind_docs/logic/index.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:14px;margin-left:0;border-radius:0 var(--rp-radius) var(--rp-radius) 0;padding-left:24px;font-weight:bold"><span>章节预览</span></div></a><section class="rspress-sidebar-section mt-0.5 block" style="margin-left:0"><div class="rspress-sidebar-collapse flex justify-between items-center menuItem_ac22e" style="border-radius:0 var(--rp-radius) var(--rp-radius) 0;cursor:pointer"><h2 class="py-2 px-3 text-sm font-medium flex" style="font-size:14px;padding-left:24px;font-weight:bold"><span class="flex-center" style="font-size:14px">指南(Guide)</span></h2><div class="collapseContainer_d6e4e p-2 rounded-xl"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(0deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div class="transition-all duration-300 ease-in-out" style="overflow:hidden;max-height:0"><div class="rspress-sidebar-group transition-opacity duration-500 ease-in-out" style="opacity:0;margin-left:12px"><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/1_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 1 章 SailWind Logic 快速开始 ಠ_ಠ</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/2_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 2 章 开始 SailWind Logic</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/3_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 3 章 用户界面</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/4_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 4 章 文件操作</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/5_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 5 章 设计设置</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/6_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 6 章 管理库和库数据</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/7_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 7 章 库元件</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/8_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 8 章 特殊示意图符号</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/9_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 9 章 设计和编辑基础</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/10_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 10 章 原理图元件</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/11_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 11 章 图页</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/12_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 12 章 非电气对象</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/13_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 13 章 连接</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/14_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 14 章 层次化设计</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/15_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 15 章 原理图对象修改</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/16_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 16 章 规则</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/17_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 17 章 报告</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/18_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 18 章 与 Layout 和 Router 协作</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/19_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 19 章 绘图和打印</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/20_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 20 章 对象链接与嵌入 ❌</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/21_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 21 章 使用高级程序 ❌</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/22_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 22 章 自定义界面 ಠ_ಠ</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/23_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 23 章 崩溃检测、BMW 和 BLT ಠ_ಠ</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/24_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 24 章 SailWind Logic 对话框 ಠ_ಠ</span></div></a></div></div></div></section><section class="rspress-sidebar-section mt-0.5 block" style="margin-left:0"><div class="rspress-sidebar-collapse flex justify-between items-center menuItem_ac22e" style="border-radius:0 var(--rp-radius) var(--rp-radius) 0;cursor:pointer"><h2 class="py-2 px-3 text-sm font-medium flex" style="font-size:14px;padding-left:24px;font-weight:bold"><span class="flex-center" style="font-size:14px">教程(Tutorial)</span></h2><div class="collapseContainer_d6e4e p-2 rounded-xl"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(0deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div class="transition-all duration-300 ease-in-out" style="overflow:hidden;max-height:0"><div class="rspress-sidebar-group transition-opacity duration-500 ease-in-out" style="opacity:0;margin-left:12px"><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/2_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>学习用户界面教程</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/3_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>创建库元件教程</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/4_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>添加与复制元件教程</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/5_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>添加连接教程</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/6_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>添加总线教程</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/7_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>编辑设计元素教程</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/8_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>分配约束教程</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/9_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>创建报告教程</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/10_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>连接 SailWind Layout教程</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/11_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>更新原理图设计变更教程</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/12_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>打印和绘制电路图教程</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/13_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>管理多页原理图教程</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/14_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>模拟仿真设计教程</span></div></a></div></div></div></section><section class="rspress-sidebar-section mt-0.5 block" style="margin-left:0"><div class="rspress-sidebar-collapse flex justify-between items-center menuItem_ac22e" style="border-radius:0 var(--rp-radius) var(--rp-radius) 0;cursor:pointer"><h2 class="py-2 px-3 text-sm font-medium flex" style="font-size:14px;padding-left:24px;font-weight:bold"><span class="flex-center" style="font-size:14px">快速参考(Quick Reference)</span></h2><div class="collapseContainer_d6e4e p-2 rounded-xl"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(0deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div class="transition-all duration-300 ease-in-out" style="overflow:hidden;max-height:0"><div class="rspress-sidebar-group transition-opacity duration-500 ease-in-out" style="opacity:0;margin-left:12px"><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/qr/modless.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>无模命令</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/qr/shortcut.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>键盘快捷键</span></div></a></div></div></div></section><section class="rspress-sidebar-section mt-0.5 block" style="margin-left:0"><div class="rspress-sidebar-collapse flex justify-between items-center menuItem_ac22e" style="border-radius:0 var(--rp-radius) var(--rp-radius) 0;cursor:pointer"><h2 class="py-2 px-3 text-sm font-medium flex" style="font-size:14px;padding-left:24px;font-weight:bold"><span class="flex-center" style="font-size:14px">命令参考(Command Reference)</span></h2><div class="collapseContainer_d6e4e p-2 rounded-xl"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(0deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div class="transition-all duration-300 ease-in-out" style="overflow:hidden;max-height:0"><div class="rspress-sidebar-group transition-opacity duration-500 ease-in-out" style="opacity:0;margin-left:12px"><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/scripts/1_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItemActive_de63c mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 1 章 Logic 自动化服务器</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/scripts/2_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 2 章 自动化服务器参考</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/scripts/3_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 3 章 宏</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/scripts/4_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 4 章 SPICE 网表属性术语表</span></div></a></div></div></div></section></nav></div></aside><div class="flex-1 relative min-w-0"><div class="rspress-sidebar-menu-container "><div class="rspress-sidebar-menu"><button type="button" class="flex-center mr-auto"><div class="text-md mr-2"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg></div><span class="text-sm">Menu</span></button><button type="button" class="flex-center ml-auto"><span class="text-sm">本页目录</span><div class="text-md mr-2" style="transform:rotate(0deg);transition:transform 0.2s ease-out;margin-top:2px"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></button><div class="rspress-local-toc-container "><ul><li><a href="#ole-背景" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">OLE 背景</span></a></li><li><a href="#多版本环境中的自动化" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">多版本环境中的自动化</span></a></li><li><a href="#对象层次结构" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">对象层次结构</span></a></li><li><a href="#自动化服务器示例" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">自动化服务器示例</span></a></li><li><a href="#故障排除" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">故障排除</span></a></li><li><a href="#sailwind-logic-自动化客户端示例" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">SailWind Logic 自动化客户端示例</span></a></li><li><a href="#代码示例" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">代码示例</span></a></li><li><a href="#在-sailwind-logic-中运行代码示例" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">在 SailWind Logic 中运行代码示例</span></a></li><li><a href="#在-sailwind-logic-外部运行代码示例" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">在 SailWind Logic 外部运行代码示例</span></a></li><li><a href="#增强示例代码" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">增强示例代码</span></a></li><li><a href="#代码示例故障排除" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">代码示例故障排除</span></a></li></ul></div></div></div><div class="content_ff766 rspress-doc-container flex"><div class="flex-1 overflow-x-auto"><div class="rspress-doc"><!--$--><h1 id="第-1-章-logic-自动化服务器" class="rspress-doc-title text-3xl mb-10 leading-10 tracking-tight title_fb7eb">第 1 章 Logic 自动化服务器<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#第-1-章-logic-自动化服务器">#</a></h1>
-<p class="my-4 leading-7">本章介绍 SailWind Logic 中包含的自动化服务器功能。</p>
-<h2 id="ole-背景" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">OLE 背景<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#ole-背景">#</a></h2>
-<p class="my-4 leading-7">&quot;OLE 解决的根本问题：如何设计一个系统，使得来自不同供应商的二进制组件 - 在世界不同地区、不同时间使用不同编程语言编写 - 能够保证互操作？&quot;</p>
-<p class="my-4 leading-7">Dr. Dobbs&#x27;s Journal, 1995年1月</p>
-<p class="my-4 leading-7">从技术上讲，OLE 代表对象链接与嵌入(Object Linking and Embedding)，但这个名称现在已不够全面。如今，OLE 是基于微软框架的一系列不断增长的功能（包括对象链接与嵌入、自动化、复合文档、编辑、ActiveX、DCOM 等），允许异构应用程序相互通信。</p>
-<p class="my-4 leading-7">自动化是 OLE 的一项功能，它定义了应用程序与使用相同协议的其他应用程序共享其数据和功能的协议。自动化涉及服务器和客户端。服务器是提供某些数据和功能的实体。客户端（也称为控制器）是使用服务器数据和功能的实体。</p>
-<p class="my-4 leading-7">不同组织的人员可以在不同时间使用不同的开发工具和语言编写服务器和客户端。唯一需要的共同点是它们使用相同的自动化通信协议。SailWind Logic 是一个自动化服务器，因为它向其他应用程序提供了一些数据（其数据库）和一些功能（如打开设计文件和选择👉对象）。像 Excel 这样的客户端可以使用自动化协议访问 SailWind Logic 的数据和功能。</p>
-<p class="my-4 leading-7">SailWind Logic 中的自动化实现允许第三方公司和用户：</p>
-<ul class="list-disc pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">将其产品与 SailWind Logic 集成</p>
+  <body>
+    <div id="__rspress_root"><link rel="preload" as="image" href="/sailwind_docs/logo.png"/><link rel="preload" as="image" href="/sailwind_docs/logic/scripts/1/_page_2_Figure_1.jpeg"/><link rel="preload" as="image" href="/sailwind_docs/logic/scripts/1/_page_2_Figure_2.jpeg"/><link rel="preload" as="image" href="/sailwind_docs/logic/scripts/1/_page_5_Figure_1.jpeg"/><link rel="preload" as="image" href="/sailwind_docs/logic/scripts/1/_page_5_Figure_2.jpeg"/><link rel="preload" as="image" href="/sailwind_docs/logic/scripts/1/_page_7_Picture_2.jpeg"/><link rel="preload" as="image" href="/sailwind_docs/logic/scripts/1/_page_7_Picture_4.jpeg"/><header class="rp-nav"><div class="rp-nav__left"><div class="rp-nav__title"><a href="/sailwind_docs/" class="rp-nav__title__link rp-link"><div class="rp-nav__title__logo"><img src="/sailwind_docs/logo.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image"/></div><span>SailWind</span></a></div></div><div class="rp-nav__right"><button class="rp-search-button"><div class="rp-search-button__content"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 20 21" class="rp-search-button__icon"><path fill="currentColor" d="M8.333 1.913A6.667 6.667 0 0 1 15 8.58c0 1.54-.525 2.957-1.402 4.085l4.49 4.492a.834.834 0 0 1-1.177 1.178l-4.491-4.49a6.64 6.64 0 0 1-4.087 1.402 6.667 6.667 0 0 1 0-13.334m0 1.667a5 5 0 1 0 0 10 5 5 0 0 0 0-10"></path></svg><span class="rp-search-button__word">Search</span></div><div class="rp-search-button__hotkey" style="opacity:0"><span></span><span>K</span></div></button><div class="rp-search-button--mobile"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 20 21"><path fill="currentColor" d="M8.333 1.913A6.667 6.667 0 0 1 15 8.58c0 1.54-.525 2.957-1.402 4.085l4.49 4.492a.834.834 0 0 1-1.177 1.178l-4.491-4.49a6.64 6.64 0 0 1-4.087 1.402 6.667 6.667 0 0 1 0-13.334m0 1.667a5 5 0 1 0 0 10 5 5 0 0 0 0-10"></path></svg></div><ul class="rp-nav-menu rp-nav-menu--right"><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/sailwind_docs/logic/index.html" class="rp-nav-menu__item__container rp-link">原理图 (Logic)</a></li><li class="rp-nav-menu__item"><a href="/sailwind_docs/layout/index.html" class="rp-nav-menu__item__container rp-link">物理版图 (Layout)</a></li><li class="rp-nav-menu__item"><a href="/sailwind_docs/router/index.html" class="rp-nav-menu__item__container rp-link">自动布线 (Router)</a></li><li class="rp-nav-menu__item"><a href="/sailwind_docs/lpcreator/index.html" class="rp-nav-menu__item__container rp-link">焊盘图形 (LPW)</a></li><li class="rp-nav-menu__item"><a href="/sailwind_docs/about.html" class="rp-nav-menu__item__container rp-link">关于</a></li></ul><div class="rp-nav__others"><div class="rp-nav-menu__divider"></div><div class="rp-switch-appearance"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="rp-switch-appearance__icon rp-switch-appearance__icon--sun"><path fill="currentColor" d="m7.001 15.848-1.226 1.226a.58.58 0 0 0 0 .818.58.58 0 0 0 .818 0l1.226-1.226a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0m-.352-8.735a.584.584 0 0 0 .825-.825L6.237 5.051a.584.584 0 0 0-.825.825zM5.011 11.07h-1.75a.584.584 0 0 0 0 1.167h1.75c.324 0 .584-.26.584-.583a.585.585 0 0 0-.584-.584m7.003-5.835c.324 0 .584-.26.584-.584V2.9a.58.58 0 0 0-.584-.584.58.58 0 0 0-.583.583V4.65c0 .323.262.584.583.584m5.616 1.621 1.226-1.225a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0l-1.226 1.225a.58.58 0 0 0 0 .818.576.576 0 0 0 .818 0m3.138 4.214h-1.75a.58.58 0 0 0-.584.584c0 .324.26.584.583.584h1.751a.584.584 0 1 0 0-1.167m-3.389 5.124a.584.584 0 0 0-.825.825l1.238 1.238a.584.584 0 0 0 .825-.826zm-5.365-9.795a5.256 5.256 0 0 0-5.257 5.258 5.256 5.256 0 0 0 5.257 5.257 5.256 5.256 0 0 0 5.257-5.257 5.256 5.256 0 0 0-5.257-5.258m0 11.675a.58.58 0 0 0-.583.583v1.751a.582.582 0 1 0 1.167 0v-1.75a.584.584 0 0 0-.584-.584"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" viewBox="0 0 19 19" class="rp-switch-appearance__icon rp-switch-appearance__icon--moon"><path fill="currentColor" d="M9.166 0a9.2 9.2 0 0 1 1.857.188.834.834 0 0 1 .042 1.623 4.47 4.47 0 1 0 5.457 5.457l.048-.135a.834.834 0 0 1 1.575.177q.186.902.188 1.856A9.168 9.168 0 1 1 9.166 0"></path></svg></div><div class="rp-social-links"><a href="https://github.com/mikigo/sailwind_docs/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__sm"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg></button><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__md"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"><div class="rp-nav-menu__others-mobile__container"><div class="rp-nav-hamburger__md__hover-group"><div class="rp-nav-screen-appearance"><div class="rp-nav-screen-appearance__left">Theme</div><div class="rp-nav-screen-appearance__right"></div></div><div class="rp-nav-screen-divider"></div><div class="rp-social-links"><a href="https://github.com/mikigo/sailwind_docs/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div></div></ul></button></div></header><div class="rp-doc-layout__menu"><div class="rp-sidebar-menu"><button type="button" class="rp-sidebar-menu__left"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg><span>Menu</span></button><button type="button" class="rp-sidebar-menu__right"><span class="rp-sidebar-menu__right__text">ON THIS PAGE</span><svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-sidebar-menu__right__icon" style="transform:rotate(0deg);transition:transform 0.2s ease-out"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></button></div></div><div class="rp-doc-layout__container"><aside class="rp-doc-layout__sidebar rp-scrollbar"><a href="/sailwind_docs/logic/index.html" class="rp-sidebar-item rp-link" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>章节预览</span></div><div class="rp-sidebar-item__right"></div></a><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>指南(Guide)</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(0deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:0fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/sailwind_docs/logic/guide/1_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 1 章 SailWind Logic 快速开始 ಠ_ಠ</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/guide/2_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 2 章 开始 SailWind Logic</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/guide/3_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 3 章 用户界面</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/guide/4_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 4 章 文件操作</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/guide/5_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 5 章 设计设置</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/guide/6_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 6 章 管理库和库数据</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/guide/7_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 7 章 库元件</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/guide/8_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 8 章 特殊示意图符号</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/guide/9_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 9 章 设计和编辑基础</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/guide/10_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 10 章 原理图元件</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/guide/11_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 11 章 图页</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/guide/12_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 12 章 非电气对象</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/guide/13_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 13 章 连接</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/guide/14_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 14 章 层次化设计</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/guide/15_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 15 章 原理图对象修改</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/guide/16_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 16 章 规则</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/guide/17_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 17 章 报告</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/guide/18_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 18 章 与 Layout 和 Router 协作</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/guide/19_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 19 章 绘图和打印</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/guide/20_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 20 章 对象链接与嵌入 ❌</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/guide/21_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 21 章 使用高级程序 ❌</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/guide/22_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 22 章 自定义界面 ಠ_ಠ</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/guide/23_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 23 章 崩溃检测、BMW 和 BLT ಠ_ಠ</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/guide/24_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 24 章 SailWind Logic 对话框 ಠ_ಠ</span></div><div class="rp-sidebar-item__right"></div></a></div></div><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>教程(Tutorial)</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(0deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:0fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/sailwind_docs/logic/tutorial/2_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>学习用户界面教程</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/tutorial/3_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>创建库元件教程</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/tutorial/4_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>添加与复制元件教程</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/tutorial/5_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>添加连接教程</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/tutorial/6_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>添加总线教程</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/tutorial/7_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>编辑设计元素教程</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/tutorial/8_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>分配约束教程</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/tutorial/9_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>创建报告教程</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/tutorial/10_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>连接 SailWind Layout教程</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/tutorial/11_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更新原理图设计变更教程</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/tutorial/12_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>打印和绘制电路图教程</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/tutorial/13_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>管理多页原理图教程</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/tutorial/14_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>模拟仿真设计教程</span></div><div class="rp-sidebar-item__right"></div></a></div></div><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>快速参考(Quick Reference)</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(0deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:0fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/sailwind_docs/logic/qr/modless.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>无模命令</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/qr/shortcut.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>键盘快捷键</span></div><div class="rp-sidebar-item__right"></div></a></div></div><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>命令参考(Command Reference)</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:1fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/sailwind_docs/logic/scripts/1_zh.html" class="rp-sidebar-item rp-sidebar-item--active rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 1 章 Logic 自动化服务器</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/scripts/2_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 2 章 自动化服务器参考</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/scripts/3_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 3 章 宏</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/scripts/4_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 4 章 SPICE 网表属性术语表</span></div><div class="rp-sidebar-item__right"></div></a></div></div></aside><div class="rp-doc-layout__doc"><main class="rp-doc-layout__doc-container"><div class="rp-doc rspress-doc"><!--$--><h1 class="rp-toc-include" id="第-1-章-logic-自动化服务器"><a href="#第-1-章-logic-自动化服务器" class="rp-header-anchor rp-link" aria-hidden="true">#</a>第 1 章 Logic 自动化服务器<!-- --> </h1>
+<p>本章介绍 SailWind Logic 中包含的自动化服务器功能。</p>
+<h2 class="rp-toc-include" id="ole-背景"><a href="#ole-背景" class="rp-header-anchor rp-link" aria-hidden="true">#</a>OLE 背景</h2>
+<p>&quot;OLE 解决的根本问题：如何设计一个系统，使得来自不同供应商的二进制组件 - 在世界不同地区、不同时间使用不同编程语言编写 - 能够保证互操作？&quot;</p>
+<p>Dr. Dobbs&#x27;s Journal, 1995年1月</p>
+<p>从技术上讲，OLE 代表对象链接与嵌入(Object Linking and Embedding)，但这个名称现在已不够全面。如今，OLE 是基于微软框架的一系列不断增长的功能（包括对象链接与嵌入、自动化、复合文档、编辑、ActiveX、DCOM 等），允许异构应用程序相互通信。</p>
+<p>自动化是 OLE 的一项功能，它定义了应用程序与使用相同协议的其他应用程序共享其数据和功能的协议。自动化涉及服务器和客户端。服务器是提供某些数据和功能的实体。客户端（也称为控制器）是使用服务器数据和功能的实体。</p>
+<p>不同组织的人员可以在不同时间使用不同的开发工具和语言编写服务器和客户端。唯一需要的共同点是它们使用相同的自动化通信协议。SailWind Logic 是一个自动化服务器，因为它向其他应用程序提供了一些数据（其数据库）和一些功能（如打开设计文件和选择👉对象）。像 Excel 这样的客户端可以使用自动化协议访问 SailWind Logic 的数据和功能。</p>
+<p>SailWind Logic 中的自动化实现允许第三方公司和用户：</p>
+<ul>
+<li>
+<p>将其产品与 SailWind Logic 集成</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">扩展 SailWind Logic 的功能集</p>
+<li>
+<p>扩展 SailWind Logic 的功能集</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">自定义现有的 SailWind Logic 功能</p>
+<li>
+<p>自定义现有的 SailWind Logic 功能</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">使用标准脚本语言（如 Basic）自动化 SailWind Logic 任务</p>
-</li>
-</ul>
-<p class="my-4 leading-7">此外，这可以独立于发布周期完成。</p>
-<h2 id="多版本环境中的自动化" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">多版本环境中的自动化<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#多版本环境中的自动化">#</a></h2>
-<p class="my-4 leading-7">要在同一台机器上存在多个 SailWind 软件版本的环境中使用自动化，您必须了解并应用每个软件安装的正确 COM 版本。</p>
-<ul class="list-disc pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">COM 自动化脚本 这些脚本扩展了主要创作应用程序（例如 SailWind Layout）的功能。这些脚本连接到工具实例以访问其功能。该功能包含在应用程序内的 COM 对象中。正是这些 COM 对象由注册器注册。</p>
-</li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">COM 对象 这些对象封装了产品功能，并在用户创建的 COM 自动化脚本中被引用。由于产品功能在不同版本之间有所不同，与每个版本关联的 COM 对象具有唯一版本。例如（本示例中使用的 COM 编号仅用于示例，不反映所提及版本的真实 COM 编号），任何 PADS 9.5 发布对象的版本为 1，X-ENTP VX.2.3 对象的版本为 2，PADS-Pro VX.2.3 对象的版本为 3，PADS VX.2.3 对象的版本为 4 等。对象版本控制使每个版本的产品功能可用于客户创建的脚本。注册这些 COM 对象是注册器（PADS VX.2.3）和配置器（PADS9.5）的主要功能。</p>
+<li>
+<p>使用标准脚本语言（如 Basic）自动化 SailWind Logic 任务</p>
 </li>
 </ul>
-<h2 id="对象层次结构" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">对象层次结构<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#对象层次结构">#</a></h2>
-<p class="my-4 leading-7">下图显示了对象层次结构。</p>
-<p class="my-4 leading-7"><img src="/sailwind_docs/logic/scripts/1/_page_2_Figure_1.jpeg" alt=""/></p>
-<p class="my-4 leading-7"><img src="/sailwind_docs/logic/scripts/1/_page_2_Figure_2.jpeg" alt=""/></p>
-<h2 id="自动化服务器示例" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">自动化服务器示例<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#自动化服务器示例">#</a></h2>
-<p class="my-4 leading-7">本节提供的通用示例旨在方便您开发专为 SailWind Logic 设计的自动化客户端，或将现有应用程序与 SailWind Logic 集成。</p>
-<p class="my-4 leading-7">此示例演示了以下技术：</p>
-<ul class="list-disc pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">为 SailWind Logic 服务器创建自动化客户端的基础知识。如何连接到现有（或新）的 SailWind Logic 实例，如何断开连接，以及如何从 SailWind Logic 访问简单数据。</p>
+<p>此外，这可以独立于发布周期完成。</p>
+<h2 class="rp-toc-include" id="多版本环境中的自动化"><a href="#多版本环境中的自动化" class="rp-header-anchor rp-link" aria-hidden="true">#</a>多版本环境中的自动化</h2>
+<p>要在同一台机器上存在多个 SailWind 软件版本的环境中使用自动化，您必须了解并应用每个软件安装的正确 COM 版本。</p>
+<ul>
+<li>
+<p>COM 自动化脚本 这些脚本扩展了主要创作应用程序（例如 SailWind Layout）的功能。这些脚本连接到工具实例以访问其功能。该功能包含在应用程序内的 COM 对象中。正是这些 COM 对象由注册器注册。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">添加事件，当 SailWind Logic 状态更改时通知客户端。</p>
-</li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">访问 SailWind Logic 数据库。</p>
-</li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">客户端与 SailWind Logic 之间的全双工交叉探测功能。</p>
+<li>
+<p>COM 对象 这些对象封装了产品功能，并在用户创建的 COM 自动化脚本中被引用。由于产品功能在不同版本之间有所不同，与每个版本关联的 COM 对象具有唯一版本。例如（本示例中使用的 COM 编号仅用于示例，不反映所提及版本的真实 COM 编号），任何 PADS 9.5 发布对象的版本为 1，X-ENTP VX.2.3 对象的版本为 2，PADS-Pro VX.2.3 对象的版本为 3，PADS VX.2.3 对象的版本为 4 等。对象版本控制使每个版本的产品功能可用于客户创建的脚本。注册这些 COM 对象是注册器（PADS VX.2.3）和配置器（PADS9.5）的主要功能。</p>
 </li>
 </ul>
-<p class="my-4 leading-7">提示：</p>
-<ul class="list-disc pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">您需要在系统上安装适当的开发工具才能正确运行这些示例。换句话说，要运行 Microsoft Excel 版本的任何示例，请在系统上安装 Excel。要运行 Visual Basic 版本，请安装 Visual Basic。要运行 Visual C++ 版本，请安装 Visual C++。</p>
+<h2 class="rp-toc-include" id="对象层次结构"><a href="#对象层次结构" class="rp-header-anchor rp-link" aria-hidden="true">#</a>对象层次结构</h2>
+<p>下图显示了对象层次结构。</p>
+<p><img src="/sailwind_docs/logic/scripts/1/_page_2_Figure_1.jpeg" alt=""/></p>
+<p><img src="/sailwind_docs/logic/scripts/1/_page_2_Figure_2.jpeg" alt=""/></p>
+<h2 class="rp-toc-include" id="自动化服务器示例"><a href="#自动化服务器示例" class="rp-header-anchor rp-link" aria-hidden="true">#</a>自动化服务器示例</h2>
+<p>本节提供的通用示例旨在方便您开发专为 SailWind Logic 设计的自动化客户端，或将现有应用程序与 SailWind Logic 集成。</p>
+<p>此示例演示了以下技术：</p>
+<ul>
+<li>
+<p>为 SailWind Logic 服务器创建自动化客户端的基础知识。如何连接到现有（或新）的 SailWind Logic 实例，如何断开连接，以及如何从 SailWind Logic 访问简单数据。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">如果遇到示例或您自己的客户端应用程序的困难，请参阅以下主题，其中提供了常见自动化问题的提示。</p>
+<li>
+<p>添加事件，当 SailWind Logic 状态更改时通知客户端。</p>
 </li>
-</ul>
-<p class="my-4 leading-7"><a href="#page-3-1" class="link_a7cea  link_a9ef4 inline-link_f855c">故障排除</a> <a href="#page-3-2" class="link_a7cea  link_a9ef4 inline-link_f855c">SailWind Logic 自动化客户端示例</a></p>
-<h3 id="故障排除" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">故障排除<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#故障排除">#</a></h3>
-<p class="my-4 leading-7">如果示例未按描述工作，请检查以下事项：</p>
-<ul class="list-disc pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">确保只有一个 SailWind Logic 实例正在运行。根据定义，服务器是唯一的。同一服务器的多个实例可能会使客户端感到困惑。</p>
+<li>
+<p>访问 SailWind Logic 数据库。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">退出并重新启动 SailWind Logic 在某些情况下可能会有所帮助，因为 SailWind Logic 在启动时会自动注册为自动化服务器。使用任务管理器确保没有其他 SailWind Logic 实例在后台运行。</p>
-</li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在退出客户端应用程序之前，确保从 SailWind Logic 断开所有客户端连接。</p>
-</li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">如果上述方法无效，可能需要重新启动机器。</p>
+<li>
+<p>客户端与 SailWind Logic 之间的全双工交叉探测功能。</p>
 </li>
 </ul>
-<h3 id="sailwind-logic-自动化客户端示例" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">SailWind Logic 自动化客户端示例<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#sailwind-logic-自动化客户端示例">#</a></h3>
-<p class="my-4 leading-7">本节详细讨论自动化示例。</p>
-<p class="my-4 leading-7">目标</p>
-<p class="my-4 leading-7">介绍使用 Microsoft Visual C++ 5.0（带 MFC）、Microsoft Visual Basic 5.0 和 Microsoft Excel 97 编写 SailWind Logic 自动化客户端应用程序的基础知识。为这些应用程序各提供一个示例。</p>
-<p class="my-4 leading-7">每个版本的示例都演示了如何：</p>
-<ul class="list-disc pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">准备客户端与 SailWind Logic 自动化服务器之间的通信。</p>
+<p>提示：</p>
+<ul>
+<li>
+<p>您需要在系统上安装适当的开发工具才能正确运行这些示例。换句话说，要运行 Microsoft Excel 版本的任何示例，请在系统上安装 Excel。要运行 Visual Basic 版本，请安装 Visual Basic。要运行 Visual C++ 版本，请安装 Visual C++。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">准备指向 SailWind Logic 顶层自动化对象的指针。</p>
-</li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">连接和断开与 SailWind Logic 的连接，无论 SailWind Logic 是否正在运行。</p>
-</li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">从 SailWind Logic 访问简单数据。</p>
-</li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">添加客户端通知（也称为客户端回调），以在 SailWind Logic 中发生更改时通知客户端。</p>
-</li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">访问 SailWind Logic 数据库组件并检索每个组件的详细信息。</p>
-</li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">添加全双工交叉探测并演示服务器锁定机制以提高自动化性能。</p>
+<li>
+<p>如果遇到示例或您自己的客户端应用程序的困难，请参阅以下主题，其中提供了常见自动化问题的提示。</p>
 </li>
 </ul>
-<div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
-<!-- -->
-<ul class="list-disc pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">此示例的源代码位于 C:\SailWind Projects\Samples\Scripts\Logic\AutomationClient 文件夹中（如果您在 SailWind Logic 安装期间安装了 OLE 示例（典型安装））。代码有详细注释，您可以在开发自己的客户端应用程序时使用它。</p>
+<p><a href="#page-3-1" class="rp-link">故障排除</a> <a href="#page-3-2" class="rp-link">SailWind Logic 自动化客户端示例</a></p>
+<h3 class="rp-toc-include" id="故障排除"><a href="#故障排除" class="rp-header-anchor rp-link" aria-hidden="true">#</a>故障排除</h3>
+<p>如果示例未按描述工作，请检查以下事项：</p>
+<ul>
+<li>
+<p>确保只有一个 SailWind Logic 实例正在运行。根据定义，服务器是唯一的。同一服务器的多个实例可能会使客户端感到困惑。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在运行示例之前，请确保将 OLE 示例从分发 CD 复制到硬盘。</p>
+<li>
+<p>退出并重新启动 SailWind Logic 在某些情况下可能会有所帮助，因为 SailWind Logic 在启动时会自动注册为自动化服务器。使用任务管理器确保没有其他 SailWind Logic 实例在后台运行。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">要运行示例客户端，请启动 SailWind Logic 并打开原理图文件。</p>
+<li>
+<p>在退出客户端应用程序之前，确保从 SailWind Logic 断开所有客户端连接。</p>
+</li>
+<li>
+<p>如果上述方法无效，可能需要重新启动机器。</p>
 </li>
 </ul>
-</div></div>
-<p class="my-4 leading-7">规范</p>
-<p class="my-4 leading-7">客户端示例是一个对话框，可以在运行时连接和断开与 SailWind Logic 服务器的连接。它可以连接到现有的运行实例或新的 SailWind Logic 实例。</p>
-<p class="my-4 leading-7">Visual Basic 版本的示例见<a href="#page-5-0" class="link_a7cea  link_a9ef4 inline-link_f855c">图2</a>。Visual C++ 版本的示例看起来几乎相同。Excel 97 版本不同，因为 Excel 主要是一个应用程序，而不是开发环境。此示例的 Excel 版本在 Excel 工作表中输出信息。</p>
-<p class="my-4 leading-7">客户端示例允许在客户端和服务器之间进行选择👉交叉探测；SailWind Logic 中选定对象的列表始终与客户端列表框中的选定项目列表匹配，反之亦然。选择👉交叉探测支持多选。如果在列表框中双击某个项目，则会在对话框中显示有关该对象的扩展信息。</p>
-<p class="my-4 leading-7">客户端自动刷新其值，始终匹配 SailWind Logic 中选定的组件。同样，客户端中的用户选择👉更改会更改 SailWind Logic 选择👉列表。</p>
-<p class="my-4 leading-7"><img src="/sailwind_docs/logic/scripts/1/_page_5_Figure_1.jpeg" alt=""/></p>
-<p class="my-4 leading-7"><img src="/sailwind_docs/logic/scripts/1/_page_5_Figure_2.jpeg" alt=""/></p>
-<h2 id="代码示例" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">代码示例<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#代码示例">#</a></h2>
-<p class="my-4 leading-7">本帮助文件中的许多主题都提供了 Basic 代码示例，以说明如何使用自动化属性、方法或事件。</p>
-<p class="my-4 leading-7">您可以按照以下主题中的描述运行代码示例。</p>
-<p class="my-4 leading-7">代码示例始终采用以下形式：</p>
-<table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
-<thead>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">Sub Main</th>
-</tr>
-</thead>
-<tbody>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">&#x27; 执行某些操作</td>
-</tr>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">End Sub</td>
-</tr>
-</tbody>
-</table>
-<p class="my-4 leading-7">免责声明：</p>
-<p class="my-4 leading-7">SailWind Logic 自动化服务器帮助中的代码示例是免费软件。这些示例作为对其用户的礼遇提供。免费软件按&quot;原样&quot;提供，不对免费软件做出任何明示或暗示的保证，包括对适销性或特定用途适用性的任何暗示保证。</p>
-<p class="my-4 leading-7"><a href="#page-6-1" class="link_a7cea  link_a9ef4 inline-link_f855c">在 SailWind Logic 中运行代码示例</a> <a href="#page-7-0" class="link_a7cea  link_a9ef4 inline-link_f855c">在 SailWind Logic 外部运行代码示例</a> <a href="#page-8-0" class="link_a7cea  link_a9ef4 inline-link_f855c">增强示例代码</a> <a href="#page-8-1" class="link_a7cea  link_a9ef4 inline-link_f855c">代码示例故障排除</a></p>
-<h3 id="在-sailwind-logic-中运行代码示例" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">在 SailWind Logic 中运行代码示例<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#在-sailwind-logic-中运行代码示例">#</a></h3>
-<p class="my-4 leading-7">使用 Sax Basic Engine 运行示例。</p>
-<p class="my-4 leading-7">步骤</p>
-<ol class="list-decimal pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">选择👉示例，包括 Sub Main 和 End Sub 语句。</p>
+<h3 class="rp-toc-include" id="sailwind-logic-自动化客户端示例"><a href="#sailwind-logic-自动化客户端示例" class="rp-header-anchor rp-link" aria-hidden="true">#</a>SailWind Logic 自动化客户端示例</h3>
+<p>本节详细讨论自动化示例。</p>
+<p>目标</p>
+<p>介绍使用 Microsoft Visual C++ 5.0（带 MFC）、Microsoft Visual Basic 5.0 和 Microsoft Excel 97 编写 SailWind Logic 自动化客户端应用程序的基础知识。为这些应用程序各提供一个示例。</p>
+<p>每个版本的示例都演示了如何：</p>
+<ul>
+<li>
+<p>准备客户端与 SailWind Logic 自动化服务器之间的通信。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">使用编辑菜单 &gt; 复制将其复制到剪贴板。</p>
+<li>
+<p>准备指向 SailWind Logic 顶层自动化对象的指针。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在 SailWind Logic 中选择👉工具菜单 &gt; Basic 脚本 &gt; Basic 脚本编辑器。将出现 Sax Basic Engine 对话框。</p>
+<li>
+<p>连接和断开与 SailWind Logic 的连接，无论 SailWind Logic 是否正在运行。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">使用编辑菜单 &gt; 粘贴将代码示例粘贴到 Basic 编辑器中。</p>
+<li>
+<p>从 SailWind Logic 访问简单数据。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">从 Sax Basic Engine 对话框的工具栏中选择👉开始图标以运行示例。</p>
+<li>
+<p>添加客户端通知（也称为客户端回调），以在 SailWind Logic 中发生更改时通知客户端。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">下图显示了 Application.ActiveDocument 属性属性的代码示例粘贴到 Sax Basic Engine 对话框中的情况。</p>
+<li>
+<p>访问 SailWind Logic 数据库组件并检索每个组件的详细信息。</p>
+</li>
+<li>
+<p>添加全双工交叉探测并演示服务器锁定机制以提高自动化性能。</p>
+</li>
+</ul>
+<div class="rp-callout rp-callout--tip"><div class="rp-callout__title">TIP</div><div class="rp-callout__content"><ul>
+<li>
+<p>此示例的源代码位于 C:\SailWind Projects\Samples\Scripts\Logic\AutomationClient 文件夹中（如果您在 SailWind Logic 安装期间安装了 OLE 示例（典型安装））。代码有详细注释，您可以在开发自己的客户端应用程序时使用它。</p>
+</li>
+<li>
+<p>在运行示例之前，请确保将 OLE 示例从分发 CD 复制到硬盘。</p>
+</li>
+<li>
+<p>要运行示例客户端，请启动 SailWind Logic 并打开原理图文件。</p>
+</li>
+</ul></div></div>
+<p>规范</p>
+<p>客户端示例是一个对话框，可以在运行时连接和断开与 SailWind Logic 服务器的连接。它可以连接到现有的运行实例或新的 SailWind Logic 实例。</p>
+<p>Visual Basic 版本的示例见<a href="#page-5-0" class="rp-link">图2</a>。Visual C++ 版本的示例看起来几乎相同。Excel 97 版本不同，因为 Excel 主要是一个应用程序，而不是开发环境。此示例的 Excel 版本在 Excel 工作表中输出信息。</p>
+<p>客户端示例允许在客户端和服务器之间进行选择👉交叉探测；SailWind Logic 中选定对象的列表始终与客户端列表框中的选定项目列表匹配，反之亦然。选择👉交叉探测支持多选。如果在列表框中双击某个项目，则会在对话框中显示有关该对象的扩展信息。</p>
+<p>客户端自动刷新其值，始终匹配 SailWind Logic 中选定的组件。同样，客户端中的用户选择👉更改会更改 SailWind Logic 选择👉列表。</p>
+<p><img src="/sailwind_docs/logic/scripts/1/_page_5_Figure_1.jpeg" alt=""/></p>
+<p><img src="/sailwind_docs/logic/scripts/1/_page_5_Figure_2.jpeg" alt=""/></p>
+<h2 class="rp-toc-include" id="代码示例"><a href="#代码示例" class="rp-header-anchor rp-link" aria-hidden="true">#</a>代码示例</h2>
+<p>本帮助文件中的许多主题都提供了 Basic 代码示例，以说明如何使用自动化属性、方法或事件。</p>
+<p>您可以按照以下主题中的描述运行代码示例。</p>
+<p>代码示例始终采用以下形式：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>Sub Main</th></tr></thead><tbody><tr><td>&#x27; 执行某些操作</td></tr><tr><td>End Sub</td></tr></tbody></table></div>
+<p>免责声明：</p>
+<p>SailWind Logic 自动化服务器帮助中的代码示例是免费软件。这些示例作为对其用户的礼遇提供。免费软件按&quot;原样&quot;提供，不对免费软件做出任何明示或暗示的保证，包括对适销性或特定用途适用性的任何暗示保证。</p>
+<p><a href="#page-6-1" class="rp-link">在 SailWind Logic 中运行代码示例</a> <a href="#page-7-0" class="rp-link">在 SailWind Logic 外部运行代码示例</a> <a href="#page-8-0" class="rp-link">增强示例代码</a> <a href="#page-8-1" class="rp-link">代码示例故障排除</a></p>
+<h3 class="rp-toc-include" id="在-sailwind-logic-中运行代码示例"><a href="#在-sailwind-logic-中运行代码示例" class="rp-header-anchor rp-link" aria-hidden="true">#</a>在 SailWind Logic 中运行代码示例</h3>
+<p>使用 Sax Basic Engine 运行示例。</p>
+<p>步骤</p>
+<ol>
+<li>
+<p>选择👉示例，包括 Sub Main 和 End Sub 语句。</p>
+</li>
+<li>
+<p>使用编辑菜单 &gt; 复制将其复制到剪贴板。</p>
+</li>
+<li>
+<p>在 SailWind Logic 中选择👉工具菜单 &gt; Basic 脚本 &gt; Basic 脚本编辑器。将出现 Sax Basic Engine 对话框。</p>
+</li>
+<li>
+<p>使用编辑菜单 &gt; 粘贴将代码示例粘贴到 Basic 编辑器中。</p>
+</li>
+<li>
+<p>从 Sax Basic Engine 对话框的工具栏中选择👉开始图标以运行示例。</p>
+</li>
+<li>
+<p>下图显示了 Application.ActiveDocument 属性属性的代码示例粘贴到 Sax Basic Engine 对话框中的情况。</p>
 </li>
 </ol>
-<p class="my-4 leading-7"><img src="/sailwind_docs/logic/scripts/1/_page_7_Picture_2.jpeg" alt=""/></p>
-<p class="my-4 leading-7">图3. 代码示例粘贴到 Sax Basic Engine 对话框</p>
-<p class="my-4 leading-7"><img src="/sailwind_docs/logic/scripts/1/_page_7_Picture_4.jpeg" alt=""/></p>
-<h3 id="在-sailwind-logic-外部运行代码示例" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">在 SailWind Logic 外部运行代码示例<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#在-sailwind-logic-外部运行代码示例">#</a></h3>
-<p class="my-4 leading-7">将代码示例与其他 Basic 可编写脚本的应用程序（也称为宿主应用程序）一起使用，例如 Visual Basic、Microsoft Excel 和 Microsoft Word。</p>
-<p class="my-4 leading-7">步骤</p>
-<ol class="list-decimal pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">将 SailWind Logic 自动化服务器引用导入宿主应用程序。例如要使用 Excel 作为宿主应用程序：</p>
-<ul class="list-disc pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">a. 在 Excel 中选择👉工具/引用。将出现引用对话框。</p>
+<p><img src="/sailwind_docs/logic/scripts/1/_page_7_Picture_2.jpeg" alt=""/></p>
+<p>图3. 代码示例粘贴到 Sax Basic Engine 对话框</p>
+<p><img src="/sailwind_docs/logic/scripts/1/_page_7_Picture_4.jpeg" alt=""/></p>
+<h3 class="rp-toc-include" id="在-sailwind-logic-外部运行代码示例"><a href="#在-sailwind-logic-外部运行代码示例" class="rp-header-anchor rp-link" aria-hidden="true">#</a>在 SailWind Logic 外部运行代码示例</h3>
+<p>将代码示例与其他 Basic 可编写脚本的应用程序（也称为宿主应用程序）一起使用，例如 Visual Basic、Microsoft Excel 和 Microsoft Word。</p>
+<p>步骤</p>
+<ol>
+<li>
+<p>将 SailWind Logic 自动化服务器引用导入宿主应用程序。例如要使用 Excel 作为宿主应用程序：</p>
+<ul>
+<li>
+<p>a. 在 Excel 中选择👉工具/引用。将出现引用对话框。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">b. 在列表框中，打开 SailWind Logic 类型库复选框。</p>
+<li>
+<p>b. 在列表框中，打开 SailWind Logic 类型库复选框。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">c. 选择👉确定。</p>
-</li>
-</ul>
-</li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">将代码示例粘贴到宿主应用程序的 Basic 编辑器中。要在 Excel 中执行此操作：</p>
-<ul class="list-disc pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">a. 选择👉视图/代码。</p>
-</li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">b. 选择👉编辑/粘贴。</p>
+<li>
+<p>c. 选择👉确定。</p>
 </li>
 </ul>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在代码示例的开头添加代码，使用 Basic GetObject 函数将宿主应用程序连接到 SailWind Logic。</p>
+<li>
+<p>将代码示例粘贴到宿主应用程序的 Basic 编辑器中。要在 Excel 中执行此操作：</p>
+<ul>
+<li>
+<p>a. 选择👉视图/代码。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">将 Basic GetObject 函数返回的对象添加到代码示例中每个 SailWind Logic 自动化方法或属性的开头。</p>
+<li>
+<p>b. 选择👉编辑/粘贴。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在示例末尾添加代码以断开应用程序与 SailWind Logic 的连接。</p>
+</ul>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">下图显示了 Application.ActiveDocument 属性属性的代码示例粘贴并修改到 Microsoft Excel Basic 编辑器中的情况。有关更多信息，请参阅宿主应用程序帮助文件。</p>
+<li>
+<p>在代码示例的开头添加代码，使用 Basic GetObject 函数将宿主应用程序连接到 SailWind Logic。</p>
+</li>
+<li>
+<p>将 Basic GetObject 函数返回的对象添加到代码示例中每个 SailWind Logic 自动化方法或属性的开头。</p>
+</li>
+<li>
+<p>在示例末尾添加代码以断开应用程序与 SailWind Logic 的连接。</p>
+</li>
+<li>
+<p>下图显示了 Application.ActiveDocument 属性属性的代码示例粘贴并修改到 Microsoft Excel Basic 编辑器中的情况。有关更多信息，请参阅宿主应用程序帮助文件。</p>
 </li>
 </ol>
-<p class="my-4 leading-7">图4. Microsoft Excel 97 Basic 编辑器中的代码示例</p>
-<h3 id="增强示例代码" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">增强示例代码<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#增强示例代码">#</a></h3>
-<p class="my-4 leading-7">SailWind Logic 自动化服务器帮助中的代码示例已缩减为最少行数，以快速说明如何使用 SailWind Logic 自动化属性和方法。您可以将这些代码示例作为开发自己的 SailWind Logic 功能的基础。</p>
-<p class="my-4 leading-7">以下列表提供了可能的增强思路：</p>
-<ul class="list-disc pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">添加严格的类型检查，在代码开头使用 Option Explicit 声明，并使用 Dim Basic 关键字声明所有变量。这确保 SailWind Logic 可以正确解释您的变量，并可以在可能存在潜在问题的地方生成编译错误。</p>
+<p>图4. Microsoft Excel 97 Basic 编辑器中的代码示例</p>
+<h3 class="rp-toc-include" id="增强示例代码"><a href="#增强示例代码" class="rp-header-anchor rp-link" aria-hidden="true">#</a>增强示例代码</h3>
+<p>SailWind Logic 自动化服务器帮助中的代码示例已缩减为最少行数，以快速说明如何使用 SailWind Logic 自动化属性和方法。您可以将这些代码示例作为开发自己的 SailWind Logic 功能的基础。</p>
+<p>以下列表提供了可能的增强思路：</p>
+<ul>
+<li>
+<p>添加严格的类型检查，在代码开头使用 Option Explicit 声明，并使用 Dim Basic 关键字声明所有变量。这确保 SailWind Logic 可以正确解释您的变量，并可以在可能存在潜在问题的地方生成编译错误。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">使用 Basic On Error 关键字添加错误检查。错误检查可改善代码对运行时错误的反应。</p>
+<li>
+<p>使用 Basic On Error 关键字添加错误检查。错误检查可改善代码对运行时错误的反应。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">使用 Basic UserDialog 关键字在自定义对话框中输出信息，而不是使用 Basic MsgBox 关键字在简单对话框中输出。</p>
-</li>
-</ul>
-<p class="my-4 leading-7">代码示例免责声明</p>
-<p class="my-4 leading-7">SailWind Logic 自动化服务器帮助中的代码示例是免费软件。这些示例作为对其用户的礼遇提供。免费软件按&quot;原样&quot;提供，不对免费软件做出任何明示或暗示的保证，包括对适销性或特定用途适用性的任何暗示保证。</p>
-<h3 id="代码示例故障排除" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">代码示例故障排除<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#代码示例故障排除">#</a></h3>
-<p class="my-4 leading-7">如果代码示例在您的系统上无法正确运行，您可以检查以下事项：</p>
-<ul class="list-disc pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">确保在 SailWind Logic 中打开了设计。</p>
-<p class="my-4 leading-7">几乎所有代码示例都要求在运行示例时打开原理图文件。</p>
-</li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">检查示例对设计文件所做的任何假设。</p>
-<p class="my-4 leading-7">例如，某些代码示例可能假设组件 U1 存在。这些假设在每个示例之前的文本中明确说明。如果这些假设不成立，示例代码将无法正常运行。您可以根据自己的原理图调整示例。</p>
-</li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">如果您修改了示例代码以在 SailWind Logic 外部运行，请确保您正确应用了对代码所需的所有更改，如<a href="#page-6-0" class="link_a7cea  link_a9ef4 inline-link_f855c">&quot;代码示例&quot;</a> <a href="#page-6-0" class="link_a7cea  link_a9ef4 inline-link_f855c">第21页</a>中所述。</p>
-<p class="my-4 leading-7">常见错误包括忘记导入 SailWind Logic 引用和忘记为 SailWind Logic 自动化常量添加前缀。</p>
+<li>
+<p>使用 Basic UserDialog 关键字在自定义对话框中输出信息，而不是使用 Basic MsgBox 关键字在简单对话框中输出。</p>
 </li>
 </ul>
-<p class="my-4 leading-7">免责声明</p>
-<p class="my-4 leading-7">SailWind Logic 自动化服务器帮助中的代码示例是免费软件。这些示例作为对其用户的礼遇提供。免费软件按&quot;原样&quot;提供，不对免费软件做出任何明示或暗示的保证，包括对适销性或特定用途适用性的任何暗示保证。</p><!--/$--></div><div class="rspress-doc-footer"><footer class="mt-8"><div class="xs:flex pb-5 px-2 justify-end items-center"><div class="flex text-sm text-text-2 leading-6 sm:leading-8 font-medium"><p>最近更新时间<!-- -->: <span>2025/10/30 09:31:07</span></p></div></div><div class="flex flex-col"></div><div class="flex flex-col sm:flex-row sm:justify-around gap-4 pt-6"><div class="prev_c92d1 flex flex-col"><a href="/sailwind_docs/logic/qr/shortcut.html" class="link_a7cea pager-link_e0d2d"><span class="desc_dcc01">上一页</span><span class="title_a3acb">键盘快捷键</span></a></div><div class="next_c11be flex flex-col"><a href="/sailwind_docs/logic/scripts/2_zh.html" class="link_a7cea pager-link_e0d2d next_ad355"><span class="desc_dcc01">下一页</span><span class="title_a3acb">第 2 章 自动化服务器参考</span></a></div></div></footer></div></div><div class="aside-container_bc5fa"><div class="flex flex-col"><div id="aside-container" class="relative text-sm font-medium"><div class="leading-7 block text-sm font-semibold pl-3">本页目录</div><nav class="mt-1"><ul class="relative"><li><a href="#ole-背景" title="OLE 背景" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">OLE 背景</span></a></li><li><a href="#多版本环境中的自动化" title="多版本环境中的自动化" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">多版本环境中的自动化</span></a></li><li><a href="#对象层次结构" title="对象层次结构" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">对象层次结构</span></a></li><li><a href="#自动化服务器示例" title="自动化服务器示例" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">自动化服务器示例</span></a></li><li><a href="#故障排除" title="故障排除" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">故障排除</span></a></li><li><a href="#sailwind-logic-自动化客户端示例" title="SailWind Logic 自动化客户端示例" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">SailWind Logic 自动化客户端示例</span></a></li><li><a href="#代码示例" title="代码示例" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">代码示例</span></a></li><li><a href="#在-sailwind-logic-中运行代码示例" title="在 SailWind Logic 中运行代码示例" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">在 SailWind Logic 中运行代码示例</span></a></li><li><a href="#在-sailwind-logic-外部运行代码示例" title="在 SailWind Logic 外部运行代码示例" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">在 SailWind Logic 外部运行代码示例</span></a></li><li><a href="#增强示例代码" title="增强示例代码" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">增强示例代码</span></a></li><li><a href="#代码示例故障排除" title="代码示例故障排除" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">代码示例故障排除</span></a></li></ul></nav></div></div></div></div></div></div></section></div>
-    <div id="search-container"></div>
+<p>代码示例免责声明</p>
+<p>SailWind Logic 自动化服务器帮助中的代码示例是免费软件。这些示例作为对其用户的礼遇提供。免费软件按&quot;原样&quot;提供，不对免费软件做出任何明示或暗示的保证，包括对适销性或特定用途适用性的任何暗示保证。</p>
+<h3 class="rp-toc-include" id="代码示例故障排除"><a href="#代码示例故障排除" class="rp-header-anchor rp-link" aria-hidden="true">#</a>代码示例故障排除</h3>
+<p>如果代码示例在您的系统上无法正确运行，您可以检查以下事项：</p>
+<ul>
+<li>
+<p>确保在 SailWind Logic 中打开了设计。</p>
+<p>几乎所有代码示例都要求在运行示例时打开原理图文件。</p>
+</li>
+<li>
+<p>检查示例对设计文件所做的任何假设。</p>
+<p>例如，某些代码示例可能假设组件 U1 存在。这些假设在每个示例之前的文本中明确说明。如果这些假设不成立，示例代码将无法正常运行。您可以根据自己的原理图调整示例。</p>
+</li>
+<li>
+<p>如果您修改了示例代码以在 SailWind Logic 外部运行，请确保您正确应用了对代码所需的所有更改，如<a href="#page-6-0" class="rp-link">&quot;代码示例&quot;</a> <a href="#page-6-0" class="rp-link">第21页</a>中所述。</p>
+<p>常见错误包括忘记导入 SailWind Logic 引用和忘记为 SailWind Logic 自动化常量添加前缀。</p>
+</li>
+</ul>
+<p>免责声明</p>
+<p>SailWind Logic 自动化服务器帮助中的代码示例是免费软件。这些示例作为对其用户的礼遇提供。免费软件按&quot;原样&quot;提供，不对免费软件做出任何明示或暗示的保证，包括对适销性或特定用途适用性的任何暗示保证。</p><!--/$--></div><footer class="rp-doc-footer"><div class="rp-doc-footer__edit"><div class="rp-last-updated"><p>Last Updated<!-- -->: <span>10/30/2025, 9:31:07 AM</span></p></div></div><div class="rp-doc-footer__divider"></div><div class="rp-prev-next-page"><a href="/sailwind_docs/logic/qr/shortcut.html" class="rp-prev-next-page__item rp-prev-next-page__prev rp-link"><span class="rp-prev-next-page__item__desc">Previous page</span><span class="rp-prev-next-page__item__title"><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-prev-next-page__icon rp-prev-next-page__rotate_180"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg><span>键盘快捷键</span></span></a><a href="/sailwind_docs/logic/scripts/2_zh.html" class="rp-prev-next-page__item rp-prev-next-page__next rp-link"><span class="rp-prev-next-page__item__desc">Next page</span><span class="rp-prev-next-page__item__title"><span>第 2 章 自动化服务器参考</span><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-prev-next-page__icon"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></span></a></div></footer></main></div><aside class="rp-doc-layout__outline rp-scrollbar"><div class="rp-outline"><div class="rp-outline__title">ON THIS PAGE<svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg></div><nav class="rp-outline__toc rp-scrollbar"><a href="#ole-背景" class="rp-toc-item rp-link" title="OLE 背景" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">OLE 背景</span></a><a href="#多版本环境中的自动化" class="rp-toc-item rp-link" title="多版本环境中的自动化" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">多版本环境中的自动化</span></a><a href="#对象层次结构" class="rp-toc-item rp-link" title="对象层次结构" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">对象层次结构</span></a><a href="#自动化服务器示例" class="rp-toc-item rp-link" title="自动化服务器示例" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">自动化服务器示例</span></a><a href="#故障排除" class="rp-toc-item rp-link" title="故障排除" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">故障排除</span></a><a href="#sailwind-logic-自动化客户端示例" class="rp-toc-item rp-link" title="SailWind Logic 自动化客户端示例" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">SailWind Logic 自动化客户端示例</span></a><a href="#代码示例" class="rp-toc-item rp-link" title="代码示例" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">代码示例</span></a><a href="#在-sailwind-logic-中运行代码示例" class="rp-toc-item rp-link" title="在 SailWind Logic 中运行代码示例" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">在 SailWind Logic 中运行代码示例</span></a><a href="#在-sailwind-logic-外部运行代码示例" class="rp-toc-item rp-link" title="在 SailWind Logic 外部运行代码示例" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">在 SailWind Logic 外部运行代码示例</span></a><a href="#增强示例代码" class="rp-toc-item rp-link" title="增强示例代码" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">增强示例代码</span></a><a href="#代码示例故障排除" class="rp-toc-item rp-link" title="代码示例故障排除" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">代码示例故障排除</span></a></nav><div class="rp-outline__divider"></div><div class="rp-outline__bottom"></div></div></aside></div></div>
+    <div id="__rspress_modal_container"></div>
   </body>
 </html>

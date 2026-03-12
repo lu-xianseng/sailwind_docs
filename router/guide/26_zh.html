@@ -1,885 +1,823 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="generator" content="Rspress v1.47.0">
-    <title data-rh="true">第 26 章 自定义界面 ಠ_ಠ - SailWind</title><meta data-rh="true" name="description" content="SailWind"/>
-  <script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script><link rel="icon" href="/sailwind_docs/favicon.ico"><script defer src="/sailwind_docs/static/js/styles.47bb66ab.js"></script><script defer src="/sailwind_docs/static/js/lib-react.36f9b428.js"></script><script defer src="/sailwind_docs/static/js/lib-router.8596f9d8.js"></script><script defer src="/sailwind_docs/static/js/6268.389194c9.js"></script><script defer src="/sailwind_docs/static/js/index.3778f1be.js"></script><link href="/sailwind_docs/static/css/styles.353f381e.css" rel="stylesheet"></head>
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 26 章 自定义界面 ಠ_ಠ - SailWind</title>
+<script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.classList.toggle('rp-dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script>
+<link href="/sailwind_docs/static/css/styles.d1090a2c1b.css" rel="stylesheet">
+<script defer src="/sailwind_docs/static/js/styles.a845351eed.js"></script>
+<script defer src="/sailwind_docs/static/js/lib-react.cae1a117e5.js"></script>
+<script defer src="/sailwind_docs/static/js/lib-router.90bfcb03a3.js"></script>
+<script defer src="/sailwind_docs/static/js/4048.8cfb7a4b43.js"></script>
+<script defer src="/sailwind_docs/static/js/index.81864f7d1c.js"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Rspress v2.0.5">
+<link rel="icon" href="/sailwind_docs/favicon.ico">
+<meta property="og:type" content="website">
+<meta property="og:title" content="第 26 章 自定义界面 ಠ_ಠ - SailWind">
+<meta name="description" content="您可以根据工作风格和需求自定义 SailWind Router 界面。您可以指定显示哪些工具栏、向工具栏和菜单添加项目，以及创建自定义工具栏、菜单和快捷键。 通过自定义对话框进行设置。有两种方式可以调用该对话框： 在 SailWind 界面中，选择👉 工具 > 自定义 。您所做的所有自定义设置将应用于 SailWind 工具的主视图。在界面窗口（例如输出窗口）中右键点击👆并选择👉 自定义。您的自定义设置仅适用于该窗口。 您的自定义设置会随当前工作区保存，因此当您再次在该工作区工作时，对工具栏、菜单和快捷键所做的所有更改都会保留。">
+<meta property="og:description" content="您可以根据工作风格和需求自定义 SailWind Router 界面。您可以指定显示哪些工具栏、向工具栏和菜单添加项目，以及创建自定义工具栏、菜单和快捷键。 通过自定义对话框进行设置。有两种方式可以调用该对话框： 在 SailWind 界面中，选择👉 工具 > 自定义 。您所做的所有自定义设置将应用于 SailWind 工具的主视图。在界面窗口（例如输出窗口）中右键点击👆并选择👉 自定义。您的自定义设置仅适用于该窗口。 您的自定义设置会随当前工作区保存，因此当您再次在该工作区工作时，对工具栏、菜单和快捷键所做的所有更改都会保留。"></head>
 
-  <body >
-    <div id="root"><div class="navContainer_d18b1 rspress-nav px-6  sticky_ddfa7"><div class="container_e4235 flex justify-between items-center h-full"><div class="navBarTitle_c5f07"><a href="/sailwind_docs/index.html" class="link_a7cea flex items-center w-full h-full text-base font-semibold transition-opacity duration-300 hover:opacity-60"><div class="mr-1 min-w-8"><img src="/sailwind_docs/logo.png" alt="logo" id="logo" class="rspress-logo"/></div><span>SailWind</span></a></div><div class="flex flex-1 justify-end items-center"><div class="rightNav_a2fea"><div class="flex sm:flex-1 items-center sm:pl-4 sm:pr-2"><div class="rspress-nav-search-button navSearchButton_df1fb"><button><svg width="18" height="18" viewBox="0 0 32 32"><path fill="var(--rp-c-gray)" d="m29 27.586-7.552-7.552a11.018 11.018 0 1 0-1.414 1.414L27.586 29ZM4 13a9 9 0 1 1 9 9 9.01 9.01 0 0 1-9-9"></path></svg><p class="searchWord_af2c1">搜索</p><div style="opacity:0"><span></span><span>K</span></div></button></div><div class="mobileNavSearchButton_d85a9"><svg width="24" height="24" viewBox="0 0 32 32"><path fill="var(--rp-c-gray)" d="m29 27.586-7.552-7.552a11.018 11.018 0 1 0-1.414 1.414L27.586 29ZM4 13a9 9 0 1 1 9 9 9.01 9.01 0 0 1-9-9"></path></svg></div></div><div class="rspress-nav-menu menu h-14"><a href="/sailwind_docs/logic/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">原理图 (Logic)</div></a><a href="/sailwind_docs/layout/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">物理版图 (Layout)</div></a><a href="/sailwind_docs/router/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154 activeItem_a28b5 text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">自动布线 (Router)</div></a><a href="/sailwind_docs/lpcreator/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">焊盘图形 (LPW)</div></a><a href="/sailwind_docs/about.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">关于</div></a></div><div class="flex-center flex-row"><div class="mx-2"><div class="md:mr-2 rspress-nav-appearance"><div class="p-1 border border-solid border-gray-300 text-gray-400  cursor-pointer rounded-md hover:border-gray-600 hover:text-gray-600 dark:hover:border-gray-200 dark:hover:text-gray-200 transition-all duration-300 w-7 h-7"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" class="dark:hidden" width="18" height="18" fill="currentColor"><path d="M12 18c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6m0-10c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4M12 4c-.6 0-1-.4-1-1V1c0-.6.4-1 1-1s1 .4 1 1v2c0 .6-.4 1-1 1M12 24c-.6 0-1-.4-1-1v-2c0-.6.4-1 1-1s1 .4 1 1v2c0 .6-.4 1-1 1M5.6 6.6c-.3 0-.5-.1-.7-.3L3.5 4.9c-.4-.4-.4-1 0-1.4s1-.4 1.4 0l1.4 1.4c.4.4.4 1 0 1.4-.1.2-.4.3-.7.3M19.8 20.8c-.3 0-.5-.1-.7-.3l-1.4-1.4c-.4-.4-.4-1 0-1.4s1-.4 1.4 0l1.4 1.4c.4.4.4 1 0 1.4-.2.2-.5.3-.7.3M3 13H1c-.6 0-1-.4-1-1s.4-1 1-1h2c.6 0 1 .4 1 1s-.4 1-1 1M23 13h-2c-.6 0-1-.4-1-1s.4-1 1-1h2c.6 0 1 .4 1 1s-.4 1-1 1M4.2 20.8c-.3 0-.5-.1-.7-.3-.4-.4-.4-1 0-1.4l1.4-1.4c.4-.4 1-.4 1.4 0s.4 1 0 1.4l-1.4 1.4c-.2.2-.4.3-.7.3M18.4 6.6c-.3 0-.5-.1-.7-.3-.4-.4-.4-1 0-1.4l1.4-1.4c.4-.4 1-.4 1.4 0s.4 1 0 1.4l-1.4 1.4c-.2.2-.5.3-.7.3"></path></svg><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" class="hidden dark:block" width="18" height="18" fill="currentColor"><path d="M12.1 22h-.9c-5.5-.5-9.5-5.4-9-10.9.4-4.8 4.2-8.6 9-9 .4 0 .8.2 1 .5s.2.8-.1 1.1c-2 2.7-1.4 6.4 1.3 8.4 2.1 1.6 5 1.6 7.1 0 .3-.2.7-.3 1.1-.1.3.2.5.6.5 1-.2 2.7-1.5 5.1-3.6 6.8-1.9 1.4-4.1 2.2-6.4 2.2M9.3 4.4c-2.9 1-5 3.6-5.2 6.8-.4 4.4 2.8 8.3 7.2 8.7 2.1.2 4.2-.4 5.8-1.8 1.1-.9 1.9-2.1 2.4-3.4-2.5.9-5.3.5-7.5-1.1-2.8-2.2-3.9-5.9-2.7-9.2"></path></svg></div></div></div><div class="social-links menu-item_e90a6 flex-center relative"><div class="flex-center h-full gap-x-4 transition-colors duration-300 md:mr-2"><a href="https://github.com/mikigo/sailwind_docs/" target="_blank" rel="noopener noreferrer" class="social-links"><div class="social-links-icon_a4ad0"><div><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a></div></div></div></div><div class="mobileNavMenu_e7045"><div class="navScreen_ec30c  rspress-nav-screen" id="navScreen"><div class="container_c935d"><div class="navMenu_b887b"><div class="navMenuItem_e7978 w-full"><a href="/sailwind_docs/logic/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">原理图 (Logic)</div></a></div><div class="navMenuItem_e7978 w-full"><a href="/sailwind_docs/layout/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">物理版图 (Layout)</div></a></div><div class="navMenuItem_e7978 w-full"><a href="/sailwind_docs/router/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154 activeItem_a28b5 text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">自动布线 (Router)</div></a></div><div class="navMenuItem_e7978 w-full"><a href="/sailwind_docs/lpcreator/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">焊盘图形 (LPW)</div></a></div><div class="navMenuItem_e7978 w-full"><a href="/sailwind_docs/about.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">关于</div></a></div></div><div class="flex-center flex-col gap-2"><div class="mt-2 navAppearance_bf893 flex justify-center"></div><div class="social-links menu-item_e90a6 flex-center relative"><div class="flex-center h-full gap-x-4 transition-colors duration-300 md:mr-2"><a href="https://github.com/mikigo/sailwind_docs/" target="_blank" rel="noopener noreferrer" class="social-links"><div class="social-links-icon_a4ad0"><div><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a></div></div></div></div></div><button aria-label="mobile hamburger" class=" rspress-mobile-hamburger navHamburger_ac64c text-gray-500"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="currentColor"><circle cx="8" cy="16" r="2" fill="currentColor"></circle><circle cx="16" cy="16" r="2" fill="currentColor"></circle><circle cx="24" cy="16" r="2" fill="currentColor"></circle></svg></button></div></div></div></div><section><div class="docLayout_af141 pt-0"><aside class="sidebar_dd719 rspress-sidebar "><div class="navTitleMask_fb17c"><div class="navBarTitle_c5f07"><a href="/sailwind_docs/index.html" class="link_a7cea flex items-center w-full h-full text-base font-semibold transition-opacity duration-300 hover:opacity-60"><div class="mr-1 min-w-8"><img src="/sailwind_docs/logo.png" alt="logo" id="logo" class="rspress-logo"/></div><span>SailWind</span></a></div></div><div class="rspress-scrollbar sidebarContent_da296"><nav class="pb-2"><a href="/sailwind_docs/router/index.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:14px;margin-left:0;border-radius:0 var(--rp-radius) var(--rp-radius) 0;padding-left:24px;font-weight:bold"><span>章节预览</span></div></a><section class="rspress-sidebar-section mt-0.5 block" style="margin-left:0"><div class="rspress-sidebar-collapse flex justify-between items-center menuItem_ac22e" style="border-radius:0 var(--rp-radius) var(--rp-radius) 0;cursor:pointer"><h2 class="py-2 px-3 text-sm font-medium flex" style="font-size:14px;padding-left:24px;font-weight:bold"><span class="flex-center" style="font-size:14px">指南(Guide)</span></h2><div class="collapseContainer_d6e4e p-2 rounded-xl"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(0deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div class="transition-all duration-300 ease-in-out" style="overflow:hidden;max-height:0"><div class="rspress-sidebar-group transition-opacity duration-500 ease-in-out" style="opacity:0;margin-left:12px"><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/1_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 1 章 自动布线快速入门 ಠ_ಠ</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/2_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 2 章 交互式布线快速入门 ಠ_ಠ</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/3_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 3 章 设计准备 ಠ_ಠ</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/4_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 4 章 文件操作</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/5_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 5 章 界面元素 ಠ_ಠ</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/6_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 6 章 无模命令与快捷键 ಠ_ಠ</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/7_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 7 章 视图</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/8_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 8 章 撤销、重做、重复与删除</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/9_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 9 章 搜索与选择</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/10_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 10 章 电气网络</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/11_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 11 章 设置规则</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/12_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 12 章 启用设计规则检查</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/13_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 13 章 元件放置</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/14_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 14 章 虚拟管脚</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/15_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 15 章 覆铜平面与铜形状</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/16_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 16 章 布线设置</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/17_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 17 章 自动布线</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/18_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 18 章 选择性自动布线</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/19_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 19 章 手动布线</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/20_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 20 章 手动编辑</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/21_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 21 章 设计验证</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/22_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 22 章 报告</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/23_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 23 章 授权许可</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/24_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 24 章 SailWind Router 对话框 ಠ_ಠ</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/25_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 25 章 软件启动选项</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/guide/26_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItemActive_de63c mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 26 章 自定义界面 ಠ_ಠ</span></div></a></div></div></div></section><section class="rspress-sidebar-section mt-0.5 block" style="margin-left:0"><div class="rspress-sidebar-collapse flex justify-between items-center menuItem_ac22e" style="border-radius:0 var(--rp-radius) var(--rp-radius) 0;cursor:pointer"><h2 class="py-2 px-3 text-sm font-medium flex" style="font-size:14px;padding-left:24px;font-weight:bold"><span class="flex-center" style="font-size:14px">教程(Tutorial)</span></h2><div class="collapseContainer_d6e4e p-2 rounded-xl"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(0deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div class="transition-all duration-300 ease-in-out" style="overflow:hidden;max-height:0"><div class="rspress-sidebar-group transition-opacity duration-500 ease-in-out" style="opacity:0;margin-left:12px"><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/tutorial/1_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>学习用户界面</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/tutorial/2_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>约束条件分配</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/tutorial/3_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>设计准备</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/tutorial/4_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>元件放置</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/tutorial/5_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>交互式布线创建导线</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/tutorial/6_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>使用交互式布线创建高速导线</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/tutorial/7_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>使用 SailWind Router 进行自动布线</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/tutorial/8_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>设计规则检查</span></div></a></div></div></div></section><section class="rspress-sidebar-section mt-0.5 block" style="margin-left:0"><div class="rspress-sidebar-collapse flex justify-between items-center menuItem_ac22e" style="border-radius:0 var(--rp-radius) var(--rp-radius) 0;cursor:pointer"><h2 class="py-2 px-3 text-sm font-medium flex" style="font-size:14px;padding-left:24px;font-weight:bold"><span class="flex-center" style="font-size:14px">快速参考(Quick Reference)</span></h2><div class="collapseContainer_d6e4e p-2 rounded-xl"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(0deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div class="transition-all duration-300 ease-in-out" style="overflow:hidden;max-height:0"><div class="rspress-sidebar-group transition-opacity duration-500 ease-in-out" style="opacity:0;margin-left:12px"><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/qr/modless.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>无模命令</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/router/qr/shortcut.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>键盘快捷键</span></div></a></div></div></div></section></nav></div></aside><div class="flex-1 relative min-w-0"><div class="rspress-sidebar-menu-container "><div class="rspress-sidebar-menu"><button type="button" class="flex-center mr-auto"><div class="text-md mr-2"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg></div><span class="text-sm">Menu</span></button><button type="button" class="flex-center ml-auto"><span class="text-sm">本页目录</span><div class="text-md mr-2" style="transform:rotate(0deg);transition:transform 0.2s ease-out;margin-top:2px"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></button><div class="rspress-local-toc-container "><ul><li><a href="#1" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">迁移用户设置</span></a></li><li><a href="#2" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">自定义工具栏和快捷菜单</span></a></li><li><a href="#2-1" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">创建自定义工具栏</span></a></li><li><a href="#2-2" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">编辑自定义工具栏</span></a></li><li><a href="#2-3" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">重置工具栏为默认值</span></a></li><li><a href="#2-4" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">自定义快捷菜单</span></a></li><li><a href="#2-5" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">重置快捷菜单</span></a></li><li><a href="#3" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">创建自定义命令和菜单</span></a></li><li><a href="#3-1" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">创建和编辑自定义命令</span></a></li><li><a href="#3-2" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">删除自定义命令</span></a></li><li><a href="#3-3" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">创建自定义菜单</span></a></li><li><a href="#3-4" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">向工具栏和菜单添加项目</span></a></li><li><a href="#3-5" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">在工具栏和菜单上移动项目</span></a></li><li><a href="#3-5-1" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">在工具栏上移动按钮</span></a></li><li><a href="#3-5-2" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">移动</span></a></li><li><a href="#3-6" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">从工具栏和菜单移除项目</span></a></li><li><a href="#4" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">自定义快捷键</span></a></li><li><a href="#4-1" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">创建新快捷键</span></a></li><li><a href="#4-2" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">键序列规则与限制</span></a></li><li><a href="#4-3" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">列出可用快捷键</span></a></li><li><a href="#4-4" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">快捷键中的表达式</span></a></li><li><a href="#4-5" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">删除快捷键</span></a></li><li><a href="#4-6" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">重置默认快捷键</span></a></li><li><a href="#4-7" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">为宏分配快捷键</span></a></li><li><a href="#5" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">从宏命令文件创建命令</span></a></li><li><a href="#6" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">向菜单添加宏</span></a></li><li><a href="#7" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">自定义屏幕外观</span></a></li><li><a href="#7-1" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">自定义工具栏显示</span></a></li><li><a href="#7-2" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">自定义窗口显示</span></a></li><li><a href="#7-3" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">调整层列表大小</span></a></li><li><a href="#8" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">组织窗口</span></a></li><li><a href="#8-1" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">显示和隐藏窗口</span></a></li><li><a href="#8-2" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">自动隐藏窗口</span></a></li><li><a href="#8-3" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">从当前视图分离窗口</span></a></li><li><a href="#8-4" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">将窗口附加到当前视图</span></a></li><li><a href="#8-4-1" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">停靠到最后位置</span></a></li><li><a href="#8-4-2" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">停靠到新位置</span></a></li><li><a href="#8-4-3" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">在其他窗口中嵌入窗口</span></a></li><li><a href="#8-4-4" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">管理窗口标签页</span></a></li><li><a href="#9" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">崩溃检测</span></a></li></ul></div></div></div><div class="content_ff766 rspress-doc-container flex"><div class="flex-1 overflow-x-auto"><div class="rspress-doc"><!--$--><h1 id="第-26-章-自定义界面-ಠ_ಠ" class="rspress-doc-title text-3xl mb-10 leading-10 tracking-tight title_fb7eb">第 26 章 自定义界面 ಠ_ಠ<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#第-26-章-自定义界面-ಠ_ಠ">#</a></h1>
-<p class="my-4 leading-7">您可以根据工作风格和需求自定义 SailWind Router 界面。您可以指定显示哪些工具栏、<a href="#3-4" class="link_a7cea  link_a9ef4 inline-link_f855c">向工具栏和菜单添加项目</a>，以及<a href="#2-1" class="link_a7cea  link_a9ef4 inline-link_f855c">创建自定义工具栏</a>、菜单和快捷键。</p>
-<p class="my-4 leading-7">通过自定义对话框进行设置。有两种方式可以调用该对话框：</p>
-<ul class="list-disc pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在 SailWind 界面中，选择👉 <strong class="font-semibold">工具 &gt; 自定义</strong> 。您所做的所有自定义设置将应用于 SailWind 工具的主视图。</p>
+  <body>
+    <div id="__rspress_root"><link rel="preload" as="image" href="/sailwind_docs/logo.png"/><link rel="preload" as="image" href="/sailwind_docs/router/guide/26/_page_22_Picture_14.jpeg"/><link rel="preload" as="image" href="/sailwind_docs/router/guide/26/_page_24_Figure_10.jpeg"/><link rel="preload" as="image" href="/sailwind_docs/router/guide/26/_page_25_Picture_1.jpeg"/><link rel="preload" as="image" href="/sailwind_docs/router/guide/26/_page_25_Figure_14.jpeg"/><link rel="preload" as="image" href="/sailwind_docs/router/guide/26/_page_26_Picture_5.jpeg"/><header class="rp-nav"><div class="rp-nav__left"><div class="rp-nav__title"><a href="/sailwind_docs/" class="rp-nav__title__link rp-link"><div class="rp-nav__title__logo"><img src="/sailwind_docs/logo.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image"/></div><span>SailWind</span></a></div></div><div class="rp-nav__right"><button class="rp-search-button"><div class="rp-search-button__content"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 20 21" class="rp-search-button__icon"><path fill="currentColor" d="M8.333 1.913A6.667 6.667 0 0 1 15 8.58c0 1.54-.525 2.957-1.402 4.085l4.49 4.492a.834.834 0 0 1-1.177 1.178l-4.491-4.49a6.64 6.64 0 0 1-4.087 1.402 6.667 6.667 0 0 1 0-13.334m0 1.667a5 5 0 1 0 0 10 5 5 0 0 0 0-10"></path></svg><span class="rp-search-button__word">Search</span></div><div class="rp-search-button__hotkey" style="opacity:0"><span></span><span>K</span></div></button><div class="rp-search-button--mobile"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 20 21"><path fill="currentColor" d="M8.333 1.913A6.667 6.667 0 0 1 15 8.58c0 1.54-.525 2.957-1.402 4.085l4.49 4.492a.834.834 0 0 1-1.177 1.178l-4.491-4.49a6.64 6.64 0 0 1-4.087 1.402 6.667 6.667 0 0 1 0-13.334m0 1.667a5 5 0 1 0 0 10 5 5 0 0 0 0-10"></path></svg></div><ul class="rp-nav-menu rp-nav-menu--right"><li class="rp-nav-menu__item"><a href="/sailwind_docs/logic/index.html" class="rp-nav-menu__item__container rp-link">原理图 (Logic)</a></li><li class="rp-nav-menu__item"><a href="/sailwind_docs/layout/index.html" class="rp-nav-menu__item__container rp-link">物理版图 (Layout)</a></li><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/sailwind_docs/router/index.html" class="rp-nav-menu__item__container rp-link">自动布线 (Router)</a></li><li class="rp-nav-menu__item"><a href="/sailwind_docs/lpcreator/index.html" class="rp-nav-menu__item__container rp-link">焊盘图形 (LPW)</a></li><li class="rp-nav-menu__item"><a href="/sailwind_docs/about.html" class="rp-nav-menu__item__container rp-link">关于</a></li></ul><div class="rp-nav__others"><div class="rp-nav-menu__divider"></div><div class="rp-switch-appearance"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="rp-switch-appearance__icon rp-switch-appearance__icon--sun"><path fill="currentColor" d="m7.001 15.848-1.226 1.226a.58.58 0 0 0 0 .818.58.58 0 0 0 .818 0l1.226-1.226a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0m-.352-8.735a.584.584 0 0 0 .825-.825L6.237 5.051a.584.584 0 0 0-.825.825zM5.011 11.07h-1.75a.584.584 0 0 0 0 1.167h1.75c.324 0 .584-.26.584-.583a.585.585 0 0 0-.584-.584m7.003-5.835c.324 0 .584-.26.584-.584V2.9a.58.58 0 0 0-.584-.584.58.58 0 0 0-.583.583V4.65c0 .323.262.584.583.584m5.616 1.621 1.226-1.225a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0l-1.226 1.225a.58.58 0 0 0 0 .818.576.576 0 0 0 .818 0m3.138 4.214h-1.75a.58.58 0 0 0-.584.584c0 .324.26.584.583.584h1.751a.584.584 0 1 0 0-1.167m-3.389 5.124a.584.584 0 0 0-.825.825l1.238 1.238a.584.584 0 0 0 .825-.826zm-5.365-9.795a5.256 5.256 0 0 0-5.257 5.258 5.256 5.256 0 0 0 5.257 5.257 5.256 5.256 0 0 0 5.257-5.257 5.256 5.256 0 0 0-5.257-5.258m0 11.675a.58.58 0 0 0-.583.583v1.751a.582.582 0 1 0 1.167 0v-1.75a.584.584 0 0 0-.584-.584"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" viewBox="0 0 19 19" class="rp-switch-appearance__icon rp-switch-appearance__icon--moon"><path fill="currentColor" d="M9.166 0a9.2 9.2 0 0 1 1.857.188.834.834 0 0 1 .042 1.623 4.47 4.47 0 1 0 5.457 5.457l.048-.135a.834.834 0 0 1 1.575.177q.186.902.188 1.856A9.168 9.168 0 1 1 9.166 0"></path></svg></div><div class="rp-social-links"><a href="https://github.com/mikigo/sailwind_docs/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__sm"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg></button><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__md"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"><div class="rp-nav-menu__others-mobile__container"><div class="rp-nav-hamburger__md__hover-group"><div class="rp-nav-screen-appearance"><div class="rp-nav-screen-appearance__left">Theme</div><div class="rp-nav-screen-appearance__right"></div></div><div class="rp-nav-screen-divider"></div><div class="rp-social-links"><a href="https://github.com/mikigo/sailwind_docs/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div></div></ul></button></div></header><div class="rp-doc-layout__menu"><div class="rp-sidebar-menu"><button type="button" class="rp-sidebar-menu__left"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg><span>Menu</span></button><button type="button" class="rp-sidebar-menu__right"><span class="rp-sidebar-menu__right__text">ON THIS PAGE</span><svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-sidebar-menu__right__icon" style="transform:rotate(0deg);transition:transform 0.2s ease-out"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></button></div></div><div class="rp-doc-layout__container"><aside class="rp-doc-layout__sidebar rp-scrollbar"><a href="/sailwind_docs/router/index.html" class="rp-sidebar-item rp-link" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>章节预览</span></div><div class="rp-sidebar-item__right"></div></a><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>指南(Guide)</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:1fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/sailwind_docs/router/guide/1_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 1 章 自动布线快速入门 ಠ_ಠ</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/router/guide/2_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 2 章 交互式布线快速入门 ಠ_ಠ</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/router/guide/3_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 3 章 设计准备 ಠ_ಠ</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/router/guide/4_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 4 章 文件操作</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/router/guide/5_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 5 章 界面元素 ಠ_ಠ</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/router/guide/6_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 6 章 无模命令与快捷键 ಠ_ಠ</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/router/guide/7_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 7 章 视图</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/router/guide/8_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 8 章 撤销、重做、重复与删除</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/router/guide/9_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 9 章 搜索与选择</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/router/guide/10_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 10 章 电气网络</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/router/guide/11_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 11 章 设置规则</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/router/guide/12_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 12 章 启用设计规则检查</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/router/guide/13_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 13 章 元件放置</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/router/guide/14_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 14 章 虚拟管脚</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/router/guide/15_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 15 章 覆铜平面与铜形状</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/router/guide/16_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 16 章 布线设置</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/router/guide/17_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 17 章 自动布线</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/router/guide/18_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 18 章 选择性自动布线</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/router/guide/19_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 19 章 手动布线</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/router/guide/20_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 20 章 手动编辑</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/router/guide/21_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 21 章 设计验证</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/router/guide/22_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 22 章 报告</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/router/guide/23_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 23 章 授权许可</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/router/guide/24_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 24 章 SailWind Router 对话框 ಠ_ಠ</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/router/guide/25_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 25 章 软件启动选项</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/router/guide/26_zh.html" class="rp-sidebar-item rp-sidebar-item--active rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 26 章 自定义界面 ಠ_ಠ</span></div><div class="rp-sidebar-item__right"></div></a></div></div><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>教程(Tutorial)</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(0deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:0fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/sailwind_docs/router/tutorial/1_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>学习用户界面</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/router/tutorial/2_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>约束条件分配</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/router/tutorial/3_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>设计准备</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/router/tutorial/4_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>元件放置</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/router/tutorial/5_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>交互式布线创建导线</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/router/tutorial/6_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>使用交互式布线创建高速导线</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/router/tutorial/7_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>使用 SailWind Router 进行自动布线</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/router/tutorial/8_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>设计规则检查</span></div><div class="rp-sidebar-item__right"></div></a></div></div><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>快速参考(Quick Reference)</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(0deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:0fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/sailwind_docs/router/qr/modless.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>无模命令</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/router/qr/shortcut.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>键盘快捷键</span></div><div class="rp-sidebar-item__right"></div></a></div></div></aside><div class="rp-doc-layout__doc"><main class="rp-doc-layout__doc-container"><div class="rp-doc rspress-doc"><!--$--><h1 class="rp-toc-include" id="第-26-章-自定义界面-ಠ_ಠ"><a href="#第-26-章-自定义界面-ಠ_ಠ" class="rp-header-anchor rp-link" aria-hidden="true">#</a>第 26 章 自定义界面 ಠ_ಠ<!-- --> </h1>
+<p>您可以根据工作风格和需求自定义 SailWind Router 界面。您可以指定显示哪些工具栏、<a href="#3-4" class="rp-link">向工具栏和菜单添加项目</a>，以及<a href="#2-1" class="rp-link">创建自定义工具栏</a>、菜单和快捷键。</p>
+<p>通过自定义对话框进行设置。有两种方式可以调用该对话框：</p>
+<ul>
+<li>
+<p>在 SailWind 界面中，选择👉 <strong>工具 &gt; 自定义</strong> 。您所做的所有自定义设置将应用于 SailWind 工具的主视图。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在界面窗口（例如输出窗口）中<strong class="font-semibold">右键</strong>点击👆并选择👉 <strong class="font-semibold">自定义</strong>。您的自定义设置仅适用于该窗口。</p>
+<li>
+<p>在界面窗口（例如输出窗口）中<strong>右键</strong>点击👆并选择👉 <strong>自定义</strong>。您的自定义设置仅适用于该窗口。</p>
 </li>
 </ul>
-<p class="my-4 leading-7">您的自定义设置会随当前工作区保存，因此当您再次在该工作区工作时，对工具栏、菜单和快捷键所做的所有更改都会保留。</p>
-<h2 id="1" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">迁移用户设置<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#1">#</a></h2>
-<p class="my-4 leading-7">您可以使用用户设置迁移工具从一个安装的 SailWind Logic、Layout 和 Router 中提取您的设置，并将其导入到另一个安装或版本中。</p>
-<p class="my-4 leading-7">有关操作方法，请参阅《用户设置迁移指南》中的用户设置迁移部分。</p>
-<h2 id="2" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">自定义工具栏和快捷菜单<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#2">#</a></h2>
-<p class="my-4 leading-7">在自定义对话框中选择👉 <strong class="font-semibold">工具栏和菜单</strong> 选项卡（<strong class="font-semibold">工具 &gt; 自定义</strong> ，<strong class="font-semibold">工具栏和菜单</strong> 选项卡）以<a href="#2-1" class="link_a7cea  link_a9ef4 inline-link_f855c">创建自定义工具栏</a>和快捷菜单。</p>
-<div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
-<p class="my-4 leading-7"> 要创建自定义主菜单，请使用自定义对话框中的<strong class="font-semibold">命令</strong> 选项卡。参见&quot;<a href="#3-3" class="link_a7cea  link_a9ef4 inline-link_f855c">创建自定义菜单</a>&quot;。</p>
-</div></div>
-<h3 id="2-1" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">创建自定义工具栏<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#2-1">#</a></h3>
-<p class="my-4 leading-7">通过创建新的空工具栏并向其添加项目（命令）来<a href="#2-1" class="link_a7cea  link_a9ef4 inline-link_f855c">创建自定义工具栏</a>。</p>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<ol class="list-decimal pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">选择👉 <strong class="font-semibold">工具 &gt; 自定义</strong> ，然后点击👆 <strong class="font-semibold">工具和菜单</strong> 选项卡。</p>
+<p>您的自定义设置会随当前工作区保存，因此当您再次在该工作区工作时，对工具栏、菜单和快捷键所做的所有更改都会保留。</p>
+<h2 class="rp-toc-include" id="1"><a href="#1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>迁移用户设置</h2>
+<p>您可以使用用户设置迁移工具从一个安装的 SailWind Logic、Layout 和 Router 中提取您的设置，并将其导入到另一个安装或版本中。</p>
+<p>有关操作方法，请参阅《用户设置迁移指南》中的用户设置迁移部分。</p>
+<h2 class="rp-toc-include" id="2"><a href="#2" class="rp-header-anchor rp-link" aria-hidden="true">#</a>自定义工具栏和快捷菜单</h2>
+<p>在自定义对话框中选择👉 <strong>工具栏和菜单</strong> 选项卡（<strong>工具 &gt; 自定义</strong> ，<strong>工具栏和菜单</strong> 选项卡）以<a href="#2-1" class="rp-link">创建自定义工具栏</a>和快捷菜单。</p>
+<div class="rp-callout rp-callout--tip"><div class="rp-callout__title">TIP</div><div class="rp-callout__content"><p>要创建自定义主菜单，请使用自定义对话框中的 <strong>命令</strong> 选项卡。参见&quot;<a href="#3-3" class="rp-link">创建自定义菜单</a>&quot;。</p></div></div>
+<h3 class="rp-toc-include" id="2-1"><a href="#2-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>创建自定义工具栏</h3>
+<p>通过创建新的空工具栏并向其添加项目（命令）来<a href="#2-1" class="rp-link">创建自定义工具栏</a>。</p>
+<p>🏃‍♂️‍<strong>步骤</strong></p>
+<ol>
+<li>
+<p>选择👉 <strong>工具 &gt; 自定义</strong> ，然后点击👆 <strong>工具和菜单</strong> 选项卡。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在工具栏框中，点击👆 <strong class="font-semibold">新建</strong> 按钮。</p>
+<li>
+<p>在工具栏框中，点击👆 <strong>新建</strong> 按钮。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">输入📝工具栏名称并点击👆 <strong class="font-semibold">确定</strong>。</p>
-<p class="my-4 leading-7">新的空工具栏将显示在 SailWind 界面上。</p>
+<li>
+<p>输入📝工具栏名称并点击👆 <strong>确定</strong>。</p>
+<p>新的空工具栏将显示在 SailWind 界面上。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">将工具栏拖动到 SailWind 界面上您想要的位置。</p>
+<li>
+<p>将工具栏拖动到 SailWind 界面上您想要的位置。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">要向新工具栏添加项目（命令），请点击👆 <strong class="font-semibold">命令</strong> 选项卡并按以下步骤操作：</p>
-<p class="my-4 leading-7">a. 在类别列表中，选择👉菜单或工具栏名称以显示特定于该菜单或工具栏的命令。或者选择👉&quot;所有命令&quot;。</p>
-<div class="rspress-directive warning"><div class="rspress-directive-title">WARNING</div><div class="rspress-directive-content">
-<p class="my-4 leading-7"> 如果您在 SailWind Layout 或 SailWind Logic 的特殊模式下工作（例如 SailWind Layout 中的封装编辑器），某些命令类别不可用于自定义。</p>
-</div></div>
-<p class="my-4 leading-7">b. 在命令列表中，选择👉您想要的命令并将其拖动到工具栏。</p>
-<p class="my-4 leading-7">c. 添加完命令后，点击👆 <strong class="font-semibold">关闭</strong>。</p>
+<li>
+<p>要向新工具栏添加项目（命令），请点击👆 <strong>命令</strong> 选项卡并按以下步骤操作：</p>
+<p>a. 在类别列表中，选择👉菜单或工具栏名称以显示特定于该菜单或工具栏的命令。或者选择👉&quot;所有命令&quot;。</p>
+<div class="rp-callout rp-callout--warning"><div class="rp-callout__title">WARNING</div><div class="rp-callout__content"><p>如果您在 SailWind Layout 或 SailWind Logic 的特殊模式下工作（例如 SailWind Layout 中的封装编辑器），某些命令类别不可用于自定义。</p></div></div>
+<p>b. 在命令列表中，选择👉您想要的命令并将其拖动到工具栏。</p>
+<p>c. 添加完命令后，点击👆 <strong>关闭</strong>。</p>
 </li>
 </ol>
-<h3 id="2-2" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">编辑自定义工具栏<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#2-2">#</a></h3>
-<p class="my-4 leading-7">根据需要，使用自定义对话框对自定义工具栏进行编辑。</p>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<ol class="list-decimal pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">选择👉 <strong class="font-semibold">工具 &gt; 自定义</strong> 。</p>
+<h3 class="rp-toc-include" id="2-2"><a href="#2-2" class="rp-header-anchor rp-link" aria-hidden="true">#</a>编辑自定义工具栏</h3>
+<p>根据需要，使用自定义对话框对自定义工具栏进行编辑。</p>
+<p>🏃‍♂️‍<strong>步骤</strong></p>
+<ol>
+<li>
+<p>选择👉 <strong>工具 &gt; 自定义</strong> 。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在选项对话框中，点击👆 <strong class="font-semibold">工具栏和菜单</strong> 选项卡。</p>
+<li>
+<p>在选项对话框中，点击👆 <strong>工具栏和菜单</strong> 选项卡。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">执行以下操作之一：</p>
-<table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
-<thead>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">预期结果</th>
-<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">步骤</th>
-</tr>
-</thead>
-<tbody>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">显示或隐藏工具栏</td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">1. 在工具栏列表中，选择👉工具栏。2. 要在界面中显示工具栏，选中✅名称左侧的复选框。要隐藏工具栏，清除复选框。</td>
-</tr>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">删除自定义工具栏</td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">1. 在工具栏列表中，选择👉自定义工具栏。2. 点击👆删除按钮。</td>
-</tr>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">重命名自定义工具栏</td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">1. 在工具栏列表中，选择👉工具栏并点击👆编辑按钮。2. 在工具栏名称对话框中，输入📝新名称并点击👆确定。</td>
-</tr>
-</tbody>
-</table>
-<div class="rspress-directive warning"><div class="rspress-directive-title">WARNING</div><div class="rspress-directive-content">
-<p class="my-4 leading-7"> 您无法编辑或删除工具栏和菜单。</p>
-</div></div>
+<li>
+<p>执行以下操作之一：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>预期结果</th><th>步骤</th></tr></thead><tbody><tr><td>显示或隐藏工具栏</td><td>1. 在工具栏列表中，选择👉工具栏。2. 要在界面中显示工具栏，选中✅名称左侧的复选框。要隐藏工具栏，清除复选框。</td></tr><tr><td>删除自定义工具栏</td><td>1. 在工具栏列表中，选择👉自定义工具栏。2. 点击👆删除按钮。</td></tr><tr><td>重命名自定义工具栏</td><td>1. 在工具栏列表中，选择👉工具栏并点击👆编辑按钮。2. 在工具栏名称对话框中，输入📝新名称并点击👆确定。</td></tr></tbody></table></div>
+<div class="rp-callout rp-callout--warning"><div class="rp-callout__title">WARNING</div><div class="rp-callout__content"><p>您无法编辑或删除工具栏和菜单。</p></div></div>
 </li>
 </ol>
-<h3 id="2-3" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">重置工具栏为默认值<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#2-3">#</a></h3>
-<p class="my-4 leading-7">您可以将一个或所有系统工具栏重置为其默认按钮。</p>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<ol class="list-decimal pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">选择👉 <strong class="font-semibold">工具 &gt; 自定义</strong> 并点击👆 <strong class="font-semibold">工具栏和菜单</strong> 选项卡。</p>
+<h3 class="rp-toc-include" id="2-3"><a href="#2-3" class="rp-header-anchor rp-link" aria-hidden="true">#</a>重置工具栏为默认值</h3>
+<p>您可以将一个或所有系统工具栏重置为其默认按钮。</p>
+<p>🏃‍♂️‍<strong>步骤</strong></p>
+<ol>
+<li>
+<p>选择👉 <strong>工具 &gt; 自定义</strong> 并点击👆 <strong>工具栏和菜单</strong> 选项卡。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在工具栏列表中，选择👉工具栏。</p>
+<li>
+<p>在工具栏列表中，选择👉工具栏。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">点击👆 <strong class="font-semibold">重置</strong>。</p>
-<div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
-<p class="my-4 leading-7"> 要将所有系统工具栏重置为默认值，请点击👆<strong class="font-semibold">全部重置</strong>。</p>
-</div></div>
+<li>
+<p>点击👆 <strong>重置</strong>。</p>
+<div class="rp-callout rp-callout--tip"><div class="rp-callout__title">TIP</div><div class="rp-callout__content"><p>要将所有系统工具栏重置为默认值，请点击👆 <strong>全部重置</strong>。</p></div></div>
 </li>
 </ol>
-<h3 id="2-4" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">自定义快捷菜单<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#2-4">#</a></h3>
-<p class="my-4 leading-7">您可以通过添加、删除或重新排列来自定义现有的快捷菜单。您还可以将快捷菜单重置为其默认状态。</p>
-<div class="rspress-directive warning"><div class="rspress-directive-title">WARNING</div><div class="rspress-directive-content">
-<p class="my-4 leading-7"> 您无法创建新的快捷菜单。</p>
-</div></div>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<ol class="list-decimal pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">点击👆 <strong class="font-semibold">工具 &gt; 自定义</strong> ；然后在自定义对话框中，点击👆 <strong class="font-semibold">工具栏和菜单</strong> 选项卡。</p>
+<h3 class="rp-toc-include" id="2-4"><a href="#2-4" class="rp-header-anchor rp-link" aria-hidden="true">#</a>自定义快捷菜单</h3>
+<p>您可以通过添加、删除或重新排列来自定义现有的快捷菜单。您还可以将快捷菜单重置为其默认状态。</p>
+<div class="rp-callout rp-callout--warning"><div class="rp-callout__title">WARNING</div><div class="rp-callout__content"><p>您无法创建新的快捷菜单。</p></div></div>
+<p>🏃‍♂️‍<strong>步骤</strong></p>
+<ol>
+<li>
+<p>点击👆 <strong>工具 &gt; 自定义</strong> ；然后在自定义对话框中，点击👆 <strong>工具栏和菜单</strong> 选项卡。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在快捷菜单区域，选择👉要修改的快捷菜单。快捷菜单（称为弹出菜单）将出现。</p>
+<li>
+<p>在快捷菜单区域，选择👉要修改的快捷菜单。快捷菜单（称为弹出菜单）将出现。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">您现在可以添加、删除或重新排列其（命令）。</p>
-<ul class="list-disc pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7"><strong class="font-semibold">添加项目</strong>：</p>
-<p class="my-4 leading-7">i. 点击👆自定义对话框的 <strong class="font-semibold">命令</strong> 选项卡。</p>
-<p class="my-4 leading-7">ii. 在类别区域，选择👉菜单或工具栏名称以显示特定于该菜单或工具栏的命令。或点击👆所有命令。</p>
-<p class="my-4 leading-7">iii. 将命令拖动到快捷菜单。</p>
+<li>
+<p>您现在可以添加、删除或重新排列其（命令）。</p>
+<ul>
+<li>
+<p><strong>添加项目</strong>：</p>
+<p>i. 点击👆自定义对话框的 <strong>命令</strong> 选项卡。</p>
+<p>ii. 在类别区域，选择👉菜单或工具栏名称以显示特定于该菜单或工具栏的命令。或点击👆所有命令。</p>
+<p>iii. 将命令拖动到快捷菜单。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7"><strong class="font-semibold">删除项目</strong>：选择👉项目并将其拖出快捷菜单。</p>
+<li>
+<p><strong>删除项目</strong>：选择👉项目并将其拖出快捷菜单。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7"><strong class="font-semibold">重新排列项目</strong>：选择👉项目并将其拖动到菜单上的新位置。</p>
+<li>
+<p><strong>重新排列项目</strong>：选择👉项目并将其拖动到菜单上的新位置。</p>
 </li>
 </ul>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">完成菜单自定义后，关闭它（点击👆 X）或点击👆 <strong class="font-semibold">关闭</strong>。</p>
-<div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
-<p class="my-4 leading-7"> 如果命令的操作与快捷菜单的上下文不匹配，自定义操作允许您将命令添加到菜单，但菜单不会显示该命令（）。例如，在 SailWind Router 中，&quot;Smooth in router&quot;命令是一个移动模式命令。如果您将&quot;Smooth in router&quot;命令添加到<a href="/sailwind_docs/router/guide/19_zh.html#4" class="link_a7cea  link_a9ef4 inline-link_f855c">交互式布线</a>快捷菜单，该命令不会出现在菜单上。</p>
-</div></div>
+<li>
+<p>完成菜单自定义后，关闭它（点击👆 X）或点击👆 <strong>关闭</strong>。</p>
+<div class="rp-callout rp-callout--tip"><div class="rp-callout__title">TIP</div><div class="rp-callout__content"><p>如果命令的操作与快捷菜单的上下文不匹配，自定义操作允许您将命令添加到菜单，但菜单不会显示该命令（）。例如，在 SailWind Router 中，&quot;Smooth in router&quot;命令是一个移动模式命令。如果您将&quot;Smooth in router&quot;命令添加到<a href="/sailwind_docs/router/guide/19_zh.html#4" class="rp-link">交互式布线</a>快捷菜单，该命令不会出现在菜单上。</p></div></div>
 </li>
 </ol>
-<h3 id="2-5" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">重置快捷菜单<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#2-5">#</a></h3>
-<p class="my-4 leading-7">如果您自定义了快捷菜单并希望将其更改回原始，可以将一个或所有快捷菜单重置为默认设置。</p>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<ol class="list-decimal pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">选择👉 <strong class="font-semibold">工具 &gt; 自定义</strong> 并点击👆 <strong class="font-semibold">工具栏和菜单</strong> 选项卡。</p>
+<h3 class="rp-toc-include" id="2-5"><a href="#2-5" class="rp-header-anchor rp-link" aria-hidden="true">#</a>重置快捷菜单</h3>
+<p>如果您自定义了快捷菜单并希望将其更改回原始，可以将一个或所有快捷菜单重置为默认设置。</p>
+<p>🏃‍♂️‍<strong>步骤</strong></p>
+<ol>
+<li>
+<p>选择👉 <strong>工具 &gt; 自定义</strong> 并点击👆 <strong>工具栏和菜单</strong> 选项卡。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在快捷菜单列表中，选择👉要重置的快捷菜单。</p>
+<li>
+<p>在快捷菜单列表中，选择👉要重置的快捷菜单。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在快捷菜单区域，点击👆 <strong class="font-semibold">重置</strong>。</p>
-<div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
-<p class="my-4 leading-7"> 要将所有快捷菜单重置为其默认设置，在快捷菜单框中，点击👆<strong class="font-semibold">全部重置</strong>。</p>
-</div></div>
+<li>
+<p>在快捷菜单区域，点击👆 <strong>重置</strong>。</p>
+<div class="rp-callout rp-callout--tip"><div class="rp-callout__title">TIP</div><div class="rp-callout__content"><p>要将所有快捷菜单重置为其默认设置，在快捷菜单框中，点击👆 <strong>全部重置</strong>。</p></div></div>
 </li>
 </ol>
-<h2 id="3" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">创建自定义命令和菜单<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#3">#</a></h2>
-<p class="my-4 leading-7"><strong class="font-semibold">命令</strong> 选项卡为您提供了自定义命令或菜单的选项。</p>
-<h3 id="3-1" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">创建和编辑自定义命令<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#3-1">#</a></h3>
-<p class="my-4 leading-7">您可以从已存在的命令或宏命令文件创建自定义命令。</p>
-<ul class="list-disc pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">要使用已作为或工具栏按钮存在的命令，您可以选择👉一个现有命令作为新命令的基础。然后定义新命令的属性。</p>
+<h2 class="rp-toc-include" id="3"><a href="#3" class="rp-header-anchor rp-link" aria-hidden="true">#</a>创建自定义命令和菜单</h2>
+<p><strong>命令</strong> 选项卡为您提供了自定义命令或菜单的选项。</p>
+<h3 class="rp-toc-include" id="3-1"><a href="#3-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>创建和编辑自定义命令</h3>
+<p>您可以从已存在的命令或宏命令文件创建自定义命令。</p>
+<ul>
+<li>
+<p>要使用已作为或工具栏按钮存在的命令，您可以选择👉一个现有命令作为新命令的基础。然后定义新命令的属性。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">要使用宏命令文件，请参见 <a href="#5" class="link_a7cea  link_a9ef4 inline-link_f855c">从宏命令文件创建命令</a>。</p>
+<li>
+<p>要使用宏命令文件，请参见 <a href="#5" class="rp-link">从宏命令文件创建命令</a>。</p>
 </li>
 </ul>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<ol class="list-decimal pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">选择👉 <strong class="font-semibold">工具 &gt; 自定义</strong> 并点击👆 <strong class="font-semibold">命令</strong> 选项卡。</p>
+<p>🏃‍♂️‍<strong>步骤</strong></p>
+<ol>
+<li>
+<p>选择👉 <strong>工具 &gt; 自定义</strong> 并点击👆 <strong>命令</strong> 选项卡。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在类别列表中，点击👆菜单或工具栏名称以显示特定于该菜单或工具栏的项目（命令），或从列表中选择👉&quot;所有命令&quot;。</p>
-<div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
-<p class="my-4 leading-7"> 如果您使宏命令（在<strong class="font-semibold">宏文件</strong> 选项卡上）可作为命令使用，类别列表将包括宏类别，命令列表将包括宏。有关更多信息，请参见&quot;<a href="#5" class="link_a7cea  link_a9ef4 inline-link_f855c">从宏命令文件创建命令</a>&quot; 。</p>
-</div></div>
+<li>
+<p>在类别列表中，点击👆菜单或工具栏名称以显示特定于该菜单或工具栏的项目（命令），或从列表中选择👉&quot;所有命令&quot;。</p>
+<div class="rp-callout rp-callout--tip"><div class="rp-callout__title">TIP</div><div class="rp-callout__content"><p>如果您使宏命令（在 <strong>宏文件</strong> 选项卡上）可作为命令使用，类别列表将包括宏类别，命令列表将包括宏。有关更多信息，请参见&quot;<a href="#5" class="rp-link">从宏命令文件创建命令</a>&quot; 。</p></div></div>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在命令列表中，选择👉您想要基于其创建自定义命令的命令。然后点击👆 <strong class="font-semibold">新建</strong> 按钮。如果要编辑现有的自定义命令，请选择👉命令并点击👆 <strong class="font-semibold">编辑</strong>。</p>
+<li>
+<p>在命令列表中，选择👉您想要基于其创建自定义命令的命令。然后点击👆 <strong>新建</strong> 按钮。如果要编辑现有的自定义命令，请选择👉命令并点击👆 <strong>编辑</strong>。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在添加命令对话框（或编辑命令对话框，如果您正在编辑自定义命令）中，指定或更改自定义命令的属性：</p>
-<p class="my-4 leading-7">a. 在命令名称框中，输入📝命令的名称。</p>
-<p class="my-4 leading-7">b. 如果新命令需要参数，请在参数框中输入📝参数。使用空格分隔每个参数。如果参数包含空格，请将参数用引号（&quot; &quot;）括起来。</p>
-<p class="my-4 leading-7">c. 在描述框中，输入📝自定义命令的描述。</p>
-<p class="my-4 leading-7">d. 如果原始命令关联了图像，选择👉&quot;使用默认图像&quot;以对自定义命令使用相同的图像。或者，选择👉&quot;选择👉用户定义图像&quot;以使用不同的图像、编辑图像或创建新图像。</p>
-<p class="my-4 leading-7">e. 点击👆 <strong class="font-semibold">确定</strong> 关闭添加命令对话框（或编辑命令对话框）并返回自定义对话框。</p>
+<li>
+<p>在添加命令对话框（或编辑命令对话框，如果您正在编辑自定义命令）中，指定或更改自定义命令的属性：</p>
+<p>a. 在命令名称框中，输入📝命令的名称。</p>
+<p>b. 如果新命令需要参数，请在参数框中输入📝参数。使用空格分隔每个参数。如果参数包含空格，请将参数用引号（&quot; &quot;）括起来。</p>
+<p>c. 在描述框中，输入📝自定义命令的描述。</p>
+<p>d. 如果原始命令关联了图像，选择👉&quot;使用默认图像&quot;以对自定义命令使用相同的图像。或者，选择👉&quot;选择👉用户定义图像&quot;以使用不同的图像、编辑图像或创建新图像。</p>
+<p>e. 点击👆 <strong>确定</strong> 关闭添加命令对话框（或编辑命令对话框）并返回自定义对话框。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">完成所有自定义后，点击👆 <strong class="font-semibold">关闭</strong>。</p>
-<div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
-<p class="my-4 leading-7"> 要将命令添加到工具栏或菜单，请点击👆命令并将其从命令列表拖动到工具栏或菜单。</p>
-</div></div>
+<li>
+<p>完成所有自定义后，点击👆 <strong>关闭</strong>。</p>
+<div class="rp-callout rp-callout--tip"><div class="rp-callout__title">TIP</div><div class="rp-callout__content"><p>要将命令添加到工具栏或菜单，请点击👆命令并将其从命令列表拖动到工具栏或菜单。</p></div></div>
 </li>
 </ol>
-<h3 id="3-2" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">删除自定义命令<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#3-2">#</a></h3>
-<p class="my-4 leading-7">您可以删除您创建的任何自定义命令。</p>
-<p class="my-4 leading-7">🙊<strong class="font-semibold">限制</strong></p>
-<p class="my-4 leading-7">您只能<a href="#3-2" class="link_a7cea  link_a9ef4 inline-link_f855c">删除自定义命令</a>（您创建的）。您不能删除系统命令。</p>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<ol class="list-decimal pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">选择👉 <strong class="font-semibold">工具 &gt; 自定义</strong> 并点击👆 <strong class="font-semibold">命令</strong> 选项卡。</p>
+<h3 class="rp-toc-include" id="3-2"><a href="#3-2" class="rp-header-anchor rp-link" aria-hidden="true">#</a>删除自定义命令</h3>
+<p>您可以删除您创建的任何自定义命令。</p>
+<p>🙊<strong>限制</strong></p>
+<p>您只能<a href="#3-2" class="rp-link">删除自定义命令</a>（您创建的）。您不能删除系统命令。</p>
+<p>🏃‍♂️‍<strong>步骤</strong></p>
+<ol>
+<li>
+<p>选择👉 <strong>工具 &gt; 自定义</strong> 并点击👆 <strong>命令</strong> 选项卡。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在类别列表中，点击👆菜单或工具栏名称以显示特定于该菜单或工具栏的项目（命令），或选择👉&quot;所有命令&quot;。</p>
+<li>
+<p>在类别列表中，点击👆菜单或工具栏名称以显示特定于该菜单或工具栏的项目（命令），或选择👉&quot;所有命令&quot;。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在命令列表中，选择👉自定义命令并点击👆 <strong class="font-semibold">删除</strong> 按钮。</p>
+<li>
+<p>在命令列表中，选择👉自定义命令并点击👆 <strong>删除</strong> 按钮。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">点击👆 <strong class="font-semibold">关闭</strong>。</p>
+<li>
+<p>点击👆 <strong>关闭</strong>。</p>
 </li>
 </ol>
-<h3 id="3-3" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">创建自定义菜单<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#3-3">#</a></h3>
-<p class="my-4 leading-7">创建一个新的空菜单，然后向其添加项目（命令）以<a href="#3-3" class="link_a7cea  link_a9ef4 inline-link_f855c">创建自定义菜单</a>。</p>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<ol class="list-decimal pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">点击👆 <strong class="font-semibold">工具 &gt; 自定义</strong> ；然后在自定义对话框中，点击👆 <strong class="font-semibold">命令</strong> 选项卡。</p>
+<h3 class="rp-toc-include" id="3-3"><a href="#3-3" class="rp-header-anchor rp-link" aria-hidden="true">#</a>创建自定义菜单</h3>
+<p>创建一个新的空菜单，然后向其添加项目（命令）以<a href="#3-3" class="rp-link">创建自定义菜单</a>。</p>
+<p>🏃‍♂️‍<strong>步骤</strong></p>
+<ol>
+<li>
+<p>点击👆 <strong>工具 &gt; 自定义</strong> ；然后在自定义对话框中，点击👆 <strong>命令</strong> 选项卡。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在类别列表中，选择👉&quot;新建菜单&quot;。</p>
+<li>
+<p>在类别列表中，选择👉&quot;新建菜单&quot;。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在命令列表中，选择👉新建菜单并将其拖动到您想要的位置：</p>
-<ul class="list-disc pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">要创建顶级菜单，将新菜单拖动到菜单栏。</p>
+<li>
+<p>在命令列表中，选择👉新建菜单并将其拖动到您想要的位置：</p>
+<ul>
+<li>
+<p>要创建顶级菜单，将新菜单拖动到菜单栏。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">要创建子菜单，将其拖动到现有菜单名称上。</p>
+<li>
+<p>要创建子菜单，将其拖动到现有菜单名称上。</p>
 </li>
 </ul>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">点击👆您的新菜单以选择👉它。然后<strong class="font-semibold">右键</strong>点击👆并选择👉 <strong class="font-semibold">按钮外观</strong>。</p>
+<li>
+<p>点击👆您的新菜单以选择👉它。然后<strong>右键</strong>点击👆并选择👉 <strong>按钮外观</strong>。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在&quot;按钮文本&quot;字段中，输入📝菜单名称并点击👆 <strong class="font-semibold">确定</strong>。</p>
-<p class="my-4 leading-7">保持自定义对话框在 <strong class="font-semibold">命令</strong> 选项卡上打开。</p>
+<li>
+<p>在&quot;按钮文本&quot;字段中，输入📝菜单名称并点击👆 <strong>确定</strong>。</p>
+<p>保持自定义对话框在 <strong>命令</strong> 选项卡上打开。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在类别列表中，选择👉菜单或工具栏名称以显示特定于该菜单或工具栏的命令，或选择👉&quot;所有命令&quot;。</p>
-<div class="rspress-directive warning"><div class="rspress-directive-title">WARNING</div><div class="rspress-directive-content">
-<p class="my-4 leading-7"> 如果您在 SailWind Layout 或 SailWind Logic 的特殊模式下工作（例如 SailWind Layout 中的封装编辑器），某些命令类别不可用于自定义。</p>
-</div></div>
+<li>
+<p>在类别列表中，选择👉菜单或工具栏名称以显示特定于该菜单或工具栏的命令，或选择👉&quot;所有命令&quot;。</p>
+<div class="rp-callout rp-callout--warning"><div class="rp-callout__title">WARNING</div><div class="rp-callout__content"><p>如果您在 SailWind Layout 或 SailWind Logic 的特殊模式下工作（例如 SailWind Layout 中的封装编辑器），某些命令类别不可用于自定义。</p></div></div>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在命令列表中，选择👉您想要的命令并将其拖动到菜单。</p>
+<li>
+<p>在命令列表中，选择👉您想要的命令并将其拖动到菜单。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">添加完命令后，点击👆 <strong class="font-semibold">关闭</strong>。</p>
+<li>
+<p>添加完命令后，点击👆 <strong>关闭</strong>。</p>
 </li>
 </ol>
-<h3 id="3-4" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">向工具栏和菜单添加项目<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#3-4">#</a></h3>
-<p class="my-4 leading-7">向您的自定义工具栏和菜单添加按钮，以填充命令和自定义命令。</p>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<ol class="list-decimal pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">选择👉 <strong class="font-semibold">工具 &gt; 自定义</strong> 并点击👆 <strong class="font-semibold">命令</strong> 选项卡。</p>
+<h3 class="rp-toc-include" id="3-4"><a href="#3-4" class="rp-header-anchor rp-link" aria-hidden="true">#</a>向工具栏和菜单添加项目</h3>
+<p>向您的自定义工具栏和菜单添加按钮，以填充命令和自定义命令。</p>
+<p>🏃‍♂️‍<strong>步骤</strong></p>
+<ol>
+<li>
+<p>选择👉 <strong>工具 &gt; 自定义</strong> 并点击👆 <strong>命令</strong> 选项卡。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在类别列表中，选择👉工具栏或菜单名称以显示特定于该菜单或工具栏的命令，或选择👉&quot;所有命令&quot;。</p>
-<div class="rspress-directive warning"><div class="rspress-directive-title">WARNING</div><div class="rspress-directive-content">
-<p class="my-4 leading-7"> 如果您在 SailWind Layout 或 SailWind Logic 的特殊模式下工作（例如 SailWind Layout 中的封装编辑器），某些命令类别不可用于自定义。</p>
-</div></div>
+<li>
+<p>在类别列表中，选择👉工具栏或菜单名称以显示特定于该菜单或工具栏的命令，或选择👉&quot;所有命令&quot;。</p>
+<div class="rp-callout rp-callout--warning"><div class="rp-callout__title">WARNING</div><div class="rp-callout__content"><p>如果您在 SailWind Layout 或 SailWind Logic 的特殊模式下工作（例如 SailWind Layout 中的封装编辑器），某些命令类别不可用于自定义。</p></div></div>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在命令列表中，选择👉您想要的命令并将其拖动到工具栏或菜单。</p>
-<div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
-<p class="my-4 leading-7"> 要从工具栏或菜单中移除项目（在自定义对话框打开时），点击👆项目并将其拖出工具栏或菜单。</p>
-</div></div>
+<li>
+<p>在命令列表中，选择👉您想要的命令并将其拖动到工具栏或菜单。</p>
+<div class="rp-callout rp-callout--tip"><div class="rp-callout__title">TIP</div><div class="rp-callout__content"><p>要从工具栏或菜单中移除项目（在自定义对话框打开时），点击👆项目并将其拖出工具栏或菜单。</p></div></div>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">添加完命令后，点击👆 <strong class="font-semibold">关闭</strong>。</p>
+<li>
+<p>添加完命令后，点击👆 <strong>关闭</strong>。</p>
 </li>
 </ol>
-<h3 id="3-5" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">在工具栏和菜单上移动项目<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#3-5">#</a></h3>
-<p class="my-4 leading-7">您可以重新排列菜单上的项目或工具栏上的按钮。您还可以将项目从一个菜单或工具栏移动或复制到另一个。</p>
-<h4 id="3-5-1" class="mt-8 leading-6 text-lg title_fb7eb">在工具栏上移动按钮<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#3-5-1">#</a></h4>
-<p class="my-4 leading-7">移动工具栏按钮的方法取决于自定义对话框是否打开。</p>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<p class="my-4 leading-7">如果自定义对话框关闭，按住 Alt 键；然后将工具栏按钮拖动到同一工具栏上的新位置或不同的工具栏。如果自定义对话框打开，点击👆工具栏按钮并将其拖动到同一工具栏上的新位置或不同的工具栏。</p>
-<div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
-<p class="my-4 leading-7"> 您可以复制按钮并移动副本，而不是移动按钮。按住 Ctrl 和 Alt 键同时拖动按钮。</p>
-</div></div>
-<h4 id="3-5-2" class="mt-8 leading-6 text-lg title_fb7eb">移动<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#3-5-2">#</a></h4>
-<p class="my-4 leading-7">您可以重新排列自定义菜单中的项目。</p>
-<p class="my-4 leading-7">🙊<strong class="font-semibold">限制</strong></p>
-<p class="my-4 leading-7">要移动，必须打开&quot;自定义&quot;对话框。</p>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<ol class="list-decimal pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">选择👉 <strong class="font-semibold">工具 &gt; 自定义</strong> 。</p>
+<h3 class="rp-toc-include" id="3-5"><a href="#3-5" class="rp-header-anchor rp-link" aria-hidden="true">#</a>在工具栏和菜单上移动项目</h3>
+<p>您可以重新排列菜单上的项目或工具栏上的按钮。您还可以将项目从一个菜单或工具栏移动或复制到另一个。</p>
+<h4 class="rp-toc-include" id="3-5-1"><a href="#3-5-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>在工具栏上移动按钮</h4>
+<p>移动工具栏按钮的方法取决于自定义对话框是否打开。</p>
+<p>🏃‍♂️‍<strong>步骤</strong></p>
+<p>如果自定义对话框关闭，按住 Alt 键；然后将工具栏按钮拖动到同一工具栏上的新位置或不同的工具栏。如果自定义对话框打开，点击👆工具栏按钮并将其拖动到同一工具栏上的新位置或不同的工具栏。</p>
+<div class="rp-callout rp-callout--tip"><div class="rp-callout__title">TIP</div><div class="rp-callout__content"><p>您可以复制按钮并移动副本，而不是移动按钮。按住 Ctrl 和 Alt 键同时拖动按钮。</p></div></div>
+<h4 class="rp-toc-include" id="3-5-2"><a href="#3-5-2" class="rp-header-anchor rp-link" aria-hidden="true">#</a>移动</h4>
+<p>您可以重新排列自定义菜单中的项目。</p>
+<p>🙊<strong>限制</strong></p>
+<p>要移动，必须打开&quot;自定义&quot;对话框。</p>
+<p>🏃‍♂️‍<strong>步骤</strong></p>
+<ol>
+<li>
+<p>选择👉 <strong>工具 &gt; 自定义</strong> 。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在 SailWind 工具主窗口中，显示包含要移动项目的菜单。</p>
+<li>
+<p>在 SailWind 工具主窗口中，显示包含要移动项目的菜单。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">点击👆并将其拖动到同一菜单或不同菜单上的新位置。</p>
-<div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
-<p class="my-4 leading-7"> 您也可以复制而非移动。按住 Ctrl 键同时拖动项目即可复制。</p>
-</div></div>
+<li>
+<p>点击👆并将其拖动到同一菜单或不同菜单上的新位置。</p>
+<div class="rp-callout rp-callout--tip"><div class="rp-callout__title">TIP</div><div class="rp-callout__content"><p>您也可以复制而非移动。按住 Ctrl 键同时拖动项目即可复制。</p></div></div>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">点击👆 <strong class="font-semibold">关闭</strong>。</p>
+<li>
+<p>点击👆 <strong>关闭</strong>。</p>
 </li>
 </ol>
-<h3 id="3-6" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">从工具栏和菜单移除项目<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#3-6">#</a></h3>
-<p class="my-4 leading-7">您可以通过移除或工具栏按钮来自定义界面。具体方法取决于&quot;自定义&quot;对话框是否打开。</p>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<p class="my-4 leading-7">如果&quot;自定义&quot;对话框已打开，将项目拖出工具栏或菜单外，然后关闭对话框。如果对话框未打开，仍可通过按住 Alt 键将工具栏项目拖出工具栏来移除。</p>
-<div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
-<p class="my-4 leading-7"> 您可以将工具栏或快捷菜单重置为默认项目列表。参见&quot;重置工具栏为默认设置&quot;。</p>
-</div></div>
-<h2 id="4" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">自定义快捷键<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#4">#</a></h2>
-<p class="my-4 leading-7">您可以使用&quot;自定义&quot;对话框的<strong class="font-semibold">键盘和鼠标</strong>选项卡(<strong class="font-semibold">工具 &gt; 自定义</strong> &gt; <strong class="font-semibold">键盘和鼠标</strong>选项卡)创建和<a href="#4" class="link_a7cea  link_a9ef4 inline-link_f855c">自定义快捷键</a>。</p>
-<h3 id="4-1" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">创建新快捷键<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#4-1">#</a></h3>
-<p class="my-4 leading-7">您可以创建适用于任何模式的快捷键。因此，同一快捷键在不同工作模式下可能具有不同功能。</p>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<ol class="list-decimal pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">选择👉 <strong class="font-semibold">工具 &gt; 自定义</strong> ，点击👆 <strong class="font-semibold">键盘和鼠标</strong> 选项卡。</p>
+<h3 class="rp-toc-include" id="3-6"><a href="#3-6" class="rp-header-anchor rp-link" aria-hidden="true">#</a>从工具栏和菜单移除项目</h3>
+<p>您可以通过移除或工具栏按钮来自定义界面。具体方法取决于&quot;自定义&quot;对话框是否打开。</p>
+<p>🏃‍♂️‍<strong>步骤</strong></p>
+<p>如果&quot;自定义&quot;对话框已打开，将项目拖出工具栏或菜单外，然后关闭对话框。如果对话框未打开，仍可通过按住 Alt 键将工具栏项目拖出工具栏来移除。</p>
+<div class="rp-callout rp-callout--tip"><div class="rp-callout__title">TIP</div><div class="rp-callout__content"><p>您可以将工具栏或快捷菜单重置为默认项目列表。参见&quot;重置工具栏为默认设置&quot;。</p></div></div>
+<h2 class="rp-toc-include" id="4"><a href="#4" class="rp-header-anchor rp-link" aria-hidden="true">#</a>自定义快捷键</h2>
+<p>您可以使用&quot;自定义&quot;对话框的<strong>键盘和鼠标</strong>选项卡(<strong>工具 &gt; 自定义</strong> &gt; <strong>键盘和鼠标</strong>选项卡)创建和<a href="#4" class="rp-link">自定义快捷键</a>。</p>
+<h3 class="rp-toc-include" id="4-1"><a href="#4-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>创建新快捷键</h3>
+<p>您可以创建适用于任何模式的快捷键。因此，同一快捷键在不同工作模式下可能具有不同功能。</p>
+<p>🏃‍♂️‍<strong>步骤</strong></p>
+<ol>
+<li>
+<p>选择👉 <strong>工具 &gt; 自定义</strong> ，点击👆 <strong>键盘和鼠标</strong> 选项卡。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在&quot;模式&quot;框中选择👉要应用快捷键的模式。该模式的可用命令将显示在&quot;命令&quot;框中。</p>
+<li>
+<p>在&quot;模式&quot;框中选择👉要应用快捷键的模式。该模式的可用命令将显示在&quot;命令&quot;框中。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在&quot;命令&quot;框中选择👉要<a href="#4-1" class="link_a7cea  link_a9ef4 inline-link_f855c">创建新快捷键</a>的命令。如果已有快捷键，它会显示在&quot;当前快捷键&quot;框中。</p>
-<div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
-<p class="my-4 leading-7"> 要替换现有快捷键，先选择👉现有快捷键并点击👆<strong class="font-semibold">删除</strong>移除它，然后为该命令<a href="#4-1" class="link_a7cea  link_a9ef4 inline-link_f855c">创建新快捷键</a>。</p>
-</div></div>
+<li>
+<p>在&quot;命令&quot;框中选择👉要<a href="#4-1" class="rp-link">创建新快捷键</a>的命令。如果已有快捷键，它会显示在&quot;当前快捷键&quot;框中。</p>
+<div class="rp-callout rp-callout--tip"><div class="rp-callout__title">TIP</div><div class="rp-callout__content"><p>要替换现有快捷键，先选择👉现有快捷键并点击👆<strong>删除</strong>移除它，然后为该命令<a href="#4-1" class="rp-link">创建新快捷键</a>。</p></div></div>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在&quot;当前快捷键&quot;框上方，点击👆<strong class="font-semibold">新建</strong>按钮打开&quot;分配快捷键&quot;对话框。</p>
+<li>
+<p>在&quot;当前快捷键&quot;框上方，点击👆<strong>新建</strong>按钮打开&quot;分配快捷键&quot;对话框。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">选择👉以下一种快捷键类型：</p>
-<ul class="list-disc pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">要分配快捷键，选择👉&quot;按下新快捷键&quot;选项，然后按下要使用的键。有关创建快捷键的详细规则和限制，请参见&quot;<a href="#4-2" class="link_a7cea  link_a9ef4 inline-link_f855c">键序列规则与限制</a>&quot;。</p>
-<div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
-<p class="my-4 leading-7"> 当您输入📝新快捷键时，类似快捷键会显示在&quot;分配给其他命令的类似快捷键&quot;框中。这有助于避免创建与现有快捷键冲突的新快捷键。</p>
-</div></div>
+<li>
+<p>选择👉以下一种快捷键类型：</p>
+<ul>
+<li>
+<p>要分配快捷键，选择👉&quot;按下新快捷键&quot;选项，然后按下要使用的键。有关创建快捷键的详细规则和限制，请参见&quot;<a href="#4-2" class="rp-link">键序列规则与限制</a>&quot;。</p>
+<div class="rp-callout rp-callout--tip"><div class="rp-callout__title">TIP</div><div class="rp-callout__content"><p>当您输入📝新快捷键时，类似快捷键会显示在&quot;分配给其他命令的类似快捷键&quot;框中。这有助于避免创建与现有快捷键冲突的新快捷键。</p></div></div>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">要创建鼠标动作，选择👉&quot;或选择👉鼠标事件&quot;选项，然后从列表框选项、鼠标按钮事件和修饰键中选择👉组合。</p>
+<li>
+<p>要创建鼠标动作，选择👉&quot;或选择👉鼠标事件&quot;选项，然后从列表框选项、鼠标按钮事件和修饰键中选择👉组合。</p>
 </li>
 </ul>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">点击👆<strong class="font-semibold">确定</strong>关闭&quot;分配快捷键&quot;对话框。</p>
+<li>
+<p>点击👆<strong>确定</strong>关闭&quot;分配快捷键&quot;对话框。</p>
 </li>
 </ol>
-<p class="my-4 leading-7">👀‍<strong class="font-semibold">结果</strong></p>
-<p class="my-4 leading-7">新快捷键将显示在&quot;自定义&quot;对话框的&quot;当前快捷键&quot;框中。</p>
-<h3 id="4-2" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">键序列规则与限制<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#4-2">#</a></h3>
-<p class="my-4 leading-7">快捷键的第一个字符必须满足特定要求。</p>
-<p class="my-4 leading-7">快捷键的第一个字符可由以下列表中的任何项目加上 Alt、Ctrl 或Shift 修饰符组成：</p>
-<ul class="list-disc pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">所有可打印字符包括空格和 Tab</p>
+<p>👀‍<strong>结果</strong></p>
+<p>新快捷键将显示在&quot;自定义&quot;对话框的&quot;当前快捷键&quot;框中。</p>
+<h3 class="rp-toc-include" id="4-2"><a href="#4-2" class="rp-header-anchor rp-link" aria-hidden="true">#</a>键序列规则与限制</h3>
+<p>快捷键的第一个字符必须满足特定要求。</p>
+<p>快捷键的第一个字符可由以下列表中的任何项目加上 Alt、Ctrl 或Shift 修饰符组成：</p>
+<ul>
+<li>
+<p>所有可打印字符包括空格和 Tab</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">所有功能键</p>
+<li>
+<p>所有功能键</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">扩展键：上、下、左、右、插入、删除、Home、PageUp、PageDown、End</p>
+<li>
+<p>扩展键：上、下、左、右、插入、删除、Home、PageUp、PageDown、End</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">数字小键盘键(Num Lock 关闭时)：上、下、左、右、插入、Home、PageUp、PageDown、Del、End、/、*、+、-</p>
+<li>
+<p>数字小键盘键(Num Lock 关闭时)：上、下、左、右、插入、Home、PageUp、PageDown、Del、End、/、*、+、-</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">鼠标鼠标事件：点击👆、双击、向前旋转、向后旋转</p>
-<div class="rspress-directive warning"><div class="rspress-directive-title">WARNING</div><div class="rspress-directive-content">
-<p class="my-4 leading-7"> 鼠标鼠标事件不能与键序列组合使用，但允许使用 Ctrl、Alt 和Shift 修饰符。</p>
-</div></div>
+<li>
+<p>鼠标鼠标事件：点击👆、双击、向前旋转、向后旋转</p>
+<div class="rp-callout rp-callout--warning"><div class="rp-callout__title">WARNING</div><div class="rp-callout__content"><p>鼠标鼠标事件不能与键序列组合使用，但允许使用 Ctrl、Alt 和Shift 修饰符。</p></div></div>
 </li>
 </ul>
-<p class="my-4 leading-7">后续字符可由以下组成：</p>
-<ul class="list-disc pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">字母数字(a-z0-9)</p>
-<div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
-<p class="my-4 leading-7"> 例外：某些组合如 Alt+Tab 会被 Windows 拦截，因此不可用。</p>
-</div></div>
+<p>后续字符可由以下组成：</p>
+<ul>
+<li>
+<p>字母数字(a-z0-9)</p>
+<div class="rp-callout rp-callout--tip"><div class="rp-callout__title">TIP</div><div class="rp-callout__content"><p>例外：某些组合如 Alt+Tab 会被 Windows 拦截，因此不可用。</p></div></div>
 </li>
 </ul>
-<h3 id="4-3" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">列出可用快捷键<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#4-3">#</a></h3>
-<p class="my-4 leading-7">您可以创建命令及其分配快捷键的 HTML 表格，以便与设计团队其他成员通过网络共享这些信息。</p>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<ol class="list-decimal pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">选择👉 <strong class="font-semibold">工具 &gt; 自定义</strong> ，点击👆 <strong class="font-semibold">键盘和鼠标</strong> 选项卡。</p>
+<h3 class="rp-toc-include" id="4-3"><a href="#4-3" class="rp-header-anchor rp-link" aria-hidden="true">#</a>列出可用快捷键</h3>
+<p>您可以创建命令及其分配快捷键的 HTML 表格，以便与设计团队其他成员通过网络共享这些信息。</p>
+<p>🏃‍♂️‍<strong>步骤</strong></p>
+<ol>
+<li>
+<p>选择👉 <strong>工具 &gt; 自定义</strong> ，点击👆 <strong>键盘和鼠标</strong> 选项卡。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">点击👆<strong class="font-semibold">报告</strong>，然后选择👉或输入📝 HTML 文件名，点击👆<strong class="font-semibold">保存</strong>。</p>
+<li>
+<p>点击👆<strong>报告</strong>，然后选择👉或输入📝 HTML 文件名，点击👆<strong>保存</strong>。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在&quot;自定义&quot;对话框中点击👆<strong class="font-semibold">关闭</strong>。</p>
-</li>
-</ol>
-<p class="my-4 leading-7">👀‍<strong class="font-semibold">结果</strong></p>
-<p class="my-4 leading-7">文件超链接将出现在输出窗口的<strong class="font-semibold">状态</strong>选项卡下。</p>
-<h3 id="4-4" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">快捷键中的表达式<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#4-4">#</a></h3>
-<p class="my-4 leading-7">您可以用正则表达式替换快捷键命令参数中的字符。</p>
-<p class="my-4 leading-7">下表描述了表达式的用法。</p>
-<p class="my-4 leading-7"><strong class="font-semibold">表 92. <a href="#4-4" class="link_a7cea  link_a9ef4 inline-link_f855c">快捷键中的表达式</a></strong></p>
-<table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
-<thead>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">表达式</th>
-<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">用途</th>
-</tr>
-</thead>
-<tbody>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">*</td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">匹配任意数量字符。</td>
-</tr>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">?</td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">匹配任意一个字符。</td>
-</tr>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">[set]</td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">匹配指定集合中的任何字符。提示：集合由字符或范围组成。</td>
-</tr>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"></td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">范围形式为：字符-连字符-字符，如 A-Z 或0-9。</td>
-</tr>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider"></td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">集合支持的最小字符集为[0-9a-zA-Z_]。</td>
-</tr>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">[!set] 或 <code>[^set]</code></td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">匹配不在指定集合中的任何字符。</td>
-</tr>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">\</td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">用于抑制集合中字符` [ ] * ? ! ^ - \ &#x27;的特殊语法意义，精确匹配该字符。</td>
-</tr>
-</tbody>
-</table>
-<p class="my-4 leading-7">下表展示了使用 preview.pcb 设计的命令参数中正则表达式示例，参见表 93。</p>
-<table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
-<thead>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">快捷键</th>
-<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">结果</th>
-</tr>
-</thead>
-<tbody>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">H A*</td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">高亮所有以 A开头的网络，如 A00、A01、A02。</td>
-</tr>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">H +??</td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">高亮所有以+开头，后跟两位数字或字符的网络，如+5V。</td>
-</tr>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">H A?0</td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">高亮所有以 A开头，以 0 结尾，中间为任意字符的网络，如 A00 和 A10。</td>
-</tr>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">H [C-D]*</td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">高亮所有以 C或 D开头的网络，如 CLKIN、D00。</td>
-</tr>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">H [!C-D]*</td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">高亮所有不以 C或 D开头的网络，如 A00、GND。</td>
-</tr>
-</tbody>
-</table>
-<h3 id="4-5" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">删除快捷键<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#4-5">#</a></h3>
-<p class="my-4 leading-7">删除不再使用的快捷键，或作为更改现有快捷键的第一步。</p>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<ol class="list-decimal pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">选择👉 <strong class="font-semibold">工具 &gt; 自定义</strong> ，点击👆 <strong class="font-semibold">键盘和鼠标</strong> 选项卡。</p>
-</li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在&quot;模式&quot;框中选择👉要<a href="#4-5" class="link_a7cea  link_a9ef4 inline-link_f855c">删除快捷键</a>的模式。该模式的可用命令将显示在&quot;命令&quot;框中。</p>
-</li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在&quot;命令&quot;列表中选择👉要删除其快捷键的命令。</p>
-</li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在&quot;当前快捷键&quot;列表中选择👉要删除的快捷键。</p>
-</li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">点击👆<strong class="font-semibold">删除</strong>按钮。</p>
-</li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">点击👆<strong class="font-semibold">关闭</strong>。</p>
+<li>
+<p>在&quot;自定义&quot;对话框中点击👆<strong>关闭</strong>。</p>
 </li>
 </ol>
-<h3 id="4-6" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">重置默认快捷键<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#4-6">#</a></h3>
-<p class="my-4 leading-7">您可以将所有快捷键恢复为默认设置。</p>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<ol class="list-decimal pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">选择👉 <strong class="font-semibold">工具 &gt; 自定义</strong> ，点击👆 <strong class="font-semibold">键盘和鼠标</strong> 选项卡。</p>
+<p>👀‍<strong>结果</strong></p>
+<p>文件超链接将出现在输出窗口的<strong>状态</strong>选项卡下。</p>
+<h3 class="rp-toc-include" id="4-4"><a href="#4-4" class="rp-header-anchor rp-link" aria-hidden="true">#</a>快捷键中的表达式</h3>
+<p>您可以用正则表达式替换快捷键命令参数中的字符。</p>
+<p>下表描述了表达式的用法。</p>
+<p><strong>表 92. <a href="#4-4" class="rp-link">快捷键中的表达式</a></strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>表达式</th><th>用途</th></tr></thead><tbody><tr><td>*</td><td>匹配任意数量字符。</td></tr><tr><td>?</td><td>匹配任意一个字符。</td></tr><tr><td>[set]</td><td>匹配指定集合中的任何字符。提示：集合由字符或范围组成。</td></tr><tr><td></td><td>范围形式为：字符-连字符-字符，如 A-Z 或0-9。</td></tr><tr><td></td><td>集合支持的最小字符集为[0-9a-zA-Z_]。</td></tr><tr><td>[!set] 或 <code>[^set]</code></td><td>匹配不在指定集合中的任何字符。</td></tr><tr><td>\</td><td>用于抑制集合中字符` [ ] * ? ! ^ - \ &#x27;的特殊语法意义，精确匹配该字符。</td></tr></tbody></table></div>
+<p>下表展示了使用 preview.pcb 设计的命令参数中正则表达式示例，参见表 93。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>快捷键</th><th>结果</th></tr></thead><tbody><tr><td>H A*</td><td>高亮所有以 A开头的网络，如 A00、A01、A02。</td></tr><tr><td>H +??</td><td>高亮所有以+开头，后跟两位数字或字符的网络，如+5V。</td></tr><tr><td>H A?0</td><td>高亮所有以 A开头，以 0 结尾，中间为任意字符的网络，如 A00 和 A10。</td></tr><tr><td>H [C-D]*</td><td>高亮所有以 C或 D开头的网络，如 CLKIN、D00。</td></tr><tr><td>H [!C-D]*</td><td>高亮所有不以 C或 D开头的网络，如 A00、GND。</td></tr></tbody></table></div>
+<h3 class="rp-toc-include" id="4-5"><a href="#4-5" class="rp-header-anchor rp-link" aria-hidden="true">#</a>删除快捷键</h3>
+<p>删除不再使用的快捷键，或作为更改现有快捷键的第一步。</p>
+<p>🏃‍♂️‍<strong>步骤</strong></p>
+<ol>
+<li>
+<p>选择👉 <strong>工具 &gt; 自定义</strong> ，点击👆 <strong>键盘和鼠标</strong> 选项卡。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">点击👆<strong class="font-semibold">全部重置</strong>。</p>
+<li>
+<p>在&quot;模式&quot;框中选择👉要<a href="#4-5" class="rp-link">删除快捷键</a>的模式。该模式的可用命令将显示在&quot;命令&quot;框中。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在确认对话框上点击👆<strong class="font-semibold">是</strong>。</p>
+<li>
+<p>在&quot;命令&quot;列表中选择👉要删除其快捷键的命令。</p>
+</li>
+<li>
+<p>在&quot;当前快捷键&quot;列表中选择👉要删除的快捷键。</p>
+</li>
+<li>
+<p>点击👆<strong>删除</strong>按钮。</p>
+</li>
+<li>
+<p>点击👆<strong>关闭</strong>。</p>
 </li>
 </ol>
-<h3 id="4-7" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">为宏分配快捷键<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#4-7">#</a></h3>
-<p class="my-4 leading-7">您可以创建执行宏的快捷键。</p>
-<div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
-<p class="my-4 leading-7"> 要<a href="#4-7" class="link_a7cea  link_a9ef4 inline-link_f855c">为宏分配快捷键</a>，宏命令文件(.mcr)必须已存在。您可以通过在 SailWind 工具中录制宏或用宏语言编写脚本来创建宏。更多信息请参见&quot;创建宏&quot;。</p>
-</div></div>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<ol class="list-decimal pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">选择👉 <strong class="font-semibold">工具 &gt; 自定义</strong> ，点击👆 <strong class="font-semibold">宏文件</strong> 选项卡。</p>
+<h3 class="rp-toc-include" id="4-6"><a href="#4-6" class="rp-header-anchor rp-link" aria-hidden="true">#</a>重置默认快捷键</h3>
+<p>您可以将所有快捷键恢复为默认设置。</p>
+<p>🏃‍♂️‍<strong>步骤</strong></p>
+<ol>
+<li>
+<p>选择👉 <strong>工具 &gt; 自定义</strong> ，点击👆 <strong>键盘和鼠标</strong> 选项卡。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在&quot;宏命令文件&quot;区域点击👆<strong class="font-semibold">新建</strong>按钮。</p>
+<li>
+<p>点击👆<strong>全部重置</strong>。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在&quot;打开宏文件&quot;对话框中选择👉所需的宏文件，然后点击👆<strong class="font-semibold">打开</strong>。SailWind Router 加载宏并使其可用作命令(同时选中✅宏名称左侧的复选框)。</p>
-<div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
-<p class="my-4 leading-7"> 要关闭宏文件或使其在&quot;自定义&quot;对话框中不可用，清除宏名称旁边的复选框。</p>
-</div></div>
+<li>
+<p>在确认对话框上点击👆<strong>是</strong>。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">要<a href="#4-7" class="link_a7cea  link_a9ef4 inline-link_f855c">为宏分配快捷键</a>，点击👆 <strong class="font-semibold">键盘和鼠标</strong> 选项卡。</p>
+</ol>
+<h3 class="rp-toc-include" id="4-7"><a href="#4-7" class="rp-header-anchor rp-link" aria-hidden="true">#</a>为宏分配快捷键</h3>
+<p>您可以创建执行宏的快捷键。</p>
+<div class="rp-callout rp-callout--tip"><div class="rp-callout__title">TIP</div><div class="rp-callout__content"><p>要<a href="#4-7" class="rp-link">为宏分配快捷键</a>，宏命令文件(.mcr)必须已存在。您可以通过在 SailWind 工具中录制宏或用宏语言编写脚本来创建宏。更多信息请参见&quot;创建宏&quot;。</p></div></div>
+<p>🏃‍♂️‍<strong>步骤</strong></p>
+<ol>
+<li>
+<p>选择👉 <strong>工具 &gt; 自定义</strong> ，点击👆 <strong>宏文件</strong> 选项卡。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在&quot;模式&quot;列表中选择👉&quot;所有模式&quot;。</p>
+<li>
+<p>在&quot;宏命令文件&quot;区域点击👆<strong>新建</strong>按钮。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在&quot;命令&quot;区域双击&quot;宏&quot;显示可用宏列表，然后选择👉所需宏。</p>
+<li>
+<p>在&quot;打开宏文件&quot;对话框中选择👉所需的宏文件，然后点击👆<strong>打开</strong>。SailWind Router 加载宏并使其可用作命令(同时选中✅宏名称左侧的复选框)。</p>
+<div class="rp-callout rp-callout--tip"><div class="rp-callout__title">TIP</div><div class="rp-callout__content"><p>要关闭宏文件或使其在&quot;自定义&quot;对话框中不可用，清除宏名称旁边的复选框。</p></div></div>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在&quot;当前快捷键&quot;区域点击👆<strong class="font-semibold">新建</strong>按钮。软件显示&quot;分配快捷键&quot;对话框。</p>
+<li>
+<p>要<a href="#4-7" class="rp-link">为宏分配快捷键</a>，点击👆 <strong>键盘和鼠标</strong> 选项卡。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">选择👉以下一种快捷键类型：</p>
-<ul class="list-disc pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">要分配快捷键，选择👉&quot;按下新快捷键&quot;选项，然后按下要使用的键。有关创建快捷键的详细规则和限制，请参见&quot;<a href="#4-2" class="link_a7cea  link_a9ef4 inline-link_f855c">键序列规则与限制</a>&quot;。</p>
-<div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
-<p class="my-4 leading-7"> 当您输入📝新快捷键时，类似快捷键会显示在&quot;分配给其他命令的类似快捷键&quot;框中。这有助于避免创建与现有快捷键冲突的新快捷键。</p>
-</div></div>
+<li>
+<p>在&quot;模式&quot;列表中选择👉&quot;所有模式&quot;。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">要创建鼠标动作，选择👉&quot;或选择👉鼠标事件&quot;选项，然后从列表框选项、鼠标按钮事件和修饰键中选择👉组合。</p>
+<li>
+<p>在&quot;命令&quot;区域双击&quot;宏&quot;显示可用宏列表，然后选择👉所需宏。</p>
+</li>
+<li>
+<p>在&quot;当前快捷键&quot;区域点击👆<strong>新建</strong>按钮。软件显示&quot;分配快捷键&quot;对话框。</p>
+</li>
+<li>
+<p>选择👉以下一种快捷键类型：</p>
+<ul>
+<li>
+<p>要分配快捷键，选择👉&quot;按下新快捷键&quot;选项，然后按下要使用的键。有关创建快捷键的详细规则和限制，请参见&quot;<a href="#4-2" class="rp-link">键序列规则与限制</a>&quot;。</p>
+<div class="rp-callout rp-callout--tip"><div class="rp-callout__title">TIP</div><div class="rp-callout__content"><p>当您输入📝新快捷键时，类似快捷键会显示在&quot;分配给其他命令的类似快捷键&quot;框中。这有助于避免创建与现有快捷键冲突的新快捷键。</p></div></div>
+</li>
+<li>
+<p>要创建鼠标动作，选择👉&quot;或选择👉鼠标事件&quot;选项，然后从列表框选项、鼠标按钮事件和修饰键中选择👉组合。</p>
 </li>
 </ul>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">点击👆<strong class="font-semibold">确定</strong>关闭&quot;分配快捷键&quot;对话框。</p>
+<li>
+<p>点击👆<strong>确定</strong>关闭&quot;分配快捷键&quot;对话框。</p>
 </li>
 </ol>
-<p class="my-4 leading-7">👀‍<strong class="font-semibold">结果</strong></p>
-<p class="my-4 leading-7">新快捷键将显示在&quot;自定义&quot;对话框的&quot;当前快捷键&quot;框中。</p>
-<h2 id="5" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">从宏命令文件创建命令<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#5">#</a></h2>
-<p class="my-4 leading-7">您可以将宏文件创建的自定义命令添加到工具栏和菜单中。</p>
-<div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
-<p class="my-4 leading-7"> 要<a href="#5" class="link_a7cea  link_a9ef4 inline-link_f855c">从宏命令文件创建命令</a>，宏命令文件(.mcr)必须已存在。您可以通过在 SailWind 工具中录制宏或用宏语言编写脚本来创建宏。更多信息请参见&quot;创建宏&quot;。</p>
-</div></div>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<ol class="list-decimal pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">选择👉 <strong class="font-semibold">工具 &gt; 自定义</strong> ，点击👆 <strong class="font-semibold">宏文件</strong> 选项卡。</p>
+<p>👀‍<strong>结果</strong></p>
+<p>新快捷键将显示在&quot;自定义&quot;对话框的&quot;当前快捷键&quot;框中。</p>
+<h2 class="rp-toc-include" id="5"><a href="#5" class="rp-header-anchor rp-link" aria-hidden="true">#</a>从宏命令文件创建命令</h2>
+<p>您可以将宏文件创建的自定义命令添加到工具栏和菜单中。</p>
+<div class="rp-callout rp-callout--tip"><div class="rp-callout__title">TIP</div><div class="rp-callout__content"><p>要<a href="#5" class="rp-link">从宏命令文件创建命令</a>，宏命令文件(.mcr)必须已存在。您可以通过在 SailWind 工具中录制宏或用宏语言编写脚本来创建宏。更多信息请参见&quot;创建宏&quot;。</p></div></div>
+<p>🏃‍♂️‍<strong>步骤</strong></p>
+<ol>
+<li>
+<p>选择👉 <strong>工具 &gt; 自定义</strong> ，点击👆 <strong>宏文件</strong> 选项卡。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">点击👆<strong class="font-semibold">新建</strong>按钮。</p>
+<li>
+<p>点击👆<strong>新建</strong>按钮。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在&quot;打开宏文件&quot;对话框中选择👉要用作命令的宏文件，然后点击👆<strong class="font-semibold">打开</strong>。软件加载宏并使其可用作命令(同时选中✅宏名称左侧的复选框)。</p>
-<div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
-<p class="my-4 leading-7"> 要关闭宏文件或使其在&quot;自定义&quot;对话框中不可用，清除宏名称旁边的复选框。</p>
-</div></div>
+<li>
+<p>在&quot;打开宏文件&quot;对话框中选择👉要用作命令的宏文件，然后点击👆<strong>打开</strong>。软件加载宏并使其可用作命令(同时选中✅宏名称左侧的复选框)。</p>
+<div class="rp-callout rp-callout--tip"><div class="rp-callout__title">TIP</div><div class="rp-callout__content"><p>要关闭宏文件或使其在&quot;自定义&quot;对话框中不可用，清除宏名称旁边的复选框。</p></div></div>
 </li>
 </ol>
-<p class="my-4 leading-7">​	您可以像使用其他命令一样使用宏，例如为&quot;宏&quot;类别创建命令列表。</p>
-<h2 id="6" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">向菜单添加宏<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#6">#</a></h2>
-<p class="my-4 leading-7">创建宏后，可将宏命令作为或工具栏按钮添加。</p>
-<div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
-<p class="my-4 leading-7"> 要将宏添加到菜单，宏命令文件(.mcr)必须已存在。您可以通过在 SailWind 工具中录制宏或用宏语言编写脚本来创建宏。更多信息请参阅鼠标&quot;创建宏&quot;。</p>
-</div></div>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<ol class="list-decimal pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">选择👉<strong class="font-semibold">工具 &gt; 自定义</strong>，点击👆<strong class="font-semibold">宏文件</strong>选项卡。</p>
+<p>​	您可以像使用其他命令一样使用宏，例如为&quot;宏&quot;类别创建命令列表。</p>
+<h2 class="rp-toc-include" id="6"><a href="#6" class="rp-header-anchor rp-link" aria-hidden="true">#</a>向菜单添加宏</h2>
+<p>创建宏后，可将宏命令作为或工具栏按钮添加。</p>
+<div class="rp-callout rp-callout--tip"><div class="rp-callout__title">TIP</div><div class="rp-callout__content"><p>要将宏添加到菜单，宏命令文件(.mcr)必须已存在。您可以通过在 SailWind 工具中录制宏或用宏语言编写脚本来创建宏。更多信息请参阅鼠标&quot;创建宏&quot;。</p></div></div>
+<p>🏃‍♂️‍<strong>步骤</strong></p>
+<ol>
+<li>
+<p>选择👉<strong>工具 &gt; 自定义</strong>，点击👆<strong>宏文件</strong>选项卡。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在宏命令文件区域，点击👆<strong class="font-semibold">新建</strong>按钮。</p>
+<li>
+<p>在宏命令文件区域，点击👆<strong>新建</strong>按钮。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在打开宏文件对话框中，选择👉要作为命令使用的宏文件，然后点击👆<strong class="font-semibold">打开</strong>。软件将加载宏并使其可用作命令(同时选中✅宏名称左侧的复选框)。</p>
-<div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
-<p class="my-4 leading-7"> 要关闭宏文件或使其在自定义对话框中不可用，请清除宏名称旁边的复选框。</p>
-</div></div>
+<li>
+<p>在打开宏文件对话框中，选择👉要作为命令使用的宏文件，然后点击👆<strong>打开</strong>。软件将加载宏并使其可用作命令(同时选中✅宏名称左侧的复选框)。</p>
+<div class="rp-callout rp-callout--tip"><div class="rp-callout__title">TIP</div><div class="rp-callout__content"><p>要关闭宏文件或使其在自定义对话框中不可用，请清除宏名称旁边的复选框。</p></div></div>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">要将宏添加到菜单，点击👆<strong class="font-semibold">命令</strong>选项卡。</p>
+<li>
+<p>要将宏添加到菜单，点击👆<strong>命令</strong>选项卡。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">从类别列表中选择👉&quot;宏&quot;。</p>
+<li>
+<p>从类别列表中选择👉&quot;宏&quot;。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在命令列表中，选择👉宏并将其拖动到菜单上。</p>
+<li>
+<p>在命令列表中，选择👉宏并将其拖动到菜单上。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">添加完宏后，点击👆<strong class="font-semibold">关闭</strong>。</p>
-<div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
-<p class="my-4 leading-7"> 您可以使用相同的步骤将宏添加到快捷菜单和工具栏。</p>
-</div></div>
+<li>
+<p>添加完宏后，点击👆<strong>关闭</strong>。</p>
+<div class="rp-callout rp-callout--tip"><div class="rp-callout__title">TIP</div><div class="rp-callout__content"><p>您可以使用相同的步骤将宏添加到快捷菜单和工具栏。</p></div></div>
 </li>
 </ol>
-<h2 id="7" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">自定义屏幕外观<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#7">#</a></h2>
-<p class="my-4 leading-7">您可以通过更改菜单和工具栏的外观来自定义 SailWind 界面。使用自定义对话框的<strong class="font-semibold">选项</strong>选项卡(<strong class="font-semibold">工具 &gt; 自定义</strong> &gt; <strong class="font-semibold">选项</strong>选项卡)。</p>
-<h3 id="7-1" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">自定义工具栏显示<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#7-1">#</a></h3>
-<p class="my-4 leading-7">您可以通过添加工具提示、显示快捷键信息或显示大图标等方式<a href="#7-1" class="link_a7cea  link_a9ef4 inline-link_f855c">自定义工具栏显示</a>。</p>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<ol class="list-decimal pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">选择👉<strong class="font-semibold">工具 &gt; 自定义</strong>，点击👆<strong class="font-semibold">选项</strong>选项卡。</p>
+<h2 class="rp-toc-include" id="7"><a href="#7" class="rp-header-anchor rp-link" aria-hidden="true">#</a>自定义屏幕外观</h2>
+<p>您可以通过更改菜单和工具栏的外观来自定义 SailWind 界面。使用自定义对话框的<strong>选项</strong>选项卡(<strong>工具 &gt; 自定义</strong> &gt; <strong>选项</strong>选项卡)。</p>
+<h3 class="rp-toc-include" id="7-1"><a href="#7-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>自定义工具栏显示</h3>
+<p>您可以通过添加工具提示、显示快捷键信息或显示大图标等方式<a href="#7-1" class="rp-link">自定义工具栏显示</a>。</p>
+<p>🏃‍♂️‍<strong>步骤</strong></p>
+<ol>
+<li>
+<p>选择👉<strong>工具 &gt; 自定义</strong>，点击👆<strong>选项</strong>选项卡。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">进行以下一项或多项选择👉：</p>
-<ul class="list-disc pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">选中✅&quot;在工具栏上显示工具提示&quot;复选框以显示工具栏按钮的工具提示，或清除复选框以隐藏工具提示。</p>
+<li>
+<p>进行以下一项或多项选择👉：</p>
+<ul>
+<li>
+<p>选中✅&quot;在工具栏上显示工具提示&quot;复选框以显示工具栏按钮的工具提示，或清除复选框以隐藏工具提示。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">选中✅&quot;在工具提示中显示快捷键&quot;复选框以显示快捷键信息，或清除复选框以隐藏。</p>
+<li>
+<p>选中✅&quot;在工具提示中显示快捷键&quot;复选框以显示快捷键信息，或清除复选框以隐藏。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">选中✅&quot;大图标&quot;复选框以显示大图标，或清除复选框以保留正常大小的图标。</p>
+<li>
+<p>选中✅&quot;大图标&quot;复选框以显示大图标，或清除复选框以保留正常大小的图标。</p>
 </li>
 </ul>
-<div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
-<p class="my-4 leading-7"> 要在 SailWind 界面中显示或隐藏工具栏，请使用<strong class="font-semibold">工具栏和菜单</strong>选项卡。参见鼠标&quot;<a href="#2-2" class="link_a7cea  link_a9ef4 inline-link_f855c">编辑自定义工具栏</a>&quot;。</p>
-</div></div>
+<div class="rp-callout rp-callout--tip"><div class="rp-callout__title">TIP</div><div class="rp-callout__content"><p>要在 SailWind 界面中显示或隐藏工具栏，请使用<strong>工具栏和菜单</strong>选项卡。参见鼠标&quot;<a href="#2-2" class="rp-link">编辑自定义工具栏</a>&quot;。</p></div></div>
 </li>
 </ol>
-<h3 id="7-2" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">自定义窗口显示<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#7-2">#</a></h3>
-<p class="my-4 leading-7">您可以从自定义窗口的<strong class="font-semibold">选项</strong>选项卡(<strong class="font-semibold">工具 &gt; 自定义</strong>，<strong class="font-semibold">选项</strong>选项卡)为窗口显示添加动画、阴影和延迟效果。</p>
-<p class="my-4 leading-7">您可以对窗口显示进行以下自定义：</p>
-<ul class="list-disc pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">要更改菜单显示方式，从菜单动画列表中选择👉动画。例如，&quot;展开&quot;动画显示部分菜单和一个可点击👆的箭头以显示其余部分。</p>
+<h3 class="rp-toc-include" id="7-2"><a href="#7-2" class="rp-header-anchor rp-link" aria-hidden="true">#</a>自定义窗口显示</h3>
+<p>您可以从自定义窗口的<strong>选项</strong>选项卡(<strong>工具 &gt; 自定义</strong>，<strong>选项</strong>选项卡)为窗口显示添加动画、阴影和延迟效果。</p>
+<p>您可以对窗口显示进行以下自定义：</p>
+<ul>
+<li>
+<p>要更改菜单显示方式，从菜单动画列表中选择👉动画。例如，&quot;展开&quot;动画显示部分菜单和一个可点击👆的箭头以显示其余部分。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">要在上显示阴影，选中✅&quot;菜单阴影&quot;复选框。</p>
+<li>
+<p>要在上显示阴影，选中✅&quot;菜单阴影&quot;复选框。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">要在其他之前显示最近的菜单选择👉，选中✅&quot;首先显示最近使用的命令&quot;复选框。</p>
+<li>
+<p>要在其他之前显示最近的菜单选择👉，选中✅&quot;首先显示最近使用的命令&quot;复选框。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">如果菜单首先显示最近使用的命令，您可以在延迟后显示完整的列表。选中✅&quot;延迟后显示完整菜单&quot;复选框。</p>
+<li>
+<p>如果菜单首先显示最近使用的命令，您可以在延迟后显示完整的列表。选中✅&quot;延迟后显示完整菜单&quot;复选框。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">如果您有一个由多个键组成的快捷键，可以通过选中✅&quot;执行长快捷键前等待回车键&quot;复选框来延迟其执行，直到按下回车键。</p>
+<li>
+<p>如果您有一个由多个键组成的快捷键，可以通过选中✅&quot;执行长快捷键前等待回车键&quot;复选框来延迟其执行，直到按下回车键。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">要删除您使用过的命令记录并将默认命令集恢复到菜单和工具栏，点击👆<strong class="font-semibold">重置我的使用数据</strong>。此选项不会撤销您已进行的任何显式自定义。</p>
+<li>
+<p>要删除您使用过的命令记录并将默认命令集恢复到菜单和工具栏，点击👆<strong>重置我的使用数据</strong>。此选项不会撤销您已进行的任何显式自定义。</p>
 </li>
 </ul>
-<h3 id="7-3" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">调整层列表大小<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#7-3">#</a></h3>
-<p class="my-4 leading-7">您可以更改工具栏上层列表的宽度。</p>
-<p class="my-4 leading-7">🙊<strong class="font-semibold">限制</strong></p>
-<p class="my-4 leading-7">您不能使用 Alt 键<a href="#7-3" class="link_a7cea  link_a9ef4 inline-link_f855c">调整层列表大小</a>。</p>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<ol class="list-decimal pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">选择👉<strong class="font-semibold">工具 &gt; 自定义</strong>打开自定义对话框。</p>
+<h3 class="rp-toc-include" id="7-3"><a href="#7-3" class="rp-header-anchor rp-link" aria-hidden="true">#</a>调整层列表大小</h3>
+<p>您可以更改工具栏上层列表的宽度。</p>
+<p>🙊<strong>限制</strong></p>
+<p>您不能使用 Alt 键<a href="#7-3" class="rp-link">调整层列表大小</a>。</p>
+<p>🏃‍♂️‍<strong>步骤</strong></p>
+<ol>
+<li>
+<p>选择👉<strong>工具 &gt; 自定义</strong>打开自定义对话框。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">点击👆工具栏上的层列表框*(忽略自定义对话框)*。</p>
+<li>
+<p>点击👆工具栏上的层列表框<em>(忽略自定义对话框)</em>。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">根据需要调整大小。</p>
+<li>
+<p>根据需要调整大小。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在自定义对话框中点击👆<strong class="font-semibold">关闭</strong>。</p>
-</li>
-</ol>
-<h2 id="8" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">组织窗口<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#8">#</a></h2>
-<p class="my-4 leading-7">您可以自定义窗口中工作区的显示方式。</p>
-<h3 id="8-1" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">显示和隐藏窗口<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#8-1">#</a></h3>
-<p class="my-4 leading-7">首次启动 SailWind Router 时会显示多个窗口。您可以显示或隐藏这些窗口中的任何一个。</p>
-<div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
-<p class="my-4 leading-7">您也可以<a href="#8-2" class="link_a7cea  link_a9ef4 inline-link_f855c">自动隐藏窗口</a>。参见鼠标&quot;<a href="#8-2" class="link_a7cea  link_a9ef4 inline-link_f855c">自动隐藏窗口</a>&quot;。</p>
-</div></div>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<p class="my-4 leading-7">要隐藏可见窗口，点击👆<strong class="font-semibold">视图</strong>菜单上的切换开关，或点击👆窗口标题栏上窗口位置菜单中的<strong class="font-semibold">隐藏</strong>命令。要显示隐藏窗口，点击👆<strong class="font-semibold">视图</strong>菜单上的切换开关。</p>
-<h3 id="8-2" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">自动隐藏窗口<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#8-2">#</a></h3>
-<p class="my-4 leading-7">您可以设置窗口自动隐藏，使其仅在鼠标悬停在隐藏窗口的标签上时显示。</p>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<ol class="list-decimal pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">将鼠标移动到要隐藏窗口的标题栏右侧。</p>
-</li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">点击👆窗口标题栏中的图钉。</p>
-<p class="my-4 leading-7">图钉图片变为横向。界面侧面会出现一个新栏。该栏出现的位置取决于窗口的位置。例如，如果项目资源管理器位于用户界面的左侧，当您从菜单中点击👆自动隐藏设置时，新栏会出现在界面的左侧。</p>
-<p class="my-4 leading-7">新栏包含一个与窗口同名的标签。</p>
-</li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">将鼠标悬停在新栏的标签上。窗口会重新出现，覆盖应用程序。</p>
-</li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">将鼠标移离窗口。窗口最小化为标签。</p>
-<div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
-<p class="my-4 leading-7"> 要关闭自动隐藏功能，将鼠标悬停在新栏的标签上使窗口重新出现。然后重复步骤 1-2，使图钉图标再次指向下方。</p>
-</div></div>
+<li>
+<p>在自定义对话框中点击👆<strong>关闭</strong>。</p>
 </li>
 </ol>
-<h3 id="8-3" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">从当前视图分离窗口<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#8-3">#</a></h3>
-<p class="my-4 leading-7">您可以将窗口从当前视图中分离。这称为<em>浮动</em>。浮动窗口不会附加到当前视图；而是悬停，阻挡其下方的任何视图。</p>
-<p class="my-4 leading-7">🙊<strong class="font-semibold">限制</strong></p>
-<p class="my-4 leading-7">您不能浮动当前设置为自动隐藏的窗口。在浮动窗口前关闭自动隐藏功能。</p>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<p class="my-4 leading-7">双击窗口的标题栏。窗口分离后，您可以将其移动到屏幕的任何部分。</p>
-<div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
-<p class="my-4 leading-7">要撤销浮动，参见鼠标&quot;<a href="#8-4" class="link_a7cea  link_a9ef4 inline-link_f855c">将窗口附加到当前视图</a>&quot;。</p>
-</div></div>
-<h3 id="8-4" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">将窗口附加到当前视图<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#8-4">#</a></h3>
-<p class="my-4 leading-7">您可以<a href="#8-4" class="link_a7cea  link_a9ef4 inline-link_f855c">将窗口附加到当前视图</a>。这称为<em>停靠</em>。停靠窗口附加到当前视图，因此不会阻挡其下方的任何视图。您可以将窗口停靠在其最后停靠的位置，或将窗口停靠到不同位置。</p>
-<h4 id="8-4-1" class="mt-8 leading-6 text-lg title_fb7eb">停靠到最后位置<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#8-4-1">#</a></h4>
-<p class="my-4 leading-7">您可以将浮动窗口附加或停靠到其最后停靠的位置。</p>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<p class="my-4 leading-7">双击窗口的标题栏。窗口重新附加到界面。</p>
-<h4 id="8-4-2" class="mt-8 leading-6 text-lg title_fb7eb">停靠到新位置<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#8-4-2">#</a></h4>
-<p class="my-4 leading-7">您可以拖动浮动窗口并将其从一个位置<a href="#8-4-2" class="link_a7cea  link_a9ef4 inline-link_f855c">停靠到新位置</a>。</p>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<ol class="list-decimal pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">使用标题栏拖动窗口。</p>
-<p class="my-4 leading-7">当您开始拖动窗口时，用户界面中会出现额外的图形。在用户界面的边缘，会出现包含图形的箭头，如图113 所示：</p>
-<p class="my-4 leading-7"><strong class="font-semibold">图 113. 窗口拖动图形</strong></p>
-<p class="my-4 leading-7"><img src="/sailwind_docs/router/guide/26/_page_22_Picture_14.jpeg" alt=""/></p>
-<div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
-<p class="my-4 leading-7">类似的一组箭头会出现在屏幕中心附近。忽略该组箭头以完成此操作。</p>
-</div></div>
+<h2 class="rp-toc-include" id="8"><a href="#8" class="rp-header-anchor rp-link" aria-hidden="true">#</a>组织窗口</h2>
+<p>您可以自定义窗口中工作区的显示方式。</p>
+<h3 class="rp-toc-include" id="8-1"><a href="#8-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>显示和隐藏窗口</h3>
+<p>首次启动 SailWind Router 时会显示多个窗口。您可以显示或隐藏这些窗口中的任何一个。</p>
+<div class="rp-callout rp-callout--tip"><div class="rp-callout__title">TIP</div><div class="rp-callout__content"><p>您也可以<a href="#8-2" class="rp-link">自动隐藏窗口</a>。参见鼠标&quot;<a href="#8-2" class="rp-link">自动隐藏窗口</a>&quot;。</p></div></div>
+<p>🏃‍♂️‍<strong>步骤</strong></p>
+<p>要隐藏可见窗口，点击👆<strong>视图</strong>菜单上的切换开关，或点击👆窗口标题栏上窗口位置菜单中的<strong>隐藏</strong>命令。要显示隐藏窗口，点击👆<strong>视图</strong>菜单上的切换开关。</p>
+<h3 class="rp-toc-include" id="8-2"><a href="#8-2" class="rp-header-anchor rp-link" aria-hidden="true">#</a>自动隐藏窗口</h3>
+<p>您可以设置窗口自动隐藏，使其仅在鼠标悬停在隐藏窗口的标签上时显示。</p>
+<p>🏃‍♂️‍<strong>步骤</strong></p>
+<ol>
+<li>
+<p>将鼠标移动到要隐藏窗口的标题栏右侧。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">拖动窗口时，将鼠标悬停在用户界面边缘的一个箭头上。例如，悬停在用户界面左侧的箭头上。</p>
-<p class="my-4 leading-7">用户界面您指向的一侧会出现一个透明彩色块。此块指示释放鼠标按钮时窗口将停靠的位置。例如，如果您悬停在用户界面左侧的箭头上，屏幕左侧会出现一个块，如图114 所示。</p>
-<p class="my-4 leading-7"><strong class="font-semibold">图 114. 停靠窗口</strong></p>
+<li>
+<p>点击👆窗口标题栏中的图钉。</p>
+<p>图钉图片变为横向。界面侧面会出现一个新栏。该栏出现的位置取决于窗口的位置。例如，如果项目资源管理器位于用户界面的左侧，当您从菜单中点击👆自动隐藏设置时，新栏会出现在界面的左侧。</p>
+<p>新栏包含一个与窗口同名的标签。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在悬停在指示您希望停靠窗口位置的箭头上时释放鼠标按钮。</p>
-<p class="my-4 leading-7">窗口停靠到用户界面，用户界面中的其他窗口会调整大小。</p>
+<li>
+<p>将鼠标悬停在新栏的标签上。窗口会重新出现，覆盖应用程序。</p>
+</li>
+<li>
+<p>将鼠标移离窗口。窗口最小化为标签。</p>
+<div class="rp-callout rp-callout--tip"><div class="rp-callout__title">TIP</div><div class="rp-callout__content"><p>要关闭自动隐藏功能，将鼠标悬停在新栏的标签上使窗口重新出现。然后重复步骤 1-2，使图钉图标再次指向下方。</p></div></div>
 </li>
 </ol>
-<h4 id="8-4-3" class="mt-8 leading-6 text-lg title_fb7eb">在其他窗口中嵌入窗口<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#8-4-3">#</a></h4>
-<p class="my-4 leading-7">除了将窗口附加到用户界面的一侧外，您还可以将窗口嵌入另一个窗口中，使其共享窗口空间或成为原始窗口中的标签。</p>
-<h5 id="两个窗口共享一个窗口空间" class="title_fb7eb">两个窗口共享一个窗口空间<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#两个窗口共享一个窗口空间">#</a></h5>
-<p class="my-4 leading-7">您可以将窗口嵌入另一个窗口的空间中。</p>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<ol class="list-decimal pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">使用标题栏将一个窗口拖入另一个窗口。</p>
-<p class="my-4 leading-7">当您开始拖动窗口时，用户界面中会出现额外的图形。一组包含图形的箭头会出现在您正在拖动的窗口中心，如图115 所示。根据您正在拖动的窗口，该组箭头的中心可能还有一个标签图形。</p>
-<p class="my-4 leading-7"><strong class="font-semibold">图 115. 拖动窗口—箭头组</strong></p>
-<p class="my-4 leading-7"><img src="/sailwind_docs/router/guide/26/_page_24_Figure_10.jpeg" alt=""/></p>
-<div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
-<p class="my-4 leading-7">类似的一组箭头会出现在用户界面的侧面。忽略这些箭头以完成此操作。</p>
-</div></div>
+<h3 class="rp-toc-include" id="8-3"><a href="#8-3" class="rp-header-anchor rp-link" aria-hidden="true">#</a>从当前视图分离窗口</h3>
+<p>您可以将窗口从当前视图中分离。这称为<em>浮动</em>。浮动窗口不会附加到当前视图；而是悬停，阻挡其下方的任何视图。</p>
+<p>🙊<strong>限制</strong></p>
+<p>您不能浮动当前设置为自动隐藏的窗口。在浮动窗口前关闭自动隐藏功能。</p>
+<p>🏃‍♂️‍<strong>步骤</strong></p>
+<p>双击窗口的标题栏。窗口分离后，您可以将其移动到屏幕的任何部分。</p>
+<div class="rp-callout rp-callout--tip"><div class="rp-callout__title">TIP</div><div class="rp-callout__content"><p>要撤销浮动，参见鼠标&quot;<a href="#8-4" class="rp-link">将窗口附加到当前视图</a>&quot;。</p></div></div>
+<h3 class="rp-toc-include" id="8-4"><a href="#8-4" class="rp-header-anchor rp-link" aria-hidden="true">#</a>将窗口附加到当前视图</h3>
+<p>您可以<a href="#8-4" class="rp-link">将窗口附加到当前视图</a>。这称为<em>停靠</em>。停靠窗口附加到当前视图，因此不会阻挡其下方的任何视图。您可以将窗口停靠在其最后停靠的位置，或将窗口停靠到不同位置。</p>
+<h4 class="rp-toc-include" id="8-4-1"><a href="#8-4-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>停靠到最后位置</h4>
+<p>您可以将浮动窗口附加或停靠到其最后停靠的位置。</p>
+<p>🏃‍♂️‍<strong>步骤</strong></p>
+<p>双击窗口的标题栏。窗口重新附加到界面。</p>
+<h4 class="rp-toc-include" id="8-4-2"><a href="#8-4-2" class="rp-header-anchor rp-link" aria-hidden="true">#</a>停靠到新位置</h4>
+<p>您可以拖动浮动窗口并将其从一个位置<a href="#8-4-2" class="rp-link">停靠到新位置</a>。</p>
+<p>🏃‍♂️‍<strong>步骤</strong></p>
+<ol>
+<li>
+<p>使用标题栏拖动窗口。</p>
+<p>当您开始拖动窗口时，用户界面中会出现额外的图形。在用户界面的边缘，会出现包含图形的箭头，如图113 所示：</p>
+<p><strong>图 113. 窗口拖动图形</strong></p>
+<p><img src="/sailwind_docs/router/guide/26/_page_22_Picture_14.jpeg" alt=""/></p>
+<div class="rp-callout rp-callout--tip"><div class="rp-callout__title">TIP</div><div class="rp-callout__content"><p>类似的一组箭头会出现在屏幕中心附近。忽略该组箭头以完成此操作。</p></div></div>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">拖动窗口时，将鼠标悬停在一个箭头上。例如，悬停在左侧箭头上。</p>
-<p class="my-4 leading-7">您正在拖动的窗口的一侧会出现一个透明彩色块，如图116 所示。此块指示释放鼠标按钮时窗口将停靠的位置。例如，如果您悬停在左侧箭头上，项目资源管理器的左侧会出现一个块。</p>
-<p class="my-4 leading-7"><img src="/sailwind_docs/router/guide/26/_page_25_Picture_1.jpeg" alt=""/></p>
-<p class="my-4 leading-7"><strong class="font-semibold">图 116. 拖动并停靠窗口</strong></p>
+<li>
+<p>拖动窗口时，将鼠标悬停在用户界面边缘的一个箭头上。例如，悬停在用户界面左侧的箭头上。</p>
+<p>用户界面您指向的一侧会出现一个透明彩色块。此块指示释放鼠标按钮时窗口将停靠的位置。例如，如果您悬停在用户界面左侧的箭头上，屏幕左侧会出现一个块，如图114 所示。</p>
+<p><strong>图 114. 停靠窗口</strong></p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在悬停在指示您希望停靠窗口位置的箭头上时释放鼠标按钮。</p>
-</li>
-</ol>
-<p class="my-4 leading-7">👀‍<strong class="font-semibold">结果</strong></p>
-<p class="my-4 leading-7">窗口嵌入另一个窗口中，两者共享原始窗口占用的空间。</p>
-<div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
-<p class="my-4 leading-7">要最大化工作区，尝试将这些嵌入窗口设置为自动隐藏。Ctrl+点击👆其中一个窗口标题栏中的图钉，原始窗口框架内的所有窗口都会自动隐藏。</p>
-</div></div>
-<h5 id="在窗口内创建标签" class="title_fb7eb">在窗口内创建标签<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#在窗口内创建标签">#</a></h5>
-<p class="my-4 leading-7">您可以将窗口作为标签嵌入另一个窗口中。</p>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<ol class="list-decimal pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">使用标题栏将一个窗口拖入另一个窗口。</p>
-<p class="my-4 leading-7">当您开始拖动窗口时，用户界面中会出现额外的图形。一组包含图形的箭头会出现在您正在拖动的窗口中心，如图117 所示。根据您正在拖动的窗口，该组箭头的中心可能还有一个标签图形。</p>
-<p class="my-4 leading-7"><strong class="font-semibold">图 117. 拖动并停靠窗口—箭头命令</strong></p>
-<p class="my-4 leading-7"><img src="/sailwind_docs/router/guide/26/_page_25_Figure_14.jpeg" alt=""/></p>
-<div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
-<p class="my-4 leading-7">类似的一组箭头会出现在用户界面的侧面。忽略这些箭头以完成此操作。</p>
-</div></div>
-</li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">拖动窗口时，将鼠标悬停在标签图形上。</p>
-<p class="my-4 leading-7">您正在拖动的窗口上会出现一个透明彩色块，如图118 所示。此块指示释放鼠标按钮时窗口将停靠的位置。例如，如果您悬停在项目资源管理器窗口中的标签上，项目资源管理器上会出现一个块。</p>
-<p class="my-4 leading-7"><img src="/sailwind_docs/router/guide/26/_page_26_Picture_5.jpeg" alt=""/></p>
-<p class="my-4 leading-7"><strong class="font-semibold">图 118. 拖动窗口—透明块</strong></p>
-</li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在悬停在标签上时释放鼠标按钮。</p>
+<li>
+<p>在悬停在指示您希望停靠窗口位置的箭头上时释放鼠标按钮。</p>
+<p>窗口停靠到用户界面，用户界面中的其他窗口会调整大小。</p>
 </li>
 </ol>
-<p class="my-4 leading-7">👀‍<strong class="font-semibold">结果</strong></p>
-<p class="my-4 leading-7">窗口作为标签嵌入窗口中，如图119 所示。您可以点击👆每个标签访问每个窗口。</p>
-<p class="my-4 leading-7"><strong class="font-semibold">图 119. 作为标签嵌入的窗口</strong></p>
-<div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
-<p class="my-4 leading-7">要最大化工作区，尝试将这些嵌入窗口设置为自动隐藏。Ctrl+点击👆其中一个窗口标题栏中的图钉，原始窗口框架内的所有窗口都会自动隐藏。</p>
-</div></div>
-<h4 id="8-4-4" class="mt-8 leading-6 text-lg title_fb7eb">管理窗口标签页<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#8-4-4">#</a></h4>
-<p class="my-4 leading-7">用户界面中的某些窗口包含标签页。您可以根据需要或偏好重新组织标签页分组。</p>
-<h5 id="重排窗口中的标签页" class="title_fb7eb">重排窗口中的标签页<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#重排窗口中的标签页">#</a></h5>
-<p class="my-4 leading-7">您可以更改窗口中标签页的顺序。</p>
-<p class="my-4 leading-7">🙊<strong class="font-semibold">限制</strong></p>
-<p class="my-4 leading-7">您只能移动已嵌入其他窗口的标签页。在默认带有标签页的窗口（如 SailWind Router 中的输出窗口）中，您无法移动标签页，只能重新排列它们。有关重排标签页的信息，请参见鼠标&quot;重排窗口中的标签页&quot;。</p>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<p class="my-4 leading-7">将标签页拖拽到标签页行中的新位置。</p>
-<h5 id="在窗口间移动标签页" class="title_fb7eb">在窗口间移动标签页<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#在窗口间移动标签页">#</a></h5>
-<p class="my-4 leading-7">您可以将标签页从一个窗口移动到另一个窗口。</p>
-<p class="my-4 leading-7">🙊<strong class="font-semibold">限制</strong></p>
-<p class="my-4 leading-7">您只能移动已嵌入其他窗口的标签页。在默认带有标签页的窗口（如 SailWind Router 中的输出窗口）中，您无法移动标签页，只能重新排列它们。有关重排标签页的信息，请参见鼠标&quot;重排窗口中的标签页&quot;。</p>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<ol class="list-decimal pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">将标签页拖拽到新窗口。开始拖拽时，标签页会自动表现得像一个窗口。</p>
+<h4 class="rp-toc-include" id="8-4-3"><a href="#8-4-3" class="rp-header-anchor rp-link" aria-hidden="true">#</a>在其他窗口中嵌入窗口</h4>
+<p>除了将窗口附加到用户界面的一侧外，您还可以将窗口嵌入另一个窗口中，使其共享窗口空间或成为原始窗口中的标签。</p>
+<h5 class="rp-toc-include" id="两个窗口共享一个窗口空间"><a href="#两个窗口共享一个窗口空间" class="rp-header-anchor rp-link" aria-hidden="true">#</a>两个窗口共享一个窗口空间</h5>
+<p>您可以将窗口嵌入另一个窗口的空间中。</p>
+<p>🏃‍♂️‍<strong>步骤</strong></p>
+<ol>
+<li>
+<p>使用标题栏将一个窗口拖入另一个窗口。</p>
+<p>当您开始拖动窗口时，用户界面中会出现额外的图形。一组包含图形的箭头会出现在您正在拖动的窗口中心，如图115 所示。根据您正在拖动的窗口，该组箭头的中心可能还有一个标签图形。</p>
+<p><strong>图 115. 拖动窗口—箭头组</strong></p>
+<p><img src="/sailwind_docs/router/guide/26/_page_24_Figure_10.jpeg" alt=""/></p>
+<div class="rp-callout rp-callout--tip"><div class="rp-callout__title">TIP</div><div class="rp-callout__content"><p>类似的一组箭头会出现在用户界面的侧面。忽略这些箭头以完成此操作。</p></div></div>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">像放置窗口一样放置标签页。</p>
+<li>
+<p>拖动窗口时，将鼠标悬停在一个箭头上。例如，悬停在左侧箭头上。</p>
+<p>您正在拖动的窗口的一侧会出现一个透明彩色块，如图116 所示。此块指示释放鼠标按钮时窗口将停靠的位置。例如，如果您悬停在左侧箭头上，项目资源管理器的左侧会出现一个块。</p>
+<p><img src="/sailwind_docs/router/guide/26/_page_25_Picture_1.jpeg" alt=""/></p>
+<p><strong>图 116. 拖动并停靠窗口</strong></p>
+</li>
+<li>
+<p>在悬停在指示您希望停靠窗口位置的箭头上时释放鼠标按钮。</p>
 </li>
 </ol>
-<h5 id="将标签页转换为窗口" class="title_fb7eb">将标签页转换为窗口<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#将标签页转换为窗口">#</a></h5>
-<p class="my-4 leading-7">您可以从标签页创建新窗口。</p>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<ol class="list-decimal pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">拖拽标签页。开始拖拽时，标签页会自动表现得像一个窗口。</p>
+<p>👀‍<strong>结果</strong></p>
+<p>窗口嵌入另一个窗口中，两者共享原始窗口占用的空间。</p>
+<div class="rp-callout rp-callout--tip"><div class="rp-callout__title">TIP</div><div class="rp-callout__content"><p>要最大化工作区，尝试将这些嵌入窗口设置为自动隐藏。Ctrl+点击👆其中一个窗口标题栏中的图钉，原始窗口框架内的所有窗口都会自动隐藏。</p></div></div>
+<h5 class="rp-toc-include" id="在窗口内创建标签"><a href="#在窗口内创建标签" class="rp-header-anchor rp-link" aria-hidden="true">#</a>在窗口内创建标签</h5>
+<p>您可以将窗口作为标签嵌入另一个窗口中。</p>
+<p>🏃‍♂️‍<strong>步骤</strong></p>
+<ol>
+<li>
+<p>使用标题栏将一个窗口拖入另一个窗口。</p>
+<p>当您开始拖动窗口时，用户界面中会出现额外的图形。一组包含图形的箭头会出现在您正在拖动的窗口中心，如图117 所示。根据您正在拖动的窗口，该组箭头的中心可能还有一个标签图形。</p>
+<p><strong>图 117. 拖动并停靠窗口—箭头命令</strong></p>
+<p><img src="/sailwind_docs/router/guide/26/_page_25_Figure_14.jpeg" alt=""/></p>
+<div class="rp-callout rp-callout--tip"><div class="rp-callout__title">TIP</div><div class="rp-callout__content"><p>类似的一组箭头会出现在用户界面的侧面。忽略这些箭头以完成此操作。</p></div></div>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">释放鼠标按钮。确保鼠标不在任何箭头图形上方。</p>
-<p class="my-4 leading-7">您现在获得了一个浮动窗口。</p>
+<li>
+<p>拖动窗口时，将鼠标悬停在标签图形上。</p>
+<p>您正在拖动的窗口上会出现一个透明彩色块，如图118 所示。此块指示释放鼠标按钮时窗口将停靠的位置。例如，如果您悬停在项目资源管理器窗口中的标签上，项目资源管理器上会出现一个块。</p>
+<p><img src="/sailwind_docs/router/guide/26/_page_26_Picture_5.jpeg" alt=""/></p>
+<p><strong>图 118. 拖动窗口—透明块</strong></p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">像放置任何浮动窗口一样放置标签页。</p>
+<li>
+<p>在悬停在标签上时释放鼠标按钮。</p>
 </li>
 </ol>
-<h2 id="9" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">崩溃检测<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#9">#</a></h2>
-<p class="my-4 leading-7">崩溃检测功能可捕获并报告软件的意外终止情况。</p>
-<p class="my-4 leading-7">如果启用了崩溃检测，软件崩溃时会在 414 页打开&quot;检测到错误&quot;对话框，允许您将 SailWind 环境报告及相关文件保存为压缩的转储文件。您可以将此文件提交给 SailWind 软件客户支持。您还可以附加反馈到此报告，并可选择👉附加基本媒体向导(BMW)媒体和项目文件。</p>
-<p class="my-4 leading-7">除非软件崩溃且已在软件*.ini*文件中启用崩溃检测，否则无法访问&quot;检测到错误&quot;对话框。</p>
-<p class="my-4 leading-7">崩溃检测由<em>SailWindRouter.ini</em>文件（位于<em>C: &lt;install_folder&gt;\Settings</em>目录）中的<em>CrashDetection</em>开关控制；默认情况下处于关闭状态。</p>
-<ul class="list-disc pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">如果*.ini<em>文件的[General]部分中不存在</em>CrashDetection*开关，或者该开关值为 0，则崩溃检测处于关闭状态。不会创建崩溃时的环境报告。</p>
+<p>👀‍<strong>结果</strong></p>
+<p>窗口作为标签嵌入窗口中，如图119 所示。您可以点击👆每个标签访问每个窗口。</p>
+<p><strong>图 119. 作为标签嵌入的窗口</strong></p>
+<div class="rp-callout rp-callout--tip"><div class="rp-callout__title">TIP</div><div class="rp-callout__content"><p>要最大化工作区，尝试将这些嵌入窗口设置为自动隐藏。Ctrl+点击👆其中一个窗口标题栏中的图钉，原始窗口框架内的所有窗口都会自动隐藏。</p></div></div>
+<h4 class="rp-toc-include" id="8-4-4"><a href="#8-4-4" class="rp-header-anchor rp-link" aria-hidden="true">#</a>管理窗口标签页</h4>
+<p>用户界面中的某些窗口包含标签页。您可以根据需要或偏好重新组织标签页分组。</p>
+<h5 class="rp-toc-include" id="重排窗口中的标签页"><a href="#重排窗口中的标签页" class="rp-header-anchor rp-link" aria-hidden="true">#</a>重排窗口中的标签页</h5>
+<p>您可以更改窗口中标签页的顺序。</p>
+<p>🙊<strong>限制</strong></p>
+<p>您只能移动已嵌入其他窗口的标签页。在默认带有标签页的窗口（如 SailWind Router 中的输出窗口）中，您无法移动标签页，只能重新排列它们。有关重排标签页的信息，请参见鼠标&quot;重排窗口中的标签页&quot;。</p>
+<p>🏃‍♂️‍<strong>步骤</strong></p>
+<p>将标签页拖拽到标签页行中的新位置。</p>
+<h5 class="rp-toc-include" id="在窗口间移动标签页"><a href="#在窗口间移动标签页" class="rp-header-anchor rp-link" aria-hidden="true">#</a>在窗口间移动标签页</h5>
+<p>您可以将标签页从一个窗口移动到另一个窗口。</p>
+<p>🙊<strong>限制</strong></p>
+<p>您只能移动已嵌入其他窗口的标签页。在默认带有标签页的窗口（如 SailWind Router 中的输出窗口）中，您无法移动标签页，只能重新排列它们。有关重排标签页的信息，请参见鼠标&quot;重排窗口中的标签页&quot;。</p>
+<p>🏃‍♂️‍<strong>步骤</strong></p>
+<ol>
+<li>
+<p>将标签页拖拽到新窗口。开始拖拽时，标签页会自动表现得像一个窗口。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">如果*.ini<em>文件的[General]部分中存在</em>CrashDetection*开关且值为 1，则会检测崩溃并显示崩溃检测对话框。</p>
+<li>
+<p>像放置窗口一样放置标签页。</p>
 </li>
-</ul><!--/$--></div><div class="rspress-doc-footer"><footer class="mt-8"><div class="xs:flex pb-5 px-2 justify-end items-center"><div class="flex text-sm text-text-2 leading-6 sm:leading-8 font-medium"><p>最近更新时间<!-- -->: <span>2025/11/7 02:32:14</span></p></div></div><div class="flex flex-col"></div><div class="flex flex-col sm:flex-row sm:justify-around gap-4 pt-6"><div class="prev_c92d1 flex flex-col"><a href="/sailwind_docs/router/guide/25_zh.html" class="link_a7cea pager-link_e0d2d"><span class="desc_dcc01">上一页</span><span class="title_a3acb">第 25 章 软件启动选项</span></a></div><div class="next_c11be flex flex-col"><a href="/sailwind_docs/router/tutorial/1_zh.html" class="link_a7cea pager-link_e0d2d next_ad355"><span class="desc_dcc01">下一页</span><span class="title_a3acb">学习用户界面</span></a></div></div></footer></div></div><div class="aside-container_bc5fa"><div class="flex flex-col"><div id="aside-container" class="relative text-sm font-medium"><div class="leading-7 block text-sm font-semibold pl-3">本页目录</div><nav class="mt-1"><ul class="relative"><li><a href="#1" title="迁移用户设置" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">迁移用户设置</span></a></li><li><a href="#2" title="自定义工具栏和快捷菜单" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">自定义工具栏和快捷菜单</span></a></li><li><a href="#2-1" title="创建自定义工具栏" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">创建自定义工具栏</span></a></li><li><a href="#2-2" title="编辑自定义工具栏" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">编辑自定义工具栏</span></a></li><li><a href="#2-3" title="重置工具栏为默认值" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">重置工具栏为默认值</span></a></li><li><a href="#2-4" title="自定义快捷菜单" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">自定义快捷菜单</span></a></li><li><a href="#2-5" title="重置快捷菜单" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">重置快捷菜单</span></a></li><li><a href="#3" title="创建自定义命令和菜单" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">创建自定义命令和菜单</span></a></li><li><a href="#3-1" title="创建和编辑自定义命令" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">创建和编辑自定义命令</span></a></li><li><a href="#3-2" title="删除自定义命令" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">删除自定义命令</span></a></li><li><a href="#3-3" title="创建自定义菜单" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">创建自定义菜单</span></a></li><li><a href="#3-4" title="向工具栏和菜单添加项目" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">向工具栏和菜单添加项目</span></a></li><li><a href="#3-5" title="在工具栏和菜单上移动项目" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">在工具栏和菜单上移动项目</span></a></li><li><a href="#3-5-1" title="在工具栏上移动按钮" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">在工具栏上移动按钮</span></a></li><li><a href="#3-5-2" title="移动" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">移动</span></a></li><li><a href="#3-6" title="从工具栏和菜单移除项目" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">从工具栏和菜单移除项目</span></a></li><li><a href="#4" title="自定义快捷键" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">自定义快捷键</span></a></li><li><a href="#4-1" title="创建新快捷键" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">创建新快捷键</span></a></li><li><a href="#4-2" title="键序列规则与限制" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">键序列规则与限制</span></a></li><li><a href="#4-3" title="列出可用快捷键" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">列出可用快捷键</span></a></li><li><a href="#4-4" title="快捷键中的表达式" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">快捷键中的表达式</span></a></li><li><a href="#4-5" title="删除快捷键" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">删除快捷键</span></a></li><li><a href="#4-6" title="重置默认快捷键" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">重置默认快捷键</span></a></li><li><a href="#4-7" title="为宏分配快捷键" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">为宏分配快捷键</span></a></li><li><a href="#5" title="从宏命令文件创建命令" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">从宏命令文件创建命令</span></a></li><li><a href="#6" title="向菜单添加宏" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">向菜单添加宏</span></a></li><li><a href="#7" title="自定义屏幕外观" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">自定义屏幕外观</span></a></li><li><a href="#7-1" title="自定义工具栏显示" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">自定义工具栏显示</span></a></li><li><a href="#7-2" title="自定义窗口显示" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">自定义窗口显示</span></a></li><li><a href="#7-3" title="调整层列表大小" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">调整层列表大小</span></a></li><li><a href="#8" title="组织窗口" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">组织窗口</span></a></li><li><a href="#8-1" title="显示和隐藏窗口" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">显示和隐藏窗口</span></a></li><li><a href="#8-2" title="自动隐藏窗口" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">自动隐藏窗口</span></a></li><li><a href="#8-3" title="从当前视图分离窗口" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">从当前视图分离窗口</span></a></li><li><a href="#8-4" title="将窗口附加到当前视图" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">将窗口附加到当前视图</span></a></li><li><a href="#8-4-1" title="停靠到最后位置" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">停靠到最后位置</span></a></li><li><a href="#8-4-2" title="停靠到新位置" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">停靠到新位置</span></a></li><li><a href="#8-4-3" title="在其他窗口中嵌入窗口" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">在其他窗口中嵌入窗口</span></a></li><li><a href="#8-4-4" title="管理窗口标签页" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">管理窗口标签页</span></a></li><li><a href="#9" title="崩溃检测" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">崩溃检测</span></a></li></ul></nav></div></div></div></div></div></div></section></div>
-    <div id="search-container"></div>
+</ol>
+<h5 class="rp-toc-include" id="将标签页转换为窗口"><a href="#将标签页转换为窗口" class="rp-header-anchor rp-link" aria-hidden="true">#</a>将标签页转换为窗口</h5>
+<p>您可以从标签页创建新窗口。</p>
+<p>🏃‍♂️‍<strong>步骤</strong></p>
+<ol>
+<li>
+<p>拖拽标签页。开始拖拽时，标签页会自动表现得像一个窗口。</p>
+</li>
+<li>
+<p>释放鼠标按钮。确保鼠标不在任何箭头图形上方。</p>
+<p>您现在获得了一个浮动窗口。</p>
+</li>
+<li>
+<p>像放置任何浮动窗口一样放置标签页。</p>
+</li>
+</ol>
+<h2 class="rp-toc-include" id="9"><a href="#9" class="rp-header-anchor rp-link" aria-hidden="true">#</a>崩溃检测</h2>
+<p>崩溃检测功能可捕获并报告软件的意外终止情况。</p>
+<p>如果启用了崩溃检测，软件崩溃时会在 414 页打开&quot;检测到错误&quot;对话框，允许您将 SailWind 环境报告及相关文件保存为压缩的转储文件。您可以将此文件提交给 SailWind 软件客户支持。您还可以附加反馈到此报告，并可选择👉附加基本媒体向导(BMW)媒体和项目文件。</p>
+<p>除非软件崩溃且已在软件<em>.ini</em>文件中启用崩溃检测，否则无法访问&quot;检测到错误&quot;对话框。</p>
+<p>崩溃检测由<em>SailWindRouter.ini</em>文件（位于<em>C: &lt;install_folder&gt;\Settings</em>目录）中的<em>CrashDetection</em>开关控制；默认情况下处于关闭状态。</p>
+<ul>
+<li>
+<p>如果<em>.ini</em>文件的[General]部分中不存在<em>CrashDetection</em>开关，或者该开关值为 0，则崩溃检测处于关闭状态。不会创建崩溃时的环境报告。</p>
+</li>
+<li>
+<p>如果<em>.ini</em>文件的[General]部分中存在<em>CrashDetection</em>开关且值为 1，则会检测崩溃并显示崩溃检测对话框。</p>
+</li>
+</ul><!--/$--></div><footer class="rp-doc-footer"><div class="rp-doc-footer__edit"><div class="rp-last-updated"><p>Last Updated<!-- -->: <span>11/7/2025, 2:32:14 AM</span></p></div></div><div class="rp-doc-footer__divider"></div><div class="rp-prev-next-page"><a href="/sailwind_docs/router/guide/25_zh.html" class="rp-prev-next-page__item rp-prev-next-page__prev rp-link"><span class="rp-prev-next-page__item__desc">Previous page</span><span class="rp-prev-next-page__item__title"><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-prev-next-page__icon rp-prev-next-page__rotate_180"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg><span>第 25 章 软件启动选项</span></span></a><a href="/sailwind_docs/router/tutorial/1_zh.html" class="rp-prev-next-page__item rp-prev-next-page__next rp-link"><span class="rp-prev-next-page__item__desc">Next page</span><span class="rp-prev-next-page__item__title"><span>学习用户界面</span><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-prev-next-page__icon"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></span></a></div></footer></main></div><aside class="rp-doc-layout__outline rp-scrollbar"><div class="rp-outline"><div class="rp-outline__title">ON THIS PAGE<svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg></div><nav class="rp-outline__toc rp-scrollbar"><a href="#1" class="rp-toc-item rp-link" title="迁移用户设置" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">迁移用户设置</span></a><a href="#2" class="rp-toc-item rp-link" title="自定义工具栏和快捷菜单" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">自定义工具栏和快捷菜单</span></a><a href="#2-1" class="rp-toc-item rp-link" title="创建自定义工具栏" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">创建自定义工具栏</span></a><a href="#2-2" class="rp-toc-item rp-link" title="编辑自定义工具栏" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">编辑自定义工具栏</span></a><a href="#2-3" class="rp-toc-item rp-link" title="重置工具栏为默认值" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">重置工具栏为默认值</span></a><a href="#2-4" class="rp-toc-item rp-link" title="自定义快捷菜单" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">自定义快捷菜单</span></a><a href="#2-5" class="rp-toc-item rp-link" title="重置快捷菜单" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">重置快捷菜单</span></a><a href="#3" class="rp-toc-item rp-link" title="创建自定义命令和菜单" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">创建自定义命令和菜单</span></a><a href="#3-1" class="rp-toc-item rp-link" title="创建和编辑自定义命令" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">创建和编辑自定义命令</span></a><a href="#3-2" class="rp-toc-item rp-link" title="删除自定义命令" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">删除自定义命令</span></a><a href="#3-3" class="rp-toc-item rp-link" title="创建自定义菜单" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">创建自定义菜单</span></a><a href="#3-4" class="rp-toc-item rp-link" title="向工具栏和菜单添加项目" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">向工具栏和菜单添加项目</span></a><a href="#3-5" class="rp-toc-item rp-link" title="在工具栏和菜单上移动项目" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">在工具栏和菜单上移动项目</span></a><a href="#3-5-1" class="rp-toc-item rp-link" title="在工具栏上移动按钮" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">在工具栏上移动按钮</span></a><a href="#3-5-2" class="rp-toc-item rp-link" title="移动" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">移动</span></a><a href="#3-6" class="rp-toc-item rp-link" title="从工具栏和菜单移除项目" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">从工具栏和菜单移除项目</span></a><a href="#4" class="rp-toc-item rp-link" title="自定义快捷键" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">自定义快捷键</span></a><a href="#4-1" class="rp-toc-item rp-link" title="创建新快捷键" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">创建新快捷键</span></a><a href="#4-2" class="rp-toc-item rp-link" title="键序列规则与限制" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">键序列规则与限制</span></a><a href="#4-3" class="rp-toc-item rp-link" title="列出可用快捷键" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">列出可用快捷键</span></a><a href="#4-4" class="rp-toc-item rp-link" title="快捷键中的表达式" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">快捷键中的表达式</span></a><a href="#4-5" class="rp-toc-item rp-link" title="删除快捷键" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">删除快捷键</span></a><a href="#4-6" class="rp-toc-item rp-link" title="重置默认快捷键" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">重置默认快捷键</span></a><a href="#4-7" class="rp-toc-item rp-link" title="为宏分配快捷键" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">为宏分配快捷键</span></a><a href="#5" class="rp-toc-item rp-link" title="从宏命令文件创建命令" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">从宏命令文件创建命令</span></a><a href="#6" class="rp-toc-item rp-link" title="向菜单添加宏" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">向菜单添加宏</span></a><a href="#7" class="rp-toc-item rp-link" title="自定义屏幕外观" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">自定义屏幕外观</span></a><a href="#7-1" class="rp-toc-item rp-link" title="自定义工具栏显示" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">自定义工具栏显示</span></a><a href="#7-2" class="rp-toc-item rp-link" title="自定义窗口显示" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">自定义窗口显示</span></a><a href="#7-3" class="rp-toc-item rp-link" title="调整层列表大小" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">调整层列表大小</span></a><a href="#8" class="rp-toc-item rp-link" title="组织窗口" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">组织窗口</span></a><a href="#8-1" class="rp-toc-item rp-link" title="显示和隐藏窗口" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">显示和隐藏窗口</span></a><a href="#8-2" class="rp-toc-item rp-link" title="自动隐藏窗口" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">自动隐藏窗口</span></a><a href="#8-3" class="rp-toc-item rp-link" title="从当前视图分离窗口" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">从当前视图分离窗口</span></a><a href="#8-4" class="rp-toc-item rp-link" title="将窗口附加到当前视图" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">将窗口附加到当前视图</span></a><a href="#8-4-1" class="rp-toc-item rp-link" title="停靠到最后位置" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">停靠到最后位置</span></a><a href="#8-4-2" class="rp-toc-item rp-link" title="停靠到新位置" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">停靠到新位置</span></a><a href="#8-4-3" class="rp-toc-item rp-link" title="在其他窗口中嵌入窗口" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">在其他窗口中嵌入窗口</span></a><a href="#8-4-4" class="rp-toc-item rp-link" title="管理窗口标签页" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">管理窗口标签页</span></a><a href="#9" class="rp-toc-item rp-link" title="崩溃检测" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">崩溃检测</span></a></nav><div class="rp-outline__divider"></div><div class="rp-outline__bottom"></div></div></aside></div></div>
+    <div id="__rspress_modal_container"></div>
   </body>
 </html>

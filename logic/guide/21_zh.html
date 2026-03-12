@@ -1,692 +1,497 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="generator" content="Rspress v1.47.0">
-    <title data-rh="true">第 21 章 使用高级程序 ❌ - SailWind</title><meta data-rh="true" name="description" content="SailWind"/>
-  <script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script><link rel="icon" href="/sailwind_docs/favicon.ico"><script defer src="/sailwind_docs/static/js/styles.47bb66ab.js"></script><script defer src="/sailwind_docs/static/js/lib-react.36f9b428.js"></script><script defer src="/sailwind_docs/static/js/lib-router.8596f9d8.js"></script><script defer src="/sailwind_docs/static/js/6268.389194c9.js"></script><script defer src="/sailwind_docs/static/js/index.3778f1be.js"></script><link href="/sailwind_docs/static/css/styles.353f381e.css" rel="stylesheet"></head>
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 21 章 使用高级程序 ❌ - SailWind</title>
+<script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.classList.toggle('rp-dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script>
+<link href="/sailwind_docs/static/css/styles.d1090a2c1b.css" rel="stylesheet">
+<script defer src="/sailwind_docs/static/js/styles.a845351eed.js"></script>
+<script defer src="/sailwind_docs/static/js/lib-react.cae1a117e5.js"></script>
+<script defer src="/sailwind_docs/static/js/lib-router.90bfcb03a3.js"></script>
+<script defer src="/sailwind_docs/static/js/4048.8cfb7a4b43.js"></script>
+<script defer src="/sailwind_docs/static/js/index.81864f7d1c.js"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Rspress v2.0.5">
+<link rel="icon" href="/sailwind_docs/favicon.ico">
+<meta property="og:type" content="website">
+<meta property="og:title" content="第 21 章 使用高级程序 ❌ - SailWind">
+<meta name="description" content="SailWind Logic 支持与 SPICE 仿真和 基本脚本等高级程序进行交互。您可以设置高级 SPICE 设计仿真来分析设计行为，并使用 基本脚本自动执行许多重复性设计任务。您还可以查看和管理许可证文件信息。">
+<meta property="og:description" content="SailWind Logic 支持与 SPICE 仿真和 基本脚本等高级程序进行交互。您可以设置高级 SPICE 设计仿真来分析设计行为，并使用 基本脚本自动执行许多重复性设计任务。您还可以查看和管理许可证文件信息。"></head>
 
-  <body >
-    <div id="root"><div class="navContainer_d18b1 rspress-nav px-6  sticky_ddfa7"><div class="container_e4235 flex justify-between items-center h-full"><div class="navBarTitle_c5f07"><a href="/sailwind_docs/index.html" class="link_a7cea flex items-center w-full h-full text-base font-semibold transition-opacity duration-300 hover:opacity-60"><div class="mr-1 min-w-8"><img src="/sailwind_docs/logo.png" alt="logo" id="logo" class="rspress-logo"/></div><span>SailWind</span></a></div><div class="flex flex-1 justify-end items-center"><div class="rightNav_a2fea"><div class="flex sm:flex-1 items-center sm:pl-4 sm:pr-2"><div class="rspress-nav-search-button navSearchButton_df1fb"><button><svg width="18" height="18" viewBox="0 0 32 32"><path fill="var(--rp-c-gray)" d="m29 27.586-7.552-7.552a11.018 11.018 0 1 0-1.414 1.414L27.586 29ZM4 13a9 9 0 1 1 9 9 9.01 9.01 0 0 1-9-9"></path></svg><p class="searchWord_af2c1">搜索</p><div style="opacity:0"><span></span><span>K</span></div></button></div><div class="mobileNavSearchButton_d85a9"><svg width="24" height="24" viewBox="0 0 32 32"><path fill="var(--rp-c-gray)" d="m29 27.586-7.552-7.552a11.018 11.018 0 1 0-1.414 1.414L27.586 29ZM4 13a9 9 0 1 1 9 9 9.01 9.01 0 0 1-9-9"></path></svg></div></div><div class="rspress-nav-menu menu h-14"><a href="/sailwind_docs/logic/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154 activeItem_a28b5 text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">原理图 (Logic)</div></a><a href="/sailwind_docs/layout/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">物理版图 (Layout)</div></a><a href="/sailwind_docs/router/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">自动布线 (Router)</div></a><a href="/sailwind_docs/lpcreator/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">焊盘图形 (LPW)</div></a><a href="/sailwind_docs/about.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">关于</div></a></div><div class="flex-center flex-row"><div class="mx-2"><div class="md:mr-2 rspress-nav-appearance"><div class="p-1 border border-solid border-gray-300 text-gray-400  cursor-pointer rounded-md hover:border-gray-600 hover:text-gray-600 dark:hover:border-gray-200 dark:hover:text-gray-200 transition-all duration-300 w-7 h-7"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" class="dark:hidden" width="18" height="18" fill="currentColor"><path d="M12 18c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6m0-10c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4M12 4c-.6 0-1-.4-1-1V1c0-.6.4-1 1-1s1 .4 1 1v2c0 .6-.4 1-1 1M12 24c-.6 0-1-.4-1-1v-2c0-.6.4-1 1-1s1 .4 1 1v2c0 .6-.4 1-1 1M5.6 6.6c-.3 0-.5-.1-.7-.3L3.5 4.9c-.4-.4-.4-1 0-1.4s1-.4 1.4 0l1.4 1.4c.4.4.4 1 0 1.4-.1.2-.4.3-.7.3M19.8 20.8c-.3 0-.5-.1-.7-.3l-1.4-1.4c-.4-.4-.4-1 0-1.4s1-.4 1.4 0l1.4 1.4c.4.4.4 1 0 1.4-.2.2-.5.3-.7.3M3 13H1c-.6 0-1-.4-1-1s.4-1 1-1h2c.6 0 1 .4 1 1s-.4 1-1 1M23 13h-2c-.6 0-1-.4-1-1s.4-1 1-1h2c.6 0 1 .4 1 1s-.4 1-1 1M4.2 20.8c-.3 0-.5-.1-.7-.3-.4-.4-.4-1 0-1.4l1.4-1.4c.4-.4 1-.4 1.4 0s.4 1 0 1.4l-1.4 1.4c-.2.2-.4.3-.7.3M18.4 6.6c-.3 0-.5-.1-.7-.3-.4-.4-.4-1 0-1.4l1.4-1.4c.4-.4 1-.4 1.4 0s.4 1 0 1.4l-1.4 1.4c-.2.2-.5.3-.7.3"></path></svg><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" class="hidden dark:block" width="18" height="18" fill="currentColor"><path d="M12.1 22h-.9c-5.5-.5-9.5-5.4-9-10.9.4-4.8 4.2-8.6 9-9 .4 0 .8.2 1 .5s.2.8-.1 1.1c-2 2.7-1.4 6.4 1.3 8.4 2.1 1.6 5 1.6 7.1 0 .3-.2.7-.3 1.1-.1.3.2.5.6.5 1-.2 2.7-1.5 5.1-3.6 6.8-1.9 1.4-4.1 2.2-6.4 2.2M9.3 4.4c-2.9 1-5 3.6-5.2 6.8-.4 4.4 2.8 8.3 7.2 8.7 2.1.2 4.2-.4 5.8-1.8 1.1-.9 1.9-2.1 2.4-3.4-2.5.9-5.3.5-7.5-1.1-2.8-2.2-3.9-5.9-2.7-9.2"></path></svg></div></div></div><div class="social-links menu-item_e90a6 flex-center relative"><div class="flex-center h-full gap-x-4 transition-colors duration-300 md:mr-2"><a href="https://github.com/mikigo/sailwind_docs/" target="_blank" rel="noopener noreferrer" class="social-links"><div class="social-links-icon_a4ad0"><div><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a></div></div></div></div><div class="mobileNavMenu_e7045"><div class="navScreen_ec30c  rspress-nav-screen" id="navScreen"><div class="container_c935d"><div class="navMenu_b887b"><div class="navMenuItem_e7978 w-full"><a href="/sailwind_docs/logic/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154 activeItem_a28b5 text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">原理图 (Logic)</div></a></div><div class="navMenuItem_e7978 w-full"><a href="/sailwind_docs/layout/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">物理版图 (Layout)</div></a></div><div class="navMenuItem_e7978 w-full"><a href="/sailwind_docs/router/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">自动布线 (Router)</div></a></div><div class="navMenuItem_e7978 w-full"><a href="/sailwind_docs/lpcreator/index.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">焊盘图形 (LPW)</div></a></div><div class="navMenuItem_e7978 w-full"><a href="/sailwind_docs/about.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  text-sm font-medium mx-1.5 px-3 py-2 flex items-center break-keep">关于</div></a></div></div><div class="flex-center flex-col gap-2"><div class="mt-2 navAppearance_bf893 flex justify-center"></div><div class="social-links menu-item_e90a6 flex-center relative"><div class="flex-center h-full gap-x-4 transition-colors duration-300 md:mr-2"><a href="https://github.com/mikigo/sailwind_docs/" target="_blank" rel="noopener noreferrer" class="social-links"><div class="social-links-icon_a4ad0"><div><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a></div></div></div></div></div><button aria-label="mobile hamburger" class=" rspress-mobile-hamburger navHamburger_ac64c text-gray-500"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="currentColor"><circle cx="8" cy="16" r="2" fill="currentColor"></circle><circle cx="16" cy="16" r="2" fill="currentColor"></circle><circle cx="24" cy="16" r="2" fill="currentColor"></circle></svg></button></div></div></div></div><section><div class="docLayout_af141 pt-0"><aside class="sidebar_dd719 rspress-sidebar "><div class="navTitleMask_fb17c"><div class="navBarTitle_c5f07"><a href="/sailwind_docs/index.html" class="link_a7cea flex items-center w-full h-full text-base font-semibold transition-opacity duration-300 hover:opacity-60"><div class="mr-1 min-w-8"><img src="/sailwind_docs/logo.png" alt="logo" id="logo" class="rspress-logo"/></div><span>SailWind</span></a></div></div><div class="rspress-scrollbar sidebarContent_da296"><nav class="pb-2"><a href="/sailwind_docs/logic/index.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:14px;margin-left:0;border-radius:0 var(--rp-radius) var(--rp-radius) 0;padding-left:24px;font-weight:bold"><span>章节预览</span></div></a><section class="rspress-sidebar-section mt-0.5 block" style="margin-left:0"><div class="rspress-sidebar-collapse flex justify-between items-center menuItem_ac22e" style="border-radius:0 var(--rp-radius) var(--rp-radius) 0;cursor:pointer"><h2 class="py-2 px-3 text-sm font-medium flex" style="font-size:14px;padding-left:24px;font-weight:bold"><span class="flex-center" style="font-size:14px">指南(Guide)</span></h2><div class="collapseContainer_d6e4e p-2 rounded-xl"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(0deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div class="transition-all duration-300 ease-in-out" style="overflow:hidden;max-height:0"><div class="rspress-sidebar-group transition-opacity duration-500 ease-in-out" style="opacity:0;margin-left:12px"><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/1_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 1 章 SailWind Logic 快速开始 ಠ_ಠ</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/2_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 2 章 开始 SailWind Logic</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/3_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 3 章 用户界面</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/4_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 4 章 文件操作</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/5_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 5 章 设计设置</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/6_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 6 章 管理库和库数据</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/7_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 7 章 库元件</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/8_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 8 章 特殊示意图符号</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/9_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 9 章 设计和编辑基础</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/10_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 10 章 原理图元件</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/11_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 11 章 图页</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/12_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 12 章 非电气对象</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/13_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 13 章 连接</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/14_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 14 章 层次化设计</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/15_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 15 章 原理图对象修改</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/16_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 16 章 规则</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/17_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 17 章 报告</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/18_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 18 章 与 Layout 和 Router 协作</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/19_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 19 章 绘图和打印</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/20_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 20 章 对象链接与嵌入 ❌</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/21_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItemActive_de63c mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 21 章 使用高级程序 ❌</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/22_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 22 章 自定义界面 ಠ_ಠ</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/23_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 23 章 崩溃检测、BMW 和 BLT ಠ_ಠ</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/guide/24_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 24 章 SailWind Logic 对话框 ಠ_ಠ</span></div></a></div></div></div></section><section class="rspress-sidebar-section mt-0.5 block" style="margin-left:0"><div class="rspress-sidebar-collapse flex justify-between items-center menuItem_ac22e" style="border-radius:0 var(--rp-radius) var(--rp-radius) 0;cursor:pointer"><h2 class="py-2 px-3 text-sm font-medium flex" style="font-size:14px;padding-left:24px;font-weight:bold"><span class="flex-center" style="font-size:14px">教程(Tutorial)</span></h2><div class="collapseContainer_d6e4e p-2 rounded-xl"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(0deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div class="transition-all duration-300 ease-in-out" style="overflow:hidden;max-height:0"><div class="rspress-sidebar-group transition-opacity duration-500 ease-in-out" style="opacity:0;margin-left:12px"><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/2_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>学习用户界面教程</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/3_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>创建库元件教程</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/4_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>添加与复制元件教程</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/5_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>添加连接教程</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/6_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>添加总线教程</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/7_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>编辑设计元素教程</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/8_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>分配约束教程</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/9_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>创建报告教程</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/10_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>连接 SailWind Layout教程</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/11_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>更新原理图设计变更教程</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/12_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>打印和绘制电路图教程</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/13_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>管理多页原理图教程</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/tutorial/14_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>模拟仿真设计教程</span></div></a></div></div></div></section><section class="rspress-sidebar-section mt-0.5 block" style="margin-left:0"><div class="rspress-sidebar-collapse flex justify-between items-center menuItem_ac22e" style="border-radius:0 var(--rp-radius) var(--rp-radius) 0;cursor:pointer"><h2 class="py-2 px-3 text-sm font-medium flex" style="font-size:14px;padding-left:24px;font-weight:bold"><span class="flex-center" style="font-size:14px">快速参考(Quick Reference)</span></h2><div class="collapseContainer_d6e4e p-2 rounded-xl"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(0deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div class="transition-all duration-300 ease-in-out" style="overflow:hidden;max-height:0"><div class="rspress-sidebar-group transition-opacity duration-500 ease-in-out" style="opacity:0;margin-left:12px"><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/qr/modless.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>无模命令</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/qr/shortcut.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>键盘快捷键</span></div></a></div></div></div></section><section class="rspress-sidebar-section mt-0.5 block" style="margin-left:0"><div class="rspress-sidebar-collapse flex justify-between items-center menuItem_ac22e" style="border-radius:0 var(--rp-radius) var(--rp-radius) 0;cursor:pointer"><h2 class="py-2 px-3 text-sm font-medium flex" style="font-size:14px;padding-left:24px;font-weight:bold"><span class="flex-center" style="font-size:14px">命令参考(Command Reference)</span></h2><div class="collapseContainer_d6e4e p-2 rounded-xl"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(0deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div class="transition-all duration-300 ease-in-out" style="overflow:hidden;max-height:0"><div class="rspress-sidebar-group transition-opacity duration-500 ease-in-out" style="opacity:0;margin-left:12px"><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/scripts/1_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 1 章 Logic 自动化服务器</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/scripts/2_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 2 章 自动化服务器参考</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/scripts/3_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 3 章 宏</span></div></a></div><div class="rspress-sidebar-item"><a href="/sailwind_docs/logic/scripts/4_zh.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e mt-0.5 py-2 px-3 font-medium flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>第 4 章 SPICE 网表属性术语表</span></div></a></div></div></div></section></nav></div></aside><div class="flex-1 relative min-w-0"><div class="rspress-sidebar-menu-container "><div class="rspress-sidebar-menu"><button type="button" class="flex-center mr-auto"><div class="text-md mr-2"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg></div><span class="text-sm">Menu</span></button><button type="button" class="flex-center ml-auto"><span class="text-sm">本页目录</span><div class="text-md mr-2" style="transform:rotate(0deg);transition:transform 0.2s ease-out;margin-top:2px"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></button><div class="rspress-local-toc-container "><ul><li><a href="#1" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">SPICE 模拟</span></a></li><li><a href="#1-1" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">用于仿真的模拟原理图</span></a></li><li><a href="#1-1-1" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">将 SPICE 属性添加到库元件与原理图元件</span></a></li><li><a href="#1-1-2" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">向原理图元件或网络添加 SPICE 属性</span></a></li><li><a href="#1-1-3" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">创建 SPICE 网表</span></a></li><li><a href="#1-1-4" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">设置交流电分析</span></a></li><li><a href="#1-1-5" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">设置直流源扫描分析</span></a></li><li><a href="#1-1-6" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">设置 SPICE Netlister</span></a></li><li><a href="#1-1-7" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">设置瞬态分析</span></a></li><li><a href="#1-1-8" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">将属性应用于您的模拟设计</span></a></li><li><a href="#2" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">基本脚本</span></a></li><li><a href="#2-1" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">管理脚本</span></a></li><li><a href="#2-1-1" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">打开现有脚本</span></a></li><li><a href="#2-1-2" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">管理打开的脚本</span></a></li><li><a href="#2-1-3" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">编辑脚本</span></a></li><li><a href="#2-1-4" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">编辑用户对话框</span></a></li><li><a href="#2-1-5" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">查找自动化语句</span></a></li><li><a href="#2-1-6" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">观察变量</span></a></li><li><a href="#2-2" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">创建脚本</span></a></li><li><a href="#2-2-1" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">创建脚本</span></a></li><li><a href="#2-2-2" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">使用对象和过程列表插入自动化语句</span></a></li><li><a href="#2-2-3" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">使用 ActiveX 自动化成员对话框插入自动化语句</span></a></li><li><a href="#2-2-4" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">设置下一个语句</span></a></li><li><a href="#2-2-5" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">显示下一个语句</span></a></li><li><a href="#2-3" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">运行脚本</span></a></li><li><a href="#2-3-1" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">运行脚本</span></a></li><li><a href="#2-3-2" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">暂停正在运行的脚本</span></a></li><li><a href="#2-3-3" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">停止正在运行的脚本</span></a></li><li><a href="#2-4" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">调试脚本</span></a></li><li><a href="#2-4-1" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">设置或删除断点</span></a></li><li><a href="#2-4-2" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">调试脚本</span></a></li><li><a href="#2-4-3" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">删除脚本中的所有断点</span></a></li><li><a href="#2-4-4" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">纠正运行时错误</span></a></li><li><a href="#2-5" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">访问 Basic 语言帮助</span></a></li><li><a href="#2-6" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">使用基本脚本对话框</span></a></li><li><a href="#2-7" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">管理 Sax 基本引擎</span></a></li><li><a href="#2-8" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">基本示例脚本</span></a></li><li><a href="#2-8-1" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">基本示例脚本 00 至 11</span></a></li><li><a href="#2-8-2" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">基本示例脚本 — RGL 报告</span></a></li><li><a href="#2-8-3" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:24px"><span class="rspress-toc-link-text block">基本示例脚本 — 高级</span></a></li><li><a href="#3" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:0"><span class="rspress-toc-link-text block">管理许可选项</span></a></li><li><a href="#3-1" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">查看许可证文件或许可证状态</span></a></li><li><a href="#3-2" class="link_a7cea rspress-toc-link sm:text-normal text-sm" style="margin-left:12px"><span class="rspress-toc-link-text block">许可证文件定义</span></a></li></ul></div></div></div><div class="content_ff766 rspress-doc-container flex"><div class="flex-1 overflow-x-auto"><div class="rspress-doc"><!--$--><h1 id="第-21-章-使用高级程序-" class="rspress-doc-title text-3xl mb-10 leading-10 tracking-tight title_fb7eb">第 21 章 使用高级程序 ❌<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#第-21-章-使用高级程序-">#</a></h1>
-<p class="my-4 leading-7">SailWind Logic 支持与 SPICE 仿真和 基本脚本等高级程序进行交互。您可以设置高级 SPICE 设计仿真来分析设计行为，并使用 基本脚本自动执行许多重复性设计任务。您还可以查看和管理许可证文件信息。</p>
-<details class="rspress-directive details"><summary class="rspress-directive-title">SPICE 模拟，功能会进行全新设计</summary><div class="rspress-directive-content">
-<h2 id="1" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">SPICE 模拟<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#1">#</a></h2>
-<p class="my-4 leading-7">SailWind Logic 中的 SPICE 模拟使您能够使用高级程序设置和分析您的设计，包括设置 SPICE 网络表、AC 分析、DC 源扫描分析、瞬态分析以及将属性应用于您的模拟设计。</p>
-<h3 id="1-1" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">用于仿真的模拟原理图<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#1-1">#</a></h3>
-<p class="my-4 leading-7">您可以创建模拟原理图并生成用于 SPICE 仿真器的网表。将模拟属性和仿真值添加到用于 SPICE 仿真的元件和网络。</p>
-<p class="my-4 leading-7">misc 库中提供了多个模拟器件作为示例。此外，库中的 Analog Models 子文件夹中还提供了多个组件仿真模型示例。</p>
-<blockquote class="border-l-2 border-solid border-divider pl-4 my-6 transition-colors duration-500 blockquote_f1063">
-<p class="my-4 leading-7">[!INFO]</p>
-<p class="my-4 leading-7">每个 SPICE 模型都必须有一个单独的 .mod 文件。模型文件可以包含子电路部分，但多个模型无法存储在一个文件中，因为软件没有从文件中提取不同模型的机制。</p>
+  <body>
+    <div id="__rspress_root"><link rel="preload" as="image" href="/sailwind_docs/logo.png"/><header class="rp-nav"><div class="rp-nav__left"><div class="rp-nav__title"><a href="/sailwind_docs/" class="rp-nav__title__link rp-link"><div class="rp-nav__title__logo"><img src="/sailwind_docs/logo.png" alt="logo" id="logo" class="rspress-logo rp-nav__title__logo-image"/></div><span>SailWind</span></a></div></div><div class="rp-nav__right"><button class="rp-search-button"><div class="rp-search-button__content"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 20 21" class="rp-search-button__icon"><path fill="currentColor" d="M8.333 1.913A6.667 6.667 0 0 1 15 8.58c0 1.54-.525 2.957-1.402 4.085l4.49 4.492a.834.834 0 0 1-1.177 1.178l-4.491-4.49a6.64 6.64 0 0 1-4.087 1.402 6.667 6.667 0 0 1 0-13.334m0 1.667a5 5 0 1 0 0 10 5 5 0 0 0 0-10"></path></svg><span class="rp-search-button__word">Search</span></div><div class="rp-search-button__hotkey" style="opacity:0"><span></span><span>K</span></div></button><div class="rp-search-button--mobile"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 20 21"><path fill="currentColor" d="M8.333 1.913A6.667 6.667 0 0 1 15 8.58c0 1.54-.525 2.957-1.402 4.085l4.49 4.492a.834.834 0 0 1-1.177 1.178l-4.491-4.49a6.64 6.64 0 0 1-4.087 1.402 6.667 6.667 0 0 1 0-13.334m0 1.667a5 5 0 1 0 0 10 5 5 0 0 0 0-10"></path></svg></div><ul class="rp-nav-menu rp-nav-menu--right"><li class="rp-nav-menu__item rp-nav-menu__item--active"><a href="/sailwind_docs/logic/index.html" class="rp-nav-menu__item__container rp-link">原理图 (Logic)</a></li><li class="rp-nav-menu__item"><a href="/sailwind_docs/layout/index.html" class="rp-nav-menu__item__container rp-link">物理版图 (Layout)</a></li><li class="rp-nav-menu__item"><a href="/sailwind_docs/router/index.html" class="rp-nav-menu__item__container rp-link">自动布线 (Router)</a></li><li class="rp-nav-menu__item"><a href="/sailwind_docs/lpcreator/index.html" class="rp-nav-menu__item__container rp-link">焊盘图形 (LPW)</a></li><li class="rp-nav-menu__item"><a href="/sailwind_docs/about.html" class="rp-nav-menu__item__container rp-link">关于</a></li></ul><div class="rp-nav__others"><div class="rp-nav-menu__divider"></div><div class="rp-switch-appearance"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="rp-switch-appearance__icon rp-switch-appearance__icon--sun"><path fill="currentColor" d="m7.001 15.848-1.226 1.226a.58.58 0 0 0 0 .818.58.58 0 0 0 .818 0l1.226-1.226a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0m-.352-8.735a.584.584 0 0 0 .825-.825L6.237 5.051a.584.584 0 0 0-.825.825zM5.011 11.07h-1.75a.584.584 0 0 0 0 1.167h1.75c.324 0 .584-.26.584-.583a.585.585 0 0 0-.584-.584m7.003-5.835c.324 0 .584-.26.584-.584V2.9a.58.58 0 0 0-.584-.584.58.58 0 0 0-.583.583V4.65c0 .323.262.584.583.584m5.616 1.621 1.226-1.225a.58.58 0 0 0 0-.818.58.58 0 0 0-.818 0l-1.226 1.225a.58.58 0 0 0 0 .818.576.576 0 0 0 .818 0m3.138 4.214h-1.75a.58.58 0 0 0-.584.584c0 .324.26.584.583.584h1.751a.584.584 0 1 0 0-1.167m-3.389 5.124a.584.584 0 0 0-.825.825l1.238 1.238a.584.584 0 0 0 .825-.826zm-5.365-9.795a5.256 5.256 0 0 0-5.257 5.258 5.256 5.256 0 0 0 5.257 5.257 5.256 5.256 0 0 0 5.257-5.257 5.256 5.256 0 0 0-5.257-5.258m0 11.675a.58.58 0 0 0-.583.583v1.751a.582.582 0 1 0 1.167 0v-1.75a.584.584 0 0 0-.584-.584"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" viewBox="0 0 19 19" class="rp-switch-appearance__icon rp-switch-appearance__icon--moon"><path fill="currentColor" d="M9.166 0a9.2 9.2 0 0 1 1.857.188.834.834 0 0 1 .042 1.623 4.47 4.47 0 1 0 5.457 5.457l.048-.135a.834.834 0 0 1 1.575.177q.186.902.188 1.856A9.168 9.168 0 1 1 9.166 0"></path></svg></div><div class="rp-social-links"><a href="https://github.com/mikigo/sailwind_docs/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__sm"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg></button><button aria-label="mobile hamburger" class="rp-nav-hamburger rp-nav-hamburger__md"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 21 21"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.667" d="M3.645 5.225h13.333M3.645 10.225h13.333M3.645 15.225h13.333"></path></svg><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"><div class="rp-nav-menu__others-mobile__container"><div class="rp-nav-hamburger__md__hover-group"><div class="rp-nav-screen-appearance"><div class="rp-nav-screen-appearance__left">Theme</div><div class="rp-nav-screen-appearance__right"></div></div><div class="rp-nav-screen-divider"></div><div class="rp-social-links"><a href="https://github.com/mikigo/sailwind_docs/" target="_blank" rel="noopener noreferrer" class="rp-social-links__item"><div class="rp-social-links__icon"><div class="rp-social-links__icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a><ul class="rp-hover-group rp-hover-group--hidden rp-hover-group--right"></ul></div></div></div></ul></button></div></header><div class="rp-doc-layout__menu"><div class="rp-sidebar-menu"><button type="button" class="rp-sidebar-menu__left"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg><span>Menu</span></button><button type="button" class="rp-sidebar-menu__right"><span class="rp-sidebar-menu__right__text">ON THIS PAGE</span><svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-sidebar-menu__right__icon" style="transform:rotate(0deg);transition:transform 0.2s ease-out"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></button></div></div><div class="rp-doc-layout__container"><aside class="rp-doc-layout__sidebar rp-scrollbar"><a href="/sailwind_docs/logic/index.html" class="rp-sidebar-item rp-link" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>章节预览</span></div><div class="rp-sidebar-item__right"></div></a><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>指南(Guide)</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:1fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/sailwind_docs/logic/guide/1_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 1 章 SailWind Logic 快速开始 ಠ_ಠ</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/guide/2_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 2 章 开始 SailWind Logic</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/guide/3_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 3 章 用户界面</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/guide/4_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 4 章 文件操作</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/guide/5_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 5 章 设计设置</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/guide/6_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 6 章 管理库和库数据</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/guide/7_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 7 章 库元件</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/guide/8_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 8 章 特殊示意图符号</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/guide/9_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 9 章 设计和编辑基础</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/guide/10_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 10 章 原理图元件</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/guide/11_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 11 章 图页</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/guide/12_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 12 章 非电气对象</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/guide/13_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 13 章 连接</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/guide/14_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 14 章 层次化设计</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/guide/15_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 15 章 原理图对象修改</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/guide/16_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 16 章 规则</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/guide/17_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 17 章 报告</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/guide/18_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 18 章 与 Layout 和 Router 协作</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/guide/19_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 19 章 绘图和打印</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/guide/20_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 20 章 对象链接与嵌入 ❌</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/guide/21_zh.html" class="rp-sidebar-item rp-sidebar-item--active rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 21 章 使用高级程序 ❌</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/guide/22_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 22 章 自定义界面 ಠ_ಠ</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/guide/23_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 23 章 崩溃检测、BMW 和 BLT ಠ_ಠ</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/guide/24_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 24 章 SailWind Logic 对话框 ಠ_ಠ</span></div><div class="rp-sidebar-item__right"></div></a></div></div><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>教程(Tutorial)</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(0deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:0fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/sailwind_docs/logic/tutorial/2_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>学习用户界面教程</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/tutorial/3_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>创建库元件教程</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/tutorial/4_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>添加与复制元件教程</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/tutorial/5_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>添加连接教程</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/tutorial/6_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>添加总线教程</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/tutorial/7_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>编辑设计元素教程</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/tutorial/8_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>分配约束教程</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/tutorial/9_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>创建报告教程</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/tutorial/10_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>连接 SailWind Layout教程</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/tutorial/11_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>更新原理图设计变更教程</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/tutorial/12_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>打印和绘制电路图教程</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/tutorial/13_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>管理多页原理图教程</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/tutorial/14_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>模拟仿真设计教程</span></div><div class="rp-sidebar-item__right"></div></a></div></div><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>快速参考(Quick Reference)</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(0deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:0fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/sailwind_docs/logic/qr/modless.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>无模命令</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/qr/shortcut.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>键盘快捷键</span></div><div class="rp-sidebar-item__right"></div></a></div></div><div class="rp-sidebar-item rp-sidebar-group" style="padding-left:12px" data-depth="0"><div class="rp-sidebar-item__left"><span>命令参考(Command Reference)</span></div><div class="rp-sidebar-item__right"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(0deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div style="display:grid;grid-template-rows:0fr;transition:grid-template-rows 0.2s ease-out"><div style="overflow:hidden"><a href="/sailwind_docs/logic/scripts/1_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 1 章 Logic 自动化服务器</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/scripts/2_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 2 章 自动化服务器参考</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/scripts/3_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 3 章 宏</span></div><div class="rp-sidebar-item__right"></div></a><a href="/sailwind_docs/logic/scripts/4_zh.html" class="rp-sidebar-item rp-sidebar-item--group-item rp-link" style="padding-left:calc(12px * 1 + 12px)" data-depth="1"><div class="rp-sidebar-item__left"><span>第 4 章 SPICE 网表属性术语表</span></div><div class="rp-sidebar-item__right"></div></a></div></div></aside><div class="rp-doc-layout__doc"><main class="rp-doc-layout__doc-container"><div class="rp-doc rspress-doc"><!--$--><h1 class="rp-toc-include" id="第-21-章-使用高级程序-"><a href="#第-21-章-使用高级程序-" class="rp-header-anchor rp-link" aria-hidden="true">#</a>第 21 章 使用高级程序 ❌<!-- --> </h1>
+<p>SailWind Logic 支持与 SPICE 仿真和 基本脚本等高级程序进行交互。您可以设置高级 SPICE 设计仿真来分析设计行为，并使用 基本脚本自动执行许多重复性设计任务。您还可以查看和管理许可证文件信息。</p>
+<details class="rp-callout rp-callout--details"><summary class="rp-callout__title">SPICE 模拟，功能会进行全新设计</summary><div class="rp-callout__content"><h2 class="rp-toc-include" id="1"><a href="#1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>SPICE 模拟</h2><p>SailWind Logic 中的 SPICE 模拟使您能够使用高级程序设置和分析您的设计，包括设置 SPICE 网络表、AC 分析、DC 源扫描分析、瞬态分析以及将属性应用于您的模拟设计。</p><h3 class="rp-toc-include" id="1-1"><a href="#1-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>用于仿真的模拟原理图</h3><p>您可以创建模拟原理图并生成用于 SPICE 仿真器的网表。将模拟属性和仿真值添加到用于 SPICE 仿真的元件和网络。</p><p>misc 库中提供了多个模拟器件作为示例。此外，库中的 Analog Models 子文件夹中还提供了多个组件仿真模型示例。</p><blockquote>
+<p>[!INFO]</p>
+<p>每个 SPICE 模型都必须有一个单独的 .mod 文件。模型文件可以包含子电路部分，但多个模型无法存储在一个文件中，因为软件没有从文件中提取不同模型的机制。</p>
+</blockquote><p>将 SPICE 属性添加到库元件与原理图元件 将 SPICE 属性添加到原理图元件或网络</p><h4 class="rp-toc-include" id="1-1-1"><a href="#1-1-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>将 SPICE 属性添加到库元件与原理图元件</h4><p>您可以将 SPICE 属性添加到库元件，而不是添加到原理图中的元件。如果将属性添加到原理图中的元件，则每次使用该元件时都必须添加。但是，如果将属性添加到库中的元件，则无需再次添加。</p><p>另请参阅属性概述。</p><h4 class="rp-toc-include" id="1-1-2"><a href="#1-1-2" class="rp-header-anchor rp-link" aria-hidden="true">#</a>向原理图元件或网络添加 SPICE 属性</h4><p>为原理图元件添加属性时，每次使用该元件时都必须添加。考虑将属性添加到库元件中。</p><p>🏃‍♂️‍<strong>步骤</strong></p><ol>
+<li>选择👉一个元件或网络，<strong>右键</strong> &gt; 点击👆“<strong>属性</strong>”。</li>
+<li>为器件添加 SPICE 属性。您也可以点击👆“<strong>浏览属性库</strong>”来浏览 SPICE 属性的属性辞典。</li>
+</ol><p>另请参阅 SailWind Logic 命令参考中的 SPICE Netlist 属性词汇表。</p><blockquote>
+<p>[!INFO]</p>
+<p>使用 MODEL 属性引用组件仿真模型。模型采用设备名称加上 .mod 扩展名。搜索顺序依次为 SailWind 安装文件夹、SailWind 库文件夹、SailWind 项目文件夹以及库列表。每个 SPICE 模型必须有单独的 .mod 文件。模型文件可以包含子电路部分，但多个模型不能存储在一个文件中，因为软件没有从文件中提取不同模型的机制。</p>
+</blockquote><h4 class="rp-toc-include" id="1-1-3"><a href="#1-1-3" class="rp-header-anchor rp-link" aria-hidden="true">#</a>创建 SPICE 网表</h4><p>将元件（具有 SPICE 属性）添加到原理图或将 SPICE 属性添加到现有元件后，您可以创建 SPICE 网表以准备进行仿真。</p><p>🏃‍♂️‍<strong>步骤</strong></p><ol>
+<li>
+<p>点击👆工具 &gt; SPICE Netlist 。</p>
+</li>
+<li>
+<p>在“输出文件名”框中，使用默认值或输入📝 SPICE 网表文件的路径和名称。您也可以使用“浏览”按钮搜索路径。</p>
+</li>
+<li>
+<p>在“选择👉图页”区域中，选择👉要包含在 SPICE 网表中的图页。您还可以使用：</p>
+<ul>
+<li>全选 — 选择👉“选择👉图页”框中的所有图页。</li>
+<li>取消全选 — 清除选择👉图页框中选定的所有图页。</li>
+</ul>
+<blockquote>
+<p>[!TIP]</p>
+<p>只有完整的原理图才能被模拟。</p>
 </blockquote>
-<p class="my-4 leading-7">将 SPICE 属性添加到库元件与原理图元件 将 SPICE 属性添加到原理图元件或网络</p>
-<h4 id="1-1-1" class="mt-8 leading-6 text-lg title_fb7eb">将 SPICE 属性添加到库元件与原理图元件<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#1-1-1">#</a></h4>
-<p class="my-4 leading-7">您可以将 SPICE 属性添加到库元件，而不是添加到原理图中的元件。如果将属性添加到原理图中的元件，则每次使用该元件时都必须添加。但是，如果将属性添加到库中的元件，则无需再次添加。</p>
-<p class="my-4 leading-7">另请参阅属性概述。</p>
-<h4 id="1-1-2" class="mt-8 leading-6 text-lg title_fb7eb">向原理图元件或网络添加 SPICE 属性<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#1-1-2">#</a></h4>
-<p class="my-4 leading-7">为原理图元件添加属性时，每次使用该元件时都必须添加。考虑将属性添加到库元件中。</p>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<ol class="list-decimal pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">选择👉一个元件或网络，<strong class="font-semibold">右键</strong> &gt; 点击👆“<strong class="font-semibold">属性</strong>”。</li>
-<li class="[&amp;:not(:first-child)]:mt-2">为器件添加 SPICE 属性。您也可以点击👆“<strong class="font-semibold">浏览属性库</strong>”来浏览 SPICE 属性的属性辞典。</li>
-</ol>
-<p class="my-4 leading-7">另请参阅 SailWind Logic 命令参考中的 SPICE Netlist 属性词汇表。</p>
-<blockquote class="border-l-2 border-solid border-divider pl-4 my-6 transition-colors duration-500 blockquote_f1063">
-<p class="my-4 leading-7">[!INFO]</p>
-<p class="my-4 leading-7">使用 MODEL 属性引用组件仿真模型。模型采用设备名称加上 .mod 扩展名。搜索顺序依次为 SailWind 安装文件夹、SailWind 库文件夹、SailWind 项目文件夹以及库列表。每个 SPICE 模型必须有单独的 .mod 文件。模型文件可以包含子电路部分，但多个模型不能存储在一个文件中，因为软件没有从文件中提取不同模型的机制。</p>
+</li>
+<li>
+<p>如果设计是分层的，请选中✅“包括子表”复选框以包括任何底层层次结构。</p>
+</li>
+<li>
+<p>在输出格式框中，选择👉目标 SPICE 软件。</p>
+</li>
+<li>
+<p>点击👆“<strong>模拟设置</strong>”以更改或启用默认模拟值。</p>
+<blockquote>
+<p>[!TIP]</p>
+<p>您的模拟值已保存以供将来的 SPICE 网络列表使用。</p>
 </blockquote>
-<h4 id="1-1-3" class="mt-8 leading-6 text-lg title_fb7eb">创建 SPICE 网表<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#1-1-3">#</a></h4>
-<p class="my-4 leading-7">将元件（具有 SPICE 属性）添加到原理图或将 SPICE 属性添加到现有元件后，您可以创建 SPICE 网表以准备进行仿真。</p>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<ol class="list-decimal pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">点击👆工具 &gt; SPICE Netlist 。</p>
+<p>另请参阅设置 SPICE Netlister。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在“输出文件名”框中，使用默认值或输入📝 SPICE 网表文件的路径和名称。您也可以使用“浏览”按钮搜索路径。</p>
+<li>
+<p>点击👆“<strong>确定</strong>”创建 SPICE 网表。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在“选择👉图页”区域中，选择👉要包含在 SPICE 网表中的图页。您还可以使用：</p>
-<ul class="list-disc pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">全选 — 选择👉“选择👉图页”框中的所有图页。</li>
-<li class="[&amp;:not(:first-child)]:mt-2">取消全选 — 清除选择👉图页框中选定的所有图页。</li>
+</ol><p>输出窗口将显示生成的网表。生成网表过程中的所有警告、错误和注释都嵌入到最终网表中。您可以在开始仿真之前编辑网表。</p><h4 class="rp-toc-include" id="1-1-4"><a href="#1-1-4" class="rp-header-anchor rp-link" aria-hidden="true">#</a>设置交流电分析</h4><p>作为设置 SPICE 网络列表的一部分，您可以专门为 AC 分析设置选项。</p><p>🏃‍♂️‍<strong>步骤</strong></p><ol>
+<li>点击👆工具 &gt; SPICE Netlist 。</li>
+<li>在 SPICEnet 对话框中，点击👆仿真设置。</li>
+<li>在“仿真设置”对话框中，点击👆“<strong>AC 分析</strong>”。</li>
+<li>在间隔区域中，输入📝点数，然后选择👉变化方式：十倍、八倍或线性。</li>
+<li>在频率区域，输入📝起始频率和结束频率。</li>
+</ol><blockquote>
+<p>[!TIP]</p>
+<p>您的模拟设置值将被保存以供将来的 SPICE 网络列表使用。</p>
+</blockquote><p>有关 AC 分析的更多信息，请参阅 SPICE 模拟器中的帮助。</p><h4 class="rp-toc-include" id="1-1-5"><a href="#1-1-5" class="rp-header-anchor rp-link" aria-hidden="true">#</a>设置直流源扫描分析</h4><p>作为设置 SPICE 网络列表的一部分，您可以专门为 DC 扫描分析设置选项。</p><p>🏃‍♂️‍<strong>步骤</strong></p><ol>
+<li>点击👆工具 &gt; SPICE Netlist 。</li>
+<li>在 SPICEnet 对话框中，点击👆仿真设置。</li>
+<li>在“模拟设置”对话框中，点击👆“<strong>直流扫描</strong>”。</li>
+<li>在源框中，输入📝电压源或电流源的名称。</li>
+<li>在“开始”框中，输入📝扫描的起始电压。</li>
+<li>在停止框中，输入📝扫描的停止电压。</li>
+<li>在步长框中，输入📝扫描的增量值。</li>
+</ol><blockquote>
+<p>[!TIP]</p>
+<p>您的模拟设置值将被保存以供将来的 SPICE 网络列表使用。</p>
+</blockquote><p>有关直流源扫描分析的更多信息，请参阅 SPICE 模拟器中的帮助。</p><h4 class="rp-toc-include" id="1-1-6"><a href="#1-1-6" class="rp-header-anchor rp-link" aria-hidden="true">#</a>设置 SPICE Netlister</h4><p>将元件（具有 SPICE 属性）添加到原理图或将 SPICE 属性添加到现有元件后，您可以创建 SPICE 网表以准备进行仿真。</p><p>🏃‍♂️‍<strong>步骤</strong></p><ol>
+<li>
+<p>点击👆工具 &gt; SPICE Netlist 。</p>
+</li>
+<li>
+<p>在 SPICEnet 对话框中，点击👆仿真设置。</p>
+</li>
+<li>
+<p>选中✅您想要启用的任何分析旁边的复选框。</p>
+</li>
+<li>
+<p>点击👆分析按钮即可更改默认模拟值。</p>
+<ul>
+<li>AC 分析——指示 SPICE 模拟器执行频率分析</li>
+<li>直流源扫描分析——指示 SPICE 模拟器在指定值处执行工作点分析</li>
+<li>瞬态分析——指示 SPICE 模拟器执行时间分析</li>
+<li>工作点——指示 SPICE 仿真器确定电路的直流工作点</li>
 </ul>
-<div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
-<!-- -->
-<p class="my-4 leading-7">只有完整的原理图才能被模拟。</p>
-</div></div>
-</li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">如果设计是分层的，请选中✅“包括子表”复选框以包括任何底层层次结构。</p>
-</li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在输出格式框中，选择👉目标 SPICE 软件。</p>
-</li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">点击👆“<strong class="font-semibold">模拟设置</strong>”以更改或启用默认模拟值。</p>
-<div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
-<!-- -->
-<p class="my-4 leading-7">您的模拟值已保存以供将来的 SPICE 网络列表使用。</p>
-</div></div>
-<p class="my-4 leading-7">另请参阅设置 SPICE Netlister。</p>
-</li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">点击👆“<strong class="font-semibold">确定</strong>”创建 SPICE 网表。</p>
-</li>
-</ol>
-<p class="my-4 leading-7">输出窗口将显示生成的网表。生成网表过程中的所有警告、错误和注释都嵌入到最终网表中。您可以在开始仿真之前编辑网表。</p>
-<h4 id="1-1-4" class="mt-8 leading-6 text-lg title_fb7eb">设置交流电分析<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#1-1-4">#</a></h4>
-<p class="my-4 leading-7">作为设置 SPICE 网络列表的一部分，您可以专门为 AC 分析设置选项。</p>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<ol class="list-decimal pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">点击👆工具 &gt; SPICE Netlist 。</li>
-<li class="[&amp;:not(:first-child)]:mt-2">在 SPICEnet 对话框中，点击👆仿真设置。</li>
-<li class="[&amp;:not(:first-child)]:mt-2">在“仿真设置”对话框中，点击👆“<strong class="font-semibold">AC 分析</strong>”。</li>
-<li class="[&amp;:not(:first-child)]:mt-2">在间隔区域中，输入📝点数，然后选择👉变化方式：十倍、八倍或线性。</li>
-<li class="[&amp;:not(:first-child)]:mt-2">在频率区域，输入📝起始频率和结束频率。</li>
-</ol>
-<blockquote class="border-l-2 border-solid border-divider pl-4 my-6 transition-colors duration-500 blockquote_f1063">
-<p class="my-4 leading-7">[!TIP]</p>
-<p class="my-4 leading-7">您的模拟设置值将被保存以供将来的 SPICE 网络列表使用。</p>
+<blockquote>
+<p>[!TIP]</p>
+<p>您的模拟设置值将被保存以供将来的 SPICE 网络列表使用。</p>
 </blockquote>
-<p class="my-4 leading-7">有关 AC 分析的更多信息，请参阅 SPICE 模拟器中的帮助。</p>
-<h4 id="1-1-5" class="mt-8 leading-6 text-lg title_fb7eb">设置直流源扫描分析<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#1-1-5">#</a></h4>
-<p class="my-4 leading-7">作为设置 SPICE 网络列表的一部分，您可以专门为 DC 扫描分析设置选项。</p>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<ol class="list-decimal pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">点击👆工具 &gt; SPICE Netlist 。</li>
-<li class="[&amp;:not(:first-child)]:mt-2">在 SPICEnet 对话框中，点击👆仿真设置。</li>
-<li class="[&amp;:not(:first-child)]:mt-2">在“模拟设置”对话框中，点击👆“<strong class="font-semibold">直流扫描</strong>”。</li>
-<li class="[&amp;:not(:first-child)]:mt-2">在源框中，输入📝电压源或电流源的名称。</li>
-<li class="[&amp;:not(:first-child)]:mt-2">在“开始”框中，输入📝扫描的起始电压。</li>
-<li class="[&amp;:not(:first-child)]:mt-2">在停止框中，输入📝扫描的停止电压。</li>
-<li class="[&amp;:not(:first-child)]:mt-2">在步长框中，输入📝扫描的增量值。</li>
-</ol>
-<blockquote class="border-l-2 border-solid border-divider pl-4 my-6 transition-colors duration-500 blockquote_f1063">
-<p class="my-4 leading-7">[!TIP]</p>
-<p class="my-4 leading-7">您的模拟设置值将被保存以供将来的 SPICE 网络列表使用。</p>
+<p>有关模拟设置的更多信息，请参阅 SPICE 模拟器中的帮助。</p>
+</li>
+</ol><h4 class="rp-toc-include" id="1-1-7"><a href="#1-1-7" class="rp-header-anchor rp-link" aria-hidden="true">#</a>设置瞬态分析</h4><p>作为设置 SPICE 网络列表的一部分，您可以专门为瞬态分析设置选项。</p><p>🏃‍♂️‍<strong>步骤</strong></p><ol>
+<li>
+<p>点击👆工具 &gt; SPICE Netlist 。</p>
+</li>
+<li>
+<p>在“仿真设置”对话框中，点击👆“<strong>瞬态</strong>”。将显示“瞬态分析”对话框。</p>
+</li>
+<li>
+<p>在数据步长时间框中，输入📝分析的增量。</p>
+</li>
+<li>
+<p>在“总分析时间”框中，输入📝结束分析的时间。</p>
+</li>
+<li>
+<p>在开始记录数据的时间框中，输入📝开始记录分析数据的时间。</p>
+<p>如果您的模拟文件太大并且您对分析开始时的数据不感兴趣，这将很有帮助。</p>
+</li>
+<li>
+<p>在最大时间步长框中，输入📝最大时间步长值。</p>
+</li>
+<li>
+<p>如果您不希望 SPICE 在开始瞬态分析之前求解静态工作点，请选中✅使用初始条件复选框。</p>
+<p>如果启用此选项，SPICE 将在各个元素上使用 $ 1C=\cdots $ 作为初始瞬态条件并继续分析。</p>
+<blockquote>
+<p>[!TIP]</p>
+<p>您的模拟设置值将被保存以供将来的 SPICE 网络列表使用。</p>
 </blockquote>
-<p class="my-4 leading-7">有关直流源扫描分析的更多信息，请参阅 SPICE 模拟器中的帮助。</p>
-<h4 id="1-1-6" class="mt-8 leading-6 text-lg title_fb7eb">设置 SPICE Netlister<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#1-1-6">#</a></h4>
-<p class="my-4 leading-7">将元件（具有 SPICE 属性）添加到原理图或将 SPICE 属性添加到现有元件后，您可以创建 SPICE 网表以准备进行仿真。</p>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<ol class="list-decimal pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">点击👆工具 &gt; SPICE Netlist 。</p>
+<p>有关瞬态分析的更多信息，请参阅 SPICE 模拟器中的帮助。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在 SPICEnet 对话框中，点击👆仿真设置。</p>
+</ol><h4 class="rp-toc-include" id="1-1-8"><a href="#1-1-8" class="rp-header-anchor rp-link" aria-hidden="true">#</a>将属性应用于您的模拟设计</h4><p>这里有一系列可应用于模拟设计的属性。请查看列表并选择👉与您的设计意图相关的属性。</p><p>请参阅 SailWind Logic 命令参考中的“SPICE Netlist 属性词汇表”。</p></div></details>
+<details class="rp-callout rp-callout--details"><summary class="rp-callout__title">基本脚本，基于 Python 实现，还在开发中</summary><div class="rp-callout__content"><h2 class="rp-toc-include" id="2"><a href="#2" class="rp-header-anchor rp-link" aria-hidden="true">#</a>基本脚本</h2><h3 class="rp-toc-include" id="2-1"><a href="#2-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>管理脚本</h3><p>SailWind Logic 提供了多种灵活的脚本管理选项。您可以打开现有脚本、管理打开的脚本、编辑脚本、编辑用户对话框以启用用户交互、查找自动化语句以及监视变量。这让您能够高度掌控脚本的设置和管理。</p><p>Basic 是一种简单的脚本语言。与许多 Windows 应用程序（例如 Microsoft Word 和 Excel）一样，SailWind 应用程序也包含 Basic 功能，使用户能够使用标准脚本语言自定义其应用程序。</p><h4 class="rp-toc-include" id="2-1-1"><a href="#2-1-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>打开现有脚本</h4><p>使用基本脚本对话框</p><p>脚本在以 .bas 为扩展名的脚本文件中创建和存储。.bas 文件的默认位置为 C:\SailWind Projects。</p><ol>
+<li>
+<p>点击👆工具  &gt; Basic Scripts  &gt; Basic Script Editor ，然后点击👆打开按钮。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">选中✅您想要启用的任何分析旁边的复选框。</p>
+<li>
+<p>选择👉脚本，然后点击👆“<strong>打开</strong>”。</p>
+<p>您最多可以同时打开九个脚本。</p>
+<blockquote>
+<p>[!TIP]</p>
+<p>C:\SailWind Projects\Samples\Scripts\Logic 文件夹中提供了一些示例脚本。</p>
+</blockquote>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">点击👆分析按钮即可更改默认模拟值。</p>
-<ul class="list-disc pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">AC 分析——指示 SPICE 模拟器执行频率分析</li>
-<li class="[&amp;:not(:first-child)]:mt-2">直流源扫描分析——指示 SPICE 模拟器在指定值处执行工作点分析</li>
-<li class="[&amp;:not(:first-child)]:mt-2">瞬态分析——指示 SPICE 模拟器执行时间分析</li>
-<li class="[&amp;:not(:first-child)]:mt-2">工作点——指示 SPICE 仿真器确定电路的直流工作点</li>
-</ul>
-<div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
-<!-- -->
-<p class="my-4 leading-7">您的模拟设置值将被保存以供将来的 SPICE 网络列表使用。</p>
-</div></div>
-<p class="my-4 leading-7">有关模拟设置的更多信息，请参阅 SPICE 模拟器中的帮助。</p>
+</ol><h4 class="rp-toc-include" id="2-1-2"><a href="#2-1-2" class="rp-header-anchor rp-link" aria-hidden="true">#</a>管理打开的脚本</h4><p>图页子菜单上的命令提供了脚本管理方法。由于您最多可以同时打开 9 个脚本，因此您可以打开 <code>#uses</code>、关闭图页、关闭多个图页以及选择👉要查看和编辑的脚本。</p><p><strong>打开 #uses 模块</strong></p><p><code>#Uses</code> 模块是从其他脚本中调用的基本脚本。要打开这些辅助脚本，请执行以下操作：</p><ul>
+<li>在基本脚本编辑器中，<strong>右键</strong>点击👆并选择👉 Sheet &gt; Open Uses。</li>
+</ul><p>脚本中调用的 #uses 模块在 基本脚本编辑器中显示为脚本表。它们被分配了一个带编号的选项卡，您可以编辑或运行它们。</p><p><strong>关闭打开的脚本</strong></p><p>在基本脚本编辑器中，<strong>右键</strong>点击👆并选择👉 Sheet &gt; Close。</p><p>或者，您可以双击脚本边缘的编号选项卡。</p><p><strong>关闭所有打开的脚本</strong></p><ul>
+<li>在基本脚本编辑器中，<strong>右键</strong>点击👆并选择👉 Sheet &gt; Close All。</li>
+</ul><p><strong>查看特定脚本</strong></p><p>如果您打开了多个脚本，则可以查看特定打开的脚本。您最多可以同时打开九个脚本。</p><p>要查看特定脚本：</p><ul>
+<li><strong>右键</strong>点击👆并选择👉“图页”。然后在子菜单的打开脚本列表中，点击👆要查看的脚本。或者，您也可以点击👆脚本左侧的编号选项卡。</li>
+</ul><h4 class="rp-toc-include" id="2-1-3"><a href="#2-1-3" class="rp-header-anchor rp-link" aria-hidden="true">#</a>编辑脚本</h4><p>您可以将选定的文本从 基本脚本编辑器复制或剪切到剪贴板。您还可以将剪贴板中的选定内容粘贴到文本窗口中。您还可以将剪贴板中的文本粘贴到其他应用程序中。</p><ol>
+<li>
+<p>在基本脚本编辑器中，选择👉要复制或剪切的文本。</p>
 </li>
-</ol>
-<h4 id="1-1-7" class="mt-8 leading-6 text-lg title_fb7eb">设置瞬态分析<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#1-1-7">#</a></h4>
-<p class="my-4 leading-7">作为设置 SPICE 网络列表的一部分，您可以专门为瞬态分析设置选项。</p>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<ol class="list-decimal pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">点击👆工具 &gt; SPICE Netlist 。</p>
+<li>
+<p><strong>右键</strong> &gt; 点击👆编辑  &gt; 复制或剪切。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在“仿真设置”对话框中，点击👆“<strong class="font-semibold">瞬态</strong>”。将显示“瞬态分析”对话框。</p>
+<li>
+<p><strong>右键</strong>点击👆编辑  &gt; 粘贴 指定的值来粘贴脚本文本。</p>
+<p>您的选择👉将粘贴到输出窗口的插入点处。 或者，您可以点击👆基本脚本编辑器工具栏上的复制、剪切和粘贴按钮。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在数据步长时间框中，输入📝分析的增量。</p>
-</li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在“总分析时间”框中，输入📝结束分析的时间。</p>
-</li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在开始记录数据的时间框中，输入📝开始记录分析数据的时间。</p>
-<p class="my-4 leading-7">如果您的模拟文件太大并且您对分析开始时的数据不感兴趣，这将很有帮助。</p>
-</li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在最大时间步长框中，输入📝最大时间步长值。</p>
-</li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">如果您不希望 SPICE 在开始瞬态分析之前求解静态工作点，请选中✅使用初始条件复选框。</p>
-<p class="my-4 leading-7">如果启用此选项，SPICE 将在各个元素上使用 $ 1C=\cdots $ 作为初始瞬态条件并继续分析。</p>
-<div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
-<!-- -->
-<p class="my-4 leading-7">您的模拟设置值将被保存以供将来的 SPICE 网络列表使用。</p>
-</div></div>
-<p class="my-4 leading-7">有关瞬态分析的更多信息，请参阅 SPICE 模拟器中的帮助。</p>
-</li>
-</ol>
-<h4 id="1-1-8" class="mt-8 leading-6 text-lg title_fb7eb">将属性应用于您的模拟设计<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#1-1-8">#</a></h4>
-<p class="my-4 leading-7">这里有一系列可应用于模拟设计的属性。请查看列表并选择👉与您的设计意图相关的属性。</p>
-<p class="my-4 leading-7">请参阅 SailWind Logic 命令参考中的“SPICE Netlist 属性词汇表”。
-</p></div></details>
-<details class="rspress-directive details"><summary class="rspress-directive-title">基本脚本，基于 Python 实现，还在开发中</summary><div class="rspress-directive-content">
-<h2 id="2" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">基本脚本<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#2">#</a></h2>
-<h3 id="2-1" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">管理脚本<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#2-1">#</a></h3>
-<p class="my-4 leading-7">SailWind Logic 提供了多种灵活的脚本管理选项。您可以打开现有脚本、管理打开的脚本、编辑脚本、编辑用户对话框以启用用户交互、查找自动化语句以及监视变量。这让您能够高度掌控脚本的设置和管理。</p>
-<p class="my-4 leading-7">Basic 是一种简单的脚本语言。与许多 Windows 应用程序（例如 Microsoft Word 和 Excel）一样，SailWind 应用程序也包含 Basic 功能，使用户能够使用标准脚本语言自定义其应用程序。</p>
-<h4 id="2-1-1" class="mt-8 leading-6 text-lg title_fb7eb">打开现有脚本<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#2-1-1">#</a></h4>
-<p class="my-4 leading-7">使用基本脚本对话框</p>
-<p class="my-4 leading-7">脚本在以 .bas 为扩展名的脚本文件中创建和存储。.bas 文件的默认位置为 C:\SailWind Projects。</p>
-<ol class="list-decimal pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">点击👆工具  &gt; Basic Scripts  &gt; Basic Script Editor ，然后点击👆打开按钮。</p>
-</li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">选择👉脚本，然后点击👆“<strong class="font-semibold">打开</strong>”。</p>
-<p class="my-4 leading-7">您最多可以同时打开九个脚本。</p>
-<div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
-<!-- -->
-<p class="my-4 leading-7">C:\SailWind Projects\Samples\Scripts\Logic 文件夹中提供了一些示例脚本。</p>
-</div></div>
-</li>
-</ol>
-<h4 id="2-1-2" class="mt-8 leading-6 text-lg title_fb7eb">管理打开的脚本<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#2-1-2">#</a></h4>
-<p class="my-4 leading-7">图页子菜单上的命令提供了脚本管理方法。由于您最多可以同时打开 9 个脚本，因此您可以打开 <code>#uses</code>、关闭图页、关闭多个图页以及选择👉要查看和编辑的脚本。</p>
-<p class="my-4 leading-7"><strong class="font-semibold">打开 #uses 模块</strong></p>
-<p class="my-4 leading-7"><code>#Uses</code> 模块是从其他脚本中调用的基本脚本。要打开这些辅助脚本，请执行以下操作：</p>
-<ul class="list-disc pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">在基本脚本编辑器中，<strong class="font-semibold">右键</strong>点击👆并选择👉 Sheet &gt; Open Uses。</li>
-</ul>
-<p class="my-4 leading-7">脚本中调用的 #uses 模块在 基本脚本编辑器中显示为脚本表。它们被分配了一个带编号的选项卡，您可以编辑或运行它们。</p>
-<p class="my-4 leading-7"><strong class="font-semibold">关闭打开的脚本</strong></p>
-<p class="my-4 leading-7">在基本脚本编辑器中，<strong class="font-semibold">右键</strong>点击👆并选择👉 Sheet &gt; Close。</p>
-<p class="my-4 leading-7">或者，您可以双击脚本边缘的编号选项卡。</p>
-<p class="my-4 leading-7"><strong class="font-semibold">关闭所有打开的脚本</strong></p>
-<ul class="list-disc pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">在基本脚本编辑器中，<strong class="font-semibold">右键</strong>点击👆并选择👉 Sheet &gt; Close All。</li>
-</ul>
-<p class="my-4 leading-7"><strong class="font-semibold">查看特定脚本</strong></p>
-<p class="my-4 leading-7">如果您打开了多个脚本，则可以查看特定打开的脚本。您最多可以同时打开九个脚本。</p>
-<p class="my-4 leading-7">要查看特定脚本：</p>
-<ul class="list-disc pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2"><strong class="font-semibold">右键</strong>点击👆并选择👉“图页”。然后在子菜单的打开脚本列表中，点击👆要查看的脚本。或者，您也可以点击👆脚本左侧的编号选项卡。</li>
-</ul>
-<h4 id="2-1-3" class="mt-8 leading-6 text-lg title_fb7eb">编辑脚本<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#2-1-3">#</a></h4>
-<p class="my-4 leading-7">您可以将选定的文本从 基本脚本编辑器复制或剪切到剪贴板。您还可以将剪贴板中的选定内容粘贴到文本窗口中。您还可以将剪贴板中的文本粘贴到其他应用程序中。</p>
-<ol class="list-decimal pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在基本脚本编辑器中，选择👉要复制或剪切的文本。</p>
-</li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7"><strong class="font-semibold">右键</strong> &gt; 点击👆编辑  &gt; 复制或剪切。</p>
-</li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7"><strong class="font-semibold">右键</strong>点击👆编辑  &gt; 粘贴 指定的值来粘贴脚本文本。</p>
-<p class="my-4 leading-7">您的选择👉将粘贴到输出窗口的插入点处。 或者，您可以点击👆基本脚本编辑器工具栏上的复制、剪切和粘贴按钮。</p>
-</li>
-</ol>
-<h4 id="2-1-4" class="mt-8 leading-6 text-lg title_fb7eb">编辑用户对话框<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#2-1-4">#</a></h4>
-<p class="my-4 leading-7">UserDialog 由 Begin Dialog...End Dialog 块定义。</p>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<ol class="list-decimal pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">在 基本脚本编辑器中，将光标置于脚本的 UserDialog 块中。</li>
-<li class="[&amp;:not(:first-child)]:mt-2">点击👆“<strong class="font-semibold">编辑 UserDialog</strong>”按钮。
+</ol><h4 class="rp-toc-include" id="2-1-4"><a href="#2-1-4" class="rp-header-anchor rp-link" aria-hidden="true">#</a>编辑用户对话框</h4><p>UserDialog 由 Begin Dialog...End Dialog 块定义。</p><p>🏃‍♂️‍<strong>步骤</strong></p><ol>
+<li>在 基本脚本编辑器中，将光标置于脚本的 UserDialog 块中。</li>
+<li>点击👆“<strong>编辑 UserDialog</strong>”按钮。
 另请参阅 Sax Basic 编辑器在线帮助 (C:\ \ \程序\sbe5_000.hlp)</li>
-</ol>
-<h4 id="2-1-5" class="mt-8 leading-6 text-lg title_fb7eb">查找自动化语句<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#2-1-5">#</a></h4>
-<p class="my-4 leading-7">如果您正在处理长脚本，则可以搜索特定的语句。</p>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<ol class="list-decimal pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">在 基本脚本编辑器中，点击👆“<strong class="font-semibold">对象</strong>”列表并选择👉一个对象类型。“对象”列表显示当前模块的所有对象。“（常规）”对象将所有不属于任何特定对象的过程分组。</li>
-<li class="[&amp;:not(:first-child)]:mt-2">点击👆“<strong class="font-semibold">过程</strong>”列表并选择👉一个粗体过程。“过程”列表显示当前对象的所有过程。选择👉粗体过程可在脚本中定位该过程。 该语句出现在 基本脚本编辑器中。</li>
-</ol>
-<h4 id="2-1-6" class="mt-8 leading-6 text-lg title_fb7eb">观察变量<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#2-1-6">#</a></h4>
-<p class="my-4 leading-7">快速监视在立即窗口中显示光标下的表达式的值。</p>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<p class="my-4 leading-7"><strong class="font-semibold">右键</strong>点击👆“<strong class="font-semibold">快速监视</strong>”。</p>
-<p class="my-4 leading-7">或者，在基本脚本编辑器中，点击👆“<strong class="font-semibold">快速监视</strong>”按钮。</p>
-<p class="my-4 leading-7">另请参阅 Sax Basic Editor 在线帮助。</p>
-<h3 id="2-2" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">创建脚本<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#2-2">#</a></h3>
-<p class="my-4 leading-7">您可以创建脚本来简化冗余活动。</p>
-<h4 id="2-2-1" class="mt-8 leading-6 text-lg title_fb7eb">创建脚本<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#2-2-1">#</a></h4>
-<p class="my-4 leading-7">您可以使用基本脚本编辑器创建脚本。</p>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<ol class="list-decimal pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">点击👆“<strong class="font-semibold">工具 &gt; “基本脚本 &gt; “基本脚本编辑器</strong>”。
+</ol><h4 class="rp-toc-include" id="2-1-5"><a href="#2-1-5" class="rp-header-anchor rp-link" aria-hidden="true">#</a>查找自动化语句</h4><p>如果您正在处理长脚本，则可以搜索特定的语句。</p><p>🏃‍♂️‍<strong>步骤</strong></p><ol>
+<li>在 基本脚本编辑器中，点击👆“<strong>对象</strong>”列表并选择👉一个对象类型。“对象”列表显示当前模块的所有对象。“（常规）”对象将所有不属于任何特定对象的过程分组。</li>
+<li>点击👆“<strong>过程</strong>”列表并选择👉一个粗体过程。“过程”列表显示当前对象的所有过程。选择👉粗体过程可在脚本中定位该过程。 该语句出现在 基本脚本编辑器中。</li>
+</ol><h4 class="rp-toc-include" id="2-1-6"><a href="#2-1-6" class="rp-header-anchor rp-link" aria-hidden="true">#</a>观察变量</h4><p>快速监视在立即窗口中显示光标下的表达式的值。</p><p>🏃‍♂️‍<strong>步骤</strong></p><p><strong>右键</strong>点击👆“<strong>快速监视</strong>”。</p><p>或者，在基本脚本编辑器中，点击👆“<strong>快速监视</strong>”按钮。</p><p>另请参阅 Sax Basic Editor 在线帮助。</p><h3 class="rp-toc-include" id="2-2"><a href="#2-2" class="rp-header-anchor rp-link" aria-hidden="true">#</a>创建脚本</h3><p>您可以创建脚本来简化冗余活动。</p><h4 class="rp-toc-include" id="2-2-1"><a href="#2-2-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>创建脚本</h4><p>您可以使用基本脚本编辑器创建脚本。</p><p>🏃‍♂️‍<strong>步骤</strong></p><ol>
+<li>点击👆“<strong>工具 &gt; “基本脚本 &gt; “基本脚本编辑器</strong>”。
 在 SailWind Layout 和 SailWind Logic 中，将出现“SAX 基本引擎”对话框。</li>
-<li class="[&amp;:not(:first-child)]:mt-2">点击👆<strong class="font-semibold">新建</strong>按钮。</li>
-</ol>
-<h4 id="2-2-2" class="mt-8 leading-6 text-lg title_fb7eb">使用对象和过程列表插入自动化语句<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#2-2-2">#</a></h4>
-<p class="my-4 leading-7">使用对象和过程列表来选择👉并插入语句。这些列表包含最常用的语句。</p>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<ol class="list-decimal pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">点击👆“<strong class="font-semibold">对象列表</strong>”，然后点击👆一个对象类型。对象列表显示当前模块的所有对象。“（常规）”对象将所有不属于任何特定对象的过程分组。</p>
+<li>点击👆<strong>新建</strong>按钮。</li>
+</ol><h4 class="rp-toc-include" id="2-2-2"><a href="#2-2-2" class="rp-header-anchor rp-link" aria-hidden="true">#</a>使用对象和过程列表插入自动化语句</h4><p>使用对象和过程列表来选择👉并插入语句。这些列表包含最常用的语句。</p><p>🏃‍♂️‍<strong>步骤</strong></p><ol>
+<li>
+<p>点击👆“<strong>对象列表</strong>”，然后点击👆一个对象类型。对象列表显示当前模块的所有对象。“（常规）”对象将所有不属于任何特定对象的过程分组。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">点击👆“<strong class="font-semibold">过程</strong>”列表，然后点击👆要插入的非粗体过程。“过程”列表显示当前对象的所有过程。选择👉非粗体过程将插入该过程的正确过程定义。</p>
-<p class="my-4 leading-7">该声明出现在脚本的底部。</p>
+<li>
+<p>点击👆“<strong>过程</strong>”列表，然后点击👆要插入的非粗体过程。“过程”列表显示当前对象的所有过程。选择👉非粗体过程将插入该过程的正确过程定义。</p>
+<p>该声明出现在脚本的底部。</p>
 </li>
-</ol>
-<h4 id="2-2-3" class="mt-8 leading-6 text-lg title_fb7eb">使用 ActiveX 自动化成员对话框插入自动化语句<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#2-2-3">#</a></h4>
-<p class="my-4 leading-7">使用 ActiveX 自动化成员对话框从提供的详尽列表中插入一条语句。</p>
-<p class="my-4 leading-7">程序</p>
-<ol class="list-decimal pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在基本脚本编辑器中，<strong class="font-semibold">右键</strong>点击👆调试 &gt; 浏览。</p>
+</ol><h4 class="rp-toc-include" id="2-2-3"><a href="#2-2-3" class="rp-header-anchor rp-link" aria-hidden="true">#</a>使用 ActiveX 自动化成员对话框插入自动化语句</h4><p>使用 ActiveX 自动化成员对话框从提供的详尽列表中插入一条语句。</p><p>程序</p><ol>
+<li>
+<p>在基本脚本编辑器中，<strong>右键</strong>点击👆调试 &gt; 浏览。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">使用 ActiveX Automation 成员对话框选择👉并插入语句。 该对话框包含详尽的语句列表。</p>
-<div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
-<!-- -->
-<p class="my-4 leading-7">如果鼠标位于脚本中除底行之外的任何一行，则该行将被覆盖。</p>
-</div></div>
-</li>
-</ol>
-<h4 id="2-2-4" class="mt-8 leading-6 text-lg title_fb7eb">设置下一个语句<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#2-2-4">#</a></h4>
-<p class="my-4 leading-7">您可以强制执行脚本中的特定行。您只能选择👉当前子程序或函数中的语句。</p>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<ol class="list-decimal pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在基本脚本编辑器中，将光标放在接下来要运行的行上。</p>
-</li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7"><strong class="font-semibold">右键</strong>点击👆“<strong class="font-semibold">调试 &gt; “设置下一个语句</strong>”。</p>
-<p class="my-4 leading-7">所选行旁边会出现一个指令鼠标。接下来将运行此行，且仅运行此行。如果您转到脚本的其他部分，可以通过点击👆“<strong class="font-semibold">显示下一语句</strong>”返回到此行。</p>
-</li>
-</ol>
-<h4 id="2-2-5" class="mt-8 leading-6 text-lg title_fb7eb">显示下一个语句<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#2-2-5">#</a></h4>
-<p class="my-4 leading-7">在基本脚本编辑器中，您可以导航鼠标右键菜单来启动“显示下一个语句”命令。</p>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<p class="my-4 leading-7">在基本脚本编辑器中，<strong class="font-semibold">右键</strong>点击👆“调试 &gt; 显示下一个语句。</p>
-<p class="my-4 leading-7">指令鼠标指示下一个要运行的语句。</p>
-<blockquote class="border-l-2 border-solid border-divider pl-4 my-6 transition-colors duration-500 blockquote_f1063">
-<p class="my-4 leading-7">[!TIP]</p>
-<p class="my-4 leading-7">暂停正在运行的脚本或设置下一个要运行的语句会设置下一个语句。您可以在脚本的任何位置找到该设置语句。</p>
+<li>
+<p>使用 ActiveX Automation 成员对话框选择👉并插入语句。 该对话框包含详尽的语句列表。</p>
+<blockquote>
+<p>[!TIP]</p>
+<p>如果鼠标位于脚本中除底行之外的任何一行，则该行将被覆盖。</p>
 </blockquote>
-<h3 id="2-3" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">运行脚本<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#2-3">#</a></h3>
-<p class="my-4 leading-7">您可以使用“运行”运行现有脚本。“运行”还可以恢复暂停的脚本的播放。运行脚本时，您无法在工作区中使用鼠标。</p>
-<h4 id="2-3-1" class="mt-8 leading-6 text-lg title_fb7eb">运行脚本<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#2-3-1">#</a></h4>
-<p class="my-4 leading-7">您可以使用基本脚本编辑器中的宏命令运行脚本。</p>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<ol class="list-decimal pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在基本脚本编辑器中，打开一个脚本文件。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7"><strong class="font-semibold">右键</strong> &gt; 点击👆“宏 &gt; 运行。</p>
+</ol><h4 class="rp-toc-include" id="2-2-4"><a href="#2-2-4" class="rp-header-anchor rp-link" aria-hidden="true">#</a>设置下一个语句</h4><p>您可以强制执行脚本中的特定行。您只能选择👉当前子程序或函数中的语句。</p><p>🏃‍♂️‍<strong>步骤</strong></p><ol>
+<li>
+<p>在基本脚本编辑器中，将光标放在接下来要运行的行上。</p>
 </li>
-</ol>
-<p class="my-4 leading-7">或者，在“基本脚本编辑器”工具栏上，点击👆“<strong class="font-semibold">开始/恢复</strong>”按钮。</p>
-<h4 id="2-3-2" class="mt-8 leading-6 text-lg title_fb7eb">暂停正在运行的脚本<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#2-3-2">#</a></h4>
-<p class="my-4 leading-7">运行长脚本时，您可能需要暂停它以执行其他设计活动。</p>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<ol class="list-decimal pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在基本脚本编辑器中，<strong class="font-semibold">右键</strong>点击👆宏 &gt; 暂停。</p>
+<li>
+<p><strong>右键</strong>点击👆“<strong>调试 &gt; “设置下一个语句</strong>”。</p>
+<p>所选行旁边会出现一个指令鼠标。接下来将运行此行，且仅运行此行。如果您转到脚本的其他部分，可以通过点击👆“<strong>显示下一语句</strong>”返回到此行。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">或者，在基本脚本编辑器工具栏上，点击👆暂停按钮。</p>
-<div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
-<!-- -->
-<p class="my-4 leading-7">如果您暂停了脚本，也可以使用“运行”、“单步跳过”或“单步跳至光标”来继续运行脚本。<strong class="font-semibold">右键</strong>点击👆并选择👉“运行”即可继续运行脚本。</p>
-</div></div>
+</ol><h4 class="rp-toc-include" id="2-2-5"><a href="#2-2-5" class="rp-header-anchor rp-link" aria-hidden="true">#</a>显示下一个语句</h4><p>在基本脚本编辑器中，您可以导航鼠标右键菜单来启动“显示下一个语句”命令。</p><p>🏃‍♂️‍<strong>步骤</strong></p><p>在基本脚本编辑器中，<strong>右键</strong>点击👆“调试 &gt; 显示下一个语句。</p><p>指令鼠标指示下一个要运行的语句。</p><blockquote>
+<p>[!TIP]</p>
+<p>暂停正在运行的脚本或设置下一个要运行的语句会设置下一个语句。您可以在脚本的任何位置找到该设置语句。</p>
+</blockquote><h3 class="rp-toc-include" id="2-3"><a href="#2-3" class="rp-header-anchor rp-link" aria-hidden="true">#</a>运行脚本</h3><p>您可以使用“运行”运行现有脚本。“运行”还可以恢复暂停的脚本的播放。运行脚本时，您无法在工作区中使用鼠标。</p><h4 class="rp-toc-include" id="2-3-1"><a href="#2-3-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>运行脚本</h4><p>您可以使用基本脚本编辑器中的宏命令运行脚本。</p><p>🏃‍♂️‍<strong>步骤</strong></p><ol>
+<li>
+<p>在基本脚本编辑器中，打开一个脚本文件。</p>
 </li>
-</ol>
-<h4 id="2-3-3" class="mt-8 leading-6 text-lg title_fb7eb">停止正在运行的脚本<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#2-3-3">#</a></h4>
-<p class="my-4 leading-7">您可以随时停止正在运行的脚本。但是，一旦停止，脚本将无法继续运行。点击👆“<strong class="font-semibold">运行</strong>”后，脚本将从头开始运行。</p>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<p class="my-4 leading-7">在基本脚本编辑器中，<strong class="font-semibold">右键</strong>点击👆宏 &gt; 结束。</p>
-<p class="my-4 leading-7">或者，在基本脚本编辑器工具栏上点击👆停止按钮。</p>
-<h3 id="2-4" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">调试脚本<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#2-4">#</a></h3>
-<p class="my-4 leading-7">运行脚本时，您可以逐步运行，也可以运行到脚本中的某个位置。要执行这些调试任务，请在脚本中您希望脚本停止的位置插入断点。</p>
-<h4 id="2-4-1" class="mt-8 leading-6 text-lg title_fb7eb">设置或删除断点<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#2-4-1">#</a></h4>
-<p class="my-4 leading-7">在调试脚本时，设置或删除断点的功能非常有用。如果 Basic 引擎在运行脚本时遇到断点，它会暂停脚本。</p>
-<p class="my-4 leading-7">程序</p>
-<ol class="list-decimal pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">将光标置于要添加断点的行上。</p>
+<li>
+<p><strong>右键</strong> &gt; 点击👆“宏 &gt; 运行。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在基本脚本编辑器工具栏上，点击👆切换断点按钮。</p>
-<p class="my-4 leading-7">或者，在基本编辑器中，<strong class="font-semibold">右键</strong>点击👆调试 &gt; 切换中断。</p>
-<p class="my-4 leading-7">此操作会在当前光标位置插入一个断点。断点标记会出现在装订线区域。</p>
-<div class="rspress-directive info"><div class="rspress-directive-title">INFO</div><div class="rspress-directive-content">
-<!-- -->
-<p class="my-4 leading-7">当 Basic 引擎在运行脚本时遇到断点时，它会暂停脚本。脚本中的下一行将用指令鼠标标记。</p>
-</div></div>
+</ol><p>或者，在“基本脚本编辑器”工具栏上，点击👆“<strong>开始/恢复</strong>”按钮。</p><h4 class="rp-toc-include" id="2-3-2"><a href="#2-3-2" class="rp-header-anchor rp-link" aria-hidden="true">#</a>暂停正在运行的脚本</h4><p>运行长脚本时，您可能需要暂停它以执行其他设计活动。</p><p>🏃‍♂️‍<strong>步骤</strong></p><ol>
+<li>
+<p>在基本脚本编辑器中，<strong>右键</strong>点击👆宏 &gt; 暂停。</p>
 </li>
-</ol>
-<h4 id="2-4-2" class="mt-8 leading-6 text-lg title_fb7eb">调试脚本<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#2-4-2">#</a></h4>
-<p class="my-4 leading-7">插入断点后，您可以使用 Debug 命令调试脚本。</p>
-<p class="my-4 leading-7">要运行脚本的单行：</p>
-<ul class="list-disc pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">在基本脚本编辑器工具栏上，点击👆“<strong class="font-semibold">Step over</strong>”按钮。</li>
+<li>
+<p>或者，在基本脚本编辑器工具栏上，点击👆暂停按钮。</p>
+<blockquote>
+<p>[!TIP]</p>
+<p>如果您暂停了脚本，也可以使用“运行”、“单步跳过”或“单步跳至光标”来继续运行脚本。<strong>右键</strong>点击👆并选择👉“运行”即可继续运行脚本。</p>
+</blockquote>
+</li>
+</ol><h4 class="rp-toc-include" id="2-3-3"><a href="#2-3-3" class="rp-header-anchor rp-link" aria-hidden="true">#</a>停止正在运行的脚本</h4><p>您可以随时停止正在运行的脚本。但是，一旦停止，脚本将无法继续运行。点击👆“<strong>运行</strong>”后，脚本将从头开始运行。</p><p>🏃‍♂️‍<strong>步骤</strong></p><p>在基本脚本编辑器中，<strong>右键</strong>点击👆宏 &gt; 结束。</p><p>或者，在基本脚本编辑器工具栏上点击👆停止按钮。</p><h3 class="rp-toc-include" id="2-4"><a href="#2-4" class="rp-header-anchor rp-link" aria-hidden="true">#</a>调试脚本</h3><p>运行脚本时，您可以逐步运行，也可以运行到脚本中的某个位置。要执行这些调试任务，请在脚本中您希望脚本停止的位置插入断点。</p><h4 class="rp-toc-include" id="2-4-1"><a href="#2-4-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>设置或删除断点</h4><p>在调试脚本时，设置或删除断点的功能非常有用。如果 Basic 引擎在运行脚本时遇到断点，它会暂停脚本。</p><p>程序</p><ol>
+<li>
+<p>将光标置于要添加断点的行上。</p>
+</li>
+<li>
+<p>在基本脚本编辑器工具栏上，点击👆切换断点按钮。</p>
+<p>或者，在基本编辑器中，<strong>右键</strong>点击👆调试 &gt; 切换中断。</p>
+<p>此操作会在当前光标位置插入一个断点。断点标记会出现在装订线区域。</p>
+<blockquote>
+<p>[!INFO]</p>
+<p>当 Basic 引擎在运行脚本时遇到断点时，它会暂停脚本。脚本中的下一行将用指令鼠标标记。</p>
+</blockquote>
+</li>
+</ol><h4 class="rp-toc-include" id="2-4-2"><a href="#2-4-2" class="rp-header-anchor rp-link" aria-hidden="true">#</a>调试脚本</h4><p>插入断点后，您可以使用 Debug 命令调试脚本。</p><p>要运行脚本的单行：</p><ul>
+<li>在基本脚本编辑器工具栏上，点击👆“<strong>Step over</strong>”按钮。</li>
+</ul><p>要在当前行执行子例程调用：</p><ul>
+<li>
+<p>在 基本脚本编辑器工具栏上，点击👆“<strong>单步执行</strong>”按钮。</p>
+<p>或者，在 基本脚本编辑器中，<strong>右键</strong>点击👆并选择👉“调试 &gt; “ 单步执行”。</p>
+</li>
+</ul><p>从子程序返回到调用它的点：</p><ul>
+<li>在基本脚本编辑器工具栏上，点击👆“<strong>跳出</strong>”按钮。</li>
+</ul><p>要运行脚本到某个点：</p><ul>
+<li>在基本脚本编辑器中，<strong>右键</strong>点击👆调试 &gt; 步进到光标。</li>
+</ul><p>从当前点继续执行：</p><ul>
+<li>在 基本脚本编辑器工具栏上，点击👆“<strong>运行</strong>”按钮。</li>
+<li>或者，在 基本脚本编辑器中，<strong>右键</strong>点击👆并选择👉“宏 &gt; “ 运行”。</li>
+</ul><h4 class="rp-toc-include" id="2-4-3"><a href="#2-4-3" class="rp-header-anchor rp-link" aria-hidden="true">#</a>删除脚本中的所有断点</h4><p>您可以选择👉删除所有断点而不是单个断点。</p><p>步骤</p><p>在基本脚本编辑器中，<strong>右键</strong>点击👆“调试 &gt; 清除所有中断。</p><p>这将删除脚本中的所有断点。</p><h4 class="rp-toc-include" id="2-4-4"><a href="#2-4-4" class="rp-header-anchor rp-link" aria-hidden="true">#</a>纠正运行时错误</h4><p>如果发生运行时错误，脚本调试器将切换到分步模式，并在状态栏上显示详细消息。指令鼠标将指向产生错误的行。修复错误后，您可以继续运行脚本。</p><h3 class="rp-toc-include" id="2-5"><a href="#2-5" class="rp-header-anchor rp-link" aria-hidden="true">#</a>访问 Basic 语言帮助</h3><p>在编写或运行脚本时，您可以访问提供信息和使用 Basic 语言语句的示例脚本的帮助。</p><p>🏃‍♂️‍<strong>步骤</strong></p><p>在 基本脚本编辑器的编辑区域中选择👉或点击👆彩色项目，然后按 F1。</p><p>出现当前语句的帮助。</p><h3 class="rp-toc-include" id="2-6"><a href="#2-6" class="rp-header-anchor rp-link" aria-hidden="true">#</a>使用基本脚本对话框</h3><p>通过“基本脚本”对话框，您可以轻松访问 基本脚本。您可以从这里编辑和调试脚本。</p><p>程序</p><ol>
+<li>
+<p>点击👆工具 &gt; 基本脚本，然后点击👆基本脚本。</p>
+</li>
+<li>
+<p>选择👉您要管理的脚本。</p>
+</li>
+<li>
+<p>要运行脚本，请点击👆“<strong>运行</strong>”。</p>
+<blockquote>
+<p>[!WARNING]</p>
+<p>您不能同时运行多个脚本。</p>
+</blockquote>
+<blockquote>
+<p>[!TIP]</p>
+<p>如果选定的脚本在编译过程中出现错误，它将自动在基本脚本编辑器中打开以进行更正。</p>
+</blockquote>
+</li>
+<li>
+<p>要编辑脚本，请点击👆“<strong>编辑</strong>”。此时将出现“Sax 基本引擎”对话框。另请参阅“管理 Sax 基本引擎”。</p>
+</li>
+<li>
+<p>要将脚本添加到基本脚本菜单，请点击👆“<strong>在菜单中</strong>”复选框。</p>
+</li>
+<li>
+<p>要从列表中删除脚本，请点击👆卸载文件。</p>
+</li>
+<li>
+<p>要将新脚本添加到列表中，请点击👆“<strong>加载文件</strong>”。</p>
+<blockquote>
+<p>[!TIP]</p>
+<p>加载脚本时请注意以下事项：</p>
+<ul>
+<li>您最多可以加载 32,767 个脚本。脚本在加载时不会被编译，而是在运行时才会编译。</li>
+<li>您加载到此对话框中的脚本列表保存在 VBScripts.ini 文件中，因此每次打开“基本脚本”对话框时都会加载这些脚本。</li>
 </ul>
-<p class="my-4 leading-7">要在当前行执行子例程调用：</p>
-<ul class="list-disc pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">在 基本脚本编辑器工具栏上，点击👆“<strong class="font-semibold">单步执行</strong>”按钮。</p>
-<p class="my-4 leading-7">或者，在 基本脚本编辑器中，<strong class="font-semibold">右键</strong>点击👆并选择👉“调试 &gt; “ 单步执行”。</p>
+</blockquote>
 </li>
-</ul>
-<p class="my-4 leading-7">从子程序返回到调用它的点：</p>
-<ul class="list-disc pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">在基本脚本编辑器工具栏上，点击👆“<strong class="font-semibold">跳出</strong>”按钮。</li>
-</ul>
-<p class="my-4 leading-7">要运行脚本到某个点：</p>
-<ul class="list-disc pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">在基本脚本编辑器中，<strong class="font-semibold">右键</strong>点击👆调试 &gt; 步进到光标。</li>
-</ul>
-<p class="my-4 leading-7">从当前点继续执行：</p>
-<ul class="list-disc pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">在 基本脚本编辑器工具栏上，点击👆“<strong class="font-semibold">运行</strong>”按钮。</li>
-<li class="[&amp;:not(:first-child)]:mt-2">或者，在 基本脚本编辑器中，<strong class="font-semibold">右键</strong>点击👆并选择👉“宏 &gt; “ 运行”。</li>
-</ul>
-<h4 id="2-4-3" class="mt-8 leading-6 text-lg title_fb7eb">删除脚本中的所有断点<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#2-4-3">#</a></h4>
-<p class="my-4 leading-7">您可以选择👉删除所有断点而不是单个断点。</p>
-<p class="my-4 leading-7">步骤</p>
-<p class="my-4 leading-7">在基本脚本编辑器中，<strong class="font-semibold">右键</strong>点击👆“调试 &gt; 清除所有中断。</p>
-<p class="my-4 leading-7">这将删除脚本中的所有断点。</p>
-<h4 id="2-4-4" class="mt-8 leading-6 text-lg title_fb7eb">纠正运行时错误<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#2-4-4">#</a></h4>
-<p class="my-4 leading-7">如果发生运行时错误，脚本调试器将切换到分步模式，并在状态栏上显示详细消息。指令鼠标将指向产生错误的行。修复错误后，您可以继续运行脚本。</p>
-<h3 id="2-5" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">访问 Basic 语言帮助<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#2-5">#</a></h3>
-<p class="my-4 leading-7">在编写或运行脚本时，您可以访问提供信息和使用 Basic 语言语句的示例脚本的帮助。</p>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<p class="my-4 leading-7">在 基本脚本编辑器的编辑区域中选择👉或点击👆彩色项目，然后按 F1。</p>
-<p class="my-4 leading-7">出现当前语句的帮助。</p>
-<h3 id="2-6" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">使用基本脚本对话框<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#2-6">#</a></h3>
-<p class="my-4 leading-7">通过“基本脚本”对话框，您可以轻松访问 基本脚本。您可以从这里编辑和调试脚本。</p>
-<p class="my-4 leading-7">程序</p>
-<ol class="list-decimal pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">点击👆工具 &gt; 基本脚本，然后点击👆基本脚本。</p>
+</ol><h3 class="rp-toc-include" id="2-7"><a href="#2-7" class="rp-header-anchor rp-link" aria-hidden="true">#</a>管理 Sax 基本引擎</h3><p>Sax 基本引擎对话框提供对 Sax 基本引擎脚本编辑器的访问。您可以设计、开发和编辑脚本，以添加、替换、增强或自定义现有的 SailWind Logic 功能。</p><p>使用 基本脚本编辑器编写的脚本符合 Microsoft 对 Visual Basic 语法的所有要求；因此，您可以在任何其他 Visual Basic 解释器（例如 Word 或 Excel）中运行这些脚本。但是，您无法在 Sax Basic 引擎中运行所有在 Sax Basic 引擎之外创建的 基本脚本，因为 Sax Basic 引擎是 Visual Basic 的子集。例如，您无法在 Sax Basic 引擎中运行自动化示例。</p><ul>
+<li>点击👆工具 &gt; 基本脚本 &gt; 基本脚本编辑器，然后点击👆<strong>新建</strong>按钮。</li>
+</ul><p>另请参阅 Sax Basic Editor 在线帮助。</p><p>脚本有四种类型：脚本、代码模块、对象模块和类模块。</p><p>您可以创建一个脚本来调用另一个脚本。例如，ScriptA 可以调用 ScriptB。</p><p>您还可以创建一个运行一系列脚本的脚本，或者一个“主”脚本。例如：</p><div class="rp-codeblock language-bash"><div class="rp-codeblock__content"><div class="rp-codeblock__content__scroll-container rp-scrollbar rp-scrollbar--always"><pre class="shiki css-variables" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0" data-lang="bash"><code><span class="line"><span style="color:var(--shiki-token-function)">&#x27;$Include: &quot;scriptA.bas&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">&#x27;</span><span style="color:var(--shiki-foreground)">$Include</span><span style="color:var(--shiki-token-string)">:</span><span style="color:var(--shiki-token-string-expression)"> &quot;scriptB.bas&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">&#x27;$Include: &quot;scriptC.bas&quot;</span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">Sub Main</span></span>
+<span class="line"><span style="color:var(--shiki-token-function)"> Call scriptA</span></span>
+<span class="line"><span style="color:var(--shiki-token-function)"> Call scriptB</span></span>
+<span class="line"><span style="color:var(--shiki-token-function)"> Call scriptC</span></span>
+<span class="line"><span style="color:var(--shiki-token-function)">End Sub</span></span></code></pre></div><div class="rp-code-button-group"><button class="rp-code-button-group__button rp-code-wrap-button" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrapped"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-button-group__icon--wrap"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="rp-code-button-group__button rp-code-copy-button" title="Copy code"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--copy"><path fill="currentColor" d="M20 8v12H8V8zm0-2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 16H2V4a2 2 0 0 1 2-2h12v2H4Z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="rp-code-button-group__icon rp-code-copy-button__icon rp-code-copy-button__icon--success"><path fill="#49cd37" d="m9.55 18-5.7-5.7 1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"></path></svg></button></div></div></div><p><strong>编辑器颜色</strong></p><p>基本脚本编辑器使用不同的颜色显示源代码。颜色与上下文相关：当您将光标放在文本上并按下 F1 键时，会打开相应的帮助文件并显示相应的帮助主题。例如，如果您按下 F1 键时光标位于 SailWind Logic 自动化对象（紫色）上，则会显示自动化服务器在线帮助。</p><p>表 42. 基本脚本编辑器颜色表示</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>颜色</th><th>代表</th></tr></thead><tbody><tr><td>蓝色的</td><td>基本关键词</td></tr><tr><td>黑色的</td><td>用户变量</td></tr><tr><td>青色</td><td>基本功能</td></tr><tr><td>紫色的</td><td>SailWind Logic 自动化对象或成员</td></tr><tr><td>红色的</td><td>错误</td></tr><tr><td>绿色的</td><td>评论</td></tr></tbody></table></div><h3 class="rp-toc-include" id="2-8"><a href="#2-8" class="rp-header-anchor rp-link" aria-hidden="true">#</a>基本示例脚本</h3><p>为了解决常见的设计场景，并为自定义用户脚本的开发提供起点，SailWind Logic 提供了一系列 Basic 示例脚本。所有示例脚本均附有注释。</p><p>基本示例脚本 00 至 11 基本示例脚本 — RGL 报告 基本示例脚本 — 高级</p><h4 class="rp-toc-include" id="2-8-1"><a href="#2-8-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>基本示例脚本 00 至 11</h4><p>如果您没有使用过 基本脚本，示例 00 至 09 可以概述 Basic。示例 10 和 11 提供了一些 SailWind Logic 的小功能，可用于添加、增强或自定义 SailWind Logic 的功能。</p><p>这些文件位于 C:&lt;install_folder&gt;<version>\Samples\Scripts\Logic\tutorial。</version></p><p>表 43. 基本示例脚本列表</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>脚本文件名</th><th>描述</th></tr></thead><tbody><tr><td>00 什么是脚本.BAS</td><td>空脚本演示了什么是基本脚本以及如何定义它。</td></tr><tr><td>01 使用消息框.BAS</td><td>演示如何显示“确定”对话框。</td></tr><tr><td>02 使用变量.BAS</td><td>演示基本变量：如何分配值以及如何获取其值。</td></tr><tr><td>03 使用基本函数.BAS</td><td>演示如何使用标准 Basic 函数并在消息框中显示其结果。</td></tr><tr><td>04 使用 SailWind 逻辑函数.BAS</td><td>演示与 SailWind Logic Automation 功能的基本交互。</td></tr><tr><td>05 使用 If 和 Then 语句.BAS</td><td>演示 If、Then 语句。</td></tr><tr><td>06 使用自定义 Dialog1.BAS</td><td>使用基本对话框编辑器演示一个简单的对话框。</td></tr><tr><td>07 使用自定义 Dialog2.BAS</td><td>使用基本对话框编辑器演示标准对话框。</td></tr><tr><td>08 使用自定义 Dialog3.BAS</td><td>使用基本对话框编辑器演示复杂的对话框。</td></tr><tr><td>09 综合运用.BAS</td><td>提供一个“真实”示例。列出默认文件目录中的所有设计文件。从列表中选择👉一个文件将在 SailWind Logic 中打开该文件。</td></tr><tr><td>10 比较和净值列表.BAS</td><td>列出所有组件和网络。</td></tr><tr><td>11 按管脚数选择👉.BAS</td><td>允许您输入📝管脚数。所有具有该管脚数的元件均会被选中✅。</td></tr></tbody></table></div><h4 class="rp-toc-include" id="2-8-2"><a href="#2-8-2" class="rp-header-anchor rp-link" aria-hidden="true">#</a>基本示例脚本 — RGL 报告</h4><p>基本脚本相当于现有的 RGL 报告。</p><p>这些文件位于 C:&lt;install_folder&gt;<version>\Samples\Scripts\Logic\rgl samples。</version></p><p>表 44. 基本示例脚本/RGL 报告列表</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>脚本文件名</th><th>描述</th></tr></thead><tbody><tr><td>RGL.BAS</td><td>包含一个函数库，供该组中的其他脚本使用；该组中的脚本必须包含 RGL.BAS 才能运行。</td></tr><tr><td>网络统计</td><td>列出原理图中的所有网络并识别任何有问题的网络。</td></tr><tr><td>元件统计信息</td><td>列出原理图中的所有元件。</td></tr><tr><td>未使用的门.BAS</td><td>列出原理图中所有未使用的门。</td></tr><tr><td>未使用的管脚.BAS</td><td>列出原理图中所有未使用的管脚。</td></tr><tr><td>未使用的.BAS</td><td>列出原理图中所有未使用的管脚和门。</td></tr></tbody></table></div><h4 class="rp-toc-include" id="2-8-3"><a href="#2-8-3" class="rp-header-anchor rp-link" aria-hidden="true">#</a>基本示例脚本 — 高级</h4><p>Advanced 基本脚本文件位于 C:&lt;install_folder&gt;<version> \Samples\Scripts\Logic。</version></p><p>表 45. 基本示例脚本/高级列表</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="rp-table-scroll-container rp-scrollbar"><table><thead><tr><th>脚本文件名</th><th>描述</th></tr></thead><tbody><tr><td>添加元件.BAS</td><td>向原理图添加一个新门。</td></tr><tr><td>活动网络列表</td><td>在 Excel 中创建一个网络表，使您能够在 SailWind Logic 对象和包含对象名称的 Excel 单元格之间进行交叉探测。</td></tr><tr><td>物料清单</td><td>以用户可自定义的格式生成物料清单。</td></tr><tr><td>非模态属性</td><td>生成一个非模式对话框，您可以使用它来管理元件属性。</td></tr><tr><td>非模态质量管理元件</td><td>生成一个非模式对话框，您可以使用它来管理元件和门的属性。</td></tr><tr><td>非模态可视性</td><td>生成一个非模式对话框，您可以使用它来管理门和属性的可见性。</td></tr><tr><td>SailWind 无规则布局网络表.BAS</td><td>生成 ASCll 格式的网表报告。</td></tr><tr><td>SailWind 逻辑脚本向导.BAS</td><td>生成一个向导对话框，您可以使用它来创建基本报告。</td></tr><tr><td>图页层次结构到 Excel.BAS</td><td>在 Excel 中创建图页层次结构报告，使您能够在 SaiiWind Logic 对象和包含对象名称的 Excel 单元格之间进行交叉探测。</td></tr></tbody></table></div></div></details>
+<details class="rp-callout rp-callout--details"><summary class="rp-callout__title">许可方案重新开发中</summary><div class="rp-callout__content"><h2 class="rp-toc-include" id="3"><a href="#3" class="rp-header-anchor rp-link" aria-hidden="true">#</a>管理许可选项</h2><p>您可以查看和管理已授权的 SailWind Logic 选项。您可以查看节点锁定或浮动许可证的可用选项。</p><p>查看许可证文件或许可证状态许可证文件定义</p><h3 class="rp-toc-include" id="3-1"><a href="#3-1" class="rp-header-anchor rp-link" aria-hidden="true">#</a>查看许可证文件或许可证状态</h3><p>如果您使用的是节点锁定许可，则可以查看许可证文件的内容。如果您使用的是浮动许可证，则无法查看实际的许可证文件，但可以查看与服务器许可证关联的功能的状态。</p><p>🏃‍♂️‍<strong>步骤</strong></p><ol>
+<li>
+<p>点击👆“<strong>帮助 &gt; “ 已安装选项</strong>”，然后点击👆“<strong>许可证文件</strong>”选项卡。</p>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">选择👉您要管理的脚本。</p>
-</li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">要运行脚本，请点击👆“<strong class="font-semibold">运行</strong>”。</p>
-<div class="rspress-directive warning"><div class="rspress-directive-title">WARNING</div><div class="rspress-directive-content">
-<!-- -->
-<p class="my-4 leading-7">您不能同时运行多个脚本。</p>
-</div></div>
-<div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
-<!-- -->
-<p class="my-4 leading-7">如果选定的脚本在编译过程中出现错误，它将自动在基本脚本编辑器中打开以进行更正。</p>
-</div></div>
-</li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">要编辑脚本，请点击👆“<strong class="font-semibold">编辑</strong>”。此时将出现“Sax 基本引擎”对话框。另请参阅“管理 Sax 基本引擎”。</p>
-</li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">要将脚本添加到基本脚本菜单，请点击👆“<strong class="font-semibold">在菜单中</strong>”复选框。</p>
-</li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">要从列表中删除脚本，请点击👆卸载文件。</p>
-</li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">要将新脚本添加到列表中，请点击👆“<strong class="font-semibold">加载文件</strong>”。</p>
-<div class="rspress-directive tip"><div class="rspress-directive-title">TIP</div><div class="rspress-directive-content">
-<!-- -->
-<p class="my-4 leading-7">加载脚本时请注意以下事项：</p>
-<ul class="list-disc pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">您最多可以加载 32,767 个脚本。脚本在加载时不会被编译，而是在运行时才会编译。</li>
-<li class="[&amp;:not(:first-child)]:mt-2">您加载到此对话框中的脚本列表保存在 VBScripts.ini 文件中，因此每次打开“基本脚本”对话框时都会加载这些脚本。</li>
-</ul>
-</div></div>
-</li>
-</ol>
-<h3 id="2-7" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">管理 Sax 基本引擎<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#2-7">#</a></h3>
-<p class="my-4 leading-7">Sax 基本引擎对话框提供对 Sax 基本引擎脚本编辑器的访问。您可以设计、开发和编辑脚本，以添加、替换、增强或自定义现有的 SailWind Logic 功能。</p>
-<p class="my-4 leading-7">使用 基本脚本编辑器编写的脚本符合 Microsoft 对 Visual Basic 语法的所有要求；因此，您可以在任何其他 Visual Basic 解释器（例如 Word 或 Excel）中运行这些脚本。但是，您无法在 Sax Basic 引擎中运行所有在 Sax Basic 引擎之外创建的 基本脚本，因为 Sax Basic 引擎是 Visual Basic 的子集。例如，您无法在 Sax Basic 引擎中运行自动化示例。</p>
-<ul class="list-disc pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">点击👆工具 &gt; 基本脚本 &gt; 基本脚本编辑器，然后点击👆<strong class="font-semibold">新建</strong>按钮。</li>
-</ul>
-<p class="my-4 leading-7">另请参阅 Sax Basic Editor 在线帮助。</p>
-<p class="my-4 leading-7">脚本有四种类型：脚本、代码模块、对象模块和类模块。</p>
-<p class="my-4 leading-7">您可以创建一个脚本来调用另一个脚本。例如，ScriptA 可以调用 ScriptB。</p>
-<p class="my-4 leading-7">您还可以创建一个运行一系列脚本的脚本，或者一个“主”脚本。例如：</p>
-<div class="language-bash"><div class="rspress-code-content rspress-scrollbar"><div><pre class="code" style="background-color:inherit"><code class="language-bash" style="white-space:pre"><span style="display:block;padding:0 1.25rem"><span class="token" style="color:var(--code-token-string)">&#x27;$Include: &quot;scriptA.bas&quot;
-</span></span><span style="display:block;padding:0 1.25rem"><span class="token" style="color:var(--code-token-string)">&#x27;</span><span class="token" style="color:var(--code-token-variable)">$Include</span><span class="token class-name" style="color:var(--code-token-symbol)">:</span><span> </span><span class="token" style="color:var(--code-token-string)">&quot;scriptB.bas&quot;</span><span>
-</span></span><span style="display:block;padding:0 1.25rem"><span>&#x27;</span><span class="token" style="color:var(--code-token-variable)">$Include</span><span class="token class-name" style="color:var(--code-token-symbol)">:</span><span> </span><span class="token" style="color:var(--code-token-string)">&quot;scriptC.bas&quot;</span><span>
-</span></span><span style="display:block;padding:0 1.25rem">Sub Main
-</span><span style="display:block;padding:0 1.25rem"> Call scriptA
-</span><span style="display:block;padding:0 1.25rem"> Call scriptB
-</span><span style="display:block;padding:0 1.25rem"> Call scriptC
-</span><span style="display:block;padding:0 1.25rem">End Sub</span></code></pre></div><div class="code-button-group_fb445"><button title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_fb89b"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_ccd3d"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="code-copy-button_c5089" title="Copy code"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_ef942"><path fill="currentColor" d="M28 10v18H10V10zm0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_d5ec0"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9z"></path></svg></button></div></div></div>
-<p class="my-4 leading-7"><strong class="font-semibold">编辑器颜色</strong></p>
-<p class="my-4 leading-7">基本脚本编辑器使用不同的颜色显示源代码。颜色与上下文相关：当您将光标放在文本上并按下 F1 键时，会打开相应的帮助文件并显示相应的帮助主题。例如，如果您按下 F1 键时光标位于 SailWind Logic 自动化对象（紫色）上，则会显示自动化服务器在线帮助。</p>
-<p class="my-4 leading-7">表 42. 基本脚本编辑器颜色表示</p>
-<table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
-<thead>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">颜色</th>
-<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">代表</th>
-</tr>
-</thead>
-<tbody>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">蓝色的</td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">基本关键词</td>
-</tr>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">黑色的</td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">用户变量</td>
-</tr>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">青色</td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">基本功能</td>
-</tr>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">紫色的</td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">SailWind Logic 自动化对象或成员</td>
-</tr>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">红色的</td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">错误</td>
-</tr>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">绿色的</td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">评论</td>
-</tr>
-</tbody>
-</table>
-<h3 id="2-8" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">基本示例脚本<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#2-8">#</a></h3>
-<p class="my-4 leading-7">为了解决常见的设计场景，并为自定义用户脚本的开发提供起点，SailWind Logic 提供了一系列 Basic 示例脚本。所有示例脚本均附有注释。</p>
-<p class="my-4 leading-7">基本示例脚本 00 至 11 基本示例脚本 — RGL 报告 基本示例脚本 — 高级</p>
-<h4 id="2-8-1" class="mt-8 leading-6 text-lg title_fb7eb">基本示例脚本 00 至 11<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#2-8-1">#</a></h4>
-<p class="my-4 leading-7">如果您没有使用过 基本脚本，示例 00 至 09 可以概述 Basic。示例 10 和 11 提供了一些 SailWind Logic 的小功能，可用于添加、增强或自定义 SailWind Logic 的功能。</p>
-<p class="my-4 leading-7">这些文件位于 C:&lt;install_folder&gt;<!-- -->\Samples\Scripts\Logic\tutorial。</p>
-<p class="my-4 leading-7">表 43. 基本示例脚本列表</p>
-<table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
-<thead>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">脚本文件名</th>
-<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">00 什么是脚本.BAS</td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">空脚本演示了什么是基本脚本以及如何定义它。</td>
-</tr>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">01 使用消息框.BAS</td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">演示如何显示“确定”对话框。</td>
-</tr>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">02 使用变量.BAS</td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">演示基本变量：如何分配值以及如何获取其值。</td>
-</tr>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">03 使用基本函数.BAS</td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">演示如何使用标准 Basic 函数并在消息框中显示其结果。</td>
-</tr>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">04 使用 SailWind 逻辑函数.BAS</td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">演示与 SailWind Logic Automation 功能的基本交互。</td>
-</tr>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">05 使用 If 和 Then 语句.BAS</td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">演示 If、Then 语句。</td>
-</tr>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">06 使用自定义 Dialog1.BAS</td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">使用基本对话框编辑器演示一个简单的对话框。</td>
-</tr>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">07 使用自定义 Dialog2.BAS</td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">使用基本对话框编辑器演示标准对话框。</td>
-</tr>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">08 使用自定义 Dialog3.BAS</td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">使用基本对话框编辑器演示复杂的对话框。</td>
-</tr>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">09 综合运用.BAS</td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">提供一个“真实”示例。列出默认文件目录中的所有设计文件。从列表中选择👉一个文件将在 SailWind Logic 中打开该文件。</td>
-</tr>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">10 比较和净值列表.BAS</td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">列出所有组件和网络。</td>
-</tr>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">11 按管脚数选择👉.BAS</td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">允许您输入📝管脚数。所有具有该管脚数的元件均会被选中✅。</td>
-</tr>
-</tbody>
-</table>
-<h4 id="2-8-2" class="mt-8 leading-6 text-lg title_fb7eb">基本示例脚本 — RGL 报告<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#2-8-2">#</a></h4>
-<p class="my-4 leading-7">基本脚本相当于现有的 RGL 报告。</p>
-<p class="my-4 leading-7">这些文件位于 C:&lt;install_folder&gt;<!-- -->\Samples\Scripts\Logic\rgl samples。</p>
-<p class="my-4 leading-7">表 44. 基本示例脚本/RGL 报告列表</p>
-<table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
-<thead>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">脚本文件名</th>
-<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">RGL.BAS</td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">包含一个函数库，供该组中的其他脚本使用；该组中的脚本必须包含 RGL.BAS 才能运行。</td>
-</tr>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">网络统计</td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">列出原理图中的所有网络并识别任何有问题的网络。</td>
-</tr>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">元件统计信息</td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">列出原理图中的所有元件。</td>
-</tr>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">未使用的门.BAS</td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">列出原理图中所有未使用的门。</td>
-</tr>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">未使用的管脚.BAS</td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">列出原理图中所有未使用的管脚。</td>
-</tr>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">未使用的.BAS</td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">列出原理图中所有未使用的管脚和门。</td>
-</tr>
-</tbody>
-</table>
-<h4 id="2-8-3" class="mt-8 leading-6 text-lg title_fb7eb">基本示例脚本 — 高级<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#2-8-3">#</a></h4>
-<p class="my-4 leading-7">Advanced 基本脚本文件位于 C:&lt;install_folder&gt;<!-- --> \Samples\Scripts\Logic。</p>
-<p class="my-4 leading-7">表 45. 基本示例脚本/高级列表</p>
-<table class="block border-collapse text-base my-5 overflow-x-auto leading-7 border-gray-light-3 dark:border-divider">
-<thead>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">脚本文件名</th>
-<th class="border border-solid px-4 py-2 text-text-1 text-base font-semibold border-gray-light-3 dark:border-divider">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">添加元件.BAS</td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">向原理图添加一个新门。</td>
-</tr>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">活动网络列表</td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">在 Excel 中创建一个网络表，使您能够在 SailWind Logic 对象和包含对象名称的 Excel 单元格之间进行交叉探测。</td>
-</tr>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">物料清单</td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">以用户可自定义的格式生成物料清单。</td>
-</tr>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">非模态属性</td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">生成一个非模式对话框，您可以使用它来管理元件属性。</td>
-</tr>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">非模态质量管理元件</td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">生成一个非模式对话框，您可以使用它来管理元件和门的属性。</td>
-</tr>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">非模态可视性</td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">生成一个非模式对话框，您可以使用它来管理门和属性的可见性。</td>
-</tr>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">SailWind 无规则布局网络表.BAS</td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">生成 ASCll 格式的网表报告。</td>
-</tr>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">SailWind 逻辑脚本向导.BAS</td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">生成一个向导对话框，您可以使用它来创建基本报告。</td>
-</tr>
-<tr class="border border-solid transition-colors duration-500 even:bg-soft border-gray-light-3 dark:border-divider">
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">图页层次结构到 Excel.BAS</td>
-<td class="border border-solid px-4 py-2 border-gray-light-3 dark:border-divider">在 Excel 中创建图页层次结构报告，使您能够在 SaiiWind Logic 对象和包含对象名称的 Excel 单元格之间进行交叉探测。</td>
-</tr>
-</tbody>
-</table>
-</div></details>
-<details class="rspress-directive details"><summary class="rspress-directive-title">许可方案重新开发中</summary><div class="rspress-directive-content">
-<h2 id="3" class="mt-12 mb-6 pt-8 text-2xl tracking-tight border-t-[1px] border-divider-light title_fb7eb">管理许可选项<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#3">#</a></h2>
-<p class="my-4 leading-7">您可以查看和管理已授权的 SailWind Logic 选项。您可以查看节点锁定或浮动许可证的可用选项。</p>
-<p class="my-4 leading-7">查看许可证文件或许可证状态许可证文件定义</p>
-<h3 id="3-1" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">查看许可证文件或许可证状态<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#3-1">#</a></h3>
-<p class="my-4 leading-7">如果您使用的是节点锁定许可，则可以查看许可证文件的内容。如果您使用的是浮动许可证，则无法查看实际的许可证文件，但可以查看与服务器许可证关联的功能的状态。</p>
-<p class="my-4 leading-7">🏃‍♂️‍<strong class="font-semibold">步骤</strong></p>
-<ol class="list-decimal pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">点击👆“<strong class="font-semibold">帮助 &gt; “ 已安装选项</strong>”，然后点击👆“<strong class="font-semibold">许可证文件</strong>”选项卡。</p>
-</li>
-<li class="[&amp;:not(:first-child)]:mt-2">
-<p class="my-4 leading-7">选择👉以下方法之一来查看许可证文件：</p>
-<ul class="list-disc pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">对于节点锁定许可证 — 要查看许可证文件：<!-- -->
-<ul class="list-disc pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">从许可证文件列表中选择👉要查看的许可证文件。</li>
-<li class="[&amp;:not(:first-child)]:mt-2">点击👆“<strong class="font-semibold">查看</strong>”。屏幕底部显示所选文件的内容。</li>
+<li>
+<p>选择👉以下方法之一来查看许可证文件：</p>
+<ul>
+<li>对于节点锁定许可证 — 要查看许可证文件：
+<ul>
+<li>从许可证文件列表中选择👉要查看的许可证文件。</li>
+<li>点击👆“<strong>查看</strong>”。屏幕底部显示所选文件的内容。</li>
 </ul>
 </li>
-<li class="[&amp;:not(:first-child)]:mt-2">对于浮动许可证 — 要查看与服务器许可证关联的功能状态：<!-- -->
-<ul class="list-disc pl-5 my-4 leading-7">
-<li class="[&amp;:not(:first-child)]:mt-2">选择👉要显示其功能状态的服务器许可证文件。</li>
-<li class="[&amp;:not(:first-child)]:mt-2">点击👆“<strong class="font-semibold">状态</strong>”。功能使用情况信息将显示在屏幕底部。</li>
+<li>对于浮动许可证 — 要查看与服务器许可证关联的功能状态：
+<ul>
+<li>选择👉要显示其功能状态的服务器许可证文件。</li>
+<li>点击👆“<strong>状态</strong>”。功能使用情况信息将显示在屏幕底部。</li>
 </ul>
 </li>
 </ul>
 </li>
-</ol>
-<h3 id="3-2" class="mt-10 mb-2 leading-7 text-xl title_fb7eb">许可证文件定义<a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#3-2">#</a></h3>
-<p class="my-4 leading-7">本节介绍许可证文件及其中可能启用的选项。</p>
-<p class="my-4 leading-7">所有已安装的选项均显示在鼠标“已安装的选项”对话框中。</p>
-<p class="my-4 leading-7"><strong class="font-semibold">选项</strong></p>
-<p class="my-4 leading-7">SailWindLogic 特色</p>
-<p class="my-4 leading-7">控制进入程序并提供对基本 SailWind Logic 示意图功能的访问。</p>
-<p class="my-4 leading-7">此功能未在“已安装选项”对话框中列出。
-</p></div></details><!--/$--></div><div class="rspress-doc-footer"><footer class="mt-8"><div class="xs:flex pb-5 px-2 justify-end items-center"><div class="flex text-sm text-text-2 leading-6 sm:leading-8 font-medium"><p>最近更新时间<!-- -->: <span>2025/10/30 09:34:56</span></p></div></div><div class="flex flex-col"></div><div class="flex flex-col sm:flex-row sm:justify-around gap-4 pt-6"><div class="prev_c92d1 flex flex-col"><a href="/sailwind_docs/logic/guide/20_zh.html" class="link_a7cea pager-link_e0d2d"><span class="desc_dcc01">上一页</span><span class="title_a3acb">第 20 章 对象链接与嵌入 ❌</span></a></div><div class="next_c11be flex flex-col"><a href="/sailwind_docs/logic/guide/22_zh.html" class="link_a7cea pager-link_e0d2d next_ad355"><span class="desc_dcc01">下一页</span><span class="title_a3acb">第 22 章 自定义界面 ಠ_ಠ</span></a></div></div></footer></div></div><div class="aside-container_bc5fa"><div class="flex flex-col"><div id="aside-container" class="relative text-sm font-medium"><div class="leading-7 block text-sm font-semibold pl-3">本页目录</div><nav class="mt-1"><ul class="relative"><li><a href="#1" title="SPICE 模拟" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">SPICE 模拟</span></a></li><li><a href="#1-1" title="用于仿真的模拟原理图" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">用于仿真的模拟原理图</span></a></li><li><a href="#1-1-1" title="将 SPICE 属性添加到库元件与原理图元件" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">将 SPICE 属性添加到库元件与原理图元件</span></a></li><li><a href="#1-1-2" title="向原理图元件或网络添加 SPICE 属性" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">向原理图元件或网络添加 SPICE 属性</span></a></li><li><a href="#1-1-3" title="创建 SPICE 网表" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">创建 SPICE 网表</span></a></li><li><a href="#1-1-4" title="设置交流电分析" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">设置交流电分析</span></a></li><li><a href="#1-1-5" title="设置直流源扫描分析" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">设置直流源扫描分析</span></a></li><li><a href="#1-1-6" title="设置 SPICE Netlister" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">设置 SPICE Netlister</span></a></li><li><a href="#1-1-7" title="设置瞬态分析" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">设置瞬态分析</span></a></li><li><a href="#1-1-8" title="将属性应用于您的模拟设计" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">将属性应用于您的模拟设计</span></a></li><li><a href="#2" title="基本脚本" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">基本脚本</span></a></li><li><a href="#2-1" title="管理脚本" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">管理脚本</span></a></li><li><a href="#2-1-1" title="打开现有脚本" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">打开现有脚本</span></a></li><li><a href="#2-1-2" title="管理打开的脚本" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">管理打开的脚本</span></a></li><li><a href="#2-1-3" title="编辑脚本" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">编辑脚本</span></a></li><li><a href="#2-1-4" title="编辑用户对话框" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">编辑用户对话框</span></a></li><li><a href="#2-1-5" title="查找自动化语句" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">查找自动化语句</span></a></li><li><a href="#2-1-6" title="观察变量" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">观察变量</span></a></li><li><a href="#2-2" title="创建脚本" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">创建脚本</span></a></li><li><a href="#2-2-1" title="创建脚本" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">创建脚本</span></a></li><li><a href="#2-2-2" title="使用对象和过程列表插入自动化语句" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">使用对象和过程列表插入自动化语句</span></a></li><li><a href="#2-2-3" title="使用 ActiveX 自动化成员对话框插入自动化语句" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">使用 ActiveX 自动化成员对话框插入自动化语句</span></a></li><li><a href="#2-2-4" title="设置下一个语句" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">设置下一个语句</span></a></li><li><a href="#2-2-5" title="显示下一个语句" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">显示下一个语句</span></a></li><li><a href="#2-3" title="运行脚本" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">运行脚本</span></a></li><li><a href="#2-3-1" title="运行脚本" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">运行脚本</span></a></li><li><a href="#2-3-2" title="暂停正在运行的脚本" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">暂停正在运行的脚本</span></a></li><li><a href="#2-3-3" title="停止正在运行的脚本" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">停止正在运行的脚本</span></a></li><li><a href="#2-4" title="调试脚本" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">调试脚本</span></a></li><li><a href="#2-4-1" title="设置或删除断点" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">设置或删除断点</span></a></li><li><a href="#2-4-2" title="调试脚本" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">调试脚本</span></a></li><li><a href="#2-4-3" title="删除脚本中的所有断点" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">删除脚本中的所有断点</span></a></li><li><a href="#2-4-4" title="纠正运行时错误" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">纠正运行时错误</span></a></li><li><a href="#2-5" title="访问 Basic 语言帮助" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">访问 Basic 语言帮助</span></a></li><li><a href="#2-6" title="使用基本脚本对话框" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">使用基本脚本对话框</span></a></li><li><a href="#2-7" title="管理 Sax 基本引擎" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">管理 Sax 基本引擎</span></a></li><li><a href="#2-8" title="基本示例脚本" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">基本示例脚本</span></a></li><li><a href="#2-8-1" title="基本示例脚本 00 至 11" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">基本示例脚本 00 至 11</span></a></li><li><a href="#2-8-2" title="基本示例脚本 — RGL 报告" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">基本示例脚本 — RGL 报告</span></a></li><li><a href="#2-8-3" title="基本示例脚本 — 高级" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:24px;font-weight:semibold"><span class="aside-link-text block">基本示例脚本 — 高级</span></a></li><li><a href="#3" title="管理许可选项" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:0;font-weight:semibold"><span class="aside-link-text block">管理许可选项</span></a></li><li><a href="#3-1" title="查看许可证文件或许可证状态" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">查看许可证文件或许可证状态</span></a></li><li><a href="#3-2" title="许可证文件定义" class="aside-link transition-all duration-300 hover:text-text-1 text-text-2 block" style="margin-left:12px;font-weight:semibold"><span class="aside-link-text block">许可证文件定义</span></a></li></ul></nav></div></div></div></div></div></div></section></div>
-    <div id="search-container"></div>
+</ol><h3 class="rp-toc-include" id="3-2"><a href="#3-2" class="rp-header-anchor rp-link" aria-hidden="true">#</a>许可证文件定义</h3><p>本节介绍许可证文件及其中可能启用的选项。</p><p>所有已安装的选项均显示在鼠标“已安装的选项”对话框中。</p><p><strong>选项</strong></p><p>SailWindLogic 特色</p><p>控制进入程序并提供对基本 SailWind Logic 示意图功能的访问。</p><p>此功能未在“已安装选项”对话框中列出。</p></div></details><!--/$--></div><footer class="rp-doc-footer"><div class="rp-doc-footer__edit"><div class="rp-last-updated"><p>Last Updated<!-- -->: <span>10/30/2025, 9:34:56 AM</span></p></div></div><div class="rp-doc-footer__divider"></div><div class="rp-prev-next-page"><a href="/sailwind_docs/logic/guide/20_zh.html" class="rp-prev-next-page__item rp-prev-next-page__prev rp-link"><span class="rp-prev-next-page__item__desc">Previous page</span><span class="rp-prev-next-page__item__title"><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-prev-next-page__icon rp-prev-next-page__rotate_180"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg><span>第 20 章 对象链接与嵌入 ❌</span></span></a><a href="/sailwind_docs/logic/guide/22_zh.html" class="rp-prev-next-page__item rp-prev-next-page__next rp-link"><span class="rp-prev-next-page__item__desc">Next page</span><span class="rp-prev-next-page__item__title"><span>第 22 章 自定义界面 ಠ_ಠ</span><svg width="1em" height="1em" viewBox="0 0 32 32" class="rp-prev-next-page__icon"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></span></a></div></footer></main></div><aside class="rp-doc-layout__outline rp-scrollbar"><div class="rp-outline"><div class="rp-outline__title">ON THIS PAGE<svg width="14" height="14" class="rp-progress-circle"><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-divider-light)" stroke-width="2"></circle><circle cx="7" cy="7" r="6" stroke-linecap="round" fill="none" stroke="var(--rp-c-brand)" stroke-width="2" stroke-dasharray="37.69911184307752" stroke-dashoffset="37.69911184307752" transform="rotate(-90 7 7)" style="transition:stroke-dashoffset 0.3s"></circle></svg></div><nav class="rp-outline__toc rp-scrollbar"><a href="#1" class="rp-toc-item rp-link" title="SPICE 模拟" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">SPICE 模拟</span></a><a href="#1-1" class="rp-toc-item rp-link" title="用于仿真的模拟原理图" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">用于仿真的模拟原理图</span></a><a href="#1-1-1" class="rp-toc-item rp-link" title="将 SPICE 属性添加到库元件与原理图元件" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">将 SPICE 属性添加到库元件与原理图元件</span></a><a href="#1-1-2" class="rp-toc-item rp-link" title="向原理图元件或网络添加 SPICE 属性" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">向原理图元件或网络添加 SPICE 属性</span></a><a href="#1-1-3" class="rp-toc-item rp-link" title="创建 SPICE 网表" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">创建 SPICE 网表</span></a><a href="#1-1-4" class="rp-toc-item rp-link" title="设置交流电分析" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">设置交流电分析</span></a><a href="#1-1-5" class="rp-toc-item rp-link" title="设置直流源扫描分析" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">设置直流源扫描分析</span></a><a href="#1-1-6" class="rp-toc-item rp-link" title="设置 SPICE Netlister" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">设置 SPICE Netlister</span></a><a href="#1-1-7" class="rp-toc-item rp-link" title="设置瞬态分析" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">设置瞬态分析</span></a><a href="#1-1-8" class="rp-toc-item rp-link" title="将属性应用于您的模拟设计" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">将属性应用于您的模拟设计</span></a><a href="#2" class="rp-toc-item rp-link" title="基本脚本" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">基本脚本</span></a><a href="#2-1" class="rp-toc-item rp-link" title="管理脚本" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">管理脚本</span></a><a href="#2-1-1" class="rp-toc-item rp-link" title="打开现有脚本" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">打开现有脚本</span></a><a href="#2-1-2" class="rp-toc-item rp-link" title="管理打开的脚本" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">管理打开的脚本</span></a><a href="#2-1-3" class="rp-toc-item rp-link" title="编辑脚本" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">编辑脚本</span></a><a href="#2-1-4" class="rp-toc-item rp-link" title="编辑用户对话框" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">编辑用户对话框</span></a><a href="#2-1-5" class="rp-toc-item rp-link" title="查找自动化语句" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">查找自动化语句</span></a><a href="#2-1-6" class="rp-toc-item rp-link" title="观察变量" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">观察变量</span></a><a href="#2-2" class="rp-toc-item rp-link" title="创建脚本" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">创建脚本</span></a><a href="#2-2-1" class="rp-toc-item rp-link" title="创建脚本" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">创建脚本</span></a><a href="#2-2-2" class="rp-toc-item rp-link" title="使用对象和过程列表插入自动化语句" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">使用对象和过程列表插入自动化语句</span></a><a href="#2-2-3" class="rp-toc-item rp-link" title="使用 ActiveX 自动化成员对话框插入自动化语句" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">使用 ActiveX 自动化成员对话框插入自动化语句</span></a><a href="#2-2-4" class="rp-toc-item rp-link" title="设置下一个语句" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">设置下一个语句</span></a><a href="#2-2-5" class="rp-toc-item rp-link" title="显示下一个语句" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">显示下一个语句</span></a><a href="#2-3" class="rp-toc-item rp-link" title="运行脚本" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">运行脚本</span></a><a href="#2-3-1" class="rp-toc-item rp-link" title="运行脚本" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">运行脚本</span></a><a href="#2-3-2" class="rp-toc-item rp-link" title="暂停正在运行的脚本" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">暂停正在运行的脚本</span></a><a href="#2-3-3" class="rp-toc-item rp-link" title="停止正在运行的脚本" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">停止正在运行的脚本</span></a><a href="#2-4" class="rp-toc-item rp-link" title="调试脚本" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">调试脚本</span></a><a href="#2-4-1" class="rp-toc-item rp-link" title="设置或删除断点" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">设置或删除断点</span></a><a href="#2-4-2" class="rp-toc-item rp-link" title="调试脚本" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">调试脚本</span></a><a href="#2-4-3" class="rp-toc-item rp-link" title="删除脚本中的所有断点" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">删除脚本中的所有断点</span></a><a href="#2-4-4" class="rp-toc-item rp-link" title="纠正运行时错误" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">纠正运行时错误</span></a><a href="#2-5" class="rp-toc-item rp-link" title="访问 Basic 语言帮助" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">访问 Basic 语言帮助</span></a><a href="#2-6" class="rp-toc-item rp-link" title="使用基本脚本对话框" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">使用基本脚本对话框</span></a><a href="#2-7" class="rp-toc-item rp-link" title="管理 Sax 基本引擎" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">管理 Sax 基本引擎</span></a><a href="#2-8" class="rp-toc-item rp-link" title="基本示例脚本" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">基本示例脚本</span></a><a href="#2-8-1" class="rp-toc-item rp-link" title="基本示例脚本 00 至 11" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">基本示例脚本 00 至 11</span></a><a href="#2-8-2" class="rp-toc-item rp-link" title="基本示例脚本 — RGL 报告" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">基本示例脚本 — RGL 报告</span></a><a href="#2-8-3" class="rp-toc-item rp-link" title="基本示例脚本 — 高级" style="padding-left:24px" data-depth="2"><span class="rp-toc-item__text rp-doc">基本示例脚本 — 高级</span></a><a href="#3" class="rp-toc-item rp-link" title="管理许可选项" style="padding-left:0" data-depth="0"><span class="rp-toc-item__text rp-doc">管理许可选项</span></a><a href="#3-1" class="rp-toc-item rp-link" title="查看许可证文件或许可证状态" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">查看许可证文件或许可证状态</span></a><a href="#3-2" class="rp-toc-item rp-link" title="许可证文件定义" style="padding-left:12px" data-depth="1"><span class="rp-toc-item__text rp-doc">许可证文件定义</span></a></nav><div class="rp-outline__divider"></div><div class="rp-outline__bottom"></div></div></aside></div></div>
+    <div id="__rspress_modal_container"></div>
   </body>
 </html>
