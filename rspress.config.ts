@@ -24,7 +24,22 @@ export default defineConfig({
         'overview.filterPlaceholderText': { zh: '输入关键词' },
         'overview.filterNoResultText': { zh: '未查询到结果' },
     },
+    builderConfig: {
+        html: {
+            tags: [
+                {
+                    tag: 'script',
+                    attrs: {},
+                    children: `document.addEventListener('click',function(e){var a=e.target.closest('a[href*="localhost:5173/editor"]');if(a){e.preventDefault();window.open(a.href,'repopress_editor')}})`,
+                },
+            ],
+        },
+    },
     themeConfig: {
+        editLink: {
+            docRepoBaseUrl: 'http://localhost:5173/editor/cb708d91-b571-4a26-8117-ecbd2be042c8/docs',
+            text: '在 RepoPress 上编辑此页',
+        },
         enableContentAnimation: true,
         enableAppearanceAnimation: true,
         enableScrollToTop: true,
