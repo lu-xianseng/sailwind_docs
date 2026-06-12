@@ -25,7 +25,9 @@ export default defineConfig({
         'overview.filterNoResultText': { zh: '未查询到结果' },
     },
     themeConfig: {
-
+        editLink: {
+            docRepoBaseUrl: 'http://localhost:5173/editor/cb708d91-b571-4a26-8117-ecbd2be042c8/docs',
+        },
         enableContentAnimation: true,
         enableAppearanceAnimation: true,
         enableScrollToTop: true,
