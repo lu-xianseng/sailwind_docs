@@ -2,7 +2,7 @@
 pageType: home
 
 hero:
-  name: SailWind
+  name: SailWind Docs
   text: "Logic/Layout/Router \n教程 & 指南"
   tagline: 文档适配最新的 SailWind Logic、SailWind Layout 和 SailWind Router。
   actions:
