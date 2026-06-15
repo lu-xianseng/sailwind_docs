@@ -26,7 +26,7 @@ export default defineConfig({
     },
     themeConfig: {
         editLink: {
-            docRepoBaseUrl: 'http://10.0.21.144:8000/editor/REPO_ID_PLACEHOLDER/docs',
+            docRepoBaseUrl: 'http://10.0.21.144:8000/editor/f603a49a-acd9-4262-89f4-e46743679a1c/docs',
         },
         enableContentAnimation: true,
         enableAppearanceAnimation: true,
